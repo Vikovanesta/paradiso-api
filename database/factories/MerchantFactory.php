@@ -1,0 +1,29 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\MerchantLevel;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Merchant>
+ */
+class MerchantFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'merchant_level_id' => MerchantLevel::query()->inRandomOrder()->first()->id,
+            'name' => fake()->name(),
+            'ktp' => fake()->numerify('################'),
+            'npwp' => fake()->numerify('###############'),
+            'status' => fake()->randomElement([1, 2, 3, 4]),
+        ];
+    }
+}

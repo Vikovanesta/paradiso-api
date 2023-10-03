@@ -14,11 +14,11 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('merchant_id');
-            $table->foreignId('user_id');   // admin_id
+            $table->foreignId('merchant_id')->nullable();
+            $table->foreignId('user_id')->nullable();   // admin_id
             $table->foreignId('product_sub_category_id');
-            $table->tinyInteger('status_id');
-            $table->foreignId('city_id');
+            $table->tinyInteger('status_id')->nullable();
+            $table->foreignId('city_id')->nullable();
             $table->string('name');
             $table->text('description');
             $table->integer('duration');

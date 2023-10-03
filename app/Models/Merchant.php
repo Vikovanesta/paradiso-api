@@ -18,10 +18,12 @@ class Merchant extends Model
     {
         return $this->hasOne(MerchantProfile::class);
     }
-
-
     public function merchantLevel()
     {
-        return $this->hasOne(MerchantLevel::class);
+        return $this->belongsTo(MerchantLevel::class);
+    }
+    public function product()
+    {
+        return $this->hasMany(Product::class);
     }
 }
