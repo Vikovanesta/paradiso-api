@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Merchant extends Model
 {
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function merchantProfile()
+    {
+        return $this->hasOne(MerchantProfile::class);
+    }
+
+
+    public function merchantLevel()
+    {
+        return $this->hasOne(MerchantLevel::class);
+    }
 }

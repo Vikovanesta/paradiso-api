@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class MerchantProfile extends Model
 {
     use HasFactory;
+
+    public function merchant()
+    {
+        return $this->belongsTo(Merchant::class);
+    }
 }
