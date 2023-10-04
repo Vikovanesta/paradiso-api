@@ -38,31 +38,12 @@ class AuthController extends Controller
         ], 201);
     }
 
-    // public function logout(Request $request)
-    // {
-    //     // Validate the request...
-    //     $validated = $request->validate([
-    //         // 'email' => 'required|max:255',
-    //         // 'password' => 'required',
-    //     ]);
+    public function logout(Request $request)
+    {
+        auth()->user()->tokens()->delete();
 
-    //     // $user = User::where(''email', $validated['email']')->first();
-    //     // if (!$user) {
-    //     //     return response([
-    //     //         'message' => 'User not found'
-    //     //     ], 404);
-    //     // }
-
-    //     // if (!Hash::check($validated['password'], $user->password)) {
-    //     //     return response([
-    //     //         'message' => 'Password not match'
-    //     //     ], 401);
-    //     // }
-
-    //     $user->tokens()->delete();
-
-    //     return response([
-    //         'message' => 'Logged out'
-    //     ], 201);
-    // }
+        return response([
+            'message' => 'Logged out'
+        ], 201);
+    }
 }
