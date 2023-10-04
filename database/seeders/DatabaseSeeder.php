@@ -31,6 +31,16 @@ class DatabaseSeeder extends Seeder
             ->has(ProductSubCategory::factory()->count(2))
             ->create();
 
+        User::factory(1)
+            ->has(Merchant::factory()
+                ->has(MerchantProfile::factory())
+                ->has(Product::factory()->count(2)))
+            ->create([
+                'name' => 'test',
+                'email' => 'test@mail.com',
+                'password' => 'password',
+            ]);
+
         User::factory(10)
             ->has(Merchant::factory()
                 ->has(MerchantProfile::factory())

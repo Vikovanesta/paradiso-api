@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MerchantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Public routes
+Route::post('/auth', [AuthController::class,'login'])->name('login');
+
+// Protected routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/merchant/{merchant}/product', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
+    Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });

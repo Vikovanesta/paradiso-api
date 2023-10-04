@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Merchant;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class MerchantController extends Controller
@@ -13,6 +14,17 @@ class MerchantController extends Controller
     public function index()
     {
         //
+    }
+
+    /**
+     * Display a listing of the product owned.
+     */
+    public function productIndex($id)
+    {
+        $products = Product::where('merchant_id', $id)->get();
+        return response([
+            'products' => $products
+        ], 200);
     }
 
     /**
