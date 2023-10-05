@@ -9,6 +9,18 @@ class MerchantProfile extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'address',
+        'description',
+        'logo',
+        'banner',
+    ];
+
     public function merchant()
     {
         return $this->belongsTo(Merchant::class);

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    use HttpResponses;
+
     /**
      * Display a listing of the resource.
      */

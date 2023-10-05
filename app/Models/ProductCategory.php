@@ -9,6 +9,16 @@ class ProductCategory extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'icon',
+    ];    
+
     public function productSubCategory()
     {
         return $this->hasMany(ProductSubCategory::class);

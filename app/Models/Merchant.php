@@ -9,6 +9,18 @@ class Merchant extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'ktp',
+        'npwp',
+        'siup',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

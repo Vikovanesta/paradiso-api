@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Merchant;
 use App\Models\Product;
+use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 
 class MerchantController extends Controller
 {
+    use HttpResponses;
+
     /**
      * Display a listing of the resource.
      */
@@ -22,7 +25,8 @@ class MerchantController extends Controller
     public function productIndex($id)
     {
         $products = Product::where('merchant_id', $id)->get();
-        return response([
+
+        return $this->success([
             'products' => $products
         ], 200);
     }

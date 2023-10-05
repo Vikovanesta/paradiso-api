@@ -9,6 +9,28 @@ class Product extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'description',
+        'duration',
+        'start_date',
+        'end_date',
+        'price',
+        'unit',
+        'discount',
+        'thumbnail',
+        'address',
+        'coordinate',
+        'max_person',
+        'min_person',
+        'note',
+    ];
+
     public function merchant()
     {
         return $this->belongsTo(Merchant::class);
