@@ -26,3 +26,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/merchant/{merchant}/product', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
+
+Route::fallback(function(){
+    return response()->json([
+        'message' => 'Endpoint not found'
+    ],404);
+});

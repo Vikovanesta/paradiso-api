@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Models\Merchant;
 use App\Models\Product;
 use App\Traits\HttpResponses;
@@ -22,13 +23,12 @@ class MerchantController extends Controller
     /**
      * Display a listing of the product owned.
      */
-    public function productIndex($id)
+    public function productIndex(Request $request, $id)
     {
-        $products = Product::where('merchant_id', $id)->get();
+        $pageSize = $request->query('page_size', 15);
+        $products = Product::where('merchant_id', $id)->paginate($pageSize);
 
-        return $this->success([
-            'products' => $products
-        ], 200);
+        return ProductResource::collection($products);
     }
 
     /**

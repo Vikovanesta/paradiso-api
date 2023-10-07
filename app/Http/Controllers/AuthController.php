@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
@@ -35,7 +36,7 @@ class AuthController extends Controller
         $token = $user->createToken('paradiso-token')->plainTextToken;
 
         return $this->success([
-            'user' => $user,
+            'user' => new UserResource($user),
             'token' => $token
         ], 201);
     }
@@ -44,8 +45,6 @@ class AuthController extends Controller
     {
         auth()->user()->tokens()->delete();
 
-        return $this->success([
-            'message' => 'Logged out'
-        ]);
+        return $this->success(null ,'Logged out', 200);
     }
 }

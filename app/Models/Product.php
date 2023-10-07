@@ -38,6 +38,6 @@ class Product extends Model
 
     public function productSubCategory()
     {
-        return $this->hasOne(ProductSubCategory::class);
+        return $this->belongsTo(ProductSubCategory::class);
     }
 }
