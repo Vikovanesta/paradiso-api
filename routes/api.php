@@ -2,10 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MerchantController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\CityController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +18,11 @@ use App\Models\Product;
 
 // Public routes
 Route::post('/auth', [AuthController::class,'login'])->name('login');
+Route::get('/cities', [CityController::class,'index'])->name('city.index');
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::get('/merchant/{merchant}/product', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
+    Route::get('/merchants/{merchant}/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
 
