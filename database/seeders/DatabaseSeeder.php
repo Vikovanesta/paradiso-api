@@ -11,6 +11,7 @@ use App\Models\ProductCategory;
 use App\Models\ProductSubCategory;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use PHPUnit\Framework\Constraint\Count;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProductStatusSeeder::class,
             ProductCategorySeeder::class,
-            ProductSubCategorySeeder::class,
+            CountrySeeder::class,
         ]);
 
         $merchantLevels = ['standart', 'bronze', 'silver', 'gold', 'platinum'];
