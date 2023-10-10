@@ -20,6 +20,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
+        $this->call([
+            ProductStatusSeeder::class,
+            ProductCategorySeeder::class,
+            ProductSubCategorySeeder::class,
+        ]);
+
         $merchantLevels = ['standart', 'bronze', 'silver', 'gold', 'platinum'];
         foreach ($merchantLevels as $merchantLevel) {
             MerchantLevel::factory()->create([
@@ -27,14 +33,10 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        ProductCategory::factory(5)
-            ->has(ProductSubCategory::factory()->count(2))
-            ->create();
-
         User::factory(1)
             ->has(Merchant::factory()
                 ->has(MerchantProfile::factory())
-                ->has(Product::factory()->count(2)))
+                ->has(Product::factory()->count(rand(1, 5))))
             ->create([
                 'name' => 'test',
                 'email' => 'test@mail.com',
@@ -44,7 +46,7 @@ class DatabaseSeeder extends Seeder
         User::factory(10)
             ->has(Merchant::factory()
                 ->has(MerchantProfile::factory())
-                ->has(Product::factory()->count(2)))
+                ->has(Product::factory()->count(rand(0, 5))))
             ->create();
 
         // Product::factory(10)->create();
