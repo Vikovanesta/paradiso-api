@@ -34,22 +34,6 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        User::factory(1)
-            ->has(Merchant::factory()
-                ->has(MerchantProfile::factory())
-                ->has(Product::factory()->count(rand(1, 5))))
-            ->create([
-                'name' => 'test',
-                'email' => 'test@mail.com',
-                'password' => 'password',
-            ]);
-
-        User::factory(10)
-            ->has(Merchant::factory()
-                ->has(MerchantProfile::factory())
-                ->has(Product::factory()->count(rand(0, 5))))
-            ->create();
-
         // Product::factory(10)->create();
 
     }
