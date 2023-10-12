@@ -12,31 +12,18 @@ class ProductStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        $productStatuses = [
-            [
-                'name' => 'Draft',
-                'color' => 'gray',
-                'icon' => 'fa fa-file',
-            ],
-            [
-                'name' => 'Pending',
-                'color' => 'yellow',
-                'icon' => 'fa fa-clock',
-            ],
-            [
-                'name' => 'Published',
-                'color' => 'green',
-                'icon' => 'fa fa-check',
-            ],
-            [
-                'name' => 'Rejected',
-                'color' => 'red',
-                'icon' => 'fa fa-times',
-            ],
+        $statuses = [
+            'draft',
+            'submitted for review',
+            'review process',
+            'accepted',
+            'rejected',
         ];
 
-        foreach ($productStatuses as $productStatus) {
-            \App\Models\ProductStatus::create($productStatus);
+        foreach ($statuses as $status) {
+            \App\Models\ProductStatus::factory()->create([
+                'name' => $status,
+            ]);
         }
     }
 }
