@@ -15,4 +15,9 @@ class Schedule extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function scheduleDays()
+    {
+        return $this->hasMany(ScheduleDay::class);
+    }
 }

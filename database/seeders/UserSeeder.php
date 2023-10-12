@@ -7,6 +7,7 @@ use App\Models\MerchantProfile;
 use App\Models\Product;
 use App\Models\Schedule;
 use App\Models\User;
+use Database\Factories\ScheduleDayFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,7 +21,11 @@ class UserSeeder extends Seeder
         User::factory(1)
         ->has(Merchant::factory()
             ->has(MerchantProfile::factory())
-            ->has(Product::factory()->count(rand(1, 5))))
+            ->has(Product::factory()
+                ->has(Schedule::factory()
+                    ->has(ScheduleDayFactory::times(rand(1, 2)))
+                ->count(rand(1, 2)))
+            ->count(rand(1, 3))))
         ->create([
             'name' => 'test',
             'email' => 'test@mail.com',
@@ -31,7 +36,9 @@ class UserSeeder extends Seeder
         ->has(Merchant::factory()
             ->has(MerchantProfile::factory())
             ->has(Product::factory()
-                ->has(Schedule::factory()->count(rand(1, 2)))
+                ->has(Schedule::factory()
+                    ->has(ScheduleDayFactory::times(rand(1, 2)))
+                ->count(rand(1, 2)))
             ->count(rand(0, 4))))
         ->create();
     }
