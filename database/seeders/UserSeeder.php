@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Merchant;
 use App\Models\MerchantProfile;
 use App\Models\Product;
+use App\Models\Schedule;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -26,10 +27,12 @@ class UserSeeder extends Seeder
             'password' => 'password',
         ]);
 
-        User::factory(10)
+        User::factory(9)
         ->has(Merchant::factory()
             ->has(MerchantProfile::factory())
-            ->has(Product::factory()->count(rand(0, 5))))
+            ->has(Product::factory()
+                ->has(Schedule::factory()->count(rand(1, 2)))
+            ->count(rand(0, 4))))
         ->create();
     }
 }
