@@ -15,6 +15,7 @@ class ProductSubCategory extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'product_category_id',
         'name',
         'icon',
     ];

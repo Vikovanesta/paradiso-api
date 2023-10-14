@@ -15,6 +15,7 @@ class Merchant extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'merchant_level_id',
         'name',
         'ktp',
         'npwp',

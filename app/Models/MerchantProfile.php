@@ -15,6 +15,7 @@ class MerchantProfile extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'merchant_id',
         'address',
         'description',
         'logo',
