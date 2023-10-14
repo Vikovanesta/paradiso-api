@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Merchant;
 use App\Models\MerchantProfile;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Schedule;
 use App\Models\User;
 use Database\Factories\ScheduleDayFactory;
@@ -18,7 +19,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(1)
+        User::factory()
         ->has(Merchant::factory()
             ->has(MerchantProfile::factory())
             ->has(Product::factory()
@@ -35,11 +36,10 @@ class UserSeeder extends Seeder
         User::factory(9)
         ->has(Merchant::factory()
             ->has(MerchantProfile::factory())
-            ->has(Product::factory()
-                ->has(Schedule::factory()
-                    ->has(ScheduleDayFactory::times(rand(1, 2)))
-                ->count(rand(1, 2)))
-            ->count(rand(0, 4))))
+            ->has(Product::factory(2)
+                ->has(Schedule::factory(2)
+                    ->has(ScheduleDayFactory::times(2)))
+                ->has(Review::factory(2))))
         ->create();
     }
 }

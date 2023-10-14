@@ -50,4 +50,9 @@ class Product extends Model
     {
         return $this->hasMany(Schedule::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
