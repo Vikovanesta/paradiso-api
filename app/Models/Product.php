@@ -15,6 +15,11 @@ class Product extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'merchant_id',
+        'product_sub_category_id',
+        'city_id',
+        'status_id',
+        'user_id', // for admin
         'name',
         'description',
         'duration',
@@ -54,5 +59,10 @@ class Product extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function includeExcludes()
+    {
+        return $this->hasMany(IncludeExclude::class);
     }
 }
