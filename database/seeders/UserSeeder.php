@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Facility;
 use App\Models\IncludeExclude;
 use App\Models\Merchant;
 use App\Models\MerchantProfile;
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
                 )
                 ->has(Review::factory(2))
                 ->has(IncludeExclude::factory(2))
+                ->has(Facility::factory(2))
             )
         )
         ->create([
@@ -52,6 +54,7 @@ class UserSeeder extends Seeder
                 )
                 ->has(Review::factory(2))
                 ->has(IncludeExclude::factory(2))
+                ->has(Facility::factory(2))
             )
         )
         ->create();

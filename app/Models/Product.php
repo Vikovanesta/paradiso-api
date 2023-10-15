@@ -65,4 +65,9 @@ class Product extends Model
     {
         return $this->hasMany(IncludeExclude::class);
     }
+
+    public function facilities()
+    {
+        return $this->belongsToMany(Facility::class);
+    }
 }
