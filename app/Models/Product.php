@@ -70,4 +70,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Facility::class);
     }
+
+    public function faqs()
+    {
+        return $this->hasMany(Faq::class);
+    }
 }
