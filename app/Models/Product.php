@@ -75,4 +75,9 @@ class Product extends Model
     {
         return $this->hasMany(Faq::class);
     }
+
+    public function terms()
+    {
+        return $this->hasMany(Term::class);
+    }
 }

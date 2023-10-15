@@ -10,6 +10,7 @@ use App\Models\MerchantProfile;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Schedule;
+use App\Models\Term;
 use App\Models\User;
 use Database\Factories\ScheduleDayFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -36,6 +37,7 @@ class UserSeeder extends Seeder
                 ->has(IncludeExclude::factory(2))
                 ->has(Facility::factory(2))
                 ->has(Faq::factory(2))
+                ->has(Term::factory(2))
             )
         )
         ->create([
@@ -58,6 +60,7 @@ class UserSeeder extends Seeder
                 ->has(IncludeExclude::factory(2))
                 ->has(Facility::factory(2))
                 ->has(Faq::factory(2))
+                ->has(Term::factory(2))
             )
         )
         ->create();
