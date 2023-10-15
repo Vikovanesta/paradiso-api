@@ -8,6 +8,7 @@ use App\Models\IncludeExclude;
 use App\Models\Merchant;
 use App\Models\MerchantProfile;
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\Review;
 use App\Models\Schedule;
 use App\Models\Term;
@@ -38,6 +39,7 @@ class UserSeeder extends Seeder
                 ->has(Facility::factory(2))
                 ->has(Faq::factory(2))
                 ->has(Term::factory(2))
+                ->has(ProductImage::factory(2))
             )
         )
         ->create([
@@ -61,6 +63,7 @@ class UserSeeder extends Seeder
                 ->has(Facility::factory(2))
                 ->has(Faq::factory(2))
                 ->has(Term::factory(2))
+                ->has(ProductImage::factory(2))
             )
         )
         ->create();
