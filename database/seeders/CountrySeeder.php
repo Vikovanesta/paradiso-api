@@ -17,9 +17,8 @@ class CountrySeeder extends Seeder
     public function run(): void
     {
         Country::factory(3)
-            ->has(Province::factory()
-                ->has(City::factory()->count(rand(1, 10)))
-                ->count(rand(5, 10)))
+            ->has(Province::factory(5)
+                ->has(City::factory(5)))
             ->create();
     }
 }
