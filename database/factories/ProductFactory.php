@@ -22,7 +22,7 @@ class ProductFactory extends Factory
         return [
             'product_sub_category_id' => ProductSubCategory::query()->inRandomOrder()->first()->id,
             'city_id' => City::query()->inRandomOrder()->first()->id,
-            'status_id' => ProductStatus::query()->inRandomOrder()->first()->id,
+            'product_status_id' => ProductStatus::query()->inRandomOrder()->first()->id,
             'name' => fake()->words(2, true),
             'description' => fake()->text(),
             'duration' => fake()->randomNumber(2),

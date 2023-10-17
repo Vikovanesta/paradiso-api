@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MerchantController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProvinceController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ Route::post('/auth', [AuthController::class,'login'])->name('login');
 Route::get('/cities', [CityController::class,'index'])->name('city.index');
 Route::get('/provinces', [ProvinceController::class,'index'])->name('province.index');
 Route::get('/countries', [CountryController::class,'index'])->name('country.index');
+Route::get('/products/{product}', [ProductController::class,'show'])->name('product.show');
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('merchant_id')->nullable();
             $table->foreignId('user_id')->nullable();   // admin_id
             $table->foreignId('product_sub_category_id');
-            $table->tinyInteger('status_id')->nullable();
+            $table->tinyInteger('product_status_id')->nullable();
             $table->foreignId('city_id')->nullable();
             $table->string('name');
             $table->text('description');

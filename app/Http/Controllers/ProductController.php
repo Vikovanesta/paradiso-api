@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
@@ -31,7 +32,22 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $product = Product::with(
+                'merchant',
+                'productSubCategory',
+                'productSubCategory.productCategory',
+                'productStatus',
+                'schedules',
+                'schedules.scheduleDays',
+                'reviews',
+                'includeExcludes',
+                'facilities',
+                'faqs',
+                'terms',
+                'productImages',
+            )->find($product->id);
+
+        return new ProductResource($product);
     }
 
     /**

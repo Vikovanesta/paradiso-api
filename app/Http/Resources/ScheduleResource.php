@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductSubCategoryResource extends JsonResource
+class ScheduleResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +16,9 @@ class ProductSubCategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'icon' => $this->icon,
-            'product_category' => new ProductCategoryResource($this->whenLoaded('productCategory')),
+            'date' => $this->date,
+            'title' => $this->title,
+            'schedule_days' => ScheduleDayResource::collection($this->scheduleDays),
         ];
     }
 }

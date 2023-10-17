@@ -18,7 +18,7 @@ class Product extends Model
         'merchant_id',
         'product_sub_category_id',
         'city_id',
-        'status_id',
+        'product_status_id',
         'user_id', // for admin
         'name',
         'description',

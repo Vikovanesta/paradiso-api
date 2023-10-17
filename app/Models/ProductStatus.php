@@ -14,4 +14,9 @@ class ProductStatus extends Model
         'color',
         'icon',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

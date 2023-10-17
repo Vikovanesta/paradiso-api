@@ -33,7 +33,16 @@ class ProductResource extends JsonResource
             'is_published' => $this->is_published,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'sub_category' => new ProductSubCategoryResource($this->productSubCategory),    
+            'sub_category' => new ProductSubCategoryResource($this->whenLoaded('productSubCategory')),
+            'merchant' => new MerchantResource($this->whenLoaded('merchant')),
+            'status' => new ProductStatusResource($this->whenLoaded('productStatus')),
+            'schedules' => ScheduleResource::collection($this->whenLoaded('schedules')),
+            'reviews' => ReviewResource::collection($this->whenLoaded('reviews')),
+            'include_excludes' => IncludeExcludeResource::collection($this->whenLoaded('includeExcludes')),
+            'facilities' => FacilityResource::collection($this->whenLoaded('facilities')),
+            'faqs' => FaqResource::collection($this->whenLoaded('faqs')),
+            'terms' => TermResource::collection($this->whenLoaded('terms')),
+            'images' => ProductImageResource::collection($this->whenLoaded('productImages')),
         ];
     }
 }
