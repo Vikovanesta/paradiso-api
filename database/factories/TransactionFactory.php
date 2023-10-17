@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\TransactionStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Validation\Rules\Unique;
 
@@ -19,7 +20,7 @@ class TransactionFactory extends Factory
     {
         return [
             'invoice_number' => fake()->unique()->randomNumber(9),
-            'transaction_status_id' => rand(1, 4),
+            'transaction_status_id' => TransactionStatus::query()->inRandomOrder()->first()->id,
             'item_total_price' => rand(50000, 1000000),
             'item_total_net_price' => rand(50000, 1000000),
             'voucher_price' => rand(50000, 1000000),

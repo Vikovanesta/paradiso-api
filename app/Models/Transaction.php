@@ -29,4 +29,9 @@ class Transaction extends Model
     {
         return $this->hasOne(Review::class);
     }
+
+    public function transactionStatus()
+    {
+        return $this->belongsTo(TransactionStatus::class);
+    }
 }
