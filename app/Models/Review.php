@@ -26,4 +26,9 @@ class Review extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function transaction()
+    {
+        return $this->belongsTo(Transaction::class);
+    }
 }

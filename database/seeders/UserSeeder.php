@@ -12,10 +12,12 @@ use App\Models\ProductImage;
 use App\Models\Review;
 use App\Models\Schedule;
 use App\Models\Term;
+use App\Models\Transaction;
 use App\Models\User;
 use Database\Factories\ScheduleDayFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use PHPUnit\Event\Code\Test;
 
 class UserSeeder extends Seeder
 {
@@ -42,6 +44,7 @@ class UserSeeder extends Seeder
                 ->has(ProductImage::factory(2))
             )
         )
+        ->has(Transaction::factory(2))
         ->create([
             'name' => 'test',
             'email' => 'test@mail.com',
@@ -66,6 +69,7 @@ class UserSeeder extends Seeder
                 ->has(ProductImage::factory(2))
             )
         )
+        ->has(Transaction::factory(2))
         ->create();
     }
 }
