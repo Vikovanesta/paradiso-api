@@ -19,7 +19,7 @@ class ProductStatusFactory extends Factory
         return [
             'name' => fake()->word(),
             'color' => fake()->colorName(),
-            'icon' => fake()->imageUrl(),
+            'icon' => fake()->imageUrl(640, 480, null, false, null, true),
         ];
     }
 }

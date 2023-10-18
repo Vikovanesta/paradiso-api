@@ -40,6 +40,7 @@ class ProductController extends Controller
                 'schedules',
                 'schedules.scheduleDays',
                 'reviews',
+                'reviews.user',
                 'includeExcludes',
                 'facilities',
                 'faqs',

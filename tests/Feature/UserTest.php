@@ -13,8 +13,8 @@ class UserTest extends TestCase
     public function test_login_success()
     {
         $response = $this->post('/api/auth', [
-            'name' => 'test',
-            'email' => 'test@mail.com',
+            'name' => 'merchant',
+            'email' => 'merchant@mail.com',
             'password' => 'password'
         ]);
 
@@ -36,7 +36,7 @@ class UserTest extends TestCase
     public function test_login_email_not_found()
     {
         $response = $this->post('/api/auth', [
-            'name' => 'test',
+            'name' => 'merchant',
             'email' => 'oo@mail.com',
             'password' => 'password'
         ]);
@@ -54,7 +54,7 @@ class UserTest extends TestCase
     {
         $this->test_login_success();
 
-        $user = User::where('email', 'test@mail.com')->first();
+        $user = User::where('email', 'merchant@mail.com')->first();
 
         $response = $this->actingAs($user)->post('/api/logout');
 

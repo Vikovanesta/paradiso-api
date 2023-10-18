@@ -26,7 +26,7 @@ return new class extends Migration
             $table->date('end_date');
             $table->integer('price');
             $table->string('unit');
-            $table->integer('discount');
+            $table->integer('discount')->nullable();
             $table->string('thumbnail');
             $table->string('address');
             $table->string('coordinate');

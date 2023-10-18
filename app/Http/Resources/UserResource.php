@@ -23,7 +23,7 @@ class UserResource extends JsonResource
             'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'merchant' => new MerchantResource($this->merchant),
+            'merchant' => new MerchantResource($this->whenLoaded('merchant')),
         ];
     }
 }

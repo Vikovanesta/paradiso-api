@@ -46,8 +46,8 @@ class UserSeeder extends Seeder
         )
         ->has(Transaction::factory(2))
         ->create([
-            'name' => 'test',
-            'email' => 'test@mail.com',
+            'name' => 'merchant',
+            'email' => 'merchant@mail.com',
             'password' => 'password',
         ]);
 
