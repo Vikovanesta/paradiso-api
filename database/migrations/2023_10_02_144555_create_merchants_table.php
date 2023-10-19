@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('ktp');
             $table->string('npwp')->nullable();
             $table->string('siup')->nullable();
-            $table->tinyInteger('status');
             $table->timestamps();
         });
     }

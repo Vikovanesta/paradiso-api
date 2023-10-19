@@ -20,7 +20,6 @@ class MerchantResource extends JsonResource
             'ktp' =>$this ->ktp,
             'npwp' =>$this ->npwp,
             'siup' =>$this ->siup,
-            'status' =>$this ->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'profile' => new MerchantProfileResource($this->whenLoaded('merchantProfile')),

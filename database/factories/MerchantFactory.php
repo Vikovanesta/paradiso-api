@@ -25,7 +25,6 @@ class MerchantFactory extends Factory
             'name' => fake()->name(),
             'ktp' => fake()->numerify('################'),
             'npwp' => fake()->numerify('###############'),
-            'status' => fake()->randomElement([1, 2, 3, 4]),
         ];
     }
 }

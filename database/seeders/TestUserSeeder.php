@@ -41,7 +41,6 @@ class TestUserSeeder extends Seeder
             'merchant_status_id' => 3,
             'name' => 'merchant',
             'ktp' => '1234567890123456',
-            'status' => 1,
         ]);
 
         MerchantProfile::create([
