@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
 
 class ProductTest extends TestCase
@@ -16,119 +17,86 @@ class ProductTest extends TestCase
         $response = $this->get('/api/products/1');
 
         $response->assertStatus(200)
-            ->assertJsonStructure([
-                'data' => [
-                    'id',
-                    'name',
-                    'description',
-                    'start_date',
-                    'end_date',
-                    'price',
-                    'unit',
-                    'discount',
-                    'thumbnail',
-                    'address',
-                    'coordinate',
-                    'max_person',
-                    'min_person',
-                    'note',
-                    'is_published',
-                    'created_at',
-                    'updated_at',
-                    'sub_category' => [
-                        'id',
-                        'name',
-                        'icon',
-                        'product_category' => [
-                            'id',
-                            'name',
-                            'icon',
-                        ]
-                    ],
-                    'merchant' => [
-                        'id',
-                        'name',
-                        'ktp',
-                        'npwp',
-                        'siup',
-                        'status',
-                        'created_at',
-                        'updated_at',
-                    ],
-                    'status' => [
-                        'id',
-                        'name',
-                        'color',
-                        'icon',
-                    ],
-                    'schedules' => [
-                        '*' => [
-                            'id',
-                            'date',
-                            'title',
-                            'schedule_days' => [
-                                '*' => [
-                                    'id',
-                                    'start_time',
-                                    'end_time',
-                                    'description',
-                                ],
-                            ],
-                        ],
-                    ],
-                    'reviews' => [
-                        '*' => [
-                            'id',
-                            'review',
-                            'rating',
-                            'user' => [
-                                'id',
-                                'name',
-                                'user_level',
-                                'email',
-                                'phone',
-                                'status',
-                                'created_at',
-                                'updated_at'
-                            ],
-                        ],
-                    ],
-                    'include_excludes' => [
-                        '*' => [
-                            'id',
-                            'description',
-                            'is_include',
-                        ],
-                    ],
-                    'facilities' => [
-                        '*' => [
-                            'id',
-                            'name',
-                            'icon',
-                        ],
-                    ],
-                    'faqs' => [
-                        '*' => [
-                            'id',
-                            'question',
-                            'answer',
-                            'is_global',
-                        ],
-                    ],
-                    'terms' => [
-                        '*' => [
-                            'id',
-                            'term',
-                            'is_global',
-                        ],
-                    ],
-                    'images' => [
-                        '*' => [
-                            'id',
-                            'image',
-                        ],
-                    ],
-                ],
-            ]);
+            ->assertJson(fn (AssertableJson $json) =>
+                $json->has('data')
+                    ->where('data.id', 1)
+                    ->where('data.name', 'product')
+                    ->where('data.duration', 1)
+                    ->where('data.description', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
+                    ->where('data.start_date', '16/10/2023')
+                    ->where('data.end_date', '17/10/2023')
+                    ->where('data.price', 100000)
+                    ->where('data.unit', 'unit')
+                    ->where('data.discount', null)
+                    ->where('data.thumbnail', 'thumbnail.png')
+                    ->where('data.address', 'Jl. Test')
+                    ->where('data.coordinate', '123,123')
+                    ->where('data.max_person', 10)
+                    ->where('data.min_person', 1)
+                    ->where('data.note', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
+                    ->where('data.is_published', 0)
+                    ->has('data.sub_category')
+                        ->where('data.sub_category.id', 1)
+                        ->has('data.sub_category.product_category')
+                            ->where('data.sub_category.product_category.id', 1)
+                    ->has('data.merchant')
+                        ->where('data.merchant.id', 1)
+                        ->where('data.merchant.name', 'merchant')
+                    ->has('data.status')
+                        ->where('data.status.id', 1)
+                        ->where('data.status.name', 'draft')
+                    ->has('data.schedules', 1)
+                    ->has('data.schedules.0', fn(AssertableJson $json)=>
+                        $json->where('id', 1)
+                             ->where('date', '16/10/2023')
+                             ->where('title', 'day 1')
+                             ->has('schedule_days', 2)
+                             ->has('schedule_days.0', fn(AssertableJson $json)=>
+                                $json->where('id', 1)
+                                     ->where('start_time', '08:00')
+                                     ->where('end_time', '10:00')
+                                     ->where('description', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
+                             )
+                    )
+                    ->has('data.reviews', 1)
+                    ->has('data.reviews.0', fn(AssertableJson $json)=>
+                        $json->where('id', 1)
+                            ->where('review', 'revieww')
+                            ->where('rating', 5)
+                            ->has('user')
+                                ->where('user.id', 1)
+                                ->where('user.name', 'merchant')
+                    )
+                    ->has('data.include_excludes', 2)
+                    ->has('data.include_excludes.0', fn(AssertableJson $json)=>
+                        $json->where('id', 1)
+                            ->where('description', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
+                            ->where('is_include', 1)
+                    )
+                    ->has('data.facilities', 2)
+                    ->has('data.facilities.0', fn(AssertableJson $json)=>
+                        $json->where('id', 2)
+                            ->where('name', 'parkir')
+                            ->etc()
+                    )
+                    ->has('data.faqs', 2)
+                    ->has('data.faqs.0', fn(AssertableJson $json)=>
+                        $json->where('id', 1)
+                            ->where('question', 'question1')
+                            ->where('answer', 'answer1')
+                            ->where('is_global', 0)
+                    )
+                    ->has('data.terms', 2)
+                    ->has('data.terms.0', fn(AssertableJson $json)=>
+                        $json->where('id', 1)
+                            ->where('term', 'term1')
+                            ->where('is_global', 0)
+                    )
+                    ->has('data.images', 2)
+                    ->has('data.images.0', fn(AssertableJson $json)=>
+                        $json->where('id', 1)
+                            ->etc()
+                    )
+            );
     }
 }
