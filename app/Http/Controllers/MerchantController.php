@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MerchantResource;
 use App\Http\Resources\ProductResource;
 use App\Models\Merchant;
 use App\Models\Product;
@@ -44,7 +45,13 @@ class MerchantController extends Controller
      */
     public function show(Merchant $merchant)
     {
-        //
+        $merchant = Merchant::with(
+            'merchantProfile',
+            'merchantLevel',
+            'merchantStatus',
+        )->find($merchant->id);
+
+        return new MerchantResource($merchant);
     }
 
     /**

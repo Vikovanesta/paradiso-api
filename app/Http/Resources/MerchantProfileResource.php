@@ -16,7 +16,6 @@ class MerchantProfileResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
             'address' => $this->address,
             'description' => $this->description,
             'logo' => $this->logo,

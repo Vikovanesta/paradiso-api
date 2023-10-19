@@ -28,12 +28,13 @@ Route::get('/products/{product}', [ProductController::class,'show'])->name('prod
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/merchants/{merchant}', [MerchantController::class,'show'])->name('merchant.show');
     Route::get('/merchants/{merchant}/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
 
-Route::fallback(function(){
-    return response()->json([
-        'message' => 'Endpoint not found'
-    ],404);
-});
+// Route::fallback(function(){
+//     return response()->json([
+//         'message' => 'Endpoint not found'
+//     ],404);
+// });
