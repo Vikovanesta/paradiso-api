@@ -23,8 +23,9 @@ class MerchantResource extends JsonResource
             'status' =>$this ->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'merchant_level' => new MerchantLevelResource($this->whenLoaded('merchantLevel')),
-            'merchant_profile' => new MerchantProfileResource($this->whenLoaded('merchantProfile')),
+            'profile' => new MerchantProfileResource($this->whenLoaded('merchantProfile')),
+            'level' => new MerchantLevelResource($this->whenLoaded('merchantLevel')),
+            'status' => new MerchantStatusResource($this->whenLoaded('merchantStatus')),
         ];
     }
 }

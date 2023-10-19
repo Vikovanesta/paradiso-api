@@ -16,6 +16,7 @@ class Merchant extends Model
      */
     protected $fillable = [
         'merchant_level_id',
+        'merchant_status_id',
         'name',
         'ktp',
         'npwp',
@@ -38,5 +39,9 @@ class Merchant extends Model
     public function product()
     {
         return $this->hasMany(Product::class);
+    }
+    public function merchantStatus()
+    {
+        return $this->belongsTo(MerchantStatus::class);
     }
 }

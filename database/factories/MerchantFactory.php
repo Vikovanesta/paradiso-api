@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\MerchantLevel;
+use App\Models\MerchantStatus;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,6 +21,7 @@ class MerchantFactory extends Factory
     {
         return [
             'merchant_level_id' => MerchantLevel::query()->inRandomOrder()->first()->id,
+            'merchant_status_id' => MerchantStatus::query()->inRandomOrder()->first()->id,
             'name' => fake()->name(),
             'ktp' => fake()->numerify('################'),
             'npwp' => fake()->numerify('###############'),

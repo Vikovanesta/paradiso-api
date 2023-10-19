@@ -38,6 +38,7 @@ class TestUserSeeder extends Seeder
         Merchant::create([
             'user_id' => 1,
             'merchant_level_id' => 1,
+            'merchant_status_id' => 3,
             'name' => 'merchant',
             'ktp' => '1234567890123456',
             'status' => 1,
