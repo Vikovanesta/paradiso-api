@@ -59,8 +59,8 @@ class TestUserSeeder extends Seeder
             'name' => 'product',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
             'duration' => 1,
-            'start_date' => '16/10/2023',
-            'end_date' => '17/10/2023',
+            'start_date' => '10/16/2023',
+            'end_date' => '10/17/2023',
             'price' => 100000,
             'unit' => 'unit',
             'thumbnail' => 'thumbnail.png',
@@ -96,7 +96,7 @@ class TestUserSeeder extends Seeder
 
         Schedule::create([
             'product_id' => 1,
-            'date' => '16/10/2023',
+            'date' => '10/16/2023',
             'title' => 'day 1'
         ]);
 

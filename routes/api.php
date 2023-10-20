@@ -33,8 +33,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
 
-// Route::fallback(function(){
-//     return response()->json([
-//         'message' => 'Endpoint not found'
-//     ],404);
-// });
+Route::fallback(function(){
+    return response()->json([
+        'message' => 'Endpoint not found'
+    ],404);
+});

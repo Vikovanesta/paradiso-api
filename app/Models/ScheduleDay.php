@@ -9,6 +9,11 @@ class ScheduleDay extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'start_time' => 'datetime',
+        'end_time' => 'datetime',
+    ];
+
     protected $fillable = [
         'schedule_id',
         'start_time',

@@ -26,32 +26,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory()
-        // ->has(
-        //     Merchant::factory()
-        //     ->has(MerchantProfile::factory())
-        //     ->has(
-        //         Product::factory(2)
-        //         ->has(
-        //             Schedule::factory(2)
-        //             ->has(ScheduleDayFactory::times(2))
-        //         )
-        //         ->has(Review::factory(2))
-        //         ->has(IncludeExclude::factory(2))
-        //         ->has(Facility::factory(2))
-        //         ->has(Faq::factory(2))
-        //         ->has(Term::factory(2))
-        //         ->has(ProductImage::factory(2))
-        //     )
-        // )
-        // ->has(Transaction::factory(2))
-        // ->create([
-        //     'name' => 'merchant',
-        //     'email' => 'merchant@mail.com',
-        //     'password' => 'password',
-        // ]);
-
-        User::factory(9)
+        User::factory(2)
         ->has(
             Merchant::factory()
             ->has(MerchantProfile::factory())
