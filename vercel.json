@@ -1,6 +1,6 @@
 {
     "version": 2,
-      "framework": null,
+    "framework": null,
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
@@ -9,9 +9,10 @@
         "dest": "/api/index.php"
     }],
     "env": {
+        "APP_NAME": "Paradiso-api",
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://yourproductionurl.com",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://paradiso-api-vikovanesta.vercel.app",
  
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
