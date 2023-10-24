@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class CityController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all cities.
+     * 
+     * @group Public
      */
     public function index()
     {

@@ -16,7 +16,7 @@ class ScheduleResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'date' => $this->date,
+            'date' => $this->date->format('d/m/Y'),
             'title' => $this->title,
             'schedule_days' => ScheduleDayResource::collection($this->scheduleDays),
         ];

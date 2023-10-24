@@ -28,7 +28,9 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get product details.
+     * 
+     * @group Product
      */
     public function show(Product $product)
     {

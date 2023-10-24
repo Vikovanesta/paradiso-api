@@ -18,11 +18,10 @@ class MerchantProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            // 'merchant_id' => Merchant::factory(),
             'address' => fake()->address(),
             'description' => fake()->text(),
-            'logo' => fake()->imageUrl(),
-            'banner' => fake()->imageUrl(),
+            'logo' => 'https://picsum.photos/100/100',
+            'banner' => 'https://picsum.photos/500/250',
         ];
     }
 }

@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class CountryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all countries.
+     * 
+     * @group Public
      */
     public function index()
     {

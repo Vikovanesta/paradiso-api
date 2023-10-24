@@ -17,7 +17,7 @@ class ProductImageFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => fake()->imageUrl(),
+            'image' => 'https://picsum.photos/360/360',
         ];
     }
 }

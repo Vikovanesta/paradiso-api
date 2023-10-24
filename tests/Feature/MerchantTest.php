@@ -17,7 +17,7 @@ class MerchantTest extends TestCase
     {
         $user = User::where('email', 'merchant@mail.com')->first();
 
-        $response = $this->actingAs($user)->get('/api/merchants/1');
+        $response = $this->actingAs($user)->get('/api/v1/merchants/1');
 
         $response->assertStatus(200)
             ->assertJson(fn (AssertableJson $json) =>
@@ -31,8 +31,8 @@ class MerchantTest extends TestCase
                         ->where('data.profile.id', 1)
                         ->where('data.profile.address', 'Jl. Test')
                         ->where('data.profile.description', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
-                        ->where('data.profile.logo', 'logo.png')
-                        ->where('data.profile.banner', 'banner.png')
+                        ->where('data.profile.logo', 'https://picsum.photos/100/100')
+                        ->where('data.profile.banner', 'https://picsum.photos/500/250')
                     ->has('data.level')
                         ->where('data.level.id', 1)
                         ->where('data.level.name', 'standart')

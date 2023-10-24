@@ -17,6 +17,7 @@
         "spatie/laravel-ignition": "^2.0"
     },
     "require-dev": {
+        "knuckleswtf/scribe": "^4.25",
         "laravel/pint": "^1.0",
         "mockery/mockery": "^1.4.4",
         "phpunit/phpunit": "^10.1"

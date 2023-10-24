@@ -47,8 +47,8 @@ class TestUserSeeder extends Seeder
             'merchant_id' => 1,
             'address' => 'Jl. Test',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-            'logo' => 'logo.png',
-            'banner' => 'banner.png',
+            'logo' => 'https://picsum.photos/100/100',
+            'banner' => 'https://picsum.photos/500/250',
         ]);
 
         Product::create([
@@ -63,7 +63,7 @@ class TestUserSeeder extends Seeder
             'end_date' => '10/17/2023',
             'price' => 100000,
             'unit' => 'unit',
-            'thumbnail' => 'thumbnail.png',
+            'thumbnail' => 'https://picsum.photos/200/200',
             'address' => 'Jl. Test',
             'coordinate' => '123,123',
             'max_person' => 10,
@@ -135,12 +135,12 @@ class TestUserSeeder extends Seeder
 
         ProductImage::create([
             'product_id' => 1,
-            'image' => 'https://via.placeholder.com/640x480.png',
+            'image' => 'https://picsum.photos/360/360',
         ]);
 
         ProductImage::create([
             'product_id' => 1,
-            'image' => 'https://via.placeholder.com/640x480.png',
+            'image' => 'https://picsum.photos/360/360',
         ]);
 
         DB::table('facility_product')->insert([

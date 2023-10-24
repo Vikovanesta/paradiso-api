@@ -10,10 +10,24 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group Auth
+ *
+ * APIs for authentication
+ */
 class AuthController extends Controller
 {
     use HttpResponses;
 
+    /**
+     * Login
+     * 
+     * Login to the application
+     * 
+     * @bodyParam name string required The name of the user. Example: John Doe
+     * @bodyParam email string required The email of the user. Example: Doe@mail.com
+     * @bodyParam password string required The password of the user. Example: password
+     * */
     public function login(AuthLoginRequest $request)
     {
         $validated = $request->validated();
@@ -37,6 +51,17 @@ class AuthController extends Controller
         ], 201);
     }
 
+    /**
+     * Logout
+     * 
+     * Logout from the application
+     * 
+     * @authenticated
+     * 
+     * @response 200 {
+     * "message": "Logged out"
+     * }
+     * */
     public function logout(Request $request)
     {
         auth()->user()->tokens()->delete();

@@ -12,7 +12,7 @@ class UserTest extends TestCase
 {
     public function test_login_success()
     {
-        $response = $this->post('/api/auth', [
+        $response = $this->post('/api/v1/auth', [
             'name' => 'merchant',
             'email' => 'merchant@mail.com',
             'password' => 'password'
@@ -35,7 +35,7 @@ class UserTest extends TestCase
 
     public function test_login_email_not_found()
     {
-        $response = $this->post('/api/auth', [
+        $response = $this->post('/api/v1/auth', [
             'name' => 'merchant',
             'email' => 'oo@mail.com',
             'password' => 'password'
@@ -56,7 +56,7 @@ class UserTest extends TestCase
 
         $user = User::where('email', 'merchant@mail.com')->first();
 
-        $response = $this->actingAs($user)->post('/api/logout');
+        $response = $this->actingAs($user)->post('/api/v1/logout');
 
         $response->assertStatus(200)
             ->assertJson([

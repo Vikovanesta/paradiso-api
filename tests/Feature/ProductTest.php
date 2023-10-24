@@ -14,7 +14,7 @@ class ProductTest extends TestCase
      */
     public function test_get_product_detail_success(): void
     {
-        $response = $this->get('/api/products/1');
+        $response = $this->get('/api/v1/products/1');
 
         $response->assertStatus(200)
             ->assertJson(fn (AssertableJson $json) =>
@@ -28,7 +28,7 @@ class ProductTest extends TestCase
                     ->where('data.price', 100000)
                     ->where('data.unit', 'unit')
                     ->where('data.discount', null)
-                    ->where('data.thumbnail', 'thumbnail.png')
+                    ->where('data.thumbnail', 'https://picsum.photos/200/200')
                     ->where('data.address', 'Jl. Test')
                     ->where('data.coordinate', '123,123')
                     ->where('data.max_person', 10)

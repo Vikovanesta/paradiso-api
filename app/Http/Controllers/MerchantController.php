@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 
+
 class MerchantController extends Controller
 {
     use HttpResponses;
@@ -22,7 +23,11 @@ class MerchantController extends Controller
     }
 
     /**
-     * Display a listing of the product owned.
+     * Get all products from a merchant.
+     * 
+     * @group Product
+     * 
+     * @authenticated
      */
     public function productIndex(Request $request, $id)
     {
@@ -41,7 +46,11 @@ class MerchantController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get merchant profile
+     * 
+     * @group Merchant
+     * 
+     * @authenticated
      */
     public function show(Merchant $merchant)
     {

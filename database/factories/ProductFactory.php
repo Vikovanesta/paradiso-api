@@ -31,7 +31,7 @@ class ProductFactory extends Factory
             'price' => fake()->randomNumber(6),
             'unit' => fake()->randomElement(['day', 'hour']), //not sure if this is correct
             'discount' => fake()->randomNumber(2),
-            'thumbnail' => fake()->imageUrl(),
+            'thumbnail' => 'https://picsum.photos/200/200',
             'address' => fake()->address(),
             'coordinate' => fake()->latitude() . ',' . fake()->longitude(),
             'max_person' => fake()->randomNumber(2),

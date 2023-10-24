@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class ProvinceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all provinces.
+     * 
+     * @group Public
      */
     public function index()
     {
