@@ -20,9 +20,6 @@ return new class extends Migration
             $table->string('logo')->nullable();
             $table->boolean('is_highlight')->default(false);
             $table->text('notes')->nullable();
-            $table->string('ktp');
-            $table->string('npwp')->nullable();
-            $table->string('siup')->nullable();
             $table->timestamps();
         });
     }

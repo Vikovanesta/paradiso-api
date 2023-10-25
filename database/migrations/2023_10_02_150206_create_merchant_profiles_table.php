@@ -14,10 +14,15 @@ return new class extends Migration
         Schema::create('merchant_profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('merchant_id');
-            $table->string('address');
             $table->string('description');
-            $table->string('logo');
+            $table->string('address');
             $table->string('banner');
+            $table->string('ktp_number')->nullable();
+            $table->string('npwp_number')->nullable();
+            $table->string('siup_number')->nullable();
+            $table->string('ktp')->nullable();
+            $table->string('npwp')->nullable();
+            $table->string('siup')->nullable();
             $table->timestamps();
         });
     }

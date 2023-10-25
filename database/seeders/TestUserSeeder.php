@@ -40,15 +40,18 @@ class TestUserSeeder extends Seeder
             'merchant_level_id' => 1,
             'merchant_status_id' => 3,
             'name' => 'merchant',
-            'ktp' => '1234567890123456',
+            'logo' => 'https://picsum.photos/100/100',
+            'is_highlight' => false,
+            'notes' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         ]);
 
         MerchantProfile::create([
             'merchant_id' => 1,
-            'address' => 'Jl. Test',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-            'logo' => 'https://picsum.photos/100/100',
+            'address' => 'Jl. Test',
             'banner' => 'https://picsum.photos/500/250',
+            'ktp_number' => '1234567890123456',
+            'ktp' => 'https://picsum.photos/500/250',
         ]);
 
         Product::create([

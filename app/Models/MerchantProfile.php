@@ -16,10 +16,15 @@ class MerchantProfile extends Model
      */
     protected $fillable = [
         'merchant_id',
-        'address',
         'description',
-        'logo',
+        'address',
         'banner',
+        'ktp_number',
+        'npwp_number',
+        'siup_number',
+        'ktp',
+        'npwp',
+        'siup',
     ];
 
     public function merchant()

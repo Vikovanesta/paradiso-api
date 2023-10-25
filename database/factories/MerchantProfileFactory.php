@@ -18,10 +18,15 @@ class MerchantProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            'address' => fake()->address(),
             'description' => fake()->text(),
-            'logo' => 'https://picsum.photos/100/100',
+            'address' => fake()->address(),
             'banner' => 'https://picsum.photos/500/250',
+            'ktp_number' => fake()->numerify('################'),
+            'npwp_number' => fake()->numerify('###############'),
+            'siup_number' => fake()->numerify('###############'),
+            'ktp' => 'https://picsum.photos/500/250',
+            'npwp' => 'https://picsum.photos/500/250',
+            'siup' => 'https://picsum.photos/500/250',
         ];
     }
 }

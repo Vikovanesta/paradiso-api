@@ -23,8 +23,11 @@ class MerchantFactory extends Factory
             'merchant_level_id' => MerchantLevel::query()->inRandomOrder()->first()->id,
             'merchant_status_id' => MerchantStatus::query()->inRandomOrder()->first()->id,
             'name' => fake()->name(),
-            'ktp' => fake()->numerify('################'),
-            'npwp' => fake()->numerify('###############'),
+            'logo' => 'https://picsum.photos/100/100',
+            'is_highlight' => fake()->boolean(),
+            'notes' => fake()->text(),
+            // 'ktp' => fake()->numerify('################'),
+            // 'npwp' => fake()->numerify('###############'),
         ];
     }
 }

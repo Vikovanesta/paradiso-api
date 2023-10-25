@@ -15,12 +15,13 @@ class Merchant extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'merchant_level_id',
         'merchant_status_id',
         'name',
-        'ktp',
-        'npwp',
-        'siup',
+        'logo',
+        'is_highlight',
+        'notes',
     ];
 
     public function user()

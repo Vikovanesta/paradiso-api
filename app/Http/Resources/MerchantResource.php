@@ -17,9 +17,9 @@ class MerchantResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'ktp' =>$this ->ktp,
-            'npwp' =>$this ->npwp,
-            'siup' =>$this ->siup,
+            'logo' => $this->logo,
+            'is_highlight' => $this->is_highlight,
+            'notes' => $this->notes,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'profile' => new MerchantProfileResource($this->whenLoaded('merchantProfile')),

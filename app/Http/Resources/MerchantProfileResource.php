@@ -16,10 +16,15 @@ class MerchantProfileResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'address' => $this->address,
             'description' => $this->description,
-            'logo' => $this->logo,
+            'address' => $this->address,
             'banner' => $this->banner,
+            'ktp_number' => $this->ktp_number,
+            'npwp_number' => $this->npwp_number,
+            'siup_number' => $this->siup_number,
+            'ktp' => $this->ktp,
+            'npwp' => $this->npwp,
+            'siup' => $this->siup,
             'merchant' => new MerchantResource($this->whenLoaded('merchant')),
         ];
     }
