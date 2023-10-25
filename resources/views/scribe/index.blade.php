@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>paradiso_api Documentation</title>
+    <title>Paradiso API</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
-    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <link rel="stylesheet" href="{{ asset("/vendor/scribe/css/theme-default.style.css") }}" media="screen">
+    <link rel="stylesheet" href="{{ asset("/vendor/scribe/css/theme-default.print.css") }}" media="print">
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 
@@ -24,19 +24,20 @@
                     body .content .bash-example code { display: none; }
                     body .content .javascript-example code { display: none; }
                     body .content .php-example code { display: none; }
+                    body .content .python-example code { display: none; }
             </style>
 
 
-    <script src="../docs/js/theme-default-4.25.0.js"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-4.25.0.js") }}"></script>
 
 </head>
 
-<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;]">
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;,&quot;python&quot;]">
 
 <a href="#" id="nav-button">
     <span>
         MENU
-        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+        <img src="{{ asset("/vendor/scribe/images/navbar.png") }}" alt="navbar-image"/>
     </span>
 </a>
 <div class="tocify-wrapper">
@@ -45,6 +46,7 @@
                                             <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                             <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
                                             <button type="button" class="lang-button" data-language-name="php">php</button>
+                                            <button type="button" class="lang-button" data-language-name="python">python</button>
                     </div>
     
     <div class="search">
@@ -127,13 +129,11 @@
             </div>
 
     <ul class="toc-footer" id="toc-footer">
-                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
-                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
-                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                        <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: October 24, 2023</li>
+        <li>Last updated: October 25, 2023</li>
     </ul>
 </div>
 
@@ -142,7 +142,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code></code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -168,7 +168,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/auth" \
+    "/api/v1/auth" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -181,7 +181,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth"
+    "/api/v1/auth"
 );
 
 const headers = {
@@ -204,7 +204,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/auth';
+$url = '/api/v1/auth';
 $response = $client-&gt;post(
     $url,
     [
@@ -221,6 +221,25 @@ $response = $client-&gt;post(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/v1/auth'
+payload = {
+    "name": "John Doe",
+    "email": "Doe@mail.com",
+    "password": "password"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre></div>
 
 </span>
 
@@ -328,14 +347,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/logout" \
+    "/api/v1/logout" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/logout"
+    "/api/v1/logout"
 );
 
 const headers = {
@@ -351,7 +370,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/logout';
+$url = '/api/v1/logout';
 $response = $client-&gt;post(
     $url,
     [
@@ -363,6 +382,20 @@ $response = $client-&gt;post(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/v1/logout'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -448,14 +481,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/OqX" \
+    --get "/api/N9w" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/OqX"
+    "/api/N9w"
 );
 
 const headers = {
@@ -471,7 +504,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/OqX';
+$url = '/api/N9w';
 $response = $client-&gt;get(
     $url,
     [
@@ -483,6 +516,20 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/N9w'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -565,10 +612,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="OqX"
+               value="N9w"
                data-component="url">
     <br>
-<p>Example: <code>OqX</code></p>
+<p>Example: <code>N9w</code></p>
             </div>
                     </form>
 
@@ -590,14 +637,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/merchants/1" \
+    --get "/api/v1/merchants/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/merchants/1"
+    "/api/v1/merchants/1"
 );
 
 const headers = {
@@ -613,7 +660,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/merchants/1';
+$url = '/api/v1/merchants/1';
 $response = $client-&gt;get(
     $url,
     [
@@ -625,6 +672,20 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/v1/merchants/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -650,8 +711,8 @@ access-control-allow-origin: *
         &quot;ktp&quot;: &quot;1234567890123456&quot;,
         &quot;npwp&quot;: null,
         &quot;siup&quot;: null,
-        &quot;created_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
         &quot;profile&quot;: {
             &quot;id&quot;: 1,
             &quot;address&quot;: &quot;Jl. Test&quot;,
@@ -662,13 +723,13 @@ access-control-allow-origin: *
         &quot;level&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;standart&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/000044?text=recusandae&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/008811?text=expedita&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;Accepted&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ffff?text=aliquid&quot;,
-            &quot;color&quot;: &quot;#b31c3d&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/007733?text=eum&quot;,
+            &quot;color&quot;: &quot;#981f61&quot;
         }
     }
 }</code>
@@ -757,14 +818,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/products/1" \
+    --get "/api/v1/products/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/products/1"
+    "/api/v1/products/1"
 );
 
 const headers = {
@@ -780,7 +841,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/products/1';
+$url = '/api/v1/products/1';
 $response = $client-&gt;get(
     $url,
     [
@@ -792,6 +853,20 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/v1/products/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -828,16 +903,16 @@ access-control-allow-origin: *
         &quot;min_person&quot;: 1,
         &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
         &quot;is_published&quot;: 0,
-        &quot;created_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
         &quot;sub_category&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;error&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ee00?text=in&quot;,
+            &quot;name&quot;: &quot;aut&quot;,
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0000bb?text=est&quot;,
             &quot;product_category&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;voluptatibus&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00bb00?text=asperiores&quot;
+                &quot;name&quot;: &quot;facere&quot;,
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00dd33?text=nostrum&quot;
             }
         },
         &quot;merchant&quot;: {
@@ -846,13 +921,13 @@ access-control-allow-origin: *
             &quot;ktp&quot;: &quot;1234567890123456&quot;,
             &quot;npwp&quot;: null,
             &quot;siup&quot;: null,
-            &quot;created_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;draft&quot;,
-            &quot;color&quot;: &quot;OldLace&quot;,
+            &quot;color&quot;: &quot;DimGray&quot;,
             &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/CCCCCC&quot;
         },
         &quot;schedules&quot;: [
@@ -888,8 +963,8 @@ access-control-allow-origin: *
                     &quot;email&quot;: &quot;merchant@mail.com&quot;,
                     &quot;phone&quot;: &quot;081234567890&quot;,
                     &quot;status&quot;: 1,
-                    &quot;created_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;
                 }
             }
         ],
@@ -909,12 +984,12 @@ access-control-allow-origin: *
             {
                 &quot;id&quot;: 2,
                 &quot;name&quot;: &quot;parkir&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/007755?text=qui&quot;
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ff33?text=velit&quot;
             },
             {
                 &quot;id&quot;: 3,
                 &quot;name&quot;: &quot;ac&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/001133?text=cupiditate&quot;
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00cc44?text=qui&quot;
             }
         ],
         &quot;faqs&quot;: [
@@ -1037,14 +1112,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/merchants/1/products" \
+    --get "/api/v1/merchants/1/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/merchants/1/products"
+    "/api/v1/merchants/1/products"
 );
 
 const headers = {
@@ -1060,7 +1135,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/merchants/1/products';
+$url = '/api/v1/merchants/1/products';
 $response = $client-&gt;get(
     $url,
     [
@@ -1072,6 +1147,20 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/v1/merchants/1/products'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -1109,8 +1198,8 @@ access-control-allow-origin: *
             &quot;min_person&quot;: 1,
             &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
             &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-10-24T04:37:48.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;
         }
     ],
     &quot;links&quot;: {
@@ -1231,14 +1320,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/cities" \
+    --get "/api/v1/cities" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/cities"
+    "/api/v1/cities"
 );
 
 const headers = {
@@ -1254,7 +1343,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/cities';
+$url = '/api/v1/cities';
 $response = $client-&gt;get(
     $url,
     [
@@ -1266,6 +1355,20 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/v1/cities'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -1288,152 +1391,152 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;West Bailey&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0022cc?text=maiores&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;North Beth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/008888?text=amet&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Lake Angieside&quot;
+                &quot;name&quot;: &quot;North Rodrickport&quot;
             }
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Gusikowskiview&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bb33?text=et&quot;,
+            &quot;name&quot;: &quot;North Rowenaview&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0055aa?text=atque&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Lake Angieside&quot;
+                &quot;name&quot;: &quot;North Rodrickport&quot;
             }
         },
         {
             &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Lake Brycen&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0022ee?text=et&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Modestastad&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066cc?text=officia&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Lake Angieside&quot;
+                &quot;name&quot;: &quot;North Rodrickport&quot;
             }
         },
         {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Macejkovichaven&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006699?text=repellat&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;Pacochabury&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00dd44?text=omnis&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;South Bridgetteville&quot;
+                &quot;name&quot;: &quot;Nadermouth&quot;
             }
         },
         {
             &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;New Damon&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00cc00?text=et&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;West Winonamouth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bbff?text=labore&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;South Bridgetteville&quot;
+                &quot;name&quot;: &quot;Nadermouth&quot;
             }
         },
         {
             &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Reyton&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ccdd?text=velit&quot;,
+            &quot;name&quot;: &quot;Port Sabinaport&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00cc33?text=ex&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;South Bridgetteville&quot;
+                &quot;name&quot;: &quot;Nadermouth&quot;
             }
         },
         {
             &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;Port Inesstad&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066cc?text=et&quot;,
+            &quot;name&quot;: &quot;East Rozellamouth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ffcc?text=eligendi&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Wehnerfort&quot;
+                &quot;name&quot;: &quot;West Cruzhaven&quot;
             }
         },
         {
             &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;Port Lloyd&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005577?text=soluta&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Schustertown&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aaee?text=maiores&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Wehnerfort&quot;
+                &quot;name&quot;: &quot;West Cruzhaven&quot;
             }
         },
         {
             &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;New Emeliaside&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0044cc?text=quidem&quot;,
+            &quot;name&quot;: &quot;West Samantamouth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006633?text=possimus&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Wehnerfort&quot;
+                &quot;name&quot;: &quot;West Cruzhaven&quot;
             }
         },
         {
             &quot;id&quot;: 10,
-            &quot;name&quot;: &quot;Kuvalisport&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0000dd?text=consequuntur&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Kozeyhaven&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/004455?text=suscipit&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Reesemouth&quot;
+                &quot;name&quot;: &quot;Neldaview&quot;
             }
         },
         {
             &quot;id&quot;: 11,
-            &quot;name&quot;: &quot;North Othaborough&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00dd11?text=veritatis&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Erdmanside&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/007788?text=recusandae&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Reesemouth&quot;
+                &quot;name&quot;: &quot;Neldaview&quot;
             }
         },
         {
             &quot;id&quot;: 12,
-            &quot;name&quot;: &quot;South Aron&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/004444?text=enim&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Port Keanu&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ddee?text=repellendus&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Reesemouth&quot;
+                &quot;name&quot;: &quot;Neldaview&quot;
             }
         },
         {
             &quot;id&quot;: 13,
-            &quot;name&quot;: &quot;Mittieton&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bb55?text=amet&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Lake Omafort&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00eedd?text=voluptatem&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Mireilleborough&quot;
+                &quot;name&quot;: &quot;Kiehnland&quot;
             }
         },
         {
             &quot;id&quot;: 14,
-            &quot;name&quot;: &quot;South Citlalli&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005577?text=voluptas&quot;,
+            &quot;name&quot;: &quot;Bellport&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0044cc?text=laudantium&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Mireilleborough&quot;
+                &quot;name&quot;: &quot;Kiehnland&quot;
             }
         },
         {
             &quot;id&quot;: 15,
-            &quot;name&quot;: &quot;Paytontown&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0000ee?text=dicta&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Bernhardburgh&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aaaa?text=velit&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Mireilleborough&quot;
+                &quot;name&quot;: &quot;Kiehnland&quot;
             }
         }
     ]
@@ -1507,14 +1610,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/provinces" \
+    --get "/api/v1/provinces" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/provinces"
+    "/api/v1/provinces"
 );
 
 const headers = {
@@ -1530,7 +1633,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/provinces';
+$url = '/api/v1/provinces';
 $response = $client-&gt;get(
     $url,
     [
@@ -1542,6 +1645,20 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/v1/provinces'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -1564,47 +1681,47 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Lake Angieside&quot;,
+            &quot;name&quot;: &quot;North Rodrickport&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Mongolia&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/006633?text=temporibus&quot;
+                &quot;name&quot;: &quot;Faroe Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
             }
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;South Bridgetteville&quot;,
+            &quot;name&quot;: &quot;Nadermouth&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Mongolia&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/006633?text=temporibus&quot;
+                &quot;name&quot;: &quot;Faroe Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
             }
         },
         {
             &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Wehnerfort&quot;,
+            &quot;name&quot;: &quot;West Cruzhaven&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Mongolia&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/006633?text=temporibus&quot;
+                &quot;name&quot;: &quot;Faroe Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
             }
         },
         {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Reesemouth&quot;,
+            &quot;name&quot;: &quot;Neldaview&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Mongolia&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/006633?text=temporibus&quot;
+                &quot;name&quot;: &quot;Faroe Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
             }
         },
         {
             &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;North Mireilleborough&quot;,
+            &quot;name&quot;: &quot;Kiehnland&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Mongolia&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/006633?text=temporibus&quot;
+                &quot;name&quot;: &quot;Faroe Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
             }
         }
     ]
@@ -1678,14 +1795,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/countries" \
+    --get "/api/v1/countries" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/countries"
+    "/api/v1/countries"
 );
 
 const headers = {
@@ -1701,7 +1818,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/countries';
+$url = '/api/v1/countries';
 $response = $client-&gt;get(
     $url,
     [
@@ -1713,6 +1830,20 @@ $response = $client-&gt;get(
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = '/api/v1/countries'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -1735,8 +1866,8 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Mongolia&quot;,
-            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/006633?text=temporibus&quot;
+            &quot;name&quot;: &quot;Faroe Islands&quot;,
+            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
         }
     ]
 }</code>
@@ -1805,6 +1936,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                                         <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                                         <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
                                                         <button type="button" class="lang-button" data-language-name="php">php</button>
+                                                        <button type="button" class="lang-button" data-language-name="python">python</button>
                             </div>
             </div>
 </div>

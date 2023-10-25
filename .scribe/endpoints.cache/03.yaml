@@ -38,7 +38,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"merchant","ktp":"1234567890123456","npwp":null,"siup":null,"created_at":"2023-10-24T04:37:48.000000Z","updated_at":"2023-10-24T04:37:48.000000Z","profile":{"id":1,"address":"Jl. Test","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","logo":"https:\/\/picsum.photos\/100\/100","banner":"https:\/\/picsum.photos\/500\/250"},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/000044?text=recusandae"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00ffff?text=aliquid","color":"#b31c3d"}}}'
+        content: '{"data":{"id":1,"name":"merchant","ktp":"1234567890123456","npwp":null,"siup":null,"created_at":"2023-10-24T05:39:12.000000Z","updated_at":"2023-10-24T05:39:12.000000Z","profile":{"id":1,"address":"Jl. Test","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","logo":"https:\/\/picsum.photos\/100\/100","banner":"https:\/\/picsum.photos\/500\/250"},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/008811?text=expedita"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/007733?text=eum","color":"#981f61"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

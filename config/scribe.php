@@ -11,7 +11,7 @@ return [
     /*
      * The HTML <title> for the generated documentation. If this is empty, Scribe will infer it from config('app.name').
      */
-    'title' => null,
+    'title' => 'Paradiso API',
 
     /*
      * A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
@@ -22,7 +22,7 @@ return [
      * The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url') at generation time.
      * If you're using `laravel` type, you can set this to a dynamic string, like '{{ config("app.tenant_url") }}' to get a dynamic base URL.
      */
-    'base_url' => null,
+    'base_url' => '',
 
     /*
      * Tell Scribe what routes to generate documentation for.
@@ -66,6 +66,7 @@ return [
              */
             'exclude' => [
                 // '/health', 'admin.*'
+                'api.v1.docs'
             ],
 
             /*
@@ -142,7 +143,7 @@ return [
      * - "static" will generate a static HTMl page in the /public/docs folder,
      * - "laravel" will generate the documentation as a Blade view, so you can add routing and authentication.
      */
-    'type' => 'static',
+    'type' => 'laravel',
 
     /*
      * Settings for `static` type output.
@@ -163,7 +164,7 @@ return [
          * Whether to automatically create a docs endpoint for you to view your generated docs.
          * If this is false, you can still set up routing manually.
          */
-        'add_routes' => true,
+        'add_routes' => false,
 
         /*
          * URL path to use for the docs endpoint (if `add_routes` is true).
@@ -275,6 +276,7 @@ INTRO
         'bash',
         'javascript',
         'php',
+        'python'
     ],
 
     /*
@@ -284,7 +286,7 @@ INTRO
      * Setting `laravel.add_routes` to true (above) will also add a route for the collection.
      */
     'postman' => [
-        'enabled' => true,
+        'enabled' => false,
 
         /*
          * Manually override some generated content in the spec. Dot notation is supported.
@@ -301,7 +303,7 @@ INTRO
      * Setting `laravel.add_routes` to true (above) will also add a route for the spec.
      */
     'openapi' => [
-        'enabled' => true,
+        'enabled' => false,
 
         /*
          * Manually override some generated content in the spec. Dot notation is supported.

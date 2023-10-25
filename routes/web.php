@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/docs');
+    return redirect('/api/v1/');
 });
+
+Route::get('/api/v1', function () {
+    return view('scribe.index');
+})->name('api.v1.docs');

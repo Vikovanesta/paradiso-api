@@ -1,14 +1,21 @@
 {
     "version": 2,
     "framework": null,
-    "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
-    },
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-    }],
-    "env": {
+    "builds": [
+        { "src": "/api/index.php", "use": "vercel-php@0.6.0" },
+        { "src": "/public/**", "use": "@vercel/static" }
+    ],
+    "routes": [
+        {
+            "src": "/api/(css|js|vendor|assets|build)/(.*)",
+            "dest": "public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {    
         "APP_NAME": "Paradiso-api",
         "APP_ENV": "production",
         "APP_DEBUG": "false",

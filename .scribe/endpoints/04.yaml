@@ -22,12 +22,12 @@ endpoints:
         name: fallbackPlaceholder
         description: ''
         required: true
-        example: OqX
+        example: N9w
         type: string
         enumValues: []
         custom: []
     cleanUrlParameters:
-      fallbackPlaceholder: OqX
+      fallbackPlaceholder: N9w
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use Knuckles\Camel\Extraction\ExtractedEndpointData;
 use Knuckles\Scribe\Scribe;
 use Laravel\Sanctum\Sanctum;
+use URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +29,9 @@ class AppServiceProvider extends ServiceProvider
             $user = User::first();
             Sanctum::actingAs($user, ['*']);
         });
+
+        if(env('APP_ENV') !== 'local') {
+            URL::forceScheme('https');
+        }
     }
 }
