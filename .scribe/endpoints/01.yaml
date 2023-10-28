@@ -15,7 +15,7 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -27,13 +27,13 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"North Beth","image":"https:\/\/via.placeholder.com\/640x480.png\/008888?text=amet","is_highlighted":0,"province":{"id":1,"name":"North Rodrickport"}},{"id":2,"name":"North Rowenaview","image":"https:\/\/via.placeholder.com\/640x480.png\/0055aa?text=atque","is_highlighted":0,"province":{"id":1,"name":"North Rodrickport"}},{"id":3,"name":"Modestastad","image":"https:\/\/via.placeholder.com\/640x480.png\/0066cc?text=officia","is_highlighted":1,"province":{"id":1,"name":"North Rodrickport"}},{"id":4,"name":"Pacochabury","image":"https:\/\/via.placeholder.com\/640x480.png\/00dd44?text=omnis","is_highlighted":0,"province":{"id":2,"name":"Nadermouth"}},{"id":5,"name":"West Winonamouth","image":"https:\/\/via.placeholder.com\/640x480.png\/00bbff?text=labore","is_highlighted":0,"province":{"id":2,"name":"Nadermouth"}},{"id":6,"name":"Port Sabinaport","image":"https:\/\/via.placeholder.com\/640x480.png\/00cc33?text=ex","is_highlighted":1,"province":{"id":2,"name":"Nadermouth"}},{"id":7,"name":"East Rozellamouth","image":"https:\/\/via.placeholder.com\/640x480.png\/00ffcc?text=eligendi","is_highlighted":0,"province":{"id":3,"name":"West Cruzhaven"}},{"id":8,"name":"Schustertown","image":"https:\/\/via.placeholder.com\/640x480.png\/00aaee?text=maiores","is_highlighted":1,"province":{"id":3,"name":"West Cruzhaven"}},{"id":9,"name":"West Samantamouth","image":"https:\/\/via.placeholder.com\/640x480.png\/006633?text=possimus","is_highlighted":1,"province":{"id":3,"name":"West Cruzhaven"}},{"id":10,"name":"Kozeyhaven","image":"https:\/\/via.placeholder.com\/640x480.png\/004455?text=suscipit","is_highlighted":1,"province":{"id":4,"name":"Neldaview"}},{"id":11,"name":"Erdmanside","image":"https:\/\/via.placeholder.com\/640x480.png\/007788?text=recusandae","is_highlighted":1,"province":{"id":4,"name":"Neldaview"}},{"id":12,"name":"Port Keanu","image":"https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=repellendus","is_highlighted":1,"province":{"id":4,"name":"Neldaview"}},{"id":13,"name":"Lake Omafort","image":"https:\/\/via.placeholder.com\/640x480.png\/00eedd?text=voluptatem","is_highlighted":1,"province":{"id":5,"name":"Kiehnland"}},{"id":14,"name":"Bellport","image":"https:\/\/via.placeholder.com\/640x480.png\/0044cc?text=laudantium","is_highlighted":1,"province":{"id":5,"name":"Kiehnland"}},{"id":15,"name":"Bernhardburgh","image":"https:\/\/via.placeholder.com\/640x480.png\/00aaaa?text=velit","is_highlighted":1,"province":{"id":5,"name":"Kiehnland"}}]}'
+        content: '{"data":[{"id":1,"name":"Gislasonport","image":"https:\/\/via.placeholder.com\/640x480.png\/00aabb?text=beatae","is_highlighted":0,"province":{"id":1,"name":"Lake Sigmund"}},{"id":2,"name":"Reichelview","image":"https:\/\/via.placeholder.com\/640x480.png\/005522?text=mollitia","is_highlighted":1,"province":{"id":1,"name":"Lake Sigmund"}},{"id":3,"name":"Colliermouth","image":"https:\/\/via.placeholder.com\/640x480.png\/00ff55?text=aut","is_highlighted":1,"province":{"id":1,"name":"Lake Sigmund"}},{"id":4,"name":"Lake Alyce","image":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=deleniti","is_highlighted":1,"province":{"id":2,"name":"Toneyside"}},{"id":5,"name":"Loisview","image":"https:\/\/via.placeholder.com\/640x480.png\/0066ee?text=dolores","is_highlighted":1,"province":{"id":2,"name":"Toneyside"}},{"id":6,"name":"Buckmouth","image":"https:\/\/via.placeholder.com\/640x480.png\/002244?text=quia","is_highlighted":0,"province":{"id":2,"name":"Toneyside"}},{"id":7,"name":"West Tess","image":"https:\/\/via.placeholder.com\/640x480.png\/004400?text=tempore","is_highlighted":1,"province":{"id":3,"name":"Boylefurt"}},{"id":8,"name":"West Rudy","image":"https:\/\/via.placeholder.com\/640x480.png\/00bb55?text=alias","is_highlighted":0,"province":{"id":3,"name":"Boylefurt"}},{"id":9,"name":"Kaylahton","image":"https:\/\/via.placeholder.com\/640x480.png\/00aa66?text=iure","is_highlighted":0,"province":{"id":3,"name":"Boylefurt"}},{"id":10,"name":"East Felipaville","image":"https:\/\/via.placeholder.com\/640x480.png\/00ccaa?text=quis","is_highlighted":0,"province":{"id":4,"name":"Ziemefurt"}},{"id":11,"name":"Millietown","image":"https:\/\/via.placeholder.com\/640x480.png\/0099cc?text=laboriosam","is_highlighted":1,"province":{"id":4,"name":"Ziemefurt"}},{"id":12,"name":"Derekfurt","image":"https:\/\/via.placeholder.com\/640x480.png\/0066ee?text=qui","is_highlighted":1,"province":{"id":4,"name":"Ziemefurt"}},{"id":13,"name":"Okunevaview","image":"https:\/\/via.placeholder.com\/640x480.png\/00ddff?text=omnis","is_highlighted":0,"province":{"id":5,"name":"North Delmer"}},{"id":14,"name":"Kleinton","image":"https:\/\/via.placeholder.com\/640x480.png\/006699?text=et","is_highlighted":0,"province":{"id":5,"name":"North Delmer"}},{"id":15,"name":"Bogisichmouth","image":"https:\/\/via.placeholder.com\/640x480.png\/0022cc?text=voluptatibus","is_highlighted":1,"province":{"id":5,"name":"North Delmer"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          access-control-allow-origin: '*'
+          x-ratelimit-remaining: '53'
+          vary: Origin
         description: null
         custom: []
     responseFields: []
@@ -56,7 +56,7 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -68,13 +68,13 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"North Rodrickport","country":{"id":1,"name":"Faroe Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc11?text=voluptatem"}},{"id":2,"name":"Nadermouth","country":{"id":1,"name":"Faroe Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc11?text=voluptatem"}},{"id":3,"name":"West Cruzhaven","country":{"id":1,"name":"Faroe Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc11?text=voluptatem"}},{"id":4,"name":"Neldaview","country":{"id":1,"name":"Faroe Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc11?text=voluptatem"}},{"id":5,"name":"Kiehnland","country":{"id":1,"name":"Faroe Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc11?text=voluptatem"}}]}'
+        content: '{"data":[{"id":1,"name":"Lake Sigmund","country":{"id":1,"name":"Svalbard & Jan Mayen Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/0033ee?text=molestiae"}},{"id":2,"name":"Toneyside","country":{"id":1,"name":"Svalbard & Jan Mayen Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/0033ee?text=molestiae"}},{"id":3,"name":"Boylefurt","country":{"id":1,"name":"Svalbard & Jan Mayen Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/0033ee?text=molestiae"}},{"id":4,"name":"Ziemefurt","country":{"id":1,"name":"Svalbard & Jan Mayen Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/0033ee?text=molestiae"}},{"id":5,"name":"North Delmer","country":{"id":1,"name":"Svalbard & Jan Mayen Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/0033ee?text=molestiae"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
-          access-control-allow-origin: '*'
+          x-ratelimit-remaining: '52'
+          vary: Origin
         description: null
         custom: []
     responseFields: []
@@ -97,7 +97,7 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -109,13 +109,13 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Faroe Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc11?text=voluptatem"}]}'
+        content: '{"data":[{"id":1,"name":"Svalbard & Jan Mayen Islands","flag":"https:\/\/via.placeholder.com\/640x480.png\/0033ee?text=molestiae"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
-          access-control-allow-origin: '*'
+          x-ratelimit-remaining: '51'
+          vary: Origin
         description: null
         custom: []
     responseFields: []

@@ -27,6 +27,12 @@
                     body .content .python-example code { display: none; }
             </style>
 
+    <script>
+        var tryItOutBaseUrl = "http://localhost";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-4.25.0.js") }}"></script>
 
     <script src="{{ asset("/vendor/scribe/js/theme-default-4.25.0.js") }}"></script>
 
@@ -95,6 +101,9 @@
                                                     <li class="tocify-item level-2" data-unique="merchant-GETapi-v1-merchants--merchant_id-">
                                 <a href="#merchant-GETapi-v1-merchants--merchant_id-">Get merchant profile</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="merchant-PUTapi-v1-merchants">
+                                <a href="#merchant-PUTapi-v1-merchants">Update merchant profile</a>
+                            </li>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-product" class="tocify-header">
@@ -129,11 +138,12 @@
             </div>
 
     <ul class="toc-footer" id="toc-footer">
+                    <li style="padding-bottom: 5px;"><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
                         <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: October 25, 2023</li>
+        <li>Last updated: October 28, 2023</li>
     </ul>
 </div>
 
@@ -142,7 +152,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code></code>
+    <strong>Base URL</strong>: <code>http://localhost</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -168,54 +178,59 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "/api/v1/auth" \
-    --header "Content-Type: application/json" \
+    "http://localhost/api/v1/auth" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --data "{
-    \"name\": \"John Doe\",
-    \"email\": \"Doe@mail.com\",
-    \"password\": \"password\"
-}"
-</code></pre></div>
+    --form "name=merchant"\
+    --form "email=merchant@mail.com"\
+    --form "password=password"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/v1/auth"
+    "http://localhost/api/v1/auth"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
-let body = {
-    "name": "John Doe",
-    "email": "Doe@mail.com",
-    "password": "password"
-};
+const body = new FormData();
+body.append('name', 'merchant');
+body.append('email', 'merchant@mail.com');
+body.append('password', 'password');
 
 fetch(url, {
     method: "POST",
     headers,
-    body: JSON.stringify(body),
+    body,
 }).then(response =&gt; response.json());</code></pre></div>
 
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/v1/auth';
+$url = 'http://localhost/api/v1/auth';
 $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
-        'json' =&gt; [
-            'name' =&gt; 'John Doe',
-            'email' =&gt; 'Doe@mail.com',
-            'password' =&gt; 'password',
+        'multipart' =&gt; [
+            [
+                'name' =&gt; 'name',
+                'contents' =&gt; 'merchant'
+            ],
+            [
+                'name' =&gt; 'email',
+                'contents' =&gt; 'merchant@mail.com'
+            ],
+            [
+                'name' =&gt; 'password',
+                'contents' =&gt; 'password'
+            ],
         ],
     ]
 );
@@ -227,18 +242,22 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/v1/auth'
+url = 'http://localhost/api/v1/auth'
+files = {
+  'name': (None, 'merchant'),
+  'email': (None, 'merchant@mail.com'),
+  'password': (None, 'password')}
 payload = {
-    "name": "John Doe",
-    "email": "Doe@mail.com",
+    "name": "merchant",
+    "email": "merchant@mail.com",
     "password": "password"
 }
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
-response = requests.request('POST', url, headers=headers, json=payload)
+response = requests.request('POST', url, headers=headers)
 response.json()</code></pre></div>
 
 </span>
@@ -269,6 +288,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-auth"
+                    onclick="tryItOut('POSTapi-v1-auth');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-auth"
+                    onclick="cancelTryOut('POSTapi-v1-auth');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-auth"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
@@ -281,10 +317,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="POSTapi-v1-auth"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -304,10 +340,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-auth"
-               value="John Doe"
+               value="merchant"
                data-component="body">
     <br>
-<p>The name of the user. Example: <code>John Doe</code></p>
+<p>The name of the user. Example: <code>merchant</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -315,10 +351,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-auth"
-               value="Doe@mail.com"
+               value="merchant@mail.com"
                data-component="body">
     <br>
-<p>The email of the user. Example: <code>Doe@mail.com</code></p>
+<p>The email of the user. Example: <code>merchant@mail.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -347,18 +383,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "/api/v1/logout" \
-    --header "Content-Type: application/json" \
+    "http://localhost/api/v1/logout" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/v1/logout"
+    "http://localhost/api/v1/logout"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -370,12 +406,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/v1/logout';
+$url = 'http://localhost/api/v1/logout';
 $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -388,9 +424,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/v1/logout'
+url = 'http://localhost/api/v1/logout'
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -434,6 +470,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-logout', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-logout"
+                    onclick="tryItOut('POSTapi-v1-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-logout"
+                    onclick="cancelTryOut('POSTapi-v1-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-logout"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
@@ -446,10 +499,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="POSTapi-v1-logout"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -481,18 +534,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "/api/N9w" \
-    --header "Content-Type: application/json" \
+    --get "http://localhost/api/\" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/N9w"
+    "http://localhost/api/\"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -504,12 +557,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/N9w';
+$url = 'http://localhost/api/\';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -522,9 +575,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/N9w'
+url = 'http://localhost/api/\'
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -544,8 +597,8 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
-access-control-allow-origin: *
+x-ratelimit-remaining: 47
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -577,6 +630,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi--fallbackPlaceholder-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi--fallbackPlaceholder-"
+                    onclick="tryItOut('GETapi--fallbackPlaceholder-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi--fallbackPlaceholder-"
+                    onclick="cancelTryOut('GETapi--fallbackPlaceholder-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi--fallbackPlaceholder-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -589,10 +659,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -612,10 +682,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="N9w"
+               value="\"
                data-component="url">
     <br>
-<p>Example: <code>N9w</code></p>
+<p>Example: <code>\</code></p>
             </div>
                     </form>
 
@@ -637,18 +707,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "/api/v1/merchants/1" \
-    --header "Content-Type: application/json" \
+    --get "http://localhost/api/v1/merchants/1" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/v1/merchants/1"
+    "http://localhost/api/v1/merchants/1"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -660,12 +730,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/v1/merchants/1';
+$url = 'http://localhost/api/v1/merchants/1';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -678,9 +748,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/v1/merchants/1'
+url = 'http://localhost/api/v1/merchants/1'
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -700,36 +770,41 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
-access-control-allow-origin: *
+x-ratelimit-remaining: 49
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;merchant&quot;,
-        &quot;ktp&quot;: &quot;1234567890123456&quot;,
-        &quot;npwp&quot;: null,
-        &quot;siup&quot;: null,
-        &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
+        &quot;logo&quot;: &quot;http://127.0.0.1:8000/storage/merchants/logo/SE6RnlyAukubNRLPVsqDDMSXQYSkGzajuNKqfXSc.png&quot;,
+        &quot;is_highlight&quot;: 0,
+        &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+        &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-10-28T10:01:35.000000Z&quot;,
         &quot;profile&quot;: {
             &quot;id&quot;: 1,
-            &quot;address&quot;: &quot;Jl. Test&quot;,
-            &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-            &quot;logo&quot;: &quot;https://picsum.photos/100/100&quot;,
-            &quot;banner&quot;: &quot;https://picsum.photos/500/250&quot;
+            &quot;description&quot;: &quot;Travel untuk segala kalangan&quot;,
+            &quot;address&quot;: &quot;Jl. Ahmad Yani&quot;,
+            &quot;banner&quot;: &quot;https://picsum.photos/500/250&quot;,
+            &quot;ktp_number&quot;: &quot;1234567890123456&quot;,
+            &quot;npwp_number&quot;: &quot;123456789012345&quot;,
+            &quot;siup_number&quot;: &quot;1234567890123&quot;,
+            &quot;ktp&quot;: &quot;https://picsum.photos/500/250&quot;,
+            &quot;npwp&quot;: null,
+            &quot;siup&quot;: null
         },
         &quot;level&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;standart&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/008811?text=expedita&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00aa55?text=voluptas&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;Accepted&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/007733?text=eum&quot;,
-            &quot;color&quot;: &quot;#981f61&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00eeaa?text=sit&quot;,
+            &quot;color&quot;: &quot;#3e26ec&quot;
         }
     }
 }</code>
@@ -759,6 +834,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-merchants--merchant_id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-merchants--merchant_id-"
+                    onclick="tryItOut('GETapi-v1-merchants--merchant_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-merchants--merchant_id-"
+                    onclick="cancelTryOut('GETapi-v1-merchants--merchant_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-merchants--merchant_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -771,10 +863,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -801,6 +893,358 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
+                    <h2 id="merchant-PUTapi-v1-merchants">Update merchant profile</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-merchants">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/v1/merchants" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "name=quia"\
+    --form "address=quae"\
+    --form "description=Sunt eligendi ipsum nihil quo quidem pariatur aliquam."\
+    --form "ktp_number=lzxjzzajfflopwze"\
+    --form "npwp_number=jecxcasjfpimzjk"\
+    --form "siup_number=mdkwmqypcipfv"\
+    --form "logo=@/tmp/phpRw8LPw" \
+    --form "banner=@/tmp/phpLIEMQ6" \
+    --form "ktp=@/tmp/php49M6ub" \
+    --form "npwp=@/tmp/phpk4VrAe" \
+    --form "siup=@/tmp/phpsQarkA" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/merchants"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('name', 'quia');
+body.append('address', 'quae');
+body.append('description', 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.');
+body.append('ktp_number', 'lzxjzzajfflopwze');
+body.append('npwp_number', 'jecxcasjfpimzjk');
+body.append('siup_number', 'mdkwmqypcipfv');
+body.append('logo', document.querySelector('input[name="logo"]').files[0]);
+body.append('banner', document.querySelector('input[name="banner"]').files[0]);
+body.append('ktp', document.querySelector('input[name="ktp"]').files[0]);
+body.append('npwp', document.querySelector('input[name="npwp"]').files[0]);
+body.append('siup', document.querySelector('input[name="siup"]').files[0]);
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/merchants';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'application/json',
+        ],
+        'multipart' =&gt; [
+            [
+                'name' =&gt; 'name',
+                'contents' =&gt; 'quia'
+            ],
+            [
+                'name' =&gt; 'address',
+                'contents' =&gt; 'quae'
+            ],
+            [
+                'name' =&gt; 'description',
+                'contents' =&gt; 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.'
+            ],
+            [
+                'name' =&gt; 'ktp_number',
+                'contents' =&gt; 'lzxjzzajfflopwze'
+            ],
+            [
+                'name' =&gt; 'npwp_number',
+                'contents' =&gt; 'jecxcasjfpimzjk'
+            ],
+            [
+                'name' =&gt; 'siup_number',
+                'contents' =&gt; 'mdkwmqypcipfv'
+            ],
+            [
+                'name' =&gt; 'logo',
+                'contents' =&gt; fopen('/tmp/phpRw8LPw', 'r')
+            ],
+            [
+                'name' =&gt; 'banner',
+                'contents' =&gt; fopen('/tmp/phpLIEMQ6', 'r')
+            ],
+            [
+                'name' =&gt; 'ktp',
+                'contents' =&gt; fopen('/tmp/php49M6ub', 'r')
+            ],
+            [
+                'name' =&gt; 'npwp',
+                'contents' =&gt; fopen('/tmp/phpk4VrAe', 'r')
+            ],
+            [
+                'name' =&gt; 'siup',
+                'contents' =&gt; fopen('/tmp/phpsQarkA', 'r')
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://localhost/api/v1/merchants'
+files = {
+  'name': (None, 'quia'),
+  'address': (None, 'quae'),
+  'description': (None, 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.'),
+  'ktp_number': (None, 'lzxjzzajfflopwze'),
+  'npwp_number': (None, 'jecxcasjfpimzjk'),
+  'siup_number': (None, 'mdkwmqypcipfv'),
+  'logo': open('/tmp/phpRw8LPw', 'rb'),
+  'banner': open('/tmp/phpLIEMQ6', 'rb'),
+  'ktp': open('/tmp/php49M6ub', 'rb'),
+  'npwp': open('/tmp/phpk4VrAe', 'rb'),
+  'siup': open('/tmp/phpsQarkA', 'rb')}
+payload = {
+    "name": "quia",
+    "address": "quae",
+    "description": "Sunt eligendi ipsum nihil quo quidem pariatur aliquam.",
+    "ktp_number": "lzxjzzajfflopwze",
+    "npwp_number": "jecxcasjfpimzjk",
+    "siup_number": "mdkwmqypcipfv"
+}
+headers = {
+  'Content-Type': 'multipart/form-data',
+  'Accept': 'application/json'
+}
+
+response = requests.request('PUT', url, headers=headers, files=files)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-merchants">
+</span>
+<span id="execution-results-PUTapi-v1-merchants" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-merchants"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-merchants"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-merchants" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-merchants">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-v1-merchants" data-method="PUT"
+      data-path="api/v1/merchants"
+      data-authed="1"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-merchants', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-merchants"
+                    onclick="tryItOut('PUTapi-v1-merchants');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-merchants"
+                    onclick="cancelTryOut('PUTapi-v1-merchants');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-merchants"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/merchants</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-v1-merchants"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-v1-merchants"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-v1-merchants"
+               value="quia"
+               data-component="body">
+    <br>
+<p>Example: <code>quia</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>logo</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="logo"                data-endpoint="PUTapi-v1-merchants"
+               value=""
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpRw8LPw</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="address"                data-endpoint="PUTapi-v1-merchants"
+               value="quae"
+               data-component="body">
+    <br>
+<p>Example: <code>quae</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>banner</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="banner"                data-endpoint="PUTapi-v1-merchants"
+               value=""
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpLIEMQ6</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="PUTapi-v1-merchants"
+               value="Sunt eligendi ipsum nihil quo quidem pariatur aliquam."
+               data-component="body">
+    <br>
+<p>Example: <code>Sunt eligendi ipsum nihil quo quidem pariatur aliquam.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ktp_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="ktp_number"                data-endpoint="PUTapi-v1-merchants"
+               value="lzxjzzajfflopwze"
+               data-component="body">
+    <br>
+<p>Must be 16 characters. Example: <code>lzxjzzajfflopwze</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>npwp_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="npwp_number"                data-endpoint="PUTapi-v1-merchants"
+               value="jecxcasjfpimzjk"
+               data-component="body">
+    <br>
+<p>Must be 15 characters. Example: <code>jecxcasjfpimzjk</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>siup_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="siup_number"                data-endpoint="PUTapi-v1-merchants"
+               value="mdkwmqypcipfv"
+               data-component="body">
+    <br>
+<p>Must be 13 characters. Example: <code>mdkwmqypcipfv</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ktp</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="ktp"                data-endpoint="PUTapi-v1-merchants"
+               value=""
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image. Example: <code>/tmp/php49M6ub</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>npwp</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="npwp"                data-endpoint="PUTapi-v1-merchants"
+               value=""
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpk4VrAe</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>siup</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="siup"                data-endpoint="PUTapi-v1-merchants"
+               value=""
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpsQarkA</code></p>
+        </div>
+        </form>
+
                 <h1 id="product">Product</h1>
 
     
@@ -818,18 +1262,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "/api/v1/products/1" \
-    --header "Content-Type: application/json" \
+    --get "http://localhost/api/v1/products/1" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/v1/products/1"
+    "http://localhost/api/v1/products/1"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -841,12 +1285,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/v1/products/1';
+$url = 'http://localhost/api/v1/products/1';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -859,9 +1303,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/v1/products/1'
+url = 'http://localhost/api/v1/products/1'
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -881,8 +1325,8 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
-access-control-allow-origin: *
+x-ratelimit-remaining: 50
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -903,31 +1347,31 @@ access-control-allow-origin: *
         &quot;min_person&quot;: 1,
         &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
         &quot;is_published&quot;: 0,
-        &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
         &quot;sub_category&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;aut&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0000bb?text=est&quot;,
+            &quot;name&quot;: &quot;architecto&quot;,
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ccdd?text=voluptatem&quot;,
             &quot;product_category&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;facere&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00dd33?text=nostrum&quot;
+                &quot;name&quot;: &quot;commodi&quot;,
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ee55?text=ut&quot;
             }
         },
         &quot;merchant&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;merchant&quot;,
-            &quot;ktp&quot;: &quot;1234567890123456&quot;,
-            &quot;npwp&quot;: null,
-            &quot;siup&quot;: null,
-            &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;
+            &quot;logo&quot;: &quot;http://127.0.0.1:8000/storage/merchants/logo/SE6RnlyAukubNRLPVsqDDMSXQYSkGzajuNKqfXSc.png&quot;,
+            &quot;is_highlight&quot;: 0,
+            &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+            &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-10-28T10:01:35.000000Z&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;draft&quot;,
-            &quot;color&quot;: &quot;DimGray&quot;,
+            &quot;color&quot;: &quot;PapayaWhip&quot;,
             &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/CCCCCC&quot;
         },
         &quot;schedules&quot;: [
@@ -963,8 +1407,8 @@ access-control-allow-origin: *
                     &quot;email&quot;: &quot;merchant@mail.com&quot;,
                     &quot;phone&quot;: &quot;081234567890&quot;,
                     &quot;status&quot;: 1,
-                    &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;
                 }
             }
         ],
@@ -984,12 +1428,12 @@ access-control-allow-origin: *
             {
                 &quot;id&quot;: 2,
                 &quot;name&quot;: &quot;parkir&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ff33?text=velit&quot;
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00bbdd?text=minus&quot;
             },
             {
                 &quot;id&quot;: 3,
                 &quot;name&quot;: &quot;ac&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00cc44?text=qui&quot;
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00cccc?text=eum&quot;
             }
         ],
         &quot;faqs&quot;: [
@@ -1056,6 +1500,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--product_id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-products--product_id-"
+                    onclick="tryItOut('GETapi-v1-products--product_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-products--product_id-"
+                    onclick="cancelTryOut('GETapi-v1-products--product_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-products--product_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -1068,10 +1529,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="GETapi-v1-products--product_id-"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1112,18 +1573,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "/api/v1/merchants/1/products" \
-    --header "Content-Type: application/json" \
+    --get "http://localhost/api/v1/merchants/1/products" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/v1/merchants/1/products"
+    "http://localhost/api/v1/merchants/1/products"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -1135,12 +1596,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/v1/merchants/1/products';
+$url = 'http://localhost/api/v1/merchants/1/products';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1153,9 +1614,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/v1/merchants/1/products'
+url = 'http://localhost/api/v1/merchants/1/products'
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -1175,8 +1636,8 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
-access-control-allow-origin: *
+x-ratelimit-remaining: 48
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1198,8 +1659,8 @@ access-control-allow-origin: *
             &quot;min_person&quot;: 1,
             &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
             &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-10-24T05:39:12.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;
         }
     ],
     &quot;links&quot;: {
@@ -1261,6 +1722,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-merchants--merchant--products', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-merchants--merchant--products"
+                    onclick="tryItOut('GETapi-v1-merchants--merchant--products');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-merchants--merchant--products"
+                    onclick="cancelTryOut('GETapi-v1-merchants--merchant--products');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-merchants--merchant--products"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -1273,10 +1751,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="GETapi-v1-merchants--merchant--products"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1320,18 +1798,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "/api/v1/cities" \
-    --header "Content-Type: application/json" \
+    --get "http://localhost/api/v1/cities" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/v1/cities"
+    "http://localhost/api/v1/cities"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -1343,12 +1821,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/v1/cities';
+$url = 'http://localhost/api/v1/cities';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1361,9 +1839,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/v1/cities'
+url = 'http://localhost/api/v1/cities'
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -1383,160 +1861,160 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
-access-control-allow-origin: *
+x-ratelimit-remaining: 53
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;North Beth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/008888?text=amet&quot;,
+            &quot;name&quot;: &quot;Gislasonport&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aabb?text=beatae&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;North Rodrickport&quot;
+                &quot;name&quot;: &quot;Lake Sigmund&quot;
             }
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;North Rowenaview&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0055aa?text=atque&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Reichelview&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005522?text=mollitia&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;North Rodrickport&quot;
+                &quot;name&quot;: &quot;Lake Sigmund&quot;
             }
         },
         {
             &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Modestastad&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066cc?text=officia&quot;,
+            &quot;name&quot;: &quot;Colliermouth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ff55?text=aut&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;North Rodrickport&quot;
+                &quot;name&quot;: &quot;Lake Sigmund&quot;
             }
         },
         {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Pacochabury&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00dd44?text=omnis&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Lake Alyce&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006688?text=deleniti&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Nadermouth&quot;
+                &quot;name&quot;: &quot;Toneyside&quot;
             }
         },
         {
             &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;West Winonamouth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bbff?text=labore&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Loisview&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066ee?text=dolores&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Nadermouth&quot;
+                &quot;name&quot;: &quot;Toneyside&quot;
             }
         },
         {
             &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Port Sabinaport&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00cc33?text=ex&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;Buckmouth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/002244?text=quia&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Nadermouth&quot;
+                &quot;name&quot;: &quot;Toneyside&quot;
             }
         },
         {
             &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;East Rozellamouth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ffcc?text=eligendi&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;West Tess&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/004400?text=tempore&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;West Cruzhaven&quot;
+                &quot;name&quot;: &quot;Boylefurt&quot;
             }
         },
         {
             &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;Schustertown&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aaee?text=maiores&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;West Rudy&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bb55?text=alias&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;West Cruzhaven&quot;
+                &quot;name&quot;: &quot;Boylefurt&quot;
             }
         },
         {
             &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;West Samantamouth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006633?text=possimus&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;Kaylahton&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aa66?text=iure&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;West Cruzhaven&quot;
+                &quot;name&quot;: &quot;Boylefurt&quot;
             }
         },
         {
             &quot;id&quot;: 10,
-            &quot;name&quot;: &quot;Kozeyhaven&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/004455?text=suscipit&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;East Felipaville&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ccaa?text=quis&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Neldaview&quot;
+                &quot;name&quot;: &quot;Ziemefurt&quot;
             }
         },
         {
             &quot;id&quot;: 11,
-            &quot;name&quot;: &quot;Erdmanside&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/007788?text=recusandae&quot;,
+            &quot;name&quot;: &quot;Millietown&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0099cc?text=laboriosam&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Neldaview&quot;
+                &quot;name&quot;: &quot;Ziemefurt&quot;
             }
         },
         {
             &quot;id&quot;: 12,
-            &quot;name&quot;: &quot;Port Keanu&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ddee?text=repellendus&quot;,
+            &quot;name&quot;: &quot;Derekfurt&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066ee?text=qui&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Neldaview&quot;
+                &quot;name&quot;: &quot;Ziemefurt&quot;
             }
         },
         {
             &quot;id&quot;: 13,
-            &quot;name&quot;: &quot;Lake Omafort&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00eedd?text=voluptatem&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;Okunevaview&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ddff?text=omnis&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;Kiehnland&quot;
+                &quot;name&quot;: &quot;North Delmer&quot;
             }
         },
         {
             &quot;id&quot;: 14,
-            &quot;name&quot;: &quot;Bellport&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0044cc?text=laudantium&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;Kleinton&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006699?text=et&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;Kiehnland&quot;
+                &quot;name&quot;: &quot;North Delmer&quot;
             }
         },
         {
             &quot;id&quot;: 15,
-            &quot;name&quot;: &quot;Bernhardburgh&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aaaa?text=velit&quot;,
+            &quot;name&quot;: &quot;Bogisichmouth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0022cc?text=voluptatibus&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;Kiehnland&quot;
+                &quot;name&quot;: &quot;North Delmer&quot;
             }
         }
     ]
@@ -1567,6 +2045,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cities', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cities"
+                    onclick="tryItOut('GETapi-v1-cities');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cities"
+                    onclick="cancelTryOut('GETapi-v1-cities');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cities"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -1579,10 +2074,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="GETapi-v1-cities"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1610,18 +2105,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "/api/v1/provinces" \
-    --header "Content-Type: application/json" \
+    --get "http://localhost/api/v1/provinces" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/v1/provinces"
+    "http://localhost/api/v1/provinces"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -1633,12 +2128,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/v1/provinces';
+$url = 'http://localhost/api/v1/provinces';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1651,9 +2146,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/v1/provinces'
+url = 'http://localhost/api/v1/provinces'
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -1673,55 +2168,55 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
-access-control-allow-origin: *
+x-ratelimit-remaining: 52
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;North Rodrickport&quot;,
+            &quot;name&quot;: &quot;Lake Sigmund&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Faroe Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
+                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
             }
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Nadermouth&quot;,
+            &quot;name&quot;: &quot;Toneyside&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Faroe Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
+                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
             }
         },
         {
             &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;West Cruzhaven&quot;,
+            &quot;name&quot;: &quot;Boylefurt&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Faroe Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
+                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
             }
         },
         {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Neldaview&quot;,
+            &quot;name&quot;: &quot;Ziemefurt&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Faroe Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
+                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
             }
         },
         {
             &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Kiehnland&quot;,
+            &quot;name&quot;: &quot;North Delmer&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Faroe Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
+                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
             }
         }
     ]
@@ -1752,6 +2247,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provinces', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-provinces"
+                    onclick="tryItOut('GETapi-v1-provinces');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-provinces"
+                    onclick="cancelTryOut('GETapi-v1-provinces');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-provinces"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -1764,10 +2276,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="GETapi-v1-provinces"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1795,18 +2307,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "/api/v1/countries" \
-    --header "Content-Type: application/json" \
+    --get "http://localhost/api/v1/countries" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "/api/v1/countries"
+    "http://localhost/api/v1/countries"
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -1818,12 +2330,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = '/api/v1/countries';
+$url = 'http://localhost/api/v1/countries';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1836,9 +2348,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = '/api/v1/countries'
+url = 'http://localhost/api/v1/countries'
 headers = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -1858,16 +2370,16 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
-access-control-allow-origin: *
+x-ratelimit-remaining: 51
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Faroe Islands&quot;,
-            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc11?text=voluptatem&quot;
+            &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
+            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
         }
     ]
 }</code>
@@ -1897,6 +2409,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-countries', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-countries"
+                    onclick="tryItOut('GETapi-v1-countries');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-countries"
+                    onclick="cancelTryOut('GETapi-v1-countries');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-countries"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -1909,10 +2438,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="GETapi-v1-countries"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;

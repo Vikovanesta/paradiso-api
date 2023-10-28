@@ -21,7 +21,7 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -32,7 +32,7 @@ endpoints:
         name: name
         description: 'The name of the user.'
         required: true
-        example: 'John Doe'
+        example: merchant
         type: string
         enumValues: []
         custom: []
@@ -40,7 +40,7 @@ endpoints:
         name: email
         description: 'The email of the user.'
         required: true
-        example: Doe@mail.com
+        example: merchant@mail.com
         type: string
         enumValues: []
         custom: []
@@ -53,8 +53,8 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      name: 'John Doe'
-      email: Doe@mail.com
+      name: merchant
+      email: merchant@mail.com
       password: password
     fileParameters: []
     responses: []
@@ -80,7 +80,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []

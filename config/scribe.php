@@ -22,7 +22,7 @@ return [
      * The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url') at generation time.
      * If you're using `laravel` type, you can set this to a dynamic string, like '{{ config("app.tenant_url") }}' to get a dynamic base URL.
      */
-    'base_url' => '',
+    'base_url' => env('APP_URL'),
 
     /*
      * Tell Scribe what routes to generate documentation for.
@@ -77,7 +77,7 @@ return [
                  * Additional headers to be added to the example requests
                  */
                 'headers' => [
-                    'Content-Type' => 'application/json',
+                    'Content-Type' => 'multipart/form-data',
                     'Accept' => 'application/json',
                 ],
 
@@ -190,7 +190,7 @@ return [
          * Add a Try It Out button to your endpoints so consumers can test endpoints right from their browser.
          * Don't forget to enable CORS headers for your endpoints.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /**
          * The base URL for the API tester to use (for example, you can set this to your staging URL).
@@ -286,7 +286,7 @@ INTRO
      * Setting `laravel.add_routes` to true (above) will also add a route for the collection.
      */
     'postman' => [
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Manually override some generated content in the spec. Dot notation is supported.

@@ -24,8 +24,8 @@ class AuthController extends Controller
      * 
      * Login to the application
      * 
-     * @bodyParam name string required The name of the user. Example: John Doe
-     * @bodyParam email string required The email of the user. Example: Doe@mail.com
+     * @bodyParam name string required The name of the user. Example: merchant
+     * @bodyParam email string required The email of the user. Example: merchant@mail.com
      * @bodyParam password string required The password of the user. Example: password
      * */
     public function login(AuthLoginRequest $request)

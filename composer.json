@@ -52,7 +52,8 @@
             "@php -v",
             "npm -v",
             "npm install && npm run build",
-            "@php artisan storage:link"
+            "@php artisan storage:link",
+            "@php artisan scribe:generate --force"
         ]
     },
     "extra": {

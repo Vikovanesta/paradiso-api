@@ -15,7 +15,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
       merchant_id:
@@ -36,15 +36,144 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"merchant","ktp":"1234567890123456","npwp":null,"siup":null,"created_at":"2023-10-24T05:39:12.000000Z","updated_at":"2023-10-24T05:39:12.000000Z","profile":{"id":1,"address":"Jl. Test","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","logo":"https:\/\/picsum.photos\/100\/100","banner":"https:\/\/picsum.photos\/500\/250"},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/008811?text=expedita"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/007733?text=eum","color":"#981f61"}}}'
+        content: '{"data":{"id":1,"name":"merchant","logo":"http:\/\/127.0.0.1:8000\/storage\/merchants\/logo\/SE6RnlyAukubNRLPVsqDDMSXQYSkGzajuNKqfXSc.png","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-10-25T06:18:21.000000Z","updated_at":"2023-10-28T10:01:35.000000Z","profile":{"id":1,"description":"Travel untuk segala kalangan","address":"Jl. Ahmad Yani","banner":"https:\/\/picsum.photos\/500\/250","ktp_number":"1234567890123456","npwp_number":"123456789012345","siup_number":"1234567890123","ktp":"https:\/\/picsum.photos\/500\/250","npwp":null,"siup":null},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/00aa55?text=voluptas"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00eeaa?text=sit","color":"#3e26ec"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
-          access-control-allow-origin: '*'
+          x-ratelimit-remaining: '49'
+          vary: Origin
         description: null
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/merchants
+    metadata:
+      groupName: Merchant
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update merchant profile'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: quia
+        type: string
+        enumValues: []
+        custom: []
+      logo:
+        name: logo
+        description: 'Must be a file. Must be an image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: false
+        example: quae
+        type: string
+        enumValues: []
+        custom: []
+      banner:
+        name: banner
+        description: 'Must be a file. Must be an image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.'
+        type: string
+        enumValues: []
+        custom: []
+      ktp_number:
+        name: ktp_number
+        description: 'Must be 16 characters.'
+        required: true
+        example: lzxjzzajfflopwze
+        type: string
+        enumValues: []
+        custom: []
+      npwp_number:
+        name: npwp_number
+        description: 'Must be 15 characters.'
+        required: true
+        example: jecxcasjfpimzjk
+        type: string
+        enumValues: []
+        custom: []
+      siup_number:
+        name: siup_number
+        description: 'Must be 13 characters.'
+        required: true
+        example: mdkwmqypcipfv
+        type: string
+        enumValues: []
+        custom: []
+      ktp:
+        name: ktp
+        description: 'Must be a file. Must be an image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        custom: []
+      npwp:
+        name: npwp
+        description: 'Must be a file. Must be an image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        custom: []
+      siup:
+        name: siup
+        description: 'Must be a file. Must be an image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      name: quia
+      address: quae
+      description: 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.'
+      ktp_number: lzxjzzajfflopwze
+      npwp_number: jecxcasjfpimzjk
+      siup_number: mdkwmqypcipfv
+    fileParameters:
+      logo: null
+      banner: null
+      ktp: null
+      npwp: null
+      siup: null
+    responses: []
     responseFields: []
     auth: []
     controller: null

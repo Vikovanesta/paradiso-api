@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MerchantUpdateRequest;
 use App\Http\Resources\MerchantResource;
 use App\Http\Resources\ProductResource;
 use App\Models\Merchant;
 use App\Models\Product;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class MerchantController extends Controller
 {
@@ -64,11 +66,70 @@ class MerchantController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update merchant profile
+     * 
+     * @group Merchant
+     * 
+     * @authenticated
      */
-    public function update(Request $request, Merchant $merchant)
+    public function update(MerchantUpdateRequest $request)
     {
-        //
+        
+        $validated = $request->validated();
+
+        $merchant = $request->user()->merchant;
+
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $logo->storeAs('public/merchants/logo', $logo->hashName());
+            $logo_url = url('/storage/merchants/logo/' . $logo->hashName());
+
+            Storage::delete('public' . (str_replace(url('/storage'), '', $merchant->logo)));
+
+            $merchant->update([
+                'logo' => $logo_url,
+            ]);
+        }
+
+        if ($request->hasFile('banner')) {
+            $banner = $request->file('banner');
+            $banner->storeAs('public/merchants/banner', $banner->hashName());
+            $banner_url = url('/storage/merchants/banner/' . $banner->hashName());
+
+            Storage::delete('public' . (str_replace(url('/storage'), '', $merchant->merchantProfile->banner)));
+
+            $merchant->merchantProfile()->update([
+                'banner' => $banner_url,
+            ]);
+        }
+
+
+        DB::transaction(function () use ($merchant, $validated) {
+            $merchant->update([
+                'name' => $validated['name'] ?? $merchant->name,
+                'is_highlight' => $validated['is_highlight'] ?? $merchant->is_highlight,
+                'notes' => $validated['notes'] ?? $merchant->notes,
+            ]);
+
+            $merchant->merchantProfile()->update([
+                'address' => $validated['address'] ?? $merchant->merchantProfile->address,
+                'description' => $validated['description'] ?? $merchant->merchantProfile->description,
+                'ktp_number' => $validated['ktp_number'] ?? $merchant->merchantProfile->ktp_number,
+                'npwp_number' => $validated['npwp_number'] ?? $merchant->merchantProfile->npwp_number,
+                'siup_number' => $validated['siup_number'] ?? $merchant->merchantProfile->siup_number,
+                'ktp' => $validated['ktp'] ?? $merchant->merchantProfile->ktp,
+                'npwp' => $validated['npwp'] ?? $merchant->merchantProfile->npwp,
+                'siup' => $validated['siup'] ?? $merchant->merchantProfile->siup,
+            ]);
+        });
+
+        $merchant = Merchant::with(
+            'merchantProfile',
+            'merchantLevel',
+            'merchantStatus',
+        )->find($merchant->id);
+
+        return $this->success(new MerchantResource($merchant) ,'Merchant profile updated successfully', 201);
     }
 
     /**
