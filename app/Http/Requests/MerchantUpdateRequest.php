@@ -23,17 +23,15 @@ class MerchantUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
+            'name' => 'string',
             'logo' => 'file|image',
             'address' => 'string',
             'banner' => 'file|image',
             'description' => 'string',
-            'ktp_number' => 'required|string|size:16',
-            'npwp_number' => 'required|string|size:15',
-            'siup_number' => 'required|string|size:13',
-            'ktp' => 'file|image',
-            'npwp' => 'file|image',
-            'siup' => 'file|image',
+            'notes' => 'string',
+            'ktp_number' => 'string|size:16',
+            'npwp_number' => 'string|size:15',
+            'siup_number' => 'string|size:13',
         ];
     }
 }

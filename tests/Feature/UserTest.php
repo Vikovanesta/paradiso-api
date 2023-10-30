@@ -37,7 +37,7 @@ class UserTest extends TestCase
     {
         $response = $this->post('/api/v1/auth', [
             'name' => 'merchant',
-            'email' => 'oo@mail.com',
+            'email' => 'mwfetko23948iio@mail.com',
             'password' => 'password'
         ]);
 

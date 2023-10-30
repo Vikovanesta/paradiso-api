@@ -23,6 +23,7 @@ return [
      * If you're using `laravel` type, you can set this to a dynamic string, like '{{ config("app.tenant_url") }}' to get a dynamic base URL.
      */
     'base_url' => env('APP_URL'),
+    // 'base_url' => 'https://paradiso-api-vikovanesta.vercel.app',
 
     /*
      * Tell Scribe what routes to generate documentation for.
@@ -77,7 +78,7 @@ return [
                  * Additional headers to be added to the example requests
                  */
                 'headers' => [
-                    'Content-Type' => 'multipart/form-data',
+                    // 'Content-Type' => 'multipart/form-data',
                     'Accept' => 'application/json',
                 ],
 
@@ -201,7 +202,7 @@ return [
         /**
          * Fetch a CSRF token before each request, and add it as an X-XSRF-TOKEN header. Needed if you're using Laravel Sanctum.
          */
-        'use_csrf' => false,
+        'use_csrf' => true,
 
         /**
          * The URL to fetch the CSRF token from (if `use_csrf` is true).
@@ -216,7 +217,7 @@ return [
         /*
          * Set this to true if any endpoints in your API use authentication.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Set this to true if your API should be authenticated by default. If so, you must also set `enabled` (above) to true.
@@ -246,7 +247,7 @@ return [
          * Placeholder your users will see for the auth parameter in the example requests.
          * Set this to null if you want Scribe to use a random value as placeholder instead.
          */
-        'placeholder' => '{YOUR_AUTH_KEY}',
+        'placeholder' => null,
 
         /*
          * Any extra authentication-related info for your users. For instance, you can describe how to find or generate their auth credentials.

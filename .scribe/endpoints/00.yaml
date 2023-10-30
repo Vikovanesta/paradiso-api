@@ -19,8 +19,8 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: multipart/form-data
       Accept: application/json
+      Content-Type: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -78,7 +78,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Content-Type: multipart/form-data
+      Authorization: 'Bearer aVabdPfe65kv1ED6cg3Zh48'
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -98,7 +98,10 @@ endpoints:
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer aVabdPfe65kv1ED6cg3Zh48'
     controller: null
     method: null
     route: null

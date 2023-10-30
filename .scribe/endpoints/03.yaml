@@ -15,7 +15,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Content-Type: multipart/form-data
+      Authorization: 'Bearer kPvVc8ea6fEaZ3156bdDhg4'
       Accept: application/json
     urlParameters:
       merchant_id:
@@ -36,17 +36,20 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"merchant","logo":"http:\/\/127.0.0.1:8000\/storage\/merchants\/logo\/SE6RnlyAukubNRLPVsqDDMSXQYSkGzajuNKqfXSc.png","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-10-25T06:18:21.000000Z","updated_at":"2023-10-28T10:01:35.000000Z","profile":{"id":1,"description":"Travel untuk segala kalangan","address":"Jl. Ahmad Yani","banner":"https:\/\/picsum.photos\/500\/250","ktp_number":"1234567890123456","npwp_number":"123456789012345","siup_number":"1234567890123","ktp":"https:\/\/picsum.photos\/500\/250","npwp":null,"siup":null},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/00aa55?text=voluptas"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00eeaa?text=sit","color":"#3e26ec"}}}'
+        content: '{"data":{"id":1,"name":"merchant","logo":"http:\/\/127.0.0.1:8000\/storage\/merchants\/logo\/0aslMh1MtGrxY3AwN7cHnIcDjcT91sjkhdBZ02KS.jpg","is_highlight":0,"notes":"consequatur","created_at":"2023-10-25T06:18:21.000000Z","updated_at":"2023-10-30T14:12:01.000000Z","profile":{"id":1,"description":"Sed qui molestias id eos.","address":"Jl. Mangga Seartus","banner":"http:\/\/127.0.0.1:8000\/storage\/merchants\/banner\/Z8kVN6IFMxTp36ppcInrj3FUkD6Qlgdx1aIKeWfd.jpg","ktp_number":"0987654321123456","npwp_number":"123456789012345","siup_number":"1234567890123","ktp":"https:\/\/picsum.photos\/500\/250","npwp":null,"siup":null},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/00aa55?text=voluptas"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00eeaa?text=sit","color":"#3e26ec"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '49'
+          x-ratelimit-remaining: '55'
           vary: Origin
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kPvVc8ea6fEaZ3156bdDhg4'
     controller: null
     method: null
     route: null
@@ -65,8 +68,9 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Content-Type: multipart/form-data
+      Authorization: 'Bearer bvefagcZEV5a664Pk8Ddh13'
       Accept: application/json
+      Content-Type: multipart/form-data
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -75,8 +79,8 @@ endpoints:
       name:
         name: name
         description: ''
-        required: true
-        example: quia
+        required: false
+        example: ullam
         type: string
         enumValues: []
         custom: []
@@ -92,7 +96,7 @@ endpoints:
         name: address
         description: ''
         required: false
-        example: quae
+        example: et
         type: string
         enumValues: []
         custom: []
@@ -108,74 +112,59 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.'
+        example: 'Exercitationem nobis consequuntur qui ab et dolores.'
+        type: string
+        enumValues: []
+        custom: []
+      notes:
+        name: notes
+        description: ''
+        required: false
+        example: unde
         type: string
         enumValues: []
         custom: []
       ktp_number:
         name: ktp_number
         description: 'Must be 16 characters.'
-        required: true
-        example: lzxjzzajfflopwze
+        required: false
+        example: lcrbyzlorcbsnuct
         type: string
         enumValues: []
         custom: []
       npwp_number:
         name: npwp_number
         description: 'Must be 15 characters.'
-        required: true
-        example: jecxcasjfpimzjk
+        required: false
+        example: cjpukwjwwuydfdo
         type: string
         enumValues: []
         custom: []
       siup_number:
         name: siup_number
         description: 'Must be 13 characters.'
-        required: true
-        example: mdkwmqypcipfv
+        required: false
+        example: qbrgbvfanyalh
         type: string
         enumValues: []
         custom: []
-      ktp:
-        name: ktp
-        description: 'Must be a file. Must be an image.'
-        required: false
-        example: null
-        type: file
-        enumValues: []
-        custom: []
-      npwp:
-        name: npwp
-        description: 'Must be a file. Must be an image.'
-        required: false
-        example: null
-        type: file
-        enumValues: []
-        custom: []
-      siup:
-        name: siup
-        description: 'Must be a file. Must be an image.'
-        required: false
-        example: null
-        type: file
-        enumValues: []
-        custom: []
     cleanBodyParameters:
-      name: quia
-      address: quae
-      description: 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.'
-      ktp_number: lzxjzzajfflopwze
-      npwp_number: jecxcasjfpimzjk
-      siup_number: mdkwmqypcipfv
+      name: ullam
+      address: et
+      description: 'Exercitationem nobis consequuntur qui ab et dolores.'
+      notes: unde
+      ktp_number: lcrbyzlorcbsnuct
+      npwp_number: cjpukwjwwuydfdo
+      siup_number: qbrgbvfanyalh
     fileParameters:
       logo: null
       banner: null
-      ktp: null
-      npwp: null
-      siup: null
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bvefagcZEV5a664Pk8Ddh13'
     controller: null
     method: null
     route: null

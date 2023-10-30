@@ -17,19 +17,18 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
       fallbackPlaceholder:
         name: fallbackPlaceholder
         description: ''
         required: true
-        example: \
+        example: eDa
         type: string
         enumValues: []
         custom: []
     cleanUrlParameters:
-      fallbackPlaceholder: \
+      fallbackPlaceholder: eDa
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -43,7 +42,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '47'
+          x-ratelimit-remaining: '53'
           vary: Origin
         description: null
         custom: []

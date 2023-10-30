@@ -117,9 +117,6 @@ class MerchantController extends Controller
                 'ktp_number' => $validated['ktp_number'] ?? $merchant->merchantProfile->ktp_number,
                 'npwp_number' => $validated['npwp_number'] ?? $merchant->merchantProfile->npwp_number,
                 'siup_number' => $validated['siup_number'] ?? $merchant->merchantProfile->siup_number,
-                'ktp' => $validated['ktp'] ?? $merchant->merchantProfile->ktp,
-                'npwp' => $validated['npwp'] ?? $merchant->merchantProfile->npwp,
-                'siup' => $validated['siup'] ?? $merchant->merchantProfile->siup,
             ]);
         });
 

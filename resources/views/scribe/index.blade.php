@@ -28,8 +28,8 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
-        var useCsrf = Boolean();
+        var tryItOutBaseUrl = "http://127.0.0.1:8000";
+        var useCsrf = Boolean(1);
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
     <script src="{{ asset("/vendor/scribe/js/tryitout-4.25.0.js") }}"></script>
@@ -143,7 +143,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: October 28, 2023</li>
+        <li>Last updated: October 30, 2023</li>
     </ul>
 </div>
 
@@ -152,14 +152,16 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>http://127.0.0.1:8000</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer your-token"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
         <h1 id="auth">Auth</h1>
 
@@ -178,59 +180,54 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/auth" \
-    --header "Content-Type: multipart/form-data" \
+    "http://127.0.0.1:8000/api/v1/auth" \
     --header "Accept: application/json" \
-    --form "name=merchant"\
-    --form "email=merchant@mail.com"\
-    --form "password=password"</code></pre></div>
+    --header "Content-Type: application/json" \
+    --data "{
+    \"name\": \"merchant\",
+    \"email\": \"merchant@mail.com\",
+    \"password\": \"password\"
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth"
+    "http://127.0.0.1:8000/api/v1/auth"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
+    "Content-Type": "application/json",
 };
 
-const body = new FormData();
-body.append('name', 'merchant');
-body.append('email', 'merchant@mail.com');
-body.append('password', 'password');
+let body = {
+    "name": "merchant",
+    "email": "merchant@mail.com",
+    "password": "password"
+};
 
 fetch(url, {
     method: "POST",
     headers,
-    body,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/auth';
+$url = 'http://127.0.0.1:8000/api/v1/auth';
 $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'application/json',
         ],
-        'multipart' =&gt; [
-            [
-                'name' =&gt; 'name',
-                'contents' =&gt; 'merchant'
-            ],
-            [
-                'name' =&gt; 'email',
-                'contents' =&gt; 'merchant@mail.com'
-            ],
-            [
-                'name' =&gt; 'password',
-                'contents' =&gt; 'password'
-            ],
+        'json' =&gt; [
+            'name' =&gt; 'merchant',
+            'email' =&gt; 'merchant@mail.com',
+            'password' =&gt; 'password',
         ],
     ]
 );
@@ -242,22 +239,18 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/auth'
-files = {
-  'name': (None, 'merchant'),
-  'email': (None, 'merchant@mail.com'),
-  'password': (None, 'password')}
+url = 'http://127.0.0.1:8000/api/v1/auth'
 payload = {
     "name": "merchant",
     "email": "merchant@mail.com",
     "password": "password"
 }
 headers = {
-  'Content-Type': 'multipart/form-data',
-  'Accept': 'application/json'
+  'Accept': 'application/json',
+  'Content-Type': 'application/json'
 }
 
-response = requests.request('POST', url, headers=headers)
+response = requests.request('POST', url, headers=headers, json=payload)
 response.json()</code></pre></div>
 
 </span>
@@ -312,22 +305,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-v1-auth"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
                               name="Accept"                data-endpoint="POSTapi-v1-auth"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-auth"
                value="application/json"
                data-component="header">
     <br>
@@ -383,18 +376,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/logout" \
-    --header "Content-Type: multipart/form-data" \
+    "http://127.0.0.1:8000/api/v1/logout" \
+    --header "Authorization: Bearer aVabdPfe65kv1ED6cg3Zh48" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/logout"
+    "http://127.0.0.1:8000/api/v1/logout"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
+    "Authorization": "Bearer aVabdPfe65kv1ED6cg3Zh48",
     "Accept": "application/json",
 };
 
@@ -406,12 +399,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/logout';
+$url = 'http://127.0.0.1:8000/api/v1/logout';
 $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
+            'Authorization' =&gt; 'Bearer aVabdPfe65kv1ED6cg3Zh48',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -424,9 +417,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/logout'
+url = 'http://127.0.0.1:8000/api/v1/logout'
 headers = {
-  'Content-Type': 'multipart/form-data',
+  'Authorization': 'Bearer aVabdPfe65kv1ED6cg3Zh48',
   'Accept': 'application/json'
 }
 
@@ -494,15 +487,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-v1-logout"
-               value="multipart/form-data"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-logout"
+               value="Bearer aVabdPfe65kv1ED6cg3Zh48"
                data-component="header">
     <br>
-<p>Example: <code>multipart/form-data</code></p>
+<p>Example: <code>Bearer aVabdPfe65kv1ED6cg3Zh48</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -534,18 +527,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/\" \
-    --header "Content-Type: multipart/form-data" \
+    --get "http://127.0.0.1:8000/api/eDa" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/\"
+    "http://127.0.0.1:8000/api/eDa"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -557,12 +548,11 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/\';
+$url = 'http://127.0.0.1:8000/api/eDa';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -575,9 +565,8 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/\'
+url = 'http://127.0.0.1:8000/api/eDa'
 headers = {
-  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -597,7 +586,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 47
+x-ratelimit-remaining: 53
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -654,17 +643,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -682,10 +660,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="\"
+               value="eDa"
                data-component="url">
     <br>
-<p>Example: <code>\</code></p>
+<p>Example: <code>eDa</code></p>
             </div>
                     </form>
 
@@ -707,18 +685,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/merchants/1" \
-    --header "Content-Type: multipart/form-data" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/1" \
+    --header "Authorization: Bearer kPvVc8ea6fEaZ3156bdDhg4" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/merchants/1"
+    "http://127.0.0.1:8000/api/v1/merchants/1"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
+    "Authorization": "Bearer kPvVc8ea6fEaZ3156bdDhg4",
     "Accept": "application/json",
 };
 
@@ -730,12 +708,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/merchants/1';
+$url = 'http://127.0.0.1:8000/api/v1/merchants/1';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
+            'Authorization' =&gt; 'Bearer kPvVc8ea6fEaZ3156bdDhg4',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -748,9 +726,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/merchants/1'
+url = 'http://127.0.0.1:8000/api/v1/merchants/1'
 headers = {
-  'Content-Type': 'multipart/form-data',
+  'Authorization': 'Bearer kPvVc8ea6fEaZ3156bdDhg4',
   'Accept': 'application/json'
 }
 
@@ -770,7 +748,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 49
+x-ratelimit-remaining: 55
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -778,17 +756,17 @@ vary: Origin
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;merchant&quot;,
-        &quot;logo&quot;: &quot;http://127.0.0.1:8000/storage/merchants/logo/SE6RnlyAukubNRLPVsqDDMSXQYSkGzajuNKqfXSc.png&quot;,
+        &quot;logo&quot;: &quot;http://127.0.0.1:8000/storage/merchants/logo/0aslMh1MtGrxY3AwN7cHnIcDjcT91sjkhdBZ02KS.jpg&quot;,
         &quot;is_highlight&quot;: 0,
-        &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+        &quot;notes&quot;: &quot;consequatur&quot;,
         &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-28T10:01:35.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-10-30T14:12:01.000000Z&quot;,
         &quot;profile&quot;: {
             &quot;id&quot;: 1,
-            &quot;description&quot;: &quot;Travel untuk segala kalangan&quot;,
-            &quot;address&quot;: &quot;Jl. Ahmad Yani&quot;,
-            &quot;banner&quot;: &quot;https://picsum.photos/500/250&quot;,
-            &quot;ktp_number&quot;: &quot;1234567890123456&quot;,
+            &quot;description&quot;: &quot;Sed qui molestias id eos.&quot;,
+            &quot;address&quot;: &quot;Jl. Mangga Seartus&quot;,
+            &quot;banner&quot;: &quot;http://127.0.0.1:8000/storage/merchants/banner/Z8kVN6IFMxTp36ppcInrj3FUkD6Qlgdx1aIKeWfd.jpg&quot;,
+            &quot;ktp_number&quot;: &quot;0987654321123456&quot;,
             &quot;npwp_number&quot;: &quot;123456789012345&quot;,
             &quot;siup_number&quot;: &quot;1234567890123&quot;,
             &quot;ktp&quot;: &quot;https://picsum.photos/500/250&quot;,
@@ -858,15 +836,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="multipart/form-data"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant_id-"
+               value="Bearer kPvVc8ea6fEaZ3156bdDhg4"
                data-component="header">
     <br>
-<p>Example: <code>multipart/form-data</code></p>
+<p>Example: <code>Bearer kPvVc8ea6fEaZ3156bdDhg4</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -907,44 +885,42 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/merchants" \
-    --header "Content-Type: multipart/form-data" \
+    "http://127.0.0.1:8000/api/v1/merchants" \
+    --header "Authorization: Bearer bvefagcZEV5a664Pk8Ddh13" \
     --header "Accept: application/json" \
-    --form "name=quia"\
-    --form "address=quae"\
-    --form "description=Sunt eligendi ipsum nihil quo quidem pariatur aliquam."\
-    --form "ktp_number=lzxjzzajfflopwze"\
-    --form "npwp_number=jecxcasjfpimzjk"\
-    --form "siup_number=mdkwmqypcipfv"\
-    --form "logo=@/tmp/phpRw8LPw" \
-    --form "banner=@/tmp/phpLIEMQ6" \
-    --form "ktp=@/tmp/php49M6ub" \
-    --form "npwp=@/tmp/phpk4VrAe" \
-    --form "siup=@/tmp/phpsQarkA" </code></pre></div>
+    --header "Content-Type: multipart/form-data" \
+    --form "name=ullam"\
+    --form "address=et"\
+    --form "description=Exercitationem nobis consequuntur qui ab et dolores."\
+    --form "notes=unde"\
+    --form "ktp_number=lcrbyzlorcbsnuct"\
+    --form "npwp_number=cjpukwjwwuydfdo"\
+    --form "siup_number=qbrgbvfanyalh"\
+    --form "logo=@/tmp/phpsi0Hq4" \
+    --form "banner=@/tmp/phpWAAzNZ" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/merchants"
+    "http://127.0.0.1:8000/api/v1/merchants"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
+    "Authorization": "Bearer bvefagcZEV5a664Pk8Ddh13",
     "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
 };
 
 const body = new FormData();
-body.append('name', 'quia');
-body.append('address', 'quae');
-body.append('description', 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.');
-body.append('ktp_number', 'lzxjzzajfflopwze');
-body.append('npwp_number', 'jecxcasjfpimzjk');
-body.append('siup_number', 'mdkwmqypcipfv');
+body.append('name', 'ullam');
+body.append('address', 'et');
+body.append('description', 'Exercitationem nobis consequuntur qui ab et dolores.');
+body.append('notes', 'unde');
+body.append('ktp_number', 'lcrbyzlorcbsnuct');
+body.append('npwp_number', 'cjpukwjwwuydfdo');
+body.append('siup_number', 'qbrgbvfanyalh');
 body.append('logo', document.querySelector('input[name="logo"]').files[0]);
 body.append('banner', document.querySelector('input[name="banner"]').files[0]);
-body.append('ktp', document.querySelector('input[name="ktp"]').files[0]);
-body.append('npwp', document.querySelector('input[name="npwp"]').files[0]);
-body.append('siup', document.querySelector('input[name="siup"]').files[0]);
 
 fetch(url, {
     method: "PUT",
@@ -955,58 +931,51 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/merchants';
+$url = 'http://127.0.0.1:8000/api/v1/merchants';
 $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
+            'Authorization' =&gt; 'Bearer bvefagcZEV5a664Pk8Ddh13',
             'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
         ],
         'multipart' =&gt; [
             [
                 'name' =&gt; 'name',
-                'contents' =&gt; 'quia'
+                'contents' =&gt; 'ullam'
             ],
             [
                 'name' =&gt; 'address',
-                'contents' =&gt; 'quae'
+                'contents' =&gt; 'et'
             ],
             [
                 'name' =&gt; 'description',
-                'contents' =&gt; 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.'
+                'contents' =&gt; 'Exercitationem nobis consequuntur qui ab et dolores.'
+            ],
+            [
+                'name' =&gt; 'notes',
+                'contents' =&gt; 'unde'
             ],
             [
                 'name' =&gt; 'ktp_number',
-                'contents' =&gt; 'lzxjzzajfflopwze'
+                'contents' =&gt; 'lcrbyzlorcbsnuct'
             ],
             [
                 'name' =&gt; 'npwp_number',
-                'contents' =&gt; 'jecxcasjfpimzjk'
+                'contents' =&gt; 'cjpukwjwwuydfdo'
             ],
             [
                 'name' =&gt; 'siup_number',
-                'contents' =&gt; 'mdkwmqypcipfv'
+                'contents' =&gt; 'qbrgbvfanyalh'
             ],
             [
                 'name' =&gt; 'logo',
-                'contents' =&gt; fopen('/tmp/phpRw8LPw', 'r')
+                'contents' =&gt; fopen('/tmp/phpsi0Hq4', 'r')
             ],
             [
                 'name' =&gt; 'banner',
-                'contents' =&gt; fopen('/tmp/phpLIEMQ6', 'r')
-            ],
-            [
-                'name' =&gt; 'ktp',
-                'contents' =&gt; fopen('/tmp/php49M6ub', 'r')
-            ],
-            [
-                'name' =&gt; 'npwp',
-                'contents' =&gt; fopen('/tmp/phpk4VrAe', 'r')
-            ],
-            [
-                'name' =&gt; 'siup',
-                'contents' =&gt; fopen('/tmp/phpsQarkA', 'r')
+                'contents' =&gt; fopen('/tmp/phpWAAzNZ', 'r')
             ],
         ],
     ]
@@ -1019,30 +988,30 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/merchants'
+url = 'http://127.0.0.1:8000/api/v1/merchants'
 files = {
-  'name': (None, 'quia'),
-  'address': (None, 'quae'),
-  'description': (None, 'Sunt eligendi ipsum nihil quo quidem pariatur aliquam.'),
-  'ktp_number': (None, 'lzxjzzajfflopwze'),
-  'npwp_number': (None, 'jecxcasjfpimzjk'),
-  'siup_number': (None, 'mdkwmqypcipfv'),
-  'logo': open('/tmp/phpRw8LPw', 'rb'),
-  'banner': open('/tmp/phpLIEMQ6', 'rb'),
-  'ktp': open('/tmp/php49M6ub', 'rb'),
-  'npwp': open('/tmp/phpk4VrAe', 'rb'),
-  'siup': open('/tmp/phpsQarkA', 'rb')}
+  'name': (None, 'ullam'),
+  'address': (None, 'et'),
+  'description': (None, 'Exercitationem nobis consequuntur qui ab et dolores.'),
+  'notes': (None, 'unde'),
+  'ktp_number': (None, 'lcrbyzlorcbsnuct'),
+  'npwp_number': (None, 'cjpukwjwwuydfdo'),
+  'siup_number': (None, 'qbrgbvfanyalh'),
+  'logo': open('/tmp/phpsi0Hq4', 'rb'),
+  'banner': open('/tmp/phpWAAzNZ', 'rb')}
 payload = {
-    "name": "quia",
-    "address": "quae",
-    "description": "Sunt eligendi ipsum nihil quo quidem pariatur aliquam.",
-    "ktp_number": "lzxjzzajfflopwze",
-    "npwp_number": "jecxcasjfpimzjk",
-    "siup_number": "mdkwmqypcipfv"
+    "name": "ullam",
+    "address": "et",
+    "description": "Exercitationem nobis consequuntur qui ab et dolores.",
+    "notes": "unde",
+    "ktp_number": "lcrbyzlorcbsnuct",
+    "npwp_number": "cjpukwjwwuydfdo",
+    "siup_number": "qbrgbvfanyalh"
 }
 headers = {
-  'Content-Type': 'multipart/form-data',
-  'Accept': 'application/json'
+  'Authorization': 'Bearer bvefagcZEV5a664Pk8Ddh13',
+  'Accept': 'application/json',
+  'Content-Type': 'multipart/form-data'
 }
 
 response = requests.request('PUT', url, headers=headers, files=files)
@@ -1100,15 +1069,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-v1-merchants"
-               value="multipart/form-data"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-merchants"
+               value="Bearer bvefagcZEV5a664Pk8Ddh13"
                data-component="header">
     <br>
-<p>Example: <code>multipart/form-data</code></p>
+<p>Example: <code>Bearer bvefagcZEV5a664Pk8Ddh13</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1121,17 +1090,28 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-v1-merchants"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-merchants"
-               value="quia"
+               value="ullam"
                data-component="body">
     <br>
-<p>Example: <code>quia</code></p>
+<p>Example: <code>ullam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>logo</code></b>&nbsp;&nbsp;
@@ -1142,7 +1122,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpRw8LPw</code></p>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpsi0Hq4</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -1150,10 +1130,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-merchants"
-               value="quae"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>quae</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>banner</code></b>&nbsp;&nbsp;
@@ -1164,7 +1144,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpLIEMQ6</code></p>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpWAAzNZ</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1172,76 +1152,54 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-merchants"
-               value="Sunt eligendi ipsum nihil quo quidem pariatur aliquam."
+               value="Exercitationem nobis consequuntur qui ab et dolores."
                data-component="body">
     <br>
-<p>Example: <code>Sunt eligendi ipsum nihil quo quidem pariatur aliquam.</code></p>
+<p>Example: <code>Exercitationem nobis consequuntur qui ab et dolores.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="PUTapi-v1-merchants"
+               value="unde"
+               data-component="body">
+    <br>
+<p>Example: <code>unde</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ktp_number</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ktp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="lzxjzzajfflopwze"
+               value="lcrbyzlorcbsnuct"
                data-component="body">
     <br>
-<p>Must be 16 characters. Example: <code>lzxjzzajfflopwze</code></p>
+<p>Must be 16 characters. Example: <code>lcrbyzlorcbsnuct</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>npwp_number</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="npwp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="jecxcasjfpimzjk"
+               value="cjpukwjwwuydfdo"
                data-component="body">
     <br>
-<p>Must be 15 characters. Example: <code>jecxcasjfpimzjk</code></p>
+<p>Must be 15 characters. Example: <code>cjpukwjwwuydfdo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>siup_number</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="siup_number"                data-endpoint="PUTapi-v1-merchants"
-               value="mdkwmqypcipfv"
+               value="qbrgbvfanyalh"
                data-component="body">
     <br>
-<p>Must be 13 characters. Example: <code>mdkwmqypcipfv</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>ktp</code></b>&nbsp;&nbsp;
-<small>file</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="file" style="display: none"
-                              name="ktp"                data-endpoint="PUTapi-v1-merchants"
-               value=""
-               data-component="body">
-    <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/php49M6ub</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>npwp</code></b>&nbsp;&nbsp;
-<small>file</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="file" style="display: none"
-                              name="npwp"                data-endpoint="PUTapi-v1-merchants"
-               value=""
-               data-component="body">
-    <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpk4VrAe</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>siup</code></b>&nbsp;&nbsp;
-<small>file</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="file" style="display: none"
-                              name="siup"                data-endpoint="PUTapi-v1-merchants"
-               value=""
-               data-component="body">
-    <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpsQarkA</code></p>
+<p>Must be 13 characters. Example: <code>qbrgbvfanyalh</code></p>
         </div>
         </form>
 
@@ -1262,18 +1220,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/products/1" \
-    --header "Content-Type: multipart/form-data" \
+    --get "http://127.0.0.1:8000/api/v1/products/1" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/products/1"
+    "http://127.0.0.1:8000/api/v1/products/1"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -1285,12 +1241,11 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/products/1';
+$url = 'http://127.0.0.1:8000/api/v1/products/1';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1303,9 +1258,8 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/products/1'
+url = 'http://127.0.0.1:8000/api/v1/products/1'
 headers = {
-  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -1325,7 +1279,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 50
+x-ratelimit-remaining: 56
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -1362,11 +1316,11 @@ vary: Origin
         &quot;merchant&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;merchant&quot;,
-            &quot;logo&quot;: &quot;http://127.0.0.1:8000/storage/merchants/logo/SE6RnlyAukubNRLPVsqDDMSXQYSkGzajuNKqfXSc.png&quot;,
+            &quot;logo&quot;: &quot;http://127.0.0.1:8000/storage/merchants/logo/0aslMh1MtGrxY3AwN7cHnIcDjcT91sjkhdBZ02KS.jpg&quot;,
             &quot;is_highlight&quot;: 0,
-            &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+            &quot;notes&quot;: &quot;consequatur&quot;,
             &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-10-28T10:01:35.000000Z&quot;
+            &quot;updated_at&quot;: &quot;2023-10-30T14:12:01.000000Z&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 1,
@@ -1524,17 +1478,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-products--product_id-"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -1573,18 +1516,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/merchants/1/products" \
-    --header "Content-Type: multipart/form-data" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/1/products" \
+    --header "Authorization: Bearer gdV84a3DEb66P15keZvhcfa" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/merchants/1/products"
+    "http://127.0.0.1:8000/api/v1/merchants/1/products"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
+    "Authorization": "Bearer gdV84a3DEb66P15keZvhcfa",
     "Accept": "application/json",
 };
 
@@ -1596,12 +1539,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/merchants/1/products';
+$url = 'http://127.0.0.1:8000/api/v1/merchants/1/products';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
+            'Authorization' =&gt; 'Bearer gdV84a3DEb66P15keZvhcfa',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1614,9 +1557,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/merchants/1/products'
+url = 'http://127.0.0.1:8000/api/v1/merchants/1/products'
 headers = {
-  'Content-Type': 'multipart/form-data',
+  'Authorization': 'Bearer gdV84a3DEb66P15keZvhcfa',
   'Accept': 'application/json'
 }
 
@@ -1636,7 +1579,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 48
+x-ratelimit-remaining: 54
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -1664,8 +1607,8 @@ vary: Origin
         }
     ],
     &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://localhost/api/v1/merchants/1/products?page=1&quot;,
-        &quot;last&quot;: &quot;http://localhost/api/v1/merchants/1/products?page=1&quot;,
+        &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
+        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
         &quot;prev&quot;: null,
         &quot;next&quot;: null
     },
@@ -1680,7 +1623,7 @@ vary: Origin
                 &quot;active&quot;: false
             },
             {
-                &quot;url&quot;: &quot;http://localhost/api/v1/merchants/1/products?page=1&quot;,
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
                 &quot;label&quot;: &quot;1&quot;,
                 &quot;active&quot;: true
             },
@@ -1690,7 +1633,7 @@ vary: Origin
                 &quot;active&quot;: false
             }
         ],
-        &quot;path&quot;: &quot;http://localhost/api/v1/merchants/1/products&quot;,
+        &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products&quot;,
         &quot;per_page&quot;: 15,
         &quot;to&quot;: 1,
         &quot;total&quot;: 1
@@ -1746,15 +1689,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-merchants--merchant--products"
-               value="multipart/form-data"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant--products"
+               value="Bearer gdV84a3DEb66P15keZvhcfa"
                data-component="header">
     <br>
-<p>Example: <code>multipart/form-data</code></p>
+<p>Example: <code>Bearer gdV84a3DEb66P15keZvhcfa</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1798,18 +1741,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/cities" \
-    --header "Content-Type: multipart/form-data" \
+    --get "http://127.0.0.1:8000/api/v1/cities" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/cities"
+    "http://127.0.0.1:8000/api/v1/cities"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -1821,12 +1762,11 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/cities';
+$url = 'http://127.0.0.1:8000/api/v1/cities';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1839,9 +1779,8 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/cities'
+url = 'http://127.0.0.1:8000/api/v1/cities'
 headers = {
-  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -1861,7 +1800,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+x-ratelimit-remaining: 59
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2069,17 +2008,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-cities"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -2105,18 +2033,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/provinces" \
-    --header "Content-Type: multipart/form-data" \
+    --get "http://127.0.0.1:8000/api/v1/provinces" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/provinces"
+    "http://127.0.0.1:8000/api/v1/provinces"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -2128,12 +2054,11 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/provinces';
+$url = 'http://127.0.0.1:8000/api/v1/provinces';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -2146,9 +2071,8 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/provinces'
+url = 'http://127.0.0.1:8000/api/v1/provinces'
 headers = {
-  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -2168,7 +2092,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 58
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2271,17 +2195,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-provinces"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -2307,18 +2220,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/countries" \
-    --header "Content-Type: multipart/form-data" \
+    --get "http://127.0.0.1:8000/api/v1/countries" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/countries"
+    "http://127.0.0.1:8000/api/v1/countries"
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
@@ -2330,12 +2241,11 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/countries';
+$url = 'http://127.0.0.1:8000/api/v1/countries';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -2348,9 +2258,8 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/countries'
+url = 'http://127.0.0.1:8000/api/v1/countries'
 headers = {
-  'Content-Type': 'multipart/form-data',
   'Accept': 'application/json'
 }
 
@@ -2370,7 +2279,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
+x-ratelimit-remaining: 57
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2432,17 +2341,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/v1/countries</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-countries"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;

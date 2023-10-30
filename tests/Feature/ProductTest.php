@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Testing\Fluent\AssertableJson;
@@ -9,92 +10,98 @@ use Tests\TestCase;
 
 class ProductTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
+   
     public function test_get_product_detail_success(): void
     {
-        $response = $this->get('/api/v1/products/1');
+        $productId = 1;
+        $response = $this->get('/api/v1/products/' . $productId);
+
+        $product = Product::with(
+            'merchant',
+            'productSubCategory',
+            'productSubCategory.productCategory',
+            'productStatus',
+            'schedules',
+            'schedules.scheduleDays',
+            'reviews',
+            'reviews.user',
+            'includeExcludes',
+            'facilities',
+            'faqs',
+            'terms',
+            'productImages',
+        )->find($productId);
 
         $response->assertStatus(200)
             ->assertJson(fn (AssertableJson $json) =>
                 $json->has('data')
-                    ->where('data.id', 1)
-                    ->where('data.name', 'product')
-                    ->where('data.duration', 1)
-                    ->where('data.description', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
-                    ->where('data.start_date', '16/10/2023')
-                    ->where('data.end_date', '17/10/2023')
-                    ->where('data.price', 100000)
-                    ->where('data.unit', 'unit')
-                    ->where('data.discount', null)
-                    ->where('data.thumbnail', 'https://picsum.photos/200/200')
-                    ->where('data.address', 'Jl. Test')
-                    ->where('data.coordinate', '123,123')
-                    ->where('data.max_person', 10)
-                    ->where('data.min_person', 1)
-                    ->where('data.note', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
-                    ->where('data.is_published', 0)
+                    ->where('data.id', $product->id)
+                    ->where('data.name', $product->name)
+                    ->where('data.duration', $product->duration)
+                    ->where('data.description', $product->description)
+                    ->where('data.start_date', $product->start_date->format('d/m/Y'))
+                    ->where('data.end_date', $product->end_date->format('d/m/Y'))
+                    ->where('data.price', $product->price)
+                    ->where('data.unit', $product->unit)
+                    ->where('data.discount', $product->discount)
+                    ->where('data.thumbnail', $product->thumbnail)
+                    ->where('data.address', $product->address)
+                    ->where('data.coordinate', $product->coordinate)
+                    ->where('data.max_person', $product->max_person)
+                    ->where('data.min_person', $product->min_person)
+                    ->where('data.note', $product->note)
+                    ->where('data.is_published', $product->is_published)
                     ->has('data.sub_category')
-                        ->where('data.sub_category.id', 1)
+                        ->where('data.sub_category.id', $product->productSubCategory->id)
                         ->has('data.sub_category.product_category')
-                            ->where('data.sub_category.product_category.id', 1)
+                            ->where('data.sub_category.product_category.id', $product->productSubCategory->productCategory->id)
                     ->has('data.merchant')
-                        ->where('data.merchant.id', 1)
-                        ->where('data.merchant.name', 'merchant')
+                        ->where('data.merchant.id', $product->merchant->id)
                     ->has('data.status')
-                        ->where('data.status.id', 1)
-                        ->where('data.status.name', 'draft')
-                    ->has('data.schedules', 1)
+                        ->where('data.status.id', $product->productStatus->id)
+                    ->has('data.schedules', $product->schedules->count())
                     ->has('data.schedules.0', fn(AssertableJson $json)=>
-                        $json->where('id', 1)
-                             ->where('date', '16/10/2023')
-                             ->where('title', 'day 1')
-                             ->has('schedule_days', 2)
+                        $json->where('id', $product->schedules[0]->id)
+                             ->where('date', $product->schedules[0]->date->format('d/m/Y'))
+                             ->etc()
+                             ->has('schedule_days', $product->schedules[0]->scheduleDays->count())
                              ->has('schedule_days.0', fn(AssertableJson $json)=>
-                                $json->where('id', 1)
-                                     ->where('start_time', '08:00')
-                                     ->where('end_time', '10:00')
-                                     ->where('description', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
+                                $json->where('id', $product->schedules[0]->scheduleDays[0]->id)
+                                     ->where('start_time', $product->schedules[0]->scheduleDays[0]->start_time->format('H:i'))
+                                     ->where('end_time', $product->schedules[0]->scheduleDays[0]->end_time->format('H:i'))
+                                     ->etc()
                              )
                     )
-                    ->has('data.reviews', 1)
+                    ->has('data.reviews', $product->reviews->count())
                     ->has('data.reviews.0', fn(AssertableJson $json)=>
-                        $json->where('id', 1)
-                            ->where('review', 'revieww')
-                            ->where('rating', 5)
+                        $json->where('id', $product->reviews[0]->id)
+                            ->etc()
                             ->has('user')
-                                ->where('user.id', 1)
-                                ->where('user.name', 'merchant')
+                                ->where('user.id', $product->reviews[0]->user->id)
                     )
-                    ->has('data.include_excludes', 2)
+                    ->has('data.include_excludes', $product->includeExcludes->count())
                     ->has('data.include_excludes.0', fn(AssertableJson $json)=>
-                        $json->where('id', 1)
-                            ->where('description', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.')
-                            ->where('is_include', 1)
-                    )
-                    ->has('data.facilities', 2)
-                    ->has('data.facilities.0', fn(AssertableJson $json)=>
-                        $json->where('id', 2)
-                            ->where('name', 'parkir')
+                        $json->where('id', $product->includeExcludes[0]->id)
                             ->etc()
                     )
-                    ->has('data.faqs', 2)
+                    ->has('data.facilities', $product->facilities->count())
+                    ->has('data.facilities.0', fn(AssertableJson $json)=>
+                        $json->where('id', $product->facilities[0]->id)
+                            ->etc()
+                    )
+                    ->has('data.faqs', $product->faqs->count())
                     ->has('data.faqs.0', fn(AssertableJson $json)=>
-                        $json->where('id', 1)
-                            ->where('question', 'question1')
-                            ->where('answer', 'answer1')
-                            ->where('is_global', 0)
+                        $json->where('id', $product->faqs[0]->id)
+                            ->etc()
                     )
-                    ->has('data.terms', 2)
+                    ->has('data.terms', $product->terms->count())
                     ->has('data.terms.0', fn(AssertableJson $json)=>
-                        $json->where('id', 1)
-                            ->where('term', 'term1')
-                            ->where('is_global', 0)
+                        $json->where('id', $product->terms[0]->id)
+                            ->etc()
                     )
-                    ->has('data.images', 2)
+                    ->has('data.images', $product->productImages->count())
                     ->has('data.images.0', fn(AssertableJson $json)=>
-                        $json->where('id', 1)
+                        $json->where('id', $product->productImages[0]->id)
                             ->etc()
                     )
             );

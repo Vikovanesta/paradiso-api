@@ -23,7 +23,7 @@ class MerchantProfileFactory extends Factory
             'banner' => 'https://picsum.photos/500/250',
             'ktp_number' => fake()->numerify('################'),
             'npwp_number' => fake()->numerify('###############'),
-            'siup_number' => fake()->numerify('###############'),
+            'siup_number' => fake()->numerify('#############'),
             'ktp' => 'https://picsum.photos/500/250',
             'npwp' => 'https://picsum.photos/500/250',
             'siup' => 'https://picsum.photos/500/250',
