@@ -25,6 +25,18 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Gate::define('update-merchantProfile', function ($user) {
+            return $user->user_level === 3;
+        });
+
+        Gate::define('create-product', function ($user) {
+            return $user->user_level === 3;
+        });
+
+        Gate::define('update-product', function ($user, Product $product) {
+            return $user->user_level === 3 && $user->merchant->id === $product->merchant_id;
+        });
+
         Gate::define('delete-product', function ($user, Product $product) {
             return $user->user_level === 3 && $user->merchant->id === $product->merchant_id;
         });

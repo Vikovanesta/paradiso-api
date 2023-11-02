@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App\Models\Merchant;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ProductStoreRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class ProductStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return Auth::check() && Auth::user()->user_level === 3;
+        return Gate::allows('create-product');
     }
 
     /**
