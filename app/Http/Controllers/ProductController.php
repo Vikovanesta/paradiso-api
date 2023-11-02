@@ -7,6 +7,7 @@ use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use App\Traits\HttpResponses;
 use DB;
+use Gate;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -189,10 +190,18 @@ class ProductController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete a product.
+     * 
+     * @group Product
+     * 
+     * @authenticated
      */
     public function destroy(Product $product)
     {
-        //
+        Gate::authorize('delete-product', $product);
+
+        $product->delete();
+
+        return $this->success(null, 'Product deleted successfully');
     }
 }

@@ -28,7 +28,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://127.0.0.1:8000";
+        var tryItOutBaseUrl = "https://paradiso-api-vikovanesta.vercel.app/api";
         var useCsrf = Boolean(1);
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -155,7 +155,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://127.0.0.1:8000</code>
+    <strong>Base URL</strong>: <code>https://paradiso-api-vikovanesta.vercel.app/api</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -183,7 +183,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/v1/auth" \
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/auth" \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
     --data "{
@@ -196,7 +196,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/auth"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/auth"
 );
 
 const headers = {
@@ -219,7 +219,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/auth';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/auth';
 $response = $client-&gt;post(
     $url,
     [
@@ -242,7 +242,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/auth'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/auth'
 payload = {
     "name": "merchant",
     "email": "merchant@mail.com",
@@ -379,18 +379,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/v1/logout" \
-    --header "Authorization: Bearer e16643PcD5b8dfVvagahEkZ" \
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout" \
+    --header "Authorization: Bearer db8V634PfDak5a6c1veEghZ" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/logout"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout"
 );
 
 const headers = {
-    "Authorization": "Bearer e16643PcD5b8dfVvagahEkZ",
+    "Authorization": "Bearer db8V634PfDak5a6c1veEghZ",
     "Accept": "application/json",
 };
 
@@ -402,12 +402,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/logout';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout';
 $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer e16643PcD5b8dfVvagahEkZ',
+            'Authorization' =&gt; 'Bearer db8V634PfDak5a6c1veEghZ',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -420,9 +420,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/logout'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout'
 headers = {
-  'Authorization': 'Bearer e16643PcD5b8dfVvagahEkZ',
+  'Authorization': 'Bearer db8V634PfDak5a6c1veEghZ',
   'Accept': 'application/json'
 }
 
@@ -495,10 +495,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-logout"
-               value="Bearer e16643PcD5b8dfVvagahEkZ"
+               value="Bearer db8V634PfDak5a6c1veEghZ"
                data-component="header">
     <br>
-<p>Example: <code>Bearer e16643PcD5b8dfVvagahEkZ</code></p>
+<p>Example: <code>Bearer db8V634PfDak5a6c1veEghZ</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -530,13 +530,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/&amp;lt;MKX@M" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/.sz=L" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/&amp;lt;MKX@M"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/.sz=L"
 );
 
 const headers = {
@@ -551,7 +551,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/&lt;MKX@M';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/.sz=L';
 $response = $client-&gt;get(
     $url,
     [
@@ -568,7 +568,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/&amp;lt;MKX@M'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/.sz=L'
 headers = {
   'Accept': 'application/json'
 }
@@ -589,7 +589,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+x-ratelimit-remaining: 46
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -663,10 +663,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="<MKX@M"
+               value=".sz=L"
                data-component="url">
     <br>
-<p>Example: <code>&lt;MKX@M</code></p>
+<p>Example: <code>.sz=L</code></p>
             </div>
                     </form>
 
@@ -688,18 +688,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/merchants/1" \
-    --header "Authorization: Bearer 1gc84bEaP5dkve3h6VDfa6Z" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1" \
+    --header "Authorization: Bearer 4d1D8VcZ36EheaPf6ka5vbg" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/merchants/1"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1"
 );
 
 const headers = {
-    "Authorization": "Bearer 1gc84bEaP5dkve3h6VDfa6Z",
+    "Authorization": "Bearer 4d1D8VcZ36EheaPf6ka5vbg",
     "Accept": "application/json",
 };
 
@@ -711,12 +711,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/merchants/1';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 1gc84bEaP5dkve3h6VDfa6Z',
+            'Authorization' =&gt; 'Bearer 4d1D8VcZ36EheaPf6ka5vbg',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -729,9 +729,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/merchants/1'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1'
 headers = {
-  'Authorization': 'Bearer 1gc84bEaP5dkve3h6VDfa6Z',
+  'Authorization': 'Bearer 4d1D8VcZ36EheaPf6ka5vbg',
   'Accept': 'application/json'
 }
 
@@ -751,7 +751,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 48
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -844,10 +844,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="Bearer 1gc84bEaP5dkve3h6VDfa6Z"
+               value="Bearer 4d1D8VcZ36EheaPf6ka5vbg"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 1gc84bEaP5dkve3h6VDfa6Z</code></p>
+<p>Example: <code>Bearer 4d1D8VcZ36EheaPf6ka5vbg</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -888,40 +888,40 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/v1/merchants" \
-    --header "Authorization: Bearer b15DvfaPahd8g6V43kEce6Z" \
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants" \
+    --header "Authorization: Bearer 6D36a5fEa18cZPh4kedbVvg" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
-    --form "name=sit"\
-    --form "address=delectus"\
-    --form "description=Minima reiciendis laborum et distinctio eos."\
-    --form "notes=facere"\
-    --form "ktp_number=eioeejyvjttqczsz"\
-    --form "npwp_number=yrkpkyqalbjrylz"\
-    --form "siup_number=bowbshfuzhvyt"\
-    --form "logo=@/tmp/phpFGG9c3" \
-    --form "banner=@/tmp/phpGJH9JW" </code></pre></div>
+    --form "name=aspernatur"\
+    --form "address=veritatis"\
+    --form "description=Officia aut rerum iure sint."\
+    --form "notes=veniam"\
+    --form "ktp_number=meuxrlqooafzdlrt"\
+    --form "npwp_number=pnyblicznhmejmo"\
+    --form "siup_number=yzinmhpnavkbi"\
+    --form "logo=@/tmp/phpWB45tK" \
+    --form "banner=@/tmp/phpnIQ1ti" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/merchants"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants"
 );
 
 const headers = {
-    "Authorization": "Bearer b15DvfaPahd8g6V43kEce6Z",
+    "Authorization": "Bearer 6D36a5fEa18cZPh4kedbVvg",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
 
 const body = new FormData();
-body.append('name', 'sit');
-body.append('address', 'delectus');
-body.append('description', 'Minima reiciendis laborum et distinctio eos.');
-body.append('notes', 'facere');
-body.append('ktp_number', 'eioeejyvjttqczsz');
-body.append('npwp_number', 'yrkpkyqalbjrylz');
-body.append('siup_number', 'bowbshfuzhvyt');
+body.append('name', 'aspernatur');
+body.append('address', 'veritatis');
+body.append('description', 'Officia aut rerum iure sint.');
+body.append('notes', 'veniam');
+body.append('ktp_number', 'meuxrlqooafzdlrt');
+body.append('npwp_number', 'pnyblicznhmejmo');
+body.append('siup_number', 'yzinmhpnavkbi');
 body.append('logo', document.querySelector('input[name="logo"]').files[0]);
 body.append('banner', document.querySelector('input[name="banner"]').files[0]);
 
@@ -934,51 +934,51 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/merchants';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants';
 $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer b15DvfaPahd8g6V43kEce6Z',
+            'Authorization' =&gt; 'Bearer 6D36a5fEa18cZPh4kedbVvg',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
         'multipart' =&gt; [
             [
                 'name' =&gt; 'name',
-                'contents' =&gt; 'sit'
+                'contents' =&gt; 'aspernatur'
             ],
             [
                 'name' =&gt; 'address',
-                'contents' =&gt; 'delectus'
+                'contents' =&gt; 'veritatis'
             ],
             [
                 'name' =&gt; 'description',
-                'contents' =&gt; 'Minima reiciendis laborum et distinctio eos.'
+                'contents' =&gt; 'Officia aut rerum iure sint.'
             ],
             [
                 'name' =&gt; 'notes',
-                'contents' =&gt; 'facere'
+                'contents' =&gt; 'veniam'
             ],
             [
                 'name' =&gt; 'ktp_number',
-                'contents' =&gt; 'eioeejyvjttqczsz'
+                'contents' =&gt; 'meuxrlqooafzdlrt'
             ],
             [
                 'name' =&gt; 'npwp_number',
-                'contents' =&gt; 'yrkpkyqalbjrylz'
+                'contents' =&gt; 'pnyblicznhmejmo'
             ],
             [
                 'name' =&gt; 'siup_number',
-                'contents' =&gt; 'bowbshfuzhvyt'
+                'contents' =&gt; 'yzinmhpnavkbi'
             ],
             [
                 'name' =&gt; 'logo',
-                'contents' =&gt; fopen('/tmp/phpFGG9c3', 'r')
+                'contents' =&gt; fopen('/tmp/phpWB45tK', 'r')
             ],
             [
                 'name' =&gt; 'banner',
-                'contents' =&gt; fopen('/tmp/phpGJH9JW', 'r')
+                'contents' =&gt; fopen('/tmp/phpnIQ1ti', 'r')
             ],
         ],
     ]
@@ -991,28 +991,28 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/merchants'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants'
 files = {
-  'name': (None, 'sit'),
-  'address': (None, 'delectus'),
-  'description': (None, 'Minima reiciendis laborum et distinctio eos.'),
-  'notes': (None, 'facere'),
-  'ktp_number': (None, 'eioeejyvjttqczsz'),
-  'npwp_number': (None, 'yrkpkyqalbjrylz'),
-  'siup_number': (None, 'bowbshfuzhvyt'),
-  'logo': open('/tmp/phpFGG9c3', 'rb'),
-  'banner': open('/tmp/phpGJH9JW', 'rb')}
+  'name': (None, 'aspernatur'),
+  'address': (None, 'veritatis'),
+  'description': (None, 'Officia aut rerum iure sint.'),
+  'notes': (None, 'veniam'),
+  'ktp_number': (None, 'meuxrlqooafzdlrt'),
+  'npwp_number': (None, 'pnyblicznhmejmo'),
+  'siup_number': (None, 'yzinmhpnavkbi'),
+  'logo': open('/tmp/phpWB45tK', 'rb'),
+  'banner': open('/tmp/phpnIQ1ti', 'rb')}
 payload = {
-    "name": "sit",
-    "address": "delectus",
-    "description": "Minima reiciendis laborum et distinctio eos.",
-    "notes": "facere",
-    "ktp_number": "eioeejyvjttqczsz",
-    "npwp_number": "yrkpkyqalbjrylz",
-    "siup_number": "bowbshfuzhvyt"
+    "name": "aspernatur",
+    "address": "veritatis",
+    "description": "Officia aut rerum iure sint.",
+    "notes": "veniam",
+    "ktp_number": "meuxrlqooafzdlrt",
+    "npwp_number": "pnyblicznhmejmo",
+    "siup_number": "yzinmhpnavkbi"
 }
 headers = {
-  'Authorization': 'Bearer b15DvfaPahd8g6V43kEce6Z',
+  'Authorization': 'Bearer 6D36a5fEa18cZPh4kedbVvg',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1077,10 +1077,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-merchants"
-               value="Bearer b15DvfaPahd8g6V43kEce6Z"
+               value="Bearer 6D36a5fEa18cZPh4kedbVvg"
                data-component="header">
     <br>
-<p>Example: <code>Bearer b15DvfaPahd8g6V43kEce6Z</code></p>
+<p>Example: <code>Bearer 6D36a5fEa18cZPh4kedbVvg</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1111,10 +1111,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-merchants"
-               value="sit"
+               value="aspernatur"
                data-component="body">
     <br>
-<p>Example: <code>sit</code></p>
+<p>Example: <code>aspernatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>logo</code></b>&nbsp;&nbsp;
@@ -1125,7 +1125,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpFGG9c3</code></p>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpWB45tK</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -1133,10 +1133,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-merchants"
-               value="delectus"
+               value="veritatis"
                data-component="body">
     <br>
-<p>Example: <code>delectus</code></p>
+<p>Example: <code>veritatis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>banner</code></b>&nbsp;&nbsp;
@@ -1147,7 +1147,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpGJH9JW</code></p>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpnIQ1ti</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1155,10 +1155,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-merchants"
-               value="Minima reiciendis laborum et distinctio eos."
+               value="Officia aut rerum iure sint."
                data-component="body">
     <br>
-<p>Example: <code>Minima reiciendis laborum et distinctio eos.</code></p>
+<p>Example: <code>Officia aut rerum iure sint.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -1166,10 +1166,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="PUTapi-v1-merchants"
-               value="facere"
+               value="veniam"
                data-component="body">
     <br>
-<p>Example: <code>facere</code></p>
+<p>Example: <code>veniam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ktp_number</code></b>&nbsp;&nbsp;
@@ -1177,10 +1177,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ktp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="eioeejyvjttqczsz"
+               value="meuxrlqooafzdlrt"
                data-component="body">
     <br>
-<p>Must be 16 characters. Example: <code>eioeejyvjttqczsz</code></p>
+<p>Must be 16 characters. Example: <code>meuxrlqooafzdlrt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>npwp_number</code></b>&nbsp;&nbsp;
@@ -1188,10 +1188,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="npwp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="yrkpkyqalbjrylz"
+               value="pnyblicznhmejmo"
                data-component="body">
     <br>
-<p>Must be 15 characters. Example: <code>yrkpkyqalbjrylz</code></p>
+<p>Must be 15 characters. Example: <code>pnyblicznhmejmo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>siup_number</code></b>&nbsp;&nbsp;
@@ -1199,10 +1199,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="siup_number"                data-endpoint="PUTapi-v1-merchants"
-               value="bowbshfuzhvyt"
+               value="yzinmhpnavkbi"
                data-component="body">
     <br>
-<p>Must be 13 characters. Example: <code>bowbshfuzhvyt</code></p>
+<p>Must be 13 characters. Example: <code>yzinmhpnavkbi</code></p>
         </div>
         </form>
 
@@ -1223,13 +1223,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/products/1" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/products/1"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1"
 );
 
 const headers = {
@@ -1244,7 +1244,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/products/1';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1';
 $response = $client-&gt;get(
     $url,
     [
@@ -1261,7 +1261,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/products/1'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1'
 headers = {
   'Accept': 'application/json'
 }
@@ -1282,7 +1282,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 49
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -1521,8 +1521,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/v1/merchants/products" \
-    --header "Authorization: Bearer 5PbvZDa86436cVhkfEde1ga" \
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products" \
+    --header "Authorization: Bearer hcva1VgP45DEb6afZk38d6e" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
     --form "product_sub_category_id=1"\
@@ -1541,24 +1541,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "coordinate=-6.8890653,109.1689806"\
     --form "max_person=10"\
     --form "min_person=1"\
-    --form "note=nisi"\
-    --form "includes[]=soluta"\
-    --form "excludes[]=illo"\
-    --form "facilities[]=sed"\
-    --form "terms[]=dolorem"\
+    --form "note=in"\
+    --form "includes[]=minima"\
+    --form "excludes[]=vel"\
+    --form "facilities[]=ducimus"\
+    --form "terms[]=non"\
     --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
     --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
-    --form "thumbnail=@/tmp/phpwe3J8W" \
-    --form "images[]=@/tmp/phpZmOBAj" </code></pre></div>
+    --form "thumbnail=@/tmp/phpmtsYB8" \
+    --form "images[]=@/tmp/phpC5wstp" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/merchants/products"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products"
 );
 
 const headers = {
-    "Authorization": "Bearer 5PbvZDa86436cVhkfEde1ga",
+    "Authorization": "Bearer hcva1VgP45DEb6afZk38d6e",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
@@ -1580,11 +1580,11 @@ body.append('address', 'Jl. Test');
 body.append('coordinate', '-6.8890653,109.1689806');
 body.append('max_person', '10');
 body.append('min_person', '1');
-body.append('note', 'nisi');
-body.append('includes[]', 'soluta');
-body.append('excludes[]', 'illo');
-body.append('facilities[]', 'sed');
-body.append('terms[]', 'dolorem');
+body.append('note', 'in');
+body.append('includes[]', 'minima');
+body.append('excludes[]', 'vel');
+body.append('facilities[]', 'ducimus');
+body.append('terms[]', 'non');
 body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
 body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
@@ -1599,12 +1599,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/merchants/products';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products';
 $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 5PbvZDa86436cVhkfEde1ga',
+            'Authorization' =&gt; 'Bearer hcva1VgP45DEb6afZk38d6e',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
@@ -1675,23 +1675,23 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'note',
-                'contents' =&gt; 'nisi'
+                'contents' =&gt; 'in'
             ],
             [
                 'name' =&gt; 'includes[]',
-                'contents' =&gt; 'soluta'
+                'contents' =&gt; 'minima'
             ],
             [
                 'name' =&gt; 'excludes[]',
-                'contents' =&gt; 'illo'
+                'contents' =&gt; 'vel'
             ],
             [
                 'name' =&gt; 'facilities[]',
-                'contents' =&gt; 'sed'
+                'contents' =&gt; 'ducimus'
             ],
             [
                 'name' =&gt; 'terms[]',
-                'contents' =&gt; 'dolorem'
+                'contents' =&gt; 'non'
             ],
             [
                 'name' =&gt; 'faqs',
@@ -1703,11 +1703,11 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'thumbnail',
-                'contents' =&gt; fopen('/tmp/phpwe3J8W', 'r')
+                'contents' =&gt; fopen('/tmp/phpmtsYB8', 'r')
             ],
             [
                 'name' =&gt; 'images[]',
-                'contents' =&gt; fopen('/tmp/phpZmOBAj', 'r')
+                'contents' =&gt; fopen('/tmp/phpC5wstp', 'r')
             ],
         ],
     ]
@@ -1720,7 +1720,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/merchants/products'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products'
 files = {
   'product_sub_category_id': (None, '1'),
   'city_id': (None, '1'),
@@ -1738,15 +1738,15 @@ files = {
   'coordinate': (None, '-6.8890653,109.1689806'),
   'max_person': (None, '10'),
   'min_person': (None, '1'),
-  'note': (None, 'nisi'),
-  'includes[]': (None, 'soluta'),
-  'excludes[]': (None, 'illo'),
-  'facilities[]': (None, 'sed'),
-  'terms[]': (None, 'dolorem'),
+  'note': (None, 'in'),
+  'includes[]': (None, 'minima'),
+  'excludes[]': (None, 'vel'),
+  'facilities[]': (None, 'ducimus'),
+  'terms[]': (None, 'non'),
   'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
   'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
-  'thumbnail': open('/tmp/phpwe3J8W', 'rb'),
-  'images[]': open('/tmp/phpZmOBAj', 'rb')}
+  'thumbnail': open('/tmp/phpmtsYB8', 'rb'),
+  'images[]': open('/tmp/phpC5wstp', 'rb')}
 payload = {
     "product_sub_category_id": 1,
     "city_id": 1,
@@ -1764,24 +1764,24 @@ payload = {
     "coordinate": "-6.8890653,109.1689806",
     "max_person": 10,
     "min_person": 1,
-    "note": "nisi",
+    "note": "in",
     "includes": [
-        "soluta"
+        "minima"
     ],
     "excludes": [
-        "illo"
+        "vel"
     ],
     "facilities": [
-        "sed"
+        "ducimus"
     ],
     "terms": [
-        "dolorem"
+        "non"
     ],
     "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
     "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]"
 }
 headers = {
-  'Authorization': 'Bearer 5PbvZDa86436cVhkfEde1ga',
+  'Authorization': 'Bearer hcva1VgP45DEb6afZk38d6e',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1846,10 +1846,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-merchants-products"
-               value="Bearer 5PbvZDa86436cVhkfEde1ga"
+               value="Bearer hcva1VgP45DEb6afZk38d6e"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 5PbvZDa86436cVhkfEde1ga</code></p>
+<p>Example: <code>Bearer hcva1VgP45DEb6afZk38d6e</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2017,7 +2017,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Product thumbnail. Must be a file. Must be an image. Example: <code>/tmp/phpwe3J8W</code></p>
+<p>Product thumbnail. Must be a file. Must be an image. Example: <code>/tmp/phpmtsYB8</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -2069,10 +2069,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="note"                data-endpoint="POSTapi-v1-merchants-products"
-               value="nisi"
+               value="in"
                data-component="body">
     <br>
-<p>Example: <code>nisi</code></p>
+<p>Example: <code>in</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
@@ -2177,18 +2177,18 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/merchants/1/products" \
-    --header "Authorization: Bearer kDVc5ea8dv134Ehb6fP6gaZ" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products" \
+    --header "Authorization: Bearer 3cEVk8aDf5Zg64vb6h1aPde" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/merchants/1/products"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products"
 );
 
 const headers = {
-    "Authorization": "Bearer kDVc5ea8dv134Ehb6fP6gaZ",
+    "Authorization": "Bearer 3cEVk8aDf5Zg64vb6h1aPde",
     "Accept": "application/json",
 };
 
@@ -2200,12 +2200,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/merchants/1/products';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer kDVc5ea8dv134Ehb6fP6gaZ',
+            'Authorization' =&gt; 'Bearer 3cEVk8aDf5Zg64vb6h1aPde',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -2218,9 +2218,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/merchants/1/products'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products'
 headers = {
-  'Authorization': 'Bearer kDVc5ea8dv134Ehb6fP6gaZ',
+  'Authorization': 'Bearer 3cEVk8aDf5Zg64vb6h1aPde',
   'Accept': 'application/json'
 }
 
@@ -2240,7 +2240,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 47
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2640,10 +2640,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant--products"
-               value="Bearer kDVc5ea8dv134Ehb6fP6gaZ"
+               value="Bearer 3cEVk8aDf5Zg64vb6h1aPde"
                data-component="header">
     <br>
-<p>Example: <code>Bearer kDVc5ea8dv134Ehb6fP6gaZ</code></p>
+<p>Example: <code>Bearer 3cEVk8aDf5Zg64vb6h1aPde</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2687,13 +2687,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/cities" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/cities" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/cities"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/cities"
 );
 
 const headers = {
@@ -2708,7 +2708,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/cities';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/cities';
 $response = $client-&gt;get(
     $url,
     [
@@ -2725,7 +2725,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/cities'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/cities'
 headers = {
   'Accept': 'application/json'
 }
@@ -2746,7 +2746,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
+x-ratelimit-remaining: 52
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2979,13 +2979,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/provinces" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/provinces" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/provinces"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/provinces"
 );
 
 const headers = {
@@ -3000,7 +3000,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/provinces';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/provinces';
 $response = $client-&gt;get(
     $url,
     [
@@ -3017,7 +3017,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/provinces'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/provinces'
 headers = {
   'Accept': 'application/json'
 }
@@ -3038,7 +3038,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 51
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -3166,13 +3166,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/countries" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/countries" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/countries"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/countries"
 );
 
 const headers = {
@@ -3187,7 +3187,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/countries';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/countries';
 $response = $client-&gt;get(
     $url,
     [
@@ -3204,7 +3204,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/countries'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/countries'
 headers = {
   'Accept': 'application/json'
 }
@@ -3225,7 +3225,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
+x-ratelimit-remaining: 50
 vary: Origin
  </code></pre></details>         <pre>
 

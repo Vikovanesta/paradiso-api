@@ -273,4 +273,49 @@ class ProductTest extends TestCase
                     ->has('data.images', 2)
             );
     }
+    
+    public function test_delete_product_success() {
+        $user = User::where('id', 1)->first();
+
+        Product::create([
+            'merchant_id' => 1,
+            'product_sub_category_id' => 1,
+            'product_status_id' => 1,
+            'city_id' => 1,
+            'name' => 'Product name',
+            'description' => 'Product description',
+            'duration_type' => 'time',
+            'duration' => 3,
+            'start_date' => '2023-10-16',
+            'end_date' => '2023-10-18',
+            'price' => 100000,
+            'unit' => 'person',
+            'thumbnail' => 'Product thumbnail',
+            'address' => 'Product address',
+            'coordinate' => 'Product coordinate',
+            'max_person' => 10,
+            'min_person' => 1,
+        ]);
+
+        $productId = $user->merchant->products->last()->id;
+
+        $response = $this->actingAs($user)->delete('/api/v1/products/' . $productId);
+        
+        $response->assertStatus(200)
+            ->assertJson(fn (AssertableJson $json) =>
+                $json->has('message')
+                    ->where('message', 'Product deleted successfully')
+                    ->etc()
+            );
+
+        $response = $this->actingAs($user)->get('/api/v1/products/' . $productId);
+
+        $response->assertStatus(404)
+            ->assertJson(fn (AssertableJson $json) =>
+                $json->has('message')
+                    ->where('message', 'Endpoint not found')
+                    ->etc()
+            );
+
+    }
 }

@@ -22,10 +22,13 @@ use Illuminate\Support\Facades\Route;
 // Public routes
 Route::group(['prefix' => 'v1'], function () {
     Route::post('/auth', [AuthController::class,'login'])->name('login');
+
     Route::get('/cities', [CityController::class,'index'])->name('city.index');
     Route::get('/provinces', [ProvinceController::class,'index'])->name('province.index');
     Route::get('/countries', [CountryController::class,'index'])->name('country.index');
+
     Route::get('/products/{product}', [ProductController::class,'show'])->name('product.show');
+    
     Route::get('/postman', function () {
         return response()->file(storage_path('/app/scribe/collection.json'));
     })->name('scribe.postman');
@@ -37,6 +40,9 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::get('/merchants/{merchant}', [MerchantController::class,'show'])->name('merchant.show');
     Route::get('/merchants/{merchant}/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
     Route::put('/merchants', [MerchantController::class,'update'])->name('merchant.update');
+
+    Route::delete('/products/{product}', [ProductController::class,'destroy'])->name('product.destroy');
+
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
 

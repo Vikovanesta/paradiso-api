@@ -42,7 +42,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          x-ratelimit-remaining: '49'
           vary: Origin
         description: null
         custom: []
@@ -66,7 +66,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer 5PbvZDa86436cVhkfEde1ga'
+      Authorization: 'Bearer hcva1VgP45DEb6afZk38d6e'
       Accept: application/json
       Content-Type: multipart/form-data
     urlParameters: []
@@ -216,7 +216,7 @@ endpoints:
         name: note
         description: ''
         required: false
-        example: nisi
+        example: in
         type: string
         enumValues: []
         custom: []
@@ -225,7 +225,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - soluta
+          - minima
         type: 'string[]'
         enumValues: []
         custom: []
@@ -234,7 +234,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - illo
+          - vel
         type: 'string[]'
         enumValues: []
         custom: []
@@ -243,7 +243,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - sed
+          - ducimus
         type: 'string[]'
         enumValues: []
         custom: []
@@ -252,7 +252,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - dolorem
+          - non
         type: 'string[]'
         enumValues: []
         custom: []
@@ -298,15 +298,15 @@ endpoints:
       coordinate: '-6.8890653,109.1689806'
       max_person: 10
       min_person: 1
-      note: nisi
+      note: in
       includes:
-        - soluta
+        - minima
       excludes:
-        - illo
+        - vel
       facilities:
-        - sed
+        - ducimus
       terms:
-        - dolorem
+        - non
       faqs: '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'
       schedules: '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'
     fileParameters:
@@ -318,7 +318,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5PbvZDa86436cVhkfEde1ga'
+      - 'Bearer hcva1VgP45DEb6afZk38d6e'
     controller: null
     method: null
     route: null
@@ -337,7 +337,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer kDVc5ea8dv134Ehb6fP6gaZ'
+      Authorization: 'Bearer 3cEVk8aDf5Zg64vb6h1aPde'
       Accept: application/json
     urlParameters:
       merchant:
@@ -363,7 +363,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
+          x-ratelimit-remaining: '47'
           vary: Origin
         description: null
         custom: []
@@ -371,7 +371,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kDVc5ea8dv134Ehb6fP6gaZ'
+      - 'Bearer 3cEVk8aDf5Zg64vb6h1aPde'
     controller: null
     method: null
     route: null
