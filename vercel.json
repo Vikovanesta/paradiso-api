@@ -7,7 +7,7 @@
     ],
     "routes": [
         {
-            "src": "/api/(css|js|vendor|assets|build)/(.*)",
+            "src": "/api/(css|js|vendor|assets|build|storage)/(.*)",
             "dest": "public/$1/$2"
         },
         {

@@ -21,12 +21,12 @@ endpoints:
         name: fallbackPlaceholder
         description: ''
         required: true
-        example: eDa
+        example: '<MKX@M'
         type: string
         enumValues: []
         custom: []
     cleanUrlParameters:
-      fallbackPlaceholder: eDa
+      fallbackPlaceholder: '<MKX@M'
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

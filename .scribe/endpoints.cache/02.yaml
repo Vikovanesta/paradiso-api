@@ -37,7 +37,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":null,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-10-25T06:18:21.000000Z","updated_at":"2023-10-25T06:18:21.000000Z","sub_category":{"id":1,"name":"architecto","icon":"https:\/\/via.placeholder.com\/640x480.png\/00ccdd?text=voluptatem","product_category":{"id":1,"name":"commodi","icon":"https:\/\/via.placeholder.com\/640x480.png\/00ee55?text=ut"}},"merchant":{"id":1,"name":"merchant","logo":"http:\/\/127.0.0.1:8000\/storage\/merchants\/logo\/0aslMh1MtGrxY3AwN7cHnIcDjcT91sjkhdBZ02KS.jpg","is_highlight":0,"notes":"consequatur","created_at":"2023-10-25T06:18:21.000000Z","updated_at":"2023-10-30T14:12:01.000000Z"},"status":{"id":1,"name":"draft","color":"PapayaWhip","icon":"https:\/\/via.placeholder.com\/640x480.png\/CCCCCC"},"schedules":[{"id":1,"date":"16\/10\/2023","title":"day 1","schedule_days":[{"id":1,"start_time":"08:00","end_time":"10:00","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."},{"id":2,"start_time":"13:00","end_time":"14:00","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."}]}],"reviews":[{"id":1,"review":"revieww","rating":5,"user":{"id":1,"name":"merchant","user_level":3,"email":"merchant@mail.com","phone":"081234567890","status":1,"created_at":"2023-10-25T06:18:21.000000Z","updated_at":"2023-10-25T06:18:21.000000Z"}}],"include_excludes":[{"id":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_include":1},{"id":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_include":0}],"facilities":[{"id":2,"name":"parkir","icon":"https:\/\/via.placeholder.com\/640x480.png\/00bbdd?text=minus"},{"id":3,"name":"ac","icon":"https:\/\/via.placeholder.com\/640x480.png\/00cccc?text=eum"}],"faqs":[{"id":1,"question":"question1","answer":"answer1","is_global":0},{"id":2,"question":"question2","answer":"answer2","is_global":0}],"terms":[{"id":1,"term":"term1","is_global":0},{"id":2,"term":"term2","is_global":0}],"images":[{"id":1,"image":"https:\/\/picsum.photos\/360\/360"},{"id":2,"image":"https:\/\/picsum.photos\/360\/360"}]}}'
+        content: '{"status":true,"message":"Product retrieved successfully","data":{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":null,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-11-01T16:53:40.000000Z","updated_at":"2023-11-01T16:53:40.000000Z","sub_category":{"id":1,"name":"at","icon":"https:\/\/via.placeholder.com\/640x480.png\/002277?text=voluptatem","product_category":{"id":1,"name":"perferendis","icon":"https:\/\/via.placeholder.com\/640x480.png\/007799?text=qui"}},"merchant":{"id":1,"name":"merchant","logo":"https:\/\/picsum.photos\/100\/100","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-11-01T16:53:40.000000Z","updated_at":"2023-11-01T16:53:40.000000Z"},"status":{"id":1,"name":"draft","color":"Violet","icon":"https:\/\/via.placeholder.com\/640x480.png\/CCCCCC"},"schedules":[{"id":1,"date":"16\/10\/2023","title":"day 1","schedule_days":[{"id":1,"start_time":"08:00","end_time":"10:00","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."},{"id":2,"start_time":"13:00","end_time":"14:00","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."}]}],"reviews":[{"id":1,"review":"revieww","rating":5,"user":{"id":1,"name":"merchant","user_level":3,"email":"merchant@mail.com","phone":"081234567890","status":1,"created_at":"2023-11-01T16:53:40.000000Z","updated_at":"2023-11-01T16:53:40.000000Z"}}],"include_excludes":[{"id":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_include":1},{"id":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_include":0}],"facilities":[{"id":2,"name":"parkir","icon":"https:\/\/via.placeholder.com\/640x480.png\/00bb77?text=possimus"},{"id":3,"name":"ac","icon":"https:\/\/via.placeholder.com\/640x480.png\/0055dd?text=laudantium"}],"faqs":[{"id":1,"question":"question1","answer":"answer1","is_global":0},{"id":2,"question":"question2","answer":"answer2","is_global":0}],"terms":[{"id":1,"term":"term1","is_global":0},{"id":2,"term":"term2","is_global":0}],"images":[{"id":1,"image":"https:\/\/picsum.photos\/360\/360"},{"id":2,"image":"https:\/\/picsum.photos\/360\/360"}]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -48,6 +48,277 @@ endpoints:
         custom: []
     responseFields: []
     auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/merchants/products
+    metadata:
+      groupName: Product
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create new product.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 5PbvZDa86436cVhkfEde1ga'
+      Accept: application/json
+      Content-Type: multipart/form-data
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      product_sub_category_id:
+        name: product_sub_category_id
+        description: 'Product sub category id.'
+        required: true
+        example: 1
+        type: string
+        enumValues: []
+        custom: []
+      city_id:
+        name: city_id
+        description: 'City id.'
+        required: true
+        example: 1
+        type: string
+        enumValues: []
+        custom: []
+      product_status_id:
+        name: product_status_id
+        description: 'Product status id.'
+        required: true
+        example: 1
+        type: string
+        enumValues: []
+        custom: []
+      name:
+        name: name
+        description: 'Product name.'
+        required: true
+        example: 'Product name'
+        type: string
+        enumValues: []
+        custom: []
+      description:
+        name: description
+        description: 'Product description.'
+        required: false
+        example: 'Product description'
+        type: string
+        enumValues: []
+        custom: []
+      duration_type:
+        name: duration_type
+        description: 'Product duration type. This field is required when <code>duration</code> is present.'
+        required: false
+        example: time
+        type: string
+        enumValues:
+          - time
+          - date
+        custom: []
+      duration:
+        name: duration
+        description: 'Product duration.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        custom: []
+      start_date:
+        name: start_date
+        description: 'Product start date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2023-10-14'
+        type: string
+        enumValues: []
+        custom: []
+      end_date:
+        name: end_date
+        description: 'Product end date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>.'
+        required: true
+        example: '2023-10-17'
+        type: string
+        enumValues: []
+        custom: []
+      price:
+        name: price
+        description: 'Product price.'
+        required: true
+        example: 100000
+        type: integer
+        enumValues: []
+        custom: []
+      unit:
+        name: unit
+        description: 'Product unit.'
+        required: true
+        example: 'per pack'
+        type: string
+        enumValues: []
+        custom: []
+      discount:
+        name: discount
+        description: 'Product discount.'
+        required: false
+        example: 0
+        type: integer
+        enumValues: []
+        custom: []
+      thumbnail:
+        name: thumbnail
+        description: 'Product thumbnail. Must be a file. Must be an image.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        custom: []
+      address:
+        name: address
+        description: 'Product address.'
+        required: true
+        example: 'Jl. Test'
+        type: string
+        enumValues: []
+        custom: []
+      coordinate:
+        name: coordinate
+        description: 'Product coordinate.'
+        required: true
+        example: '-6.8890653,109.1689806'
+        type: string
+        enumValues: []
+        custom: []
+      max_person:
+        name: max_person
+        description: 'Product max person.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        custom: []
+      min_person:
+        name: min_person
+        description: 'Product min person.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        custom: []
+      note:
+        name: note
+        description: ''
+        required: false
+        example: nisi
+        type: string
+        enumValues: []
+        custom: []
+      includes:
+        name: includes
+        description: ''
+        required: false
+        example:
+          - soluta
+        type: 'string[]'
+        enumValues: []
+        custom: []
+      excludes:
+        name: excludes
+        description: ''
+        required: false
+        example:
+          - illo
+        type: 'string[]'
+        enumValues: []
+        custom: []
+      facilities:
+        name: facilities
+        description: ''
+        required: false
+        example:
+          - sed
+        type: 'string[]'
+        enumValues: []
+        custom: []
+      terms:
+        name: terms
+        description: ''
+        required: false
+        example:
+          - dolorem
+        type: 'string[]'
+        enumValues: []
+        custom: []
+      faqs:
+        name: faqs
+        description: 'Product faqs. Must be a valid JSON string.'
+        required: false
+        example: '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'
+        type: string
+        enumValues: []
+        custom: []
+      schedules:
+        name: schedules
+        description: 'Product schedules. Must be a valid JSON string.'
+        required: false
+        example: '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'
+        type: string
+        enumValues: []
+        custom: []
+      images:
+        name: images
+        description: 'Must be a file. Must be an image.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      product_sub_category_id: 1
+      city_id: 1
+      product_status_id: 1
+      name: 'Product name'
+      description: 'Product description'
+      duration_type: time
+      duration: 3
+      start_date: '2023-10-14'
+      end_date: '2023-10-17'
+      price: 100000
+      unit: 'per pack'
+      discount: 0
+      address: 'Jl. Test'
+      coordinate: '-6.8890653,109.1689806'
+      max_person: 10
+      min_person: 1
+      note: nisi
+      includes:
+        - soluta
+      excludes:
+        - illo
+      facilities:
+        - sed
+      terms:
+        - dolorem
+      faqs: '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'
+      schedules: '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'
+    fileParameters:
+      thumbnail: null
+      images:
+        - null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5PbvZDa86436cVhkfEde1ga'
     controller: null
     method: null
     route: null
@@ -66,7 +337,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer gdV84a3DEb66P15keZvhcfa'
+      Authorization: 'Bearer kDVc5ea8dv134Ehb6fP6gaZ'
       Accept: application/json
     urlParameters:
       merchant:
@@ -87,7 +358,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":null,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-10-25T06:18:21.000000Z","updated_at":"2023-10-25T06:18:21.000000Z"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products","per_page":15,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":null,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-11-01T16:53:40.000000Z","updated_at":"2023-11-01T16:53:40.000000Z"},{"id":6,"name":"product 2","description":"Lorem Ipsum","duration":2,"start_date":"16\/07\/2023","end_date":"18\/07\/2023","price":9000000,"unit":"per pack","discount":null,"thumbnail":"http:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/h5JnvF6cxfOIWIBV5BzDyIELt3c1HaDIJIKFim2Z.jpg","address":"Address product","coordinate":"-6.8890653,109.1689806","max_person":10,"min_person":2,"note":null,"is_published":0,"created_at":"2023-11-02T01:52:42.000000Z","updated_at":"2023-11-02T01:52:42.000000Z"},{"id":7,"name":"product 3","description":"Lorem Ipsum","duration":2,"start_date":"16\/07\/2023","end_date":"18\/07\/2023","price":9000000,"unit":"per pack","discount":0,"thumbnail":"http:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/eVdSCsDjKoLyZnoZ1i4Roj0STrmY6GU7gqJeIeq6.jpg","address":"Address product","coordinate":"-6.8890653,109.1689806","max_person":10,"min_person":2,"note":null,"is_published":0,"created_at":"2023-11-02T01:56:51.000000Z","updated_at":"2023-11-02T01:56:51.000000Z"},{"id":8,"name":"product 4","description":"Lorem Ipsum","duration":2,"start_date":"16\/07\/2023","end_date":"18\/07\/2023","price":9000000,"unit":"per pack","discount":0,"thumbnail":"http:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/tOhOTbXzWbf5CUGni38lzYoCqZrZMUScdit1QM7a.jpg","address":"Address product","coordinate":"-6.8890653,109.1689806","max_person":10,"min_person":2,"note":null,"is_published":0,"created_at":"2023-11-02T02:03:51.000000Z","updated_at":"2023-11-02T02:03:51.000000Z"},{"id":9,"name":"product 5","description":"Lorem Ipsum","duration":2,"start_date":"16\/07\/2023","end_date":"18\/07\/2023","price":9000000,"unit":"per pack","discount":0,"thumbnail":"http:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/02GoH379w26t5o8nKupUQ5QIPHFINp4aOcUL6fHZ.jpg","address":"Address product","coordinate":"-6.8890653,109.1689806","max_person":10,"min_person":2,"note":null,"is_published":0,"created_at":"2023-11-02T02:04:33.000000Z","updated_at":"2023-11-02T02:04:33.000000Z"},{"id":10,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/sPVWUM2c5Sb4dIhULgqMV12L2EmRRaJvbxVctPuQ.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:12:00.000000Z","updated_at":"2023-11-02T03:12:00.000000Z"},{"id":11,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/RAYf7yVoJOVEi2Mm5Z0UMkh6XuaOffSjjIDXPPIz.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:17:04.000000Z","updated_at":"2023-11-02T03:17:04.000000Z"},{"id":12,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/50lk2M4P02xTN8iQ8F23I9f7Bc0XE88aovwt4pUj.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:17:42.000000Z","updated_at":"2023-11-02T03:17:42.000000Z"},{"id":13,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/EweO0sw9qEc5bLgc4KilODZ1HY0XhWoCGCI7vfkg.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:18:20.000000Z","updated_at":"2023-11-02T03:18:20.000000Z"},{"id":14,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/W6AsHkIEj0Lij32LQFFGZ3OelWrTaP1JGYsgcirg.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:18:31.000000Z","updated_at":"2023-11-02T03:18:31.000000Z"},{"id":15,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/JdCknGMdefcg9KRnNJYPHAGp0aQ1eqjyRfJMJumf.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:18:49.000000Z","updated_at":"2023-11-02T03:18:49.000000Z"},{"id":16,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/Z9ngY1gO0WUi4y9P4ViaFwz7fOJLjwmwlDJiIUJm.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:19:07.000000Z","updated_at":"2023-11-02T03:19:07.000000Z"},{"id":17,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/KMuCzhoXzSvgAAzix0YIjuGjzVq3ZX2x6kYP1gJm.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:19:18.000000Z","updated_at":"2023-11-02T03:19:18.000000Z"},{"id":18,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/ZEJEAdURnipAYYjO8sw87KvRHtCVWYfkaUWntdkJ.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:19:43.000000Z","updated_at":"2023-11-02T03:19:43.000000Z"},{"id":19,"name":"Product name","description":"Product description","duration":3,"start_date":"16\/10\/2023","end_date":"18\/10\/2023","price":100000,"unit":"person","discount":0,"thumbnail":"https:\/\/127.0.0.1:8000\/storage\/products\/thumbnail\/DUhL7L5OnUKNuoxSapdhzd4LueTn0kf4FQpxfTTw.png","address":"Product address","coordinate":"Product coordinate","max_person":10,"min_person":1,"note":null,"is_published":0,"created_at":"2023-11-02T03:19:55.000000Z","updated_at":"2023-11-02T03:19:55.000000Z"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=2","prev":null,"next":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=1","label":"1","active":true},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=2","label":"2","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products","per_page":15,"to":15,"total":25}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -100,7 +371,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gdV84a3DEb66P15keZvhcfa'
+      - 'Bearer kDVc5ea8dv134Ehb6fP6gaZ'
     controller: null
     method: null
     route: null

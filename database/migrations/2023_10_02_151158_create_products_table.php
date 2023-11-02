@@ -1,4 +1,4 @@
-
+    
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -14,26 +14,26 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('merchant_id')->nullable();
+            $table->foreignId('merchant_id');
             $table->foreignId('user_id')->nullable();   // admin_id
             $table->foreignId('product_sub_category_id');
-            $table->tinyInteger('product_status_id')->nullable();
-            $table->foreignId('city_id')->nullable();
+            $table->tinyInteger('product_status_id');
+            $table->foreignId('city_id');
             $table->string('name');
-            $table->text('description');
+            $table->text('description')->nullable()->default('No description');
             $table->integer('duration');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->integer('price');
             $table->string('unit');
-            $table->integer('discount')->nullable();
-            $table->string('thumbnail');
+            $table->integer('discount')->nullable()->default(0);
+            $table->string('thumbnail')->nullable();
             $table->string('address');
             $table->string('coordinate');
-            $table->integer('max_person');
-            $table->integer('min_person');
-            $table->text('note');
-            $table->boolean('is_published');
+            $table->integer('max_person')->nullable();
+            $table->integer('min_person')->nullable();
+            $table->text('note')->nullable();
+            $table->boolean('is_published')->default(false);
             $table->timestamps();
         });
     }

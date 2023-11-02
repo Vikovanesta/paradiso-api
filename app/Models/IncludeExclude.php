@@ -11,8 +11,8 @@ class IncludeExclude extends Model
 
     protected $fillable=[
         'product_id',
-        'include',
-        'exclude',
+        'description',
+        'is_include',
     ];
 
     public function product()

@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/api/v1', function () {
     return view('scribe.index');
 })->name('api.v1.docs');
+
+Route::get('/api/sanctum/csrf-cookie', function () {
+    return redirect('/sanctum/csrf-cookie');
+});

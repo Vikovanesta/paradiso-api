@@ -37,7 +37,7 @@ class Merchant extends Model
     {
         return $this->belongsTo(MerchantLevel::class);
     }
-    public function product()
+    public function products()
     {
         return $this->hasMany(Product::class);
     }

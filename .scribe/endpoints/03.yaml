@@ -15,7 +15,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer kPvVc8ea6fEaZ3156bdDhg4'
+      Authorization: 'Bearer 1gc84bEaP5dkve3h6VDfa6Z'
       Accept: application/json
     urlParameters:
       merchant_id:
@@ -36,7 +36,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"merchant","logo":"http:\/\/127.0.0.1:8000\/storage\/merchants\/logo\/0aslMh1MtGrxY3AwN7cHnIcDjcT91sjkhdBZ02KS.jpg","is_highlight":0,"notes":"consequatur","created_at":"2023-10-25T06:18:21.000000Z","updated_at":"2023-10-30T14:12:01.000000Z","profile":{"id":1,"description":"Sed qui molestias id eos.","address":"Jl. Mangga Seartus","banner":"http:\/\/127.0.0.1:8000\/storage\/merchants\/banner\/Z8kVN6IFMxTp36ppcInrj3FUkD6Qlgdx1aIKeWfd.jpg","ktp_number":"0987654321123456","npwp_number":"123456789012345","siup_number":"1234567890123","ktp":"https:\/\/picsum.photos\/500\/250","npwp":null,"siup":null},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/00aa55?text=voluptas"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00eeaa?text=sit","color":"#3e26ec"}}}'
+        content: '{"data":{"id":1,"name":"merchant","logo":"https:\/\/picsum.photos\/100\/100","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-11-01T16:53:40.000000Z","updated_at":"2023-11-01T16:53:40.000000Z","profile":{"id":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","address":"Jl. Test","banner":"https:\/\/picsum.photos\/500\/250","ktp_number":"1234567890123456","npwp_number":null,"siup_number":null,"ktp":"https:\/\/picsum.photos\/500\/250","npwp":null,"siup":null},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/00bb33?text=quisquam"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00cc77?text=ut","color":"#7e34e5"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -49,7 +49,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kPvVc8ea6fEaZ3156bdDhg4'
+      - 'Bearer 1gc84bEaP5dkve3h6VDfa6Z'
     controller: null
     method: null
     route: null
@@ -68,7 +68,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer bvefagcZEV5a664Pk8Ddh13'
+      Authorization: 'Bearer b15DvfaPahd8g6V43kEce6Z'
       Accept: application/json
       Content-Type: multipart/form-data
     urlParameters: []
@@ -80,7 +80,7 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: ullam
+        example: sit
         type: string
         enumValues: []
         custom: []
@@ -96,7 +96,7 @@ endpoints:
         name: address
         description: ''
         required: false
-        example: et
+        example: delectus
         type: string
         enumValues: []
         custom: []
@@ -112,7 +112,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Exercitationem nobis consequuntur qui ab et dolores.'
+        example: 'Minima reiciendis laborum et distinctio eos.'
         type: string
         enumValues: []
         custom: []
@@ -120,7 +120,7 @@ endpoints:
         name: notes
         description: ''
         required: false
-        example: unde
+        example: facere
         type: string
         enumValues: []
         custom: []
@@ -128,7 +128,7 @@ endpoints:
         name: ktp_number
         description: 'Must be 16 characters.'
         required: false
-        example: lcrbyzlorcbsnuct
+        example: eioeejyvjttqczsz
         type: string
         enumValues: []
         custom: []
@@ -136,7 +136,7 @@ endpoints:
         name: npwp_number
         description: 'Must be 15 characters.'
         required: false
-        example: cjpukwjwwuydfdo
+        example: yrkpkyqalbjrylz
         type: string
         enumValues: []
         custom: []
@@ -144,18 +144,18 @@ endpoints:
         name: siup_number
         description: 'Must be 13 characters.'
         required: false
-        example: qbrgbvfanyalh
+        example: bowbshfuzhvyt
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      name: ullam
-      address: et
-      description: 'Exercitationem nobis consequuntur qui ab et dolores.'
-      notes: unde
-      ktp_number: lcrbyzlorcbsnuct
-      npwp_number: cjpukwjwwuydfdo
-      siup_number: qbrgbvfanyalh
+      name: sit
+      address: delectus
+      description: 'Minima reiciendis laborum et distinctio eos.'
+      notes: facere
+      ktp_number: eioeejyvjttqczsz
+      npwp_number: yrkpkyqalbjrylz
+      siup_number: bowbshfuzhvyt
     fileParameters:
       logo: null
       banner: null
@@ -164,7 +164,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bvefagcZEV5a664Pk8Ddh13'
+      - 'Bearer b15DvfaPahd8g6V43kEce6Z'
     controller: null
     method: null
     route: null

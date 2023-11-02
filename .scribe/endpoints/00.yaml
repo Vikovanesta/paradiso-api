@@ -78,7 +78,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer aVabdPfe65kv1ED6cg3Zh48'
+      Authorization: 'Bearer e16643PcD5b8dfVvagahEkZ'
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -101,7 +101,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aVabdPfe65kv1ED6cg3Zh48'
+      - 'Bearer e16643PcD5b8dfVvagahEkZ'
     controller: null
     method: null
     route: null

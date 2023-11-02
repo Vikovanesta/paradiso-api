@@ -2,7 +2,9 @@
 
 use App\Models\User;
 use Knuckles\Scribe\Extracting\Strategies;
-// dd(env('SCRIBE_AUTH_KEY'));
+
+$url = env('APP_URL');
+// $url = 'https://paradiso-api-vikovanesta.vercel.app/api';
 
 return [
 
@@ -22,8 +24,7 @@ return [
      * The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url') at generation time.
      * If you're using `laravel` type, you can set this to a dynamic string, like '{{ config("app.tenant_url") }}' to get a dynamic base URL.
      */
-    'base_url' => env('APP_URL'),
-    // 'base_url' => 'https://paradiso-api-vikovanesta.vercel.app',
+    'base_url' => $url,
 
     /*
      * Tell Scribe what routes to generate documentation for.
@@ -67,7 +68,8 @@ return [
              */
             'exclude' => [
                 // '/health', 'admin.*'
-                'api.v1.docs'
+                'api.v1.docs',
+                'api/sanctum/csrf-cookie',
             ],
 
             /*
@@ -197,7 +199,7 @@ return [
          * The base URL for the API tester to use (for example, you can set this to your staging URL).
          * Leave as null to use the current app URL when generating (config("app.url")).
          */
-        'base_url' => null,
+        'base_url' => $url,
 
         /**
          * Fetch a CSRF token before each request, and add it as an X-XSRF-TOKEN header. Needed if you're using Laravel Sanctum.

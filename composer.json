@@ -52,6 +52,8 @@
             "@php -v",
             "npm -v",
             "npm install && npm run build",
+            "@php artisan optimize:clear",
+            "@php artisan config:cache",
             "@php artisan storage:link"
         ]
     },

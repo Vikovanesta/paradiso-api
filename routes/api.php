@@ -33,6 +33,7 @@ Route::group(['prefix' => 'v1'], function () {
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
+    Route::post('/merchants/products', [ProductController::class,'store'])->name('product.store');
     Route::get('/merchants/{merchant}', [MerchantController::class,'show'])->name('merchant.show');
     Route::get('/merchants/{merchant}/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
     Route::put('/merchants', [MerchantController::class,'update'])->name('merchant.update');

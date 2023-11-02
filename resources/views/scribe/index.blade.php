@@ -114,6 +114,9 @@
                                                     <li class="tocify-item level-2" data-unique="product-GETapi-v1-products--product_id-">
                                 <a href="#product-GETapi-v1-products--product_id-">Get product details.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="product-POSTapi-v1-merchants-products">
+                                <a href="#product-POSTapi-v1-merchants-products">Create new product.</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="product-GETapi-v1-merchants--merchant--products">
                                 <a href="#product-GETapi-v1-merchants--merchant--products">Get all products from a merchant.</a>
                             </li>
@@ -143,7 +146,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: October 30, 2023</li>
+        <li>Last updated: November 2, 2023</li>
     </ul>
 </div>
 
@@ -377,7 +380,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/logout" \
-    --header "Authorization: Bearer aVabdPfe65kv1ED6cg3Zh48" \
+    --header "Authorization: Bearer e16643PcD5b8dfVvagahEkZ" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -387,7 +390,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer aVabdPfe65kv1ED6cg3Zh48",
+    "Authorization": "Bearer e16643PcD5b8dfVvagahEkZ",
     "Accept": "application/json",
 };
 
@@ -404,7 +407,7 @@ $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer aVabdPfe65kv1ED6cg3Zh48',
+            'Authorization' =&gt; 'Bearer e16643PcD5b8dfVvagahEkZ',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -419,7 +422,7 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/logout'
 headers = {
-  'Authorization': 'Bearer aVabdPfe65kv1ED6cg3Zh48',
+  'Authorization': 'Bearer e16643PcD5b8dfVvagahEkZ',
   'Accept': 'application/json'
 }
 
@@ -492,10 +495,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-logout"
-               value="Bearer aVabdPfe65kv1ED6cg3Zh48"
+               value="Bearer e16643PcD5b8dfVvagahEkZ"
                data-component="header">
     <br>
-<p>Example: <code>Bearer aVabdPfe65kv1ED6cg3Zh48</code></p>
+<p>Example: <code>Bearer e16643PcD5b8dfVvagahEkZ</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -527,13 +530,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/eDa" \
+    --get "http://127.0.0.1:8000/api/&amp;lt;MKX@M" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/eDa"
+    "http://127.0.0.1:8000/api/&amp;lt;MKX@M"
 );
 
 const headers = {
@@ -548,7 +551,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/eDa';
+$url = 'http://127.0.0.1:8000/api/&lt;MKX@M';
 $response = $client-&gt;get(
     $url,
     [
@@ -565,7 +568,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/eDa'
+url = 'http://127.0.0.1:8000/api/&amp;lt;MKX@M'
 headers = {
   'Accept': 'application/json'
 }
@@ -660,10 +663,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="eDa"
+               value="<MKX@M"
                data-component="url">
     <br>
-<p>Example: <code>eDa</code></p>
+<p>Example: <code>&lt;MKX@M</code></p>
             </div>
                     </form>
 
@@ -686,7 +689,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/merchants/1" \
-    --header "Authorization: Bearer kPvVc8ea6fEaZ3156bdDhg4" \
+    --header "Authorization: Bearer 1gc84bEaP5dkve3h6VDfa6Z" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -696,7 +699,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer kPvVc8ea6fEaZ3156bdDhg4",
+    "Authorization": "Bearer 1gc84bEaP5dkve3h6VDfa6Z",
     "Accept": "application/json",
 };
 
@@ -713,7 +716,7 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer kPvVc8ea6fEaZ3156bdDhg4',
+            'Authorization' =&gt; 'Bearer 1gc84bEaP5dkve3h6VDfa6Z',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -728,7 +731,7 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/merchants/1'
 headers = {
-  'Authorization': 'Bearer kPvVc8ea6fEaZ3156bdDhg4',
+  'Authorization': 'Bearer 1gc84bEaP5dkve3h6VDfa6Z',
   'Accept': 'application/json'
 }
 
@@ -756,19 +759,19 @@ vary: Origin
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;merchant&quot;,
-        &quot;logo&quot;: &quot;http://127.0.0.1:8000/storage/merchants/logo/0aslMh1MtGrxY3AwN7cHnIcDjcT91sjkhdBZ02KS.jpg&quot;,
+        &quot;logo&quot;: &quot;https://picsum.photos/100/100&quot;,
         &quot;is_highlight&quot;: 0,
-        &quot;notes&quot;: &quot;consequatur&quot;,
-        &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-30T14:12:01.000000Z&quot;,
+        &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+        &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
         &quot;profile&quot;: {
             &quot;id&quot;: 1,
-            &quot;description&quot;: &quot;Sed qui molestias id eos.&quot;,
-            &quot;address&quot;: &quot;Jl. Mangga Seartus&quot;,
-            &quot;banner&quot;: &quot;http://127.0.0.1:8000/storage/merchants/banner/Z8kVN6IFMxTp36ppcInrj3FUkD6Qlgdx1aIKeWfd.jpg&quot;,
-            &quot;ktp_number&quot;: &quot;0987654321123456&quot;,
-            &quot;npwp_number&quot;: &quot;123456789012345&quot;,
-            &quot;siup_number&quot;: &quot;1234567890123&quot;,
+            &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+            &quot;address&quot;: &quot;Jl. Test&quot;,
+            &quot;banner&quot;: &quot;https://picsum.photos/500/250&quot;,
+            &quot;ktp_number&quot;: &quot;1234567890123456&quot;,
+            &quot;npwp_number&quot;: null,
+            &quot;siup_number&quot;: null,
             &quot;ktp&quot;: &quot;https://picsum.photos/500/250&quot;,
             &quot;npwp&quot;: null,
             &quot;siup&quot;: null
@@ -776,13 +779,13 @@ vary: Origin
         &quot;level&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;standart&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00aa55?text=voluptas&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00bb33?text=quisquam&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;Accepted&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00eeaa?text=sit&quot;,
-            &quot;color&quot;: &quot;#3e26ec&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00cc77?text=ut&quot;,
+            &quot;color&quot;: &quot;#7e34e5&quot;
         }
     }
 }</code>
@@ -841,10 +844,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="Bearer kPvVc8ea6fEaZ3156bdDhg4"
+               value="Bearer 1gc84bEaP5dkve3h6VDfa6Z"
                data-component="header">
     <br>
-<p>Example: <code>Bearer kPvVc8ea6fEaZ3156bdDhg4</code></p>
+<p>Example: <code>Bearer 1gc84bEaP5dkve3h6VDfa6Z</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -886,18 +889,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/merchants" \
-    --header "Authorization: Bearer bvefagcZEV5a664Pk8Ddh13" \
+    --header "Authorization: Bearer b15DvfaPahd8g6V43kEce6Z" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
-    --form "name=ullam"\
-    --form "address=et"\
-    --form "description=Exercitationem nobis consequuntur qui ab et dolores."\
-    --form "notes=unde"\
-    --form "ktp_number=lcrbyzlorcbsnuct"\
-    --form "npwp_number=cjpukwjwwuydfdo"\
-    --form "siup_number=qbrgbvfanyalh"\
-    --form "logo=@/tmp/phpsi0Hq4" \
-    --form "banner=@/tmp/phpWAAzNZ" </code></pre></div>
+    --form "name=sit"\
+    --form "address=delectus"\
+    --form "description=Minima reiciendis laborum et distinctio eos."\
+    --form "notes=facere"\
+    --form "ktp_number=eioeejyvjttqczsz"\
+    --form "npwp_number=yrkpkyqalbjrylz"\
+    --form "siup_number=bowbshfuzhvyt"\
+    --form "logo=@/tmp/phpFGG9c3" \
+    --form "banner=@/tmp/phpGJH9JW" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -906,19 +909,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer bvefagcZEV5a664Pk8Ddh13",
+    "Authorization": "Bearer b15DvfaPahd8g6V43kEce6Z",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
 
 const body = new FormData();
-body.append('name', 'ullam');
-body.append('address', 'et');
-body.append('description', 'Exercitationem nobis consequuntur qui ab et dolores.');
-body.append('notes', 'unde');
-body.append('ktp_number', 'lcrbyzlorcbsnuct');
-body.append('npwp_number', 'cjpukwjwwuydfdo');
-body.append('siup_number', 'qbrgbvfanyalh');
+body.append('name', 'sit');
+body.append('address', 'delectus');
+body.append('description', 'Minima reiciendis laborum et distinctio eos.');
+body.append('notes', 'facere');
+body.append('ktp_number', 'eioeejyvjttqczsz');
+body.append('npwp_number', 'yrkpkyqalbjrylz');
+body.append('siup_number', 'bowbshfuzhvyt');
 body.append('logo', document.querySelector('input[name="logo"]').files[0]);
 body.append('banner', document.querySelector('input[name="banner"]').files[0]);
 
@@ -936,46 +939,46 @@ $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer bvefagcZEV5a664Pk8Ddh13',
+            'Authorization' =&gt; 'Bearer b15DvfaPahd8g6V43kEce6Z',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
         'multipart' =&gt; [
             [
                 'name' =&gt; 'name',
-                'contents' =&gt; 'ullam'
+                'contents' =&gt; 'sit'
             ],
             [
                 'name' =&gt; 'address',
-                'contents' =&gt; 'et'
+                'contents' =&gt; 'delectus'
             ],
             [
                 'name' =&gt; 'description',
-                'contents' =&gt; 'Exercitationem nobis consequuntur qui ab et dolores.'
+                'contents' =&gt; 'Minima reiciendis laborum et distinctio eos.'
             ],
             [
                 'name' =&gt; 'notes',
-                'contents' =&gt; 'unde'
+                'contents' =&gt; 'facere'
             ],
             [
                 'name' =&gt; 'ktp_number',
-                'contents' =&gt; 'lcrbyzlorcbsnuct'
+                'contents' =&gt; 'eioeejyvjttqczsz'
             ],
             [
                 'name' =&gt; 'npwp_number',
-                'contents' =&gt; 'cjpukwjwwuydfdo'
+                'contents' =&gt; 'yrkpkyqalbjrylz'
             ],
             [
                 'name' =&gt; 'siup_number',
-                'contents' =&gt; 'qbrgbvfanyalh'
+                'contents' =&gt; 'bowbshfuzhvyt'
             ],
             [
                 'name' =&gt; 'logo',
-                'contents' =&gt; fopen('/tmp/phpsi0Hq4', 'r')
+                'contents' =&gt; fopen('/tmp/phpFGG9c3', 'r')
             ],
             [
                 'name' =&gt; 'banner',
-                'contents' =&gt; fopen('/tmp/phpWAAzNZ', 'r')
+                'contents' =&gt; fopen('/tmp/phpGJH9JW', 'r')
             ],
         ],
     ]
@@ -990,26 +993,26 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/merchants'
 files = {
-  'name': (None, 'ullam'),
-  'address': (None, 'et'),
-  'description': (None, 'Exercitationem nobis consequuntur qui ab et dolores.'),
-  'notes': (None, 'unde'),
-  'ktp_number': (None, 'lcrbyzlorcbsnuct'),
-  'npwp_number': (None, 'cjpukwjwwuydfdo'),
-  'siup_number': (None, 'qbrgbvfanyalh'),
-  'logo': open('/tmp/phpsi0Hq4', 'rb'),
-  'banner': open('/tmp/phpWAAzNZ', 'rb')}
+  'name': (None, 'sit'),
+  'address': (None, 'delectus'),
+  'description': (None, 'Minima reiciendis laborum et distinctio eos.'),
+  'notes': (None, 'facere'),
+  'ktp_number': (None, 'eioeejyvjttqczsz'),
+  'npwp_number': (None, 'yrkpkyqalbjrylz'),
+  'siup_number': (None, 'bowbshfuzhvyt'),
+  'logo': open('/tmp/phpFGG9c3', 'rb'),
+  'banner': open('/tmp/phpGJH9JW', 'rb')}
 payload = {
-    "name": "ullam",
-    "address": "et",
-    "description": "Exercitationem nobis consequuntur qui ab et dolores.",
-    "notes": "unde",
-    "ktp_number": "lcrbyzlorcbsnuct",
-    "npwp_number": "cjpukwjwwuydfdo",
-    "siup_number": "qbrgbvfanyalh"
+    "name": "sit",
+    "address": "delectus",
+    "description": "Minima reiciendis laborum et distinctio eos.",
+    "notes": "facere",
+    "ktp_number": "eioeejyvjttqczsz",
+    "npwp_number": "yrkpkyqalbjrylz",
+    "siup_number": "bowbshfuzhvyt"
 }
 headers = {
-  'Authorization': 'Bearer bvefagcZEV5a664Pk8Ddh13',
+  'Authorization': 'Bearer b15DvfaPahd8g6V43kEce6Z',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1074,10 +1077,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-merchants"
-               value="Bearer bvefagcZEV5a664Pk8Ddh13"
+               value="Bearer b15DvfaPahd8g6V43kEce6Z"
                data-component="header">
     <br>
-<p>Example: <code>Bearer bvefagcZEV5a664Pk8Ddh13</code></p>
+<p>Example: <code>Bearer b15DvfaPahd8g6V43kEce6Z</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1108,10 +1111,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-merchants"
-               value="ullam"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>ullam</code></p>
+<p>Example: <code>sit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>logo</code></b>&nbsp;&nbsp;
@@ -1122,7 +1125,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpsi0Hq4</code></p>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpFGG9c3</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -1130,10 +1133,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-merchants"
-               value="et"
+               value="delectus"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>delectus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>banner</code></b>&nbsp;&nbsp;
@@ -1144,7 +1147,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpWAAzNZ</code></p>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpGJH9JW</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1152,10 +1155,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-merchants"
-               value="Exercitationem nobis consequuntur qui ab et dolores."
+               value="Minima reiciendis laborum et distinctio eos."
                data-component="body">
     <br>
-<p>Example: <code>Exercitationem nobis consequuntur qui ab et dolores.</code></p>
+<p>Example: <code>Minima reiciendis laborum et distinctio eos.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -1163,10 +1166,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="PUTapi-v1-merchants"
-               value="unde"
+               value="facere"
                data-component="body">
     <br>
-<p>Example: <code>unde</code></p>
+<p>Example: <code>facere</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ktp_number</code></b>&nbsp;&nbsp;
@@ -1174,10 +1177,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ktp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="lcrbyzlorcbsnuct"
+               value="eioeejyvjttqczsz"
                data-component="body">
     <br>
-<p>Must be 16 characters. Example: <code>lcrbyzlorcbsnuct</code></p>
+<p>Must be 16 characters. Example: <code>eioeejyvjttqczsz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>npwp_number</code></b>&nbsp;&nbsp;
@@ -1185,10 +1188,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="npwp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="cjpukwjwwuydfdo"
+               value="yrkpkyqalbjrylz"
                data-component="body">
     <br>
-<p>Must be 15 characters. Example: <code>cjpukwjwwuydfdo</code></p>
+<p>Must be 15 characters. Example: <code>yrkpkyqalbjrylz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>siup_number</code></b>&nbsp;&nbsp;
@@ -1196,10 +1199,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="siup_number"                data-endpoint="PUTapi-v1-merchants"
-               value="qbrgbvfanyalh"
+               value="bowbshfuzhvyt"
                data-component="body">
     <br>
-<p>Must be 13 characters. Example: <code>qbrgbvfanyalh</code></p>
+<p>Must be 13 characters. Example: <code>bowbshfuzhvyt</code></p>
         </div>
         </form>
 
@@ -1284,6 +1287,8 @@ vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Product retrieved successfully&quot;,
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;product&quot;,
@@ -1301,31 +1306,31 @@ vary: Origin
         &quot;min_person&quot;: 1,
         &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
         &quot;is_published&quot;: 0,
-        &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
         &quot;sub_category&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;architecto&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ccdd?text=voluptatem&quot;,
+            &quot;name&quot;: &quot;at&quot;,
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/002277?text=voluptatem&quot;,
             &quot;product_category&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;commodi&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ee55?text=ut&quot;
+                &quot;name&quot;: &quot;perferendis&quot;,
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/007799?text=qui&quot;
             }
         },
         &quot;merchant&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;merchant&quot;,
-            &quot;logo&quot;: &quot;http://127.0.0.1:8000/storage/merchants/logo/0aslMh1MtGrxY3AwN7cHnIcDjcT91sjkhdBZ02KS.jpg&quot;,
+            &quot;logo&quot;: &quot;https://picsum.photos/100/100&quot;,
             &quot;is_highlight&quot;: 0,
-            &quot;notes&quot;: &quot;consequatur&quot;,
-            &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-10-30T14:12:01.000000Z&quot;
+            &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+            &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;draft&quot;,
-            &quot;color&quot;: &quot;PapayaWhip&quot;,
+            &quot;color&quot;: &quot;Violet&quot;,
             &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/CCCCCC&quot;
         },
         &quot;schedules&quot;: [
@@ -1361,8 +1366,8 @@ vary: Origin
                     &quot;email&quot;: &quot;merchant@mail.com&quot;,
                     &quot;phone&quot;: &quot;081234567890&quot;,
                     &quot;status&quot;: 1,
-                    &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;
                 }
             }
         ],
@@ -1382,12 +1387,12 @@ vary: Origin
             {
                 &quot;id&quot;: 2,
                 &quot;name&quot;: &quot;parkir&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00bbdd?text=minus&quot;
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00bb77?text=possimus&quot;
             },
             {
                 &quot;id&quot;: 3,
                 &quot;name&quot;: &quot;ac&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00cccc?text=eum&quot;
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0055dd?text=laudantium&quot;
             }
         ],
         &quot;faqs&quot;: [
@@ -1502,6 +1507,662 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
+                    <h2 id="product-POSTapi-v1-merchants-products">Create new product.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-merchants-products">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/v1/merchants/products" \
+    --header "Authorization: Bearer 5PbvZDa86436cVhkfEde1ga" \
+    --header "Accept: application/json" \
+    --header "Content-Type: multipart/form-data" \
+    --form "product_sub_category_id=1"\
+    --form "city_id=1"\
+    --form "product_status_id=1"\
+    --form "name=Product name"\
+    --form "description=Product description"\
+    --form "duration_type=time"\
+    --form "duration=3"\
+    --form "start_date=2023-10-14"\
+    --form "end_date=2023-10-17"\
+    --form "price=100000"\
+    --form "unit=per pack"\
+    --form "discount=0"\
+    --form "address=Jl. Test"\
+    --form "coordinate=-6.8890653,109.1689806"\
+    --form "max_person=10"\
+    --form "min_person=1"\
+    --form "note=nisi"\
+    --form "includes[]=soluta"\
+    --form "excludes[]=illo"\
+    --form "facilities[]=sed"\
+    --form "terms[]=dolorem"\
+    --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
+    --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
+    --form "thumbnail=@/tmp/phpwe3J8W" \
+    --form "images[]=@/tmp/phpZmOBAj" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/merchants/products"
+);
+
+const headers = {
+    "Authorization": "Bearer 5PbvZDa86436cVhkfEde1ga",
+    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+};
+
+const body = new FormData();
+body.append('product_sub_category_id', '1');
+body.append('city_id', '1');
+body.append('product_status_id', '1');
+body.append('name', 'Product name');
+body.append('description', 'Product description');
+body.append('duration_type', 'time');
+body.append('duration', '3');
+body.append('start_date', '2023-10-14');
+body.append('end_date', '2023-10-17');
+body.append('price', '100000');
+body.append('unit', 'per pack');
+body.append('discount', '0');
+body.append('address', 'Jl. Test');
+body.append('coordinate', '-6.8890653,109.1689806');
+body.append('max_person', '10');
+body.append('min_person', '1');
+body.append('note', 'nisi');
+body.append('includes[]', 'soluta');
+body.append('excludes[]', 'illo');
+body.append('facilities[]', 'sed');
+body.append('terms[]', 'dolorem');
+body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
+body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
+body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
+body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/v1/merchants/products';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer 5PbvZDa86436cVhkfEde1ga',
+            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+        ],
+        'multipart' =&gt; [
+            [
+                'name' =&gt; 'product_sub_category_id',
+                'contents' =&gt; '1'
+            ],
+            [
+                'name' =&gt; 'city_id',
+                'contents' =&gt; '1'
+            ],
+            [
+                'name' =&gt; 'product_status_id',
+                'contents' =&gt; '1'
+            ],
+            [
+                'name' =&gt; 'name',
+                'contents' =&gt; 'Product name'
+            ],
+            [
+                'name' =&gt; 'description',
+                'contents' =&gt; 'Product description'
+            ],
+            [
+                'name' =&gt; 'duration_type',
+                'contents' =&gt; 'time'
+            ],
+            [
+                'name' =&gt; 'duration',
+                'contents' =&gt; '3'
+            ],
+            [
+                'name' =&gt; 'start_date',
+                'contents' =&gt; '2023-10-14'
+            ],
+            [
+                'name' =&gt; 'end_date',
+                'contents' =&gt; '2023-10-17'
+            ],
+            [
+                'name' =&gt; 'price',
+                'contents' =&gt; '100000'
+            ],
+            [
+                'name' =&gt; 'unit',
+                'contents' =&gt; 'per pack'
+            ],
+            [
+                'name' =&gt; 'discount',
+                'contents' =&gt; '0'
+            ],
+            [
+                'name' =&gt; 'address',
+                'contents' =&gt; 'Jl. Test'
+            ],
+            [
+                'name' =&gt; 'coordinate',
+                'contents' =&gt; '-6.8890653,109.1689806'
+            ],
+            [
+                'name' =&gt; 'max_person',
+                'contents' =&gt; '10'
+            ],
+            [
+                'name' =&gt; 'min_person',
+                'contents' =&gt; '1'
+            ],
+            [
+                'name' =&gt; 'note',
+                'contents' =&gt; 'nisi'
+            ],
+            [
+                'name' =&gt; 'includes[]',
+                'contents' =&gt; 'soluta'
+            ],
+            [
+                'name' =&gt; 'excludes[]',
+                'contents' =&gt; 'illo'
+            ],
+            [
+                'name' =&gt; 'facilities[]',
+                'contents' =&gt; 'sed'
+            ],
+            [
+                'name' =&gt; 'terms[]',
+                'contents' =&gt; 'dolorem'
+            ],
+            [
+                'name' =&gt; 'faqs',
+                'contents' =&gt; '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'
+            ],
+            [
+                'name' =&gt; 'schedules',
+                'contents' =&gt; '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'
+            ],
+            [
+                'name' =&gt; 'thumbnail',
+                'contents' =&gt; fopen('/tmp/phpwe3J8W', 'r')
+            ],
+            [
+                'name' =&gt; 'images[]',
+                'contents' =&gt; fopen('/tmp/phpZmOBAj', 'r')
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/v1/merchants/products'
+files = {
+  'product_sub_category_id': (None, '1'),
+  'city_id': (None, '1'),
+  'product_status_id': (None, '1'),
+  'name': (None, 'Product name'),
+  'description': (None, 'Product description'),
+  'duration_type': (None, 'time'),
+  'duration': (None, '3'),
+  'start_date': (None, '2023-10-14'),
+  'end_date': (None, '2023-10-17'),
+  'price': (None, '100000'),
+  'unit': (None, 'per pack'),
+  'discount': (None, '0'),
+  'address': (None, 'Jl. Test'),
+  'coordinate': (None, '-6.8890653,109.1689806'),
+  'max_person': (None, '10'),
+  'min_person': (None, '1'),
+  'note': (None, 'nisi'),
+  'includes[]': (None, 'soluta'),
+  'excludes[]': (None, 'illo'),
+  'facilities[]': (None, 'sed'),
+  'terms[]': (None, 'dolorem'),
+  'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
+  'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
+  'thumbnail': open('/tmp/phpwe3J8W', 'rb'),
+  'images[]': open('/tmp/phpZmOBAj', 'rb')}
+payload = {
+    "product_sub_category_id": 1,
+    "city_id": 1,
+    "product_status_id": 1,
+    "name": "Product name",
+    "description": "Product description",
+    "duration_type": "time",
+    "duration": 3,
+    "start_date": "2023-10-14",
+    "end_date": "2023-10-17",
+    "price": 100000,
+    "unit": "per pack",
+    "discount": 0,
+    "address": "Jl. Test",
+    "coordinate": "-6.8890653,109.1689806",
+    "max_person": 10,
+    "min_person": 1,
+    "note": "nisi",
+    "includes": [
+        "soluta"
+    ],
+    "excludes": [
+        "illo"
+    ],
+    "facilities": [
+        "sed"
+    ],
+    "terms": [
+        "dolorem"
+    ],
+    "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
+    "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]"
+}
+headers = {
+  'Authorization': 'Bearer 5PbvZDa86436cVhkfEde1ga',
+  'Accept': 'application/json',
+  'Content-Type': 'multipart/form-data'
+}
+
+response = requests.request('POST', url, headers=headers, files=files)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-merchants-products">
+</span>
+<span id="execution-results-POSTapi-v1-merchants-products" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-merchants-products"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-merchants-products"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-merchants-products" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-merchants-products">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-merchants-products" data-method="POST"
+      data-path="api/v1/merchants/products"
+      data-authed="1"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-merchants-products', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-merchants-products"
+                    onclick="tryItOut('POSTapi-v1-merchants-products');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-merchants-products"
+                    onclick="cancelTryOut('POSTapi-v1-merchants-products');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-merchants-products"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/merchants/products</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-merchants-products"
+               value="Bearer 5PbvZDa86436cVhkfEde1ga"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 5PbvZDa86436cVhkfEde1ga</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-merchants-products"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-merchants-products"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>product_sub_category_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="product_sub_category_id"                data-endpoint="POSTapi-v1-merchants-products"
+               value="1"
+               data-component="body">
+    <br>
+<p>Product sub category id. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="city_id"                data-endpoint="POSTapi-v1-merchants-products"
+               value="1"
+               data-component="body">
+    <br>
+<p>City id. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>product_status_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="product_status_id"                data-endpoint="POSTapi-v1-merchants-products"
+               value="1"
+               data-component="body">
+    <br>
+<p>Product status id. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-v1-merchants-products"
+               value="Product name"
+               data-component="body">
+    <br>
+<p>Product name. Example: <code>Product name</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="POSTapi-v1-merchants-products"
+               value="Product description"
+               data-component="body">
+    <br>
+<p>Product description. Example: <code>Product description</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>duration_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="duration_type"                data-endpoint="POSTapi-v1-merchants-products"
+               value="time"
+               data-component="body">
+    <br>
+<p>Product duration type. This field is required when <code>duration</code> is present. Example: <code>time</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>time</code></li> <li><code>date</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>duration</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="duration"                data-endpoint="POSTapi-v1-merchants-products"
+               value="3"
+               data-component="body">
+    <br>
+<p>Product duration. Example: <code>3</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="start_date"                data-endpoint="POSTapi-v1-merchants-products"
+               value="2023-10-14"
+               data-component="body">
+    <br>
+<p>Product start date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2023-10-14</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="end_date"                data-endpoint="POSTapi-v1-merchants-products"
+               value="2023-10-17"
+               data-component="body">
+    <br>
+<p>Product end date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2023-10-17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="price"                data-endpoint="POSTapi-v1-merchants-products"
+               value="100000"
+               data-component="body">
+    <br>
+<p>Product price. Example: <code>100000</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="unit"                data-endpoint="POSTapi-v1-merchants-products"
+               value="per pack"
+               data-component="body">
+    <br>
+<p>Product unit. Example: <code>per pack</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>discount</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="discount"                data-endpoint="POSTapi-v1-merchants-products"
+               value="0"
+               data-component="body">
+    <br>
+<p>Product discount. Example: <code>0</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>thumbnail</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+                              name="thumbnail"                data-endpoint="POSTapi-v1-merchants-products"
+               value=""
+               data-component="body">
+    <br>
+<p>Product thumbnail. Must be a file. Must be an image. Example: <code>/tmp/phpwe3J8W</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="address"                data-endpoint="POSTapi-v1-merchants-products"
+               value="Jl. Test"
+               data-component="body">
+    <br>
+<p>Product address. Example: <code>Jl. Test</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>coordinate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="coordinate"                data-endpoint="POSTapi-v1-merchants-products"
+               value="-6.8890653,109.1689806"
+               data-component="body">
+    <br>
+<p>Product coordinate. Example: <code>-6.8890653,109.1689806</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>max_person</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="max_person"                data-endpoint="POSTapi-v1-merchants-products"
+               value="10"
+               data-component="body">
+    <br>
+<p>Product max person. Example: <code>10</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>min_person</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="min_person"                data-endpoint="POSTapi-v1-merchants-products"
+               value="1"
+               data-component="body">
+    <br>
+<p>Product min person. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>note</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="note"                data-endpoint="POSTapi-v1-merchants-products"
+               value="nisi"
+               data-component="body">
+    <br>
+<p>Example: <code>nisi</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="includes[0]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="includes[1]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>excludes</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="excludes[0]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="excludes[1]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>facilities</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="facilities[0]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="facilities[1]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>terms</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="terms[0]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="terms[1]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>faqs</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="faqs"                data-endpoint="POSTapi-v1-merchants-products"
+               value="[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"
+               data-component="body">
+    <br>
+<p>Product faqs. Must be a valid JSON string. Example: <code>[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>schedules</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="schedules"                data-endpoint="POSTapi-v1-merchants-products"
+               value="[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"
+               data-component="body">
+    <br>
+<p>Product schedules. Must be a valid JSON string. Example: <code>[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>file[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="images[0]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+        <input type="file" style="display: none"
+               name="images[1]"                data-endpoint="POSTapi-v1-merchants-products"
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image.</p>
+        </div>
+        </form>
+
                     <h2 id="product-GETapi-v1-merchants--merchant--products">Get all products from a merchant.</h2>
 
 <p>
@@ -1517,7 +2178,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/merchants/1/products" \
-    --header "Authorization: Bearer gdV84a3DEb66P15keZvhcfa" \
+    --header "Authorization: Bearer kDVc5ea8dv134Ehb6fP6gaZ" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -1527,7 +2188,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer gdV84a3DEb66P15keZvhcfa",
+    "Authorization": "Bearer kDVc5ea8dv134Ehb6fP6gaZ",
     "Accept": "application/json",
 };
 
@@ -1544,7 +2205,7 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer gdV84a3DEb66P15keZvhcfa',
+            'Authorization' =&gt; 'Bearer kDVc5ea8dv134Ehb6fP6gaZ',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1559,7 +2220,7 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/merchants/1/products'
 headers = {
-  'Authorization': 'Bearer gdV84a3DEb66P15keZvhcfa',
+  'Authorization': 'Bearer kDVc5ea8dv134Ehb6fP6gaZ',
   'Accept': 'application/json'
 }
 
@@ -1602,20 +2263,300 @@ vary: Origin
             &quot;min_person&quot;: 1,
             &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
             &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-10-25T06:18:21.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;product 2&quot;,
+            &quot;description&quot;: &quot;Lorem Ipsum&quot;,
+            &quot;duration&quot;: 2,
+            &quot;start_date&quot;: &quot;16/07/2023&quot;,
+            &quot;end_date&quot;: &quot;18/07/2023&quot;,
+            &quot;price&quot;: 9000000,
+            &quot;unit&quot;: &quot;per pack&quot;,
+            &quot;discount&quot;: null,
+            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/h5JnvF6cxfOIWIBV5BzDyIELt3c1HaDIJIKFim2Z.jpg&quot;,
+            &quot;address&quot;: &quot;Address product&quot;,
+            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 2,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T01:52:42.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T01:52:42.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;product 3&quot;,
+            &quot;description&quot;: &quot;Lorem Ipsum&quot;,
+            &quot;duration&quot;: 2,
+            &quot;start_date&quot;: &quot;16/07/2023&quot;,
+            &quot;end_date&quot;: &quot;18/07/2023&quot;,
+            &quot;price&quot;: 9000000,
+            &quot;unit&quot;: &quot;per pack&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/eVdSCsDjKoLyZnoZ1i4Roj0STrmY6GU7gqJeIeq6.jpg&quot;,
+            &quot;address&quot;: &quot;Address product&quot;,
+            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 2,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T01:56:51.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T01:56:51.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;product 4&quot;,
+            &quot;description&quot;: &quot;Lorem Ipsum&quot;,
+            &quot;duration&quot;: 2,
+            &quot;start_date&quot;: &quot;16/07/2023&quot;,
+            &quot;end_date&quot;: &quot;18/07/2023&quot;,
+            &quot;price&quot;: 9000000,
+            &quot;unit&quot;: &quot;per pack&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/tOhOTbXzWbf5CUGni38lzYoCqZrZMUScdit1QM7a.jpg&quot;,
+            &quot;address&quot;: &quot;Address product&quot;,
+            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 2,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T02:03:51.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T02:03:51.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;name&quot;: &quot;product 5&quot;,
+            &quot;description&quot;: &quot;Lorem Ipsum&quot;,
+            &quot;duration&quot;: 2,
+            &quot;start_date&quot;: &quot;16/07/2023&quot;,
+            &quot;end_date&quot;: &quot;18/07/2023&quot;,
+            &quot;price&quot;: 9000000,
+            &quot;unit&quot;: &quot;per pack&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/02GoH379w26t5o8nKupUQ5QIPHFINp4aOcUL6fHZ.jpg&quot;,
+            &quot;address&quot;: &quot;Address product&quot;,
+            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 2,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T02:04:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T02:04:33.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/sPVWUM2c5Sb4dIhULgqMV12L2EmRRaJvbxVctPuQ.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:12:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:12:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/RAYf7yVoJOVEi2Mm5Z0UMkh6XuaOffSjjIDXPPIz.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:17:04.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:17:04.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/50lk2M4P02xTN8iQ8F23I9f7Bc0XE88aovwt4pUj.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:17:42.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:17:42.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/EweO0sw9qEc5bLgc4KilODZ1HY0XhWoCGCI7vfkg.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:18:20.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:18:20.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 14,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/W6AsHkIEj0Lij32LQFFGZ3OelWrTaP1JGYsgcirg.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:18:31.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:18:31.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 15,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/JdCknGMdefcg9KRnNJYPHAGp0aQ1eqjyRfJMJumf.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:18:49.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:18:49.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 16,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/Z9ngY1gO0WUi4y9P4ViaFwz7fOJLjwmwlDJiIUJm.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:19:07.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:19:07.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 17,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/KMuCzhoXzSvgAAzix0YIjuGjzVq3ZX2x6kYP1gJm.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:19:18.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:19:18.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 18,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/ZEJEAdURnipAYYjO8sw87KvRHtCVWYfkaUWntdkJ.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:19:43.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:19:43.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 19,
+            &quot;name&quot;: &quot;Product name&quot;,
+            &quot;description&quot;: &quot;Product description&quot;,
+            &quot;duration&quot;: 3,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;18/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;person&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/DUhL7L5OnUKNuoxSapdhzd4LueTn0kf4FQpxfTTw.png&quot;,
+            &quot;address&quot;: &quot;Product address&quot;,
+            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:19:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-02T03:19:55.000000Z&quot;
         }
     ],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
-        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
+        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;,
         &quot;prev&quot;: null,
-        &quot;next&quot;: null
+        &quot;next&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
         &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
+        &quot;last_page&quot;: 2,
         &quot;links&quot;: [
             {
                 &quot;url&quot;: null,
@@ -1628,15 +2569,20 @@ vary: Origin
                 &quot;active&quot;: true
             },
             {
-                &quot;url&quot;: null,
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;,
+                &quot;label&quot;: &quot;2&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;,
                 &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
                 &quot;active&quot;: false
             }
         ],
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products&quot;,
         &quot;per_page&quot;: 15,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
+        &quot;to&quot;: 15,
+        &quot;total&quot;: 25
     }
 }</code>
  </pre>
@@ -1694,10 +2640,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant--products"
-               value="Bearer gdV84a3DEb66P15keZvhcfa"
+               value="Bearer kDVc5ea8dv134Ehb6fP6gaZ"
                data-component="header">
     <br>
-<p>Example: <code>Bearer gdV84a3DEb66P15keZvhcfa</code></p>
+<p>Example: <code>Bearer kDVc5ea8dv134Ehb6fP6gaZ</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1808,152 +2754,152 @@ vary: Origin
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Gislasonport&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aabb?text=beatae&quot;,
+            &quot;name&quot;: &quot;East Tevin&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/003322?text=architecto&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Lake Sigmund&quot;
+                &quot;name&quot;: &quot;West Wilson&quot;
             }
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Reichelview&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005522?text=mollitia&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;Port Theresaside&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00eecc?text=sunt&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Lake Sigmund&quot;
+                &quot;name&quot;: &quot;West Wilson&quot;
             }
         },
         {
             &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Colliermouth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ff55?text=aut&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;East Savannahfort&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0044cc?text=blanditiis&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Lake Sigmund&quot;
+                &quot;name&quot;: &quot;West Wilson&quot;
             }
         },
         {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Lake Alyce&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006688?text=deleniti&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;Earnestinetown&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00cc00?text=unde&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Toneyside&quot;
+                &quot;name&quot;: &quot;Lake Thadtown&quot;
             }
         },
         {
             &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Loisview&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066ee?text=dolores&quot;,
+            &quot;name&quot;: &quot;Evalynfurt&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bbff?text=omnis&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Toneyside&quot;
+                &quot;name&quot;: &quot;Lake Thadtown&quot;
             }
         },
         {
             &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Buckmouth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/002244?text=quia&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Langworthville&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ccee?text=nostrum&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Toneyside&quot;
+                &quot;name&quot;: &quot;Lake Thadtown&quot;
             }
         },
         {
             &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;West Tess&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/004400?text=tempore&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;South Kaelynstad&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0077ee?text=quae&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Boylefurt&quot;
+                &quot;name&quot;: &quot;Willowbury&quot;
             }
         },
         {
             &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;West Rudy&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bb55?text=alias&quot;,
+            &quot;name&quot;: &quot;Tevinport&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ee00?text=aut&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Boylefurt&quot;
+                &quot;name&quot;: &quot;Willowbury&quot;
             }
         },
         {
             &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;Kaylahton&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aa66?text=iure&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Fadelport&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/007755?text=illo&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Boylefurt&quot;
+                &quot;name&quot;: &quot;Willowbury&quot;
             }
         },
         {
             &quot;id&quot;: 10,
-            &quot;name&quot;: &quot;East Felipaville&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ccaa?text=quis&quot;,
+            &quot;name&quot;: &quot;Tomasaside&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/001133?text=quasi&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Ziemefurt&quot;
+                &quot;name&quot;: &quot;Leannonchester&quot;
             }
         },
         {
             &quot;id&quot;: 11,
-            &quot;name&quot;: &quot;Millietown&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0099cc?text=laboriosam&quot;,
+            &quot;name&quot;: &quot;Reynaland&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005500?text=ab&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Ziemefurt&quot;
+                &quot;name&quot;: &quot;Leannonchester&quot;
             }
         },
         {
             &quot;id&quot;: 12,
-            &quot;name&quot;: &quot;Derekfurt&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066ee?text=qui&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;New Elizabeth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066ff?text=voluptates&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Ziemefurt&quot;
+                &quot;name&quot;: &quot;Leannonchester&quot;
             }
         },
         {
             &quot;id&quot;: 13,
-            &quot;name&quot;: &quot;Okunevaview&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ddff?text=omnis&quot;,
+            &quot;name&quot;: &quot;Nikkohaven&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0044ff?text=ut&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Delmer&quot;
+                &quot;name&quot;: &quot;North Ismaelborough&quot;
             }
         },
         {
             &quot;id&quot;: 14,
-            &quot;name&quot;: &quot;Kleinton&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006699?text=et&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;North Selena&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066bb?text=atque&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Delmer&quot;
+                &quot;name&quot;: &quot;North Ismaelborough&quot;
             }
         },
         {
             &quot;id&quot;: 15,
-            &quot;name&quot;: &quot;Bogisichmouth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0022cc?text=voluptatibus&quot;,
+            &quot;name&quot;: &quot;South Kadechester&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/008833?text=reprehenderit&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Delmer&quot;
+                &quot;name&quot;: &quot;North Ismaelborough&quot;
             }
         }
     ]
@@ -2100,47 +3046,47 @@ vary: Origin
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Lake Sigmund&quot;,
+            &quot;name&quot;: &quot;West Wilson&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
+                &quot;name&quot;: &quot;Bhutan&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
             }
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Toneyside&quot;,
+            &quot;name&quot;: &quot;Lake Thadtown&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
+                &quot;name&quot;: &quot;Bhutan&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
             }
         },
         {
             &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Boylefurt&quot;,
+            &quot;name&quot;: &quot;Willowbury&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
+                &quot;name&quot;: &quot;Bhutan&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
             }
         },
         {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Ziemefurt&quot;,
+            &quot;name&quot;: &quot;Leannonchester&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
+                &quot;name&quot;: &quot;Bhutan&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
             }
         },
         {
             &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;North Delmer&quot;,
+            &quot;name&quot;: &quot;North Ismaelborough&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
+                &quot;name&quot;: &quot;Bhutan&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
             }
         }
     ]
@@ -2287,8 +3233,8 @@ vary: Origin
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Svalbard &amp; Jan Mayen Islands&quot;,
-            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=molestiae&quot;
+            &quot;name&quot;: &quot;Bhutan&quot;,
+            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
         }
     ]
 }</code>
