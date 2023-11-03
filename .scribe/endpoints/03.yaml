@@ -15,7 +15,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer 4d1D8VcZ36EheaPf6ka5vbg'
+      Authorization: 'Bearer 63gEhdeb1Dac5VP86Zvk4af'
       Accept: application/json
     urlParameters:
       merchant_id:
@@ -41,7 +41,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '48'
+          x-ratelimit-remaining: '55'
           vary: Origin
         description: null
         custom: []
@@ -49,7 +49,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4d1D8VcZ36EheaPf6ka5vbg'
+      - 'Bearer 63gEhdeb1Dac5VP86Zvk4af'
     controller: null
     method: null
     route: null
@@ -68,7 +68,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer 6D36a5fEa18cZPh4kedbVvg'
+      Authorization: 'Bearer Daf5kV36adeZc1v4hg6E8Pb'
       Accept: application/json
       Content-Type: multipart/form-data
     urlParameters: []
@@ -80,7 +80,7 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: aspernatur
+        example: est
         type: string
         enumValues: []
         custom: []
@@ -96,7 +96,7 @@ endpoints:
         name: address
         description: ''
         required: false
-        example: veritatis
+        example: ratione
         type: string
         enumValues: []
         custom: []
@@ -112,7 +112,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Officia aut rerum iure sint.'
+        example: 'Quo sit maiores ut a a explicabo tenetur nam.'
         type: string
         enumValues: []
         custom: []
@@ -120,7 +120,7 @@ endpoints:
         name: notes
         description: ''
         required: false
-        example: veniam
+        example: accusamus
         type: string
         enumValues: []
         custom: []
@@ -128,7 +128,7 @@ endpoints:
         name: ktp_number
         description: 'Must be 16 characters.'
         required: false
-        example: meuxrlqooafzdlrt
+        example: hrozfzsbwxqjzejg
         type: string
         enumValues: []
         custom: []
@@ -136,7 +136,7 @@ endpoints:
         name: npwp_number
         description: 'Must be 15 characters.'
         required: false
-        example: pnyblicznhmejmo
+        example: apthehahtlooihl
         type: string
         enumValues: []
         custom: []
@@ -144,18 +144,18 @@ endpoints:
         name: siup_number
         description: 'Must be 13 characters.'
         required: false
-        example: yzinmhpnavkbi
+        example: blidqriidtcjz
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      name: aspernatur
-      address: veritatis
-      description: 'Officia aut rerum iure sint.'
-      notes: veniam
-      ktp_number: meuxrlqooafzdlrt
-      npwp_number: pnyblicznhmejmo
-      siup_number: yzinmhpnavkbi
+      name: est
+      address: ratione
+      description: 'Quo sit maiores ut a a explicabo tenetur nam.'
+      notes: accusamus
+      ktp_number: hrozfzsbwxqjzejg
+      npwp_number: apthehahtlooihl
+      siup_number: blidqriidtcjz
     fileParameters:
       logo: null
       banner: null
@@ -164,7 +164,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6D36a5fEa18cZPh4kedbVvg'
+      - 'Bearer Daf5kV36adeZc1v4hg6E8Pb'
     controller: null
     method: null
     route: null

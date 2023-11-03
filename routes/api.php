@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::get('/merchants/{merchant}/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
     Route::put('/merchants', [MerchantController::class,'update'])->name('merchant.update');
 
+    Route::put('/products/{product}', [ProductController::class,'update'])->name('product.update');
     Route::delete('/products/{product}', [ProductController::class,'destroy'])->name('product.destroy');
 
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');

@@ -120,6 +120,12 @@
                                                                                 <li class="tocify-item level-2" data-unique="product-GETapi-v1-merchants--merchant--products">
                                 <a href="#product-GETapi-v1-merchants--merchant--products">Get all products from a merchant.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="product-PUTapi-v1-products--product_id-">
+                                <a href="#product-PUTapi-v1-products--product_id-">Update a product.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="product-DELETEapi-v1-products--product_id-">
+                                <a href="#product-DELETEapi-v1-products--product_id-">Delete a product.</a>
+                            </li>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-public" class="tocify-header">
@@ -146,7 +152,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 2, 2023</li>
+        <li>Last updated: November 3, 2023</li>
     </ul>
 </div>
 
@@ -380,7 +386,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout" \
-    --header "Authorization: Bearer db8V634PfDak5a6c1veEghZ" \
+    --header "Authorization: Bearer hca5bdkVfe34a8E6Pv6g1ZD" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -390,7 +396,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer db8V634PfDak5a6c1veEghZ",
+    "Authorization": "Bearer hca5bdkVfe34a8E6Pv6g1ZD",
     "Accept": "application/json",
 };
 
@@ -407,7 +413,7 @@ $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer db8V634PfDak5a6c1veEghZ',
+            'Authorization' =&gt; 'Bearer hca5bdkVfe34a8E6Pv6g1ZD',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -422,7 +428,7 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout'
 headers = {
-  'Authorization': 'Bearer db8V634PfDak5a6c1veEghZ',
+  'Authorization': 'Bearer hca5bdkVfe34a8E6Pv6g1ZD',
   'Accept': 'application/json'
 }
 
@@ -495,10 +501,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-logout"
-               value="Bearer db8V634PfDak5a6c1veEghZ"
+               value="Bearer hca5bdkVfe34a8E6Pv6g1ZD"
                data-component="header">
     <br>
-<p>Example: <code>Bearer db8V634PfDak5a6c1veEghZ</code></p>
+<p>Example: <code>Bearer hca5bdkVfe34a8E6Pv6g1ZD</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -530,13 +536,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/.sz=L" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/m1H" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/.sz=L"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/m1H"
 );
 
 const headers = {
@@ -551,7 +557,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/.sz=L';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/m1H';
 $response = $client-&gt;get(
     $url,
     [
@@ -568,7 +574,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/.sz=L'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/m1H'
 headers = {
   'Accept': 'application/json'
 }
@@ -589,7 +595,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 46
+x-ratelimit-remaining: 53
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -663,10 +669,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value=".sz=L"
+               value="m1H"
                data-component="url">
     <br>
-<p>Example: <code>.sz=L</code></p>
+<p>Example: <code>m1H</code></p>
             </div>
                     </form>
 
@@ -689,7 +695,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1" \
-    --header "Authorization: Bearer 4d1D8VcZ36EheaPf6ka5vbg" \
+    --header "Authorization: Bearer 63gEhdeb1Dac5VP86Zvk4af" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -699,7 +705,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer 4d1D8VcZ36EheaPf6ka5vbg",
+    "Authorization": "Bearer 63gEhdeb1Dac5VP86Zvk4af",
     "Accept": "application/json",
 };
 
@@ -716,7 +722,7 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 4d1D8VcZ36EheaPf6ka5vbg',
+            'Authorization' =&gt; 'Bearer 63gEhdeb1Dac5VP86Zvk4af',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -731,7 +737,7 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1'
 headers = {
-  'Authorization': 'Bearer 4d1D8VcZ36EheaPf6ka5vbg',
+  'Authorization': 'Bearer 63gEhdeb1Dac5VP86Zvk4af',
   'Accept': 'application/json'
 }
 
@@ -751,7 +757,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 48
+x-ratelimit-remaining: 55
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -844,10 +850,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="Bearer 4d1D8VcZ36EheaPf6ka5vbg"
+               value="Bearer 63gEhdeb1Dac5VP86Zvk4af"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 4d1D8VcZ36EheaPf6ka5vbg</code></p>
+<p>Example: <code>Bearer 63gEhdeb1Dac5VP86Zvk4af</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -889,18 +895,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants" \
-    --header "Authorization: Bearer 6D36a5fEa18cZPh4kedbVvg" \
+    --header "Authorization: Bearer Daf5kV36adeZc1v4hg6E8Pb" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
-    --form "name=aspernatur"\
-    --form "address=veritatis"\
-    --form "description=Officia aut rerum iure sint."\
-    --form "notes=veniam"\
-    --form "ktp_number=meuxrlqooafzdlrt"\
-    --form "npwp_number=pnyblicznhmejmo"\
-    --form "siup_number=yzinmhpnavkbi"\
-    --form "logo=@/tmp/phpWB45tK" \
-    --form "banner=@/tmp/phpnIQ1ti" </code></pre></div>
+    --form "name=est"\
+    --form "address=ratione"\
+    --form "description=Quo sit maiores ut a a explicabo tenetur nam."\
+    --form "notes=accusamus"\
+    --form "ktp_number=hrozfzsbwxqjzejg"\
+    --form "npwp_number=apthehahtlooihl"\
+    --form "siup_number=blidqriidtcjz"\
+    --form "logo=@/tmp/phpBdOnST" \
+    --form "banner=@/tmp/phpxIbMGp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -909,19 +915,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer 6D36a5fEa18cZPh4kedbVvg",
+    "Authorization": "Bearer Daf5kV36adeZc1v4hg6E8Pb",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
 
 const body = new FormData();
-body.append('name', 'aspernatur');
-body.append('address', 'veritatis');
-body.append('description', 'Officia aut rerum iure sint.');
-body.append('notes', 'veniam');
-body.append('ktp_number', 'meuxrlqooafzdlrt');
-body.append('npwp_number', 'pnyblicznhmejmo');
-body.append('siup_number', 'yzinmhpnavkbi');
+body.append('name', 'est');
+body.append('address', 'ratione');
+body.append('description', 'Quo sit maiores ut a a explicabo tenetur nam.');
+body.append('notes', 'accusamus');
+body.append('ktp_number', 'hrozfzsbwxqjzejg');
+body.append('npwp_number', 'apthehahtlooihl');
+body.append('siup_number', 'blidqriidtcjz');
 body.append('logo', document.querySelector('input[name="logo"]').files[0]);
 body.append('banner', document.querySelector('input[name="banner"]').files[0]);
 
@@ -939,46 +945,46 @@ $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 6D36a5fEa18cZPh4kedbVvg',
+            'Authorization' =&gt; 'Bearer Daf5kV36adeZc1v4hg6E8Pb',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
         'multipart' =&gt; [
             [
                 'name' =&gt; 'name',
-                'contents' =&gt; 'aspernatur'
+                'contents' =&gt; 'est'
             ],
             [
                 'name' =&gt; 'address',
-                'contents' =&gt; 'veritatis'
+                'contents' =&gt; 'ratione'
             ],
             [
                 'name' =&gt; 'description',
-                'contents' =&gt; 'Officia aut rerum iure sint.'
+                'contents' =&gt; 'Quo sit maiores ut a a explicabo tenetur nam.'
             ],
             [
                 'name' =&gt; 'notes',
-                'contents' =&gt; 'veniam'
+                'contents' =&gt; 'accusamus'
             ],
             [
                 'name' =&gt; 'ktp_number',
-                'contents' =&gt; 'meuxrlqooafzdlrt'
+                'contents' =&gt; 'hrozfzsbwxqjzejg'
             ],
             [
                 'name' =&gt; 'npwp_number',
-                'contents' =&gt; 'pnyblicznhmejmo'
+                'contents' =&gt; 'apthehahtlooihl'
             ],
             [
                 'name' =&gt; 'siup_number',
-                'contents' =&gt; 'yzinmhpnavkbi'
+                'contents' =&gt; 'blidqriidtcjz'
             ],
             [
                 'name' =&gt; 'logo',
-                'contents' =&gt; fopen('/tmp/phpWB45tK', 'r')
+                'contents' =&gt; fopen('/tmp/phpBdOnST', 'r')
             ],
             [
                 'name' =&gt; 'banner',
-                'contents' =&gt; fopen('/tmp/phpnIQ1ti', 'r')
+                'contents' =&gt; fopen('/tmp/phpxIbMGp', 'r')
             ],
         ],
     ]
@@ -993,26 +999,26 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants'
 files = {
-  'name': (None, 'aspernatur'),
-  'address': (None, 'veritatis'),
-  'description': (None, 'Officia aut rerum iure sint.'),
-  'notes': (None, 'veniam'),
-  'ktp_number': (None, 'meuxrlqooafzdlrt'),
-  'npwp_number': (None, 'pnyblicznhmejmo'),
-  'siup_number': (None, 'yzinmhpnavkbi'),
-  'logo': open('/tmp/phpWB45tK', 'rb'),
-  'banner': open('/tmp/phpnIQ1ti', 'rb')}
+  'name': (None, 'est'),
+  'address': (None, 'ratione'),
+  'description': (None, 'Quo sit maiores ut a a explicabo tenetur nam.'),
+  'notes': (None, 'accusamus'),
+  'ktp_number': (None, 'hrozfzsbwxqjzejg'),
+  'npwp_number': (None, 'apthehahtlooihl'),
+  'siup_number': (None, 'blidqriidtcjz'),
+  'logo': open('/tmp/phpBdOnST', 'rb'),
+  'banner': open('/tmp/phpxIbMGp', 'rb')}
 payload = {
-    "name": "aspernatur",
-    "address": "veritatis",
-    "description": "Officia aut rerum iure sint.",
-    "notes": "veniam",
-    "ktp_number": "meuxrlqooafzdlrt",
-    "npwp_number": "pnyblicznhmejmo",
-    "siup_number": "yzinmhpnavkbi"
+    "name": "est",
+    "address": "ratione",
+    "description": "Quo sit maiores ut a a explicabo tenetur nam.",
+    "notes": "accusamus",
+    "ktp_number": "hrozfzsbwxqjzejg",
+    "npwp_number": "apthehahtlooihl",
+    "siup_number": "blidqriidtcjz"
 }
 headers = {
-  'Authorization': 'Bearer 6D36a5fEa18cZPh4kedbVvg',
+  'Authorization': 'Bearer Daf5kV36adeZc1v4hg6E8Pb',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1077,10 +1083,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-merchants"
-               value="Bearer 6D36a5fEa18cZPh4kedbVvg"
+               value="Bearer Daf5kV36adeZc1v4hg6E8Pb"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 6D36a5fEa18cZPh4kedbVvg</code></p>
+<p>Example: <code>Bearer Daf5kV36adeZc1v4hg6E8Pb</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1111,10 +1117,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-merchants"
-               value="aspernatur"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>aspernatur</code></p>
+<p>Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>logo</code></b>&nbsp;&nbsp;
@@ -1125,7 +1131,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpWB45tK</code></p>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpBdOnST</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -1133,10 +1139,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-merchants"
-               value="veritatis"
+               value="ratione"
                data-component="body">
     <br>
-<p>Example: <code>veritatis</code></p>
+<p>Example: <code>ratione</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>banner</code></b>&nbsp;&nbsp;
@@ -1147,7 +1153,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpnIQ1ti</code></p>
+<p>Must be a file. Must be an image. Example: <code>/tmp/phpxIbMGp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1155,10 +1161,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-merchants"
-               value="Officia aut rerum iure sint."
+               value="Quo sit maiores ut a a explicabo tenetur nam."
                data-component="body">
     <br>
-<p>Example: <code>Officia aut rerum iure sint.</code></p>
+<p>Example: <code>Quo sit maiores ut a a explicabo tenetur nam.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -1166,10 +1172,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="PUTapi-v1-merchants"
-               value="veniam"
+               value="accusamus"
                data-component="body">
     <br>
-<p>Example: <code>veniam</code></p>
+<p>Example: <code>accusamus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ktp_number</code></b>&nbsp;&nbsp;
@@ -1177,10 +1183,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ktp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="meuxrlqooafzdlrt"
+               value="hrozfzsbwxqjzejg"
                data-component="body">
     <br>
-<p>Must be 16 characters. Example: <code>meuxrlqooafzdlrt</code></p>
+<p>Must be 16 characters. Example: <code>hrozfzsbwxqjzejg</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>npwp_number</code></b>&nbsp;&nbsp;
@@ -1188,10 +1194,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="npwp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="pnyblicznhmejmo"
+               value="apthehahtlooihl"
                data-component="body">
     <br>
-<p>Must be 15 characters. Example: <code>pnyblicznhmejmo</code></p>
+<p>Must be 15 characters. Example: <code>apthehahtlooihl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>siup_number</code></b>&nbsp;&nbsp;
@@ -1199,10 +1205,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="siup_number"                data-endpoint="PUTapi-v1-merchants"
-               value="yzinmhpnavkbi"
+               value="blidqriidtcjz"
                data-component="body">
     <br>
-<p>Must be 13 characters. Example: <code>yzinmhpnavkbi</code></p>
+<p>Must be 13 characters. Example: <code>blidqriidtcjz</code></p>
         </div>
         </form>
 
@@ -1282,7 +1288,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 49
+x-ratelimit-remaining: 56
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -1522,7 +1528,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products" \
-    --header "Authorization: Bearer hcva1VgP45DEb6afZk38d6e" \
+    --header "Authorization: Bearer 6k6P1ED83e4cdfVav5aZbhg" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
     --form "product_sub_category_id=1"\
@@ -1541,15 +1547,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "coordinate=-6.8890653,109.1689806"\
     --form "max_person=10"\
     --form "min_person=1"\
-    --form "note=in"\
-    --form "includes[]=minima"\
-    --form "excludes[]=vel"\
-    --form "facilities[]=ducimus"\
-    --form "terms[]=non"\
+    --form "note=ducimus"\
+    --form "includes[]=est"\
+    --form "excludes[]=ipsa"\
+    --form "facilities[]=dolore"\
+    --form "terms[]=vel"\
     --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
     --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
-    --form "thumbnail=@/tmp/phpmtsYB8" \
-    --form "images[]=@/tmp/phpC5wstp" </code></pre></div>
+    --form "thumbnail=@/tmp/phpSwo1NN" \
+    --form "images[]=@/tmp/php5BckA2" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1558,7 +1564,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer hcva1VgP45DEb6afZk38d6e",
+    "Authorization": "Bearer 6k6P1ED83e4cdfVav5aZbhg",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
@@ -1580,11 +1586,11 @@ body.append('address', 'Jl. Test');
 body.append('coordinate', '-6.8890653,109.1689806');
 body.append('max_person', '10');
 body.append('min_person', '1');
-body.append('note', 'in');
-body.append('includes[]', 'minima');
-body.append('excludes[]', 'vel');
-body.append('facilities[]', 'ducimus');
-body.append('terms[]', 'non');
+body.append('note', 'ducimus');
+body.append('includes[]', 'est');
+body.append('excludes[]', 'ipsa');
+body.append('facilities[]', 'dolore');
+body.append('terms[]', 'vel');
 body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
 body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
@@ -1604,7 +1610,7 @@ $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer hcva1VgP45DEb6afZk38d6e',
+            'Authorization' =&gt; 'Bearer 6k6P1ED83e4cdfVav5aZbhg',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
@@ -1675,23 +1681,23 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'note',
-                'contents' =&gt; 'in'
-            ],
-            [
-                'name' =&gt; 'includes[]',
-                'contents' =&gt; 'minima'
-            ],
-            [
-                'name' =&gt; 'excludes[]',
-                'contents' =&gt; 'vel'
-            ],
-            [
-                'name' =&gt; 'facilities[]',
                 'contents' =&gt; 'ducimus'
             ],
             [
+                'name' =&gt; 'includes[]',
+                'contents' =&gt; 'est'
+            ],
+            [
+                'name' =&gt; 'excludes[]',
+                'contents' =&gt; 'ipsa'
+            ],
+            [
+                'name' =&gt; 'facilities[]',
+                'contents' =&gt; 'dolore'
+            ],
+            [
                 'name' =&gt; 'terms[]',
-                'contents' =&gt; 'non'
+                'contents' =&gt; 'vel'
             ],
             [
                 'name' =&gt; 'faqs',
@@ -1703,11 +1709,11 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'thumbnail',
-                'contents' =&gt; fopen('/tmp/phpmtsYB8', 'r')
+                'contents' =&gt; fopen('/tmp/phpSwo1NN', 'r')
             ],
             [
                 'name' =&gt; 'images[]',
-                'contents' =&gt; fopen('/tmp/phpC5wstp', 'r')
+                'contents' =&gt; fopen('/tmp/php5BckA2', 'r')
             ],
         ],
     ]
@@ -1738,15 +1744,15 @@ files = {
   'coordinate': (None, '-6.8890653,109.1689806'),
   'max_person': (None, '10'),
   'min_person': (None, '1'),
-  'note': (None, 'in'),
-  'includes[]': (None, 'minima'),
-  'excludes[]': (None, 'vel'),
-  'facilities[]': (None, 'ducimus'),
-  'terms[]': (None, 'non'),
+  'note': (None, 'ducimus'),
+  'includes[]': (None, 'est'),
+  'excludes[]': (None, 'ipsa'),
+  'facilities[]': (None, 'dolore'),
+  'terms[]': (None, 'vel'),
   'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
   'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
-  'thumbnail': open('/tmp/phpmtsYB8', 'rb'),
-  'images[]': open('/tmp/phpC5wstp', 'rb')}
+  'thumbnail': open('/tmp/phpSwo1NN', 'rb'),
+  'images[]': open('/tmp/php5BckA2', 'rb')}
 payload = {
     "product_sub_category_id": 1,
     "city_id": 1,
@@ -1764,24 +1770,24 @@ payload = {
     "coordinate": "-6.8890653,109.1689806",
     "max_person": 10,
     "min_person": 1,
-    "note": "in",
+    "note": "ducimus",
     "includes": [
-        "minima"
+        "est"
     ],
     "excludes": [
-        "vel"
+        "ipsa"
     ],
     "facilities": [
-        "ducimus"
+        "dolore"
     ],
     "terms": [
-        "non"
+        "vel"
     ],
     "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
     "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]"
 }
 headers = {
-  'Authorization': 'Bearer hcva1VgP45DEb6afZk38d6e',
+  'Authorization': 'Bearer 6k6P1ED83e4cdfVav5aZbhg',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1846,10 +1852,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-merchants-products"
-               value="Bearer hcva1VgP45DEb6afZk38d6e"
+               value="Bearer 6k6P1ED83e4cdfVav5aZbhg"
                data-component="header">
     <br>
-<p>Example: <code>Bearer hcva1VgP45DEb6afZk38d6e</code></p>
+<p>Example: <code>Bearer 6k6P1ED83e4cdfVav5aZbhg</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2017,7 +2023,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Product thumbnail. Must be a file. Must be an image. Example: <code>/tmp/phpmtsYB8</code></p>
+<p>Product thumbnail. Must be a file. Must be an image. Example: <code>/tmp/phpSwo1NN</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -2069,10 +2075,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="note"                data-endpoint="POSTapi-v1-merchants-products"
-               value="in"
+               value="ducimus"
                data-component="body">
     <br>
-<p>Example: <code>in</code></p>
+<p>Example: <code>ducimus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
@@ -2178,7 +2184,7 @@ Must be one of:
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products" \
-    --header "Authorization: Bearer 3cEVk8aDf5Zg64vb6h1aPde" \
+    --header "Authorization: Bearer abDf86k5dgcvaVPe346EZ1h" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -2188,7 +2194,7 @@ Must be one of:
 );
 
 const headers = {
-    "Authorization": "Bearer 3cEVk8aDf5Zg64vb6h1aPde",
+    "Authorization": "Bearer abDf86k5dgcvaVPe346EZ1h",
     "Accept": "application/json",
 };
 
@@ -2205,7 +2211,7 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 3cEVk8aDf5Zg64vb6h1aPde',
+            'Authorization' =&gt; 'Bearer abDf86k5dgcvaVPe346EZ1h',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -2220,7 +2226,7 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products'
 headers = {
-  'Authorization': 'Bearer 3cEVk8aDf5Zg64vb6h1aPde',
+  'Authorization': 'Bearer abDf86k5dgcvaVPe346EZ1h',
   'Accept': 'application/json'
 }
 
@@ -2240,7 +2246,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 47
+x-ratelimit-remaining: 54
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2407,26 +2413,6 @@ vary: Origin
             &quot;updated_at&quot;: &quot;2023-11-02T03:17:42.000000Z&quot;
         },
         {
-            &quot;id&quot;: 13,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/EweO0sw9qEc5bLgc4KilODZ1HY0XhWoCGCI7vfkg.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:18:20.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:18:20.000000Z&quot;
-        },
-        {
             &quot;id&quot;: 14,
             &quot;name&quot;: &quot;Product name&quot;,
             &quot;description&quot;: &quot;Product description&quot;,
@@ -2545,6 +2531,26 @@ vary: Origin
             &quot;is_published&quot;: 0,
             &quot;created_at&quot;: &quot;2023-11-02T03:19:55.000000Z&quot;,
             &quot;updated_at&quot;: &quot;2023-11-02T03:19:55.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 21,
+            &quot;name&quot;: &quot;product X&quot;,
+            &quot;description&quot;: &quot;Lorem Ipsum whatt&quot;,
+            &quot;duration&quot;: 2,
+            &quot;start_date&quot;: &quot;16/07/2023&quot;,
+            &quot;end_date&quot;: &quot;18/07/2023&quot;,
+            &quot;price&quot;: 1000,
+            &quot;unit&quot;: &quot;per pack&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/3V3Z1AMZbLPDMuTmDiLeACVjcf3KL58g8l5jktZJ.jpg&quot;,
+            &quot;address&quot;: &quot;Address product&quot;,
+            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
+            &quot;max_person&quot;: 8,
+            &quot;min_person&quot;: 2,
+            &quot;note&quot;: null,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-02T03:20:42.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-03T16:23:54.000000Z&quot;
         }
     ],
     &quot;links&quot;: {
@@ -2582,7 +2588,7 @@ vary: Origin
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products&quot;,
         &quot;per_page&quot;: 15,
         &quot;to&quot;: 15,
-        &quot;total&quot;: 25
+        &quot;total&quot;: 28
     }
 }</code>
  </pre>
@@ -2640,10 +2646,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant--products"
-               value="Bearer 3cEVk8aDf5Zg64vb6h1aPde"
+               value="Bearer abDf86k5dgcvaVPe346EZ1h"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 3cEVk8aDf5Zg64vb6h1aPde</code></p>
+<p>Example: <code>Bearer abDf86k5dgcvaVPe346EZ1h</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2667,6 +2673,850 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="url">
     <br>
 <p>The merchant. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="product-PUTapi-v1-products--product_id-">Update a product.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-products--product_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1" \
+    --header "Authorization: Bearer 5agf8V6ZDPhE6e1d4av3bkc" \
+    --header "Accept: application/json" \
+    --header "Content-Type: multipart/form-data" \
+    --form "product_sub_category_id=1"\
+    --form "city_id=1"\
+    --form "product_status_id=1"\
+    --form "name=Product name"\
+    --form "description=Product description"\
+    --form "duration_type=time"\
+    --form "duration=3"\
+    --form "start_date=2023-10-14"\
+    --form "end_date=2023-10-17"\
+    --form "price=100000"\
+    --form "unit=per pack"\
+    --form "discount=0"\
+    --form "address=Jl. Test"\
+    --form "coordinate=-6.8890653,109.1689806"\
+    --form "max_person=10"\
+    --form "min_person=1"\
+    --form "note=sed"\
+    --form "includes[]=officiis"\
+    --form "excludes[]=et"\
+    --form "facilities[]=10"\
+    --form "terms[]=et"\
+    --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
+    --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
+    --form "saved_images[]=16"\
+    --form "thumbnail=@/tmp/phpYSKGtW" \
+    --form "images[]=@/tmp/phpBxbyfk" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1"
+);
+
+const headers = {
+    "Authorization": "Bearer 5agf8V6ZDPhE6e1d4av3bkc",
+    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+};
+
+const body = new FormData();
+body.append('product_sub_category_id', '1');
+body.append('city_id', '1');
+body.append('product_status_id', '1');
+body.append('name', 'Product name');
+body.append('description', 'Product description');
+body.append('duration_type', 'time');
+body.append('duration', '3');
+body.append('start_date', '2023-10-14');
+body.append('end_date', '2023-10-17');
+body.append('price', '100000');
+body.append('unit', 'per pack');
+body.append('discount', '0');
+body.append('address', 'Jl. Test');
+body.append('coordinate', '-6.8890653,109.1689806');
+body.append('max_person', '10');
+body.append('min_person', '1');
+body.append('note', 'sed');
+body.append('includes[]', 'officiis');
+body.append('excludes[]', 'et');
+body.append('facilities[]', '10');
+body.append('terms[]', 'et');
+body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
+body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
+body.append('saved_images[]', '16');
+body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
+body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer 5agf8V6ZDPhE6e1d4av3bkc',
+            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+        ],
+        'multipart' =&gt; [
+            [
+                'name' =&gt; 'product_sub_category_id',
+                'contents' =&gt; '1'
+            ],
+            [
+                'name' =&gt; 'city_id',
+                'contents' =&gt; '1'
+            ],
+            [
+                'name' =&gt; 'product_status_id',
+                'contents' =&gt; '1'
+            ],
+            [
+                'name' =&gt; 'name',
+                'contents' =&gt; 'Product name'
+            ],
+            [
+                'name' =&gt; 'description',
+                'contents' =&gt; 'Product description'
+            ],
+            [
+                'name' =&gt; 'duration_type',
+                'contents' =&gt; 'time'
+            ],
+            [
+                'name' =&gt; 'duration',
+                'contents' =&gt; '3'
+            ],
+            [
+                'name' =&gt; 'start_date',
+                'contents' =&gt; '2023-10-14'
+            ],
+            [
+                'name' =&gt; 'end_date',
+                'contents' =&gt; '2023-10-17'
+            ],
+            [
+                'name' =&gt; 'price',
+                'contents' =&gt; '100000'
+            ],
+            [
+                'name' =&gt; 'unit',
+                'contents' =&gt; 'per pack'
+            ],
+            [
+                'name' =&gt; 'discount',
+                'contents' =&gt; '0'
+            ],
+            [
+                'name' =&gt; 'address',
+                'contents' =&gt; 'Jl. Test'
+            ],
+            [
+                'name' =&gt; 'coordinate',
+                'contents' =&gt; '-6.8890653,109.1689806'
+            ],
+            [
+                'name' =&gt; 'max_person',
+                'contents' =&gt; '10'
+            ],
+            [
+                'name' =&gt; 'min_person',
+                'contents' =&gt; '1'
+            ],
+            [
+                'name' =&gt; 'note',
+                'contents' =&gt; 'sed'
+            ],
+            [
+                'name' =&gt; 'includes[]',
+                'contents' =&gt; 'officiis'
+            ],
+            [
+                'name' =&gt; 'excludes[]',
+                'contents' =&gt; 'et'
+            ],
+            [
+                'name' =&gt; 'facilities[]',
+                'contents' =&gt; '10'
+            ],
+            [
+                'name' =&gt; 'terms[]',
+                'contents' =&gt; 'et'
+            ],
+            [
+                'name' =&gt; 'faqs',
+                'contents' =&gt; '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'
+            ],
+            [
+                'name' =&gt; 'schedules',
+                'contents' =&gt; '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'
+            ],
+            [
+                'name' =&gt; 'saved_images[]',
+                'contents' =&gt; '16'
+            ],
+            [
+                'name' =&gt; 'thumbnail',
+                'contents' =&gt; fopen('/tmp/phpYSKGtW', 'r')
+            ],
+            [
+                'name' =&gt; 'images[]',
+                'contents' =&gt; fopen('/tmp/phpBxbyfk', 'r')
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1'
+files = {
+  'product_sub_category_id': (None, '1'),
+  'city_id': (None, '1'),
+  'product_status_id': (None, '1'),
+  'name': (None, 'Product name'),
+  'description': (None, 'Product description'),
+  'duration_type': (None, 'time'),
+  'duration': (None, '3'),
+  'start_date': (None, '2023-10-14'),
+  'end_date': (None, '2023-10-17'),
+  'price': (None, '100000'),
+  'unit': (None, 'per pack'),
+  'discount': (None, '0'),
+  'address': (None, 'Jl. Test'),
+  'coordinate': (None, '-6.8890653,109.1689806'),
+  'max_person': (None, '10'),
+  'min_person': (None, '1'),
+  'note': (None, 'sed'),
+  'includes[]': (None, 'officiis'),
+  'excludes[]': (None, 'et'),
+  'facilities[]': (None, '10'),
+  'terms[]': (None, 'et'),
+  'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
+  'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
+  'saved_images[]': (None, '16'),
+  'thumbnail': open('/tmp/phpYSKGtW', 'rb'),
+  'images[]': open('/tmp/phpBxbyfk', 'rb')}
+payload = {
+    "product_sub_category_id": 1,
+    "city_id": 1,
+    "product_status_id": 1,
+    "name": "Product name",
+    "description": "Product description",
+    "duration_type": "time",
+    "duration": 3,
+    "start_date": "2023-10-14",
+    "end_date": "2023-10-17",
+    "price": 100000,
+    "unit": "per pack",
+    "discount": 0,
+    "address": "Jl. Test",
+    "coordinate": "-6.8890653,109.1689806",
+    "max_person": 10,
+    "min_person": 1,
+    "note": "sed",
+    "includes": [
+        "officiis"
+    ],
+    "excludes": [
+        "et"
+    ],
+    "facilities": [
+        10
+    ],
+    "terms": [
+        "et"
+    ],
+    "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
+    "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]",
+    "saved_images": [
+        16
+    ]
+}
+headers = {
+  'Authorization': 'Bearer 5agf8V6ZDPhE6e1d4av3bkc',
+  'Accept': 'application/json',
+  'Content-Type': 'multipart/form-data'
+}
+
+response = requests.request('PUT', url, headers=headers, files=files)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-products--product_id-">
+</span>
+<span id="execution-results-PUTapi-v1-products--product_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-products--product_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-products--product_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-products--product_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-products--product_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-v1-products--product_id-" data-method="PUT"
+      data-path="api/v1/products/{product_id}"
+      data-authed="1"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-products--product_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-products--product_id-"
+                    onclick="tryItOut('PUTapi-v1-products--product_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-products--product_id-"
+                    onclick="cancelTryOut('PUTapi-v1-products--product_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-products--product_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/products/{product_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-products--product_id-"
+               value="Bearer 5agf8V6ZDPhE6e1d4av3bkc"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 5agf8V6ZDPhE6e1d4av3bkc</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>product_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="product_id"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the product. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>product_sub_category_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="product_sub_category_id"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>Product sub category id. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="city_id"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>City id. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>product_status_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="product_status_id"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>Product status id. Example: <code>1</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>1</code></li> <li><code>2</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="Product name"
+               data-component="body">
+    <br>
+<p>Product name. Example: <code>Product name</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="Product description"
+               data-component="body">
+    <br>
+<p>Product description. Example: <code>Product description</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>duration_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="duration_type"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="time"
+               data-component="body">
+    <br>
+<p>Product duration type. This field is required when <code>duration</code> is present. Example: <code>time</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>time</code></li> <li><code>date</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>duration</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="duration"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="3"
+               data-component="body">
+    <br>
+<p>Product duration. Example: <code>3</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="start_date"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="2023-10-14"
+               data-component="body">
+    <br>
+<p>Product start date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2023-10-14</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="end_date"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="2023-10-17"
+               data-component="body">
+    <br>
+<p>Product end date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>start_date</code>. Example: <code>2023-10-17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="price"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="100000"
+               data-component="body">
+    <br>
+<p>Product price. Must be at least 0. Example: <code>100000</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="unit"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="per pack"
+               data-component="body">
+    <br>
+<p>Product unit. Example: <code>per pack</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>discount</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="discount"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="0"
+               data-component="body">
+    <br>
+<p>Product discount. Example: <code>0</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>thumbnail</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="thumbnail"                data-endpoint="PUTapi-v1-products--product_id-"
+               value=""
+               data-component="body">
+    <br>
+<p>Product thumbnail. Must be a file. Must be an image. Example: <code>/tmp/phpYSKGtW</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="address"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="Jl. Test"
+               data-component="body">
+    <br>
+<p>Product address. Example: <code>Jl. Test</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>coordinate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="coordinate"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="-6.8890653,109.1689806"
+               data-component="body">
+    <br>
+<p>Product coordinate. Example: <code>-6.8890653,109.1689806</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>max_person</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="max_person"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="10"
+               data-component="body">
+    <br>
+<p>Product max person. Example: <code>10</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>min_person</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="min_person"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>Product min person. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>note</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="note"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="sed"
+               data-component="body">
+    <br>
+<p>Example: <code>sed</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="includes[0]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="includes[1]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>excludes</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="excludes[0]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="excludes[1]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>facilities</code></b>&nbsp;&nbsp;
+<small>integer[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="facilities[0]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+        <input type="number" style="display: none"
+               name="facilities[1]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>terms</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="terms[0]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="terms[1]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>faqs</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="faqs"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"
+               data-component="body">
+    <br>
+<p>Product faqs. Must be a valid JSON string. Example: <code>[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>schedules</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="schedules"                data-endpoint="PUTapi-v1-products--product_id-"
+               value="[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"
+               data-component="body">
+    <br>
+<p>Product schedules. Must be a valid JSON string. Example: <code>[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>file[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="images[0]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+        <input type="file" style="display: none"
+               name="images[1]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+    <br>
+<p>Must be a file. Must be an image.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>saved_images</code></b>&nbsp;&nbsp;
+<small>integer[]</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="saved_images[0]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+        <input type="number" style="display: none"
+               name="saved_images[1]"                data-endpoint="PUTapi-v1-products--product_id-"
+               data-component="body">
+    <br>
+
+        </div>
+        </form>
+
+                    <h2 id="product-DELETEapi-v1-products--product_id-">Delete a product.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-products--product_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1" \
+    --header "Authorization: Bearer abPc463D15VfghdEv6eZak8" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1"
+);
+
+const headers = {
+    "Authorization": "Bearer abPc463D15VfghdEv6eZak8",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer abPc463D15VfghdEv6eZak8',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1'
+headers = {
+  'Authorization': 'Bearer abPc463D15VfghdEv6eZak8',
+  'Accept': 'application/json'
+}
+
+response = requests.request('DELETE', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-products--product_id-">
+</span>
+<span id="execution-results-DELETEapi-v1-products--product_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-products--product_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-products--product_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-products--product_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-products--product_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-v1-products--product_id-" data-method="DELETE"
+      data-path="api/v1/products/{product_id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-products--product_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-products--product_id-"
+                    onclick="tryItOut('DELETEapi-v1-products--product_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-products--product_id-"
+                    onclick="cancelTryOut('DELETEapi-v1-products--product_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-products--product_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/products/{product_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-products--product_id-"
+               value="Bearer abPc463D15VfghdEv6eZak8"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer abPc463D15VfghdEv6eZak8</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-v1-products--product_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>product_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="product_id"                data-endpoint="DELETEapi-v1-products--product_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the product. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -2746,7 +3596,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 59
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -3038,7 +3888,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
+x-ratelimit-remaining: 58
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -3225,7 +4075,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 50
+x-ratelimit-remaining: 57
 vary: Origin
  </code></pre></details>         <pre>
 
