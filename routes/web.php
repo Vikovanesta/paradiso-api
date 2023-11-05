@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\FileController;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
+use App\Traits\MimeType;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +27,5 @@ Route::get('/api/v1', function () {
 Route::get('/api/sanctum/csrf-cookie', function () {
     return redirect('/sanctum/csrf-cookie');
 });
+
+Route::get('/img/{dir}/{fileName}', [FileController::class, 'showImage'])->where('dir', '(.*(?:%2F:)?.*)');

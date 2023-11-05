@@ -62,7 +62,7 @@ class MerchantController extends Controller
             'merchantStatus',
         )->find($merchant->id);
 
-        return new MerchantResource($merchant);
+        return $this->success(new MerchantResource($merchant), 'Merchant profile retrieved successfully');
     }
 
     /**
@@ -79,24 +79,26 @@ class MerchantController extends Controller
 
         $merchant = $request->user()->merchant;
 
-        if ($request->hasFile('logo')) {
-            $logo = $request->file('logo');
-            $logo->storeAs('public/merchants/logo', $logo->hashName());
-            $logo_url = url('/storage/merchants/logo/' . $logo->hashName());
+        if (isset($validated['logo'])) {
+            $logo = $validated['logo'];
+            $directory = 'merchants/logo/';
+            $logo->storeAs($directory, $logo->hashName(), 'google');
+            $logo_url = config('app.url') . '/img/' . $directory . $logo->hashName();
 
-            Storage::delete('public' . (str_replace(url('/storage'), '', $merchant->logo)));
+            Storage::disk('google')->delete($directory . basename($merchant->logo));
 
             $merchant->update([
                 'logo' => $logo_url,
             ]);
         }
 
-        if ($request->hasFile('banner')) {
-            $banner = $request->file('banner');
-            $banner->storeAs('public/merchants/banner', $banner->hashName());
-            $banner_url = url('/storage/merchants/banner/' . $banner->hashName());
+        if (isset($validated['banner'])) {
+            $banner = $validated['banner'];
+            $directory = 'merchants/banners/';
+            $banner->storeAs($directory, $banner->hashName());
+            $banner_url = config('app.url') . '/img/' . $directory . $banner->hashName();
 
-            Storage::delete('public' . (str_replace(url('/storage'), '', $merchant->merchantProfile->banner)));
+            Storage::disk('google')->delete($directory . basename($merchant->banner));
 
             $merchant->merchantProfile()->update([
                 'banner' => $banner_url,

@@ -25,9 +25,9 @@ class MerchantUpdateRequest extends FormRequest
     {
         return [
             'name' => 'string',
-            'logo' => 'file|image',
+            'logo' => 'file|mimes:jpeg,jpg,png,webp,bmp',
             'address' => 'string',
-            'banner' => 'file|image',
+            'banner' => 'file|mimes:jpeg,jpg,png,webp,bmp',
             'description' => 'string',
             'notes' => 'string',
             'ktp_number' => 'string|size:16',

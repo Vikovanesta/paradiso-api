@@ -37,7 +37,7 @@ class ProductStoreRequest extends FormRequest
             'price' => 'required|integer',
             'unit' => 'required|string',
             'discount' => 'nullable|integer',
-            'thumbnail' => 'required|file|image',
+            'thumbnail' => 'required|file|mimes:jpeg,jpg,png,webp,bmp',
             'address' => 'required|string',
             'coordinate' => 'required|string',
             'max_person' => 'required|integer',
@@ -54,7 +54,7 @@ class ProductStoreRequest extends FormRequest
             'faqs' => 'json',
             'schedules' => 'json',
             'images' => 'array',
-            'images.*' => 'file|image',
+            'images.*' => 'file|mimes:jpeg,jpg,png,webp,bmp',
         ];
     }
 

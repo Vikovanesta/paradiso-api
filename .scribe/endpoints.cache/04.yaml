@@ -23,12 +23,12 @@ endpoints:
         name: fallbackPlaceholder
         description: ''
         required: true
-        example: m1H
+        example: ''
         type: string
         enumValues: []
         custom: []
     cleanUrlParameters:
-      fallbackPlaceholder: m1H
+      fallbackPlaceholder: ''
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -37,13 +37,13 @@ endpoints:
     responses:
       -
         status: 404
-        content: '{"message":"Endpoint not found"}'
+        content: |-
+          {
+              "message": "The route api could not be found."
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
-          vary: Origin
         description: null
         custom: []
     responseFields: []

@@ -15,7 +15,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer 63gEhdeb1Dac5VP86Zvk4af'
+      Authorization: 'Bearer 4D5vk6g8h63ePEf1aZcdbVa'
       Accept: application/json
     urlParameters:
       merchant_id:
@@ -36,7 +36,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"merchant","logo":"https:\/\/picsum.photos\/100\/100","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-11-01T16:53:40.000000Z","updated_at":"2023-11-01T16:53:40.000000Z","profile":{"id":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","address":"Jl. Test","banner":"https:\/\/picsum.photos\/500\/250","ktp_number":"1234567890123456","npwp_number":null,"siup_number":null,"ktp":"https:\/\/picsum.photos\/500\/250","npwp":null,"siup":null},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/00bb33?text=quisquam"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00cc77?text=ut","color":"#7e34e5"}}}'
+        content: '{"status":true,"message":"Merchant profile retrieved successfully","data":{"id":1,"name":"merchant","logo":"https:\/\/picsum.photos\/100\/100","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-11-01T16:53:40.000000Z","updated_at":"2023-11-01T16:53:40.000000Z","profile":{"id":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","address":"Jl. Test","banner":"https:\/\/picsum.photos\/500\/250","ktp_number":"1234567890123456","npwp_number":null,"siup_number":null,"ktp":"https:\/\/picsum.photos\/500\/250","npwp":null,"siup":null},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/00bb33?text=quisquam"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00cc77?text=ut","color":"#7e34e5"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -49,7 +49,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 63gEhdeb1Dac5VP86Zvk4af'
+      - 'Bearer 4D5vk6g8h63ePEf1aZcdbVa'
     controller: null
     method: null
     route: null
@@ -68,7 +68,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer Daf5kV36adeZc1v4hg6E8Pb'
+      Authorization: 'Bearer eab641h35Zkdc8PDa6vEVfg'
       Accept: application/json
       Content-Type: multipart/form-data
     urlParameters: []
@@ -80,13 +80,13 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: est
+        example: officia
         type: string
         enumValues: []
         custom: []
       logo:
         name: logo
-        description: 'Must be a file. Must be an image.'
+        description: 'Must be a file.'
         required: false
         example: null
         type: file
@@ -96,13 +96,13 @@ endpoints:
         name: address
         description: ''
         required: false
-        example: ratione
+        example: qui
         type: string
         enumValues: []
         custom: []
       banner:
         name: banner
-        description: 'Must be a file. Must be an image.'
+        description: 'Must be a file.'
         required: false
         example: null
         type: file
@@ -112,7 +112,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quo sit maiores ut a a explicabo tenetur nam.'
+        example: 'Voluptatibus facere modi minima iusto.'
         type: string
         enumValues: []
         custom: []
@@ -120,7 +120,7 @@ endpoints:
         name: notes
         description: ''
         required: false
-        example: accusamus
+        example: veniam
         type: string
         enumValues: []
         custom: []
@@ -128,7 +128,7 @@ endpoints:
         name: ktp_number
         description: 'Must be 16 characters.'
         required: false
-        example: hrozfzsbwxqjzejg
+        example: ojejtznahodqusbv
         type: string
         enumValues: []
         custom: []
@@ -136,7 +136,7 @@ endpoints:
         name: npwp_number
         description: 'Must be 15 characters.'
         required: false
-        example: apthehahtlooihl
+        example: mskervfrmhbwdcb
         type: string
         enumValues: []
         custom: []
@@ -144,18 +144,18 @@ endpoints:
         name: siup_number
         description: 'Must be 13 characters.'
         required: false
-        example: blidqriidtcjz
+        example: njadlspkvlieb
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      name: est
-      address: ratione
-      description: 'Quo sit maiores ut a a explicabo tenetur nam.'
-      notes: accusamus
-      ktp_number: hrozfzsbwxqjzejg
-      npwp_number: apthehahtlooihl
-      siup_number: blidqriidtcjz
+      name: officia
+      address: qui
+      description: 'Voluptatibus facere modi minima iusto.'
+      notes: veniam
+      ktp_number: ojejtznahodqusbv
+      npwp_number: mskervfrmhbwdcb
+      siup_number: njadlspkvlieb
     fileParameters:
       logo: null
       banner: null
@@ -164,7 +164,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Daf5kV36adeZc1v4hg6E8Pb'
+      - 'Bearer eab641h35Zkdc8PDa6vEVfg'
     controller: null
     method: null
     route: null

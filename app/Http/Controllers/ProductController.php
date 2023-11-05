@@ -115,21 +115,22 @@ class ProductController extends Controller
             
             
             
-            if($validated['thumbnail'] != null && $validated['thumbnail'] != '') {
+            if(isset($validated['thumbnail'])) {
                 $thumbnail = $validated['thumbnail'];
-                $thumbnail->storeAs('public/products/thumbnail', $thumbnail->hashName());
-                $thumbnail_url = url('/storage/products/thumbnail/' . $thumbnail->hashName());
+                $directory = 'products/thumbnails/';
+                $thumbnail->storeAs($directory, $thumbnail->hashName(), 'google');
+                $thumbnail_url = config('app.url'). '/img/' . $directory . $thumbnail->hashName();
                 
                 $product->update([
                     'thumbnail' => $thumbnail_url,
                 ]);
             }
             
-            $validated['images'] = $validated['images'] ?? [];
-            if($validated['images'] != null && $validated['images'] != '') {
+            if(isset($validated['images'])) {
+                $directory = 'products/images/';
                 foreach ($validated['images'] as $image) {
-                    $image->storeAs('public/products/images', $image->hashName());
-                    $image_url = url('/storage/products/images/' . $image->hashName());
+                    $image->storeAs($directory, $image->hashName(), 'google');
+                    $image_url = config('app.url'). '/img/' . $directory . $image->hashName();
                     
                     $product->productImages()->create([
                         'image' => $image_url,
@@ -286,13 +287,14 @@ class ProductController extends Controller
                     ]);
                 }
             }
-
+            
             if(isset($validated['thumbnail'])) {
                 $thumbnail = $validated['thumbnail'];
-                $thumbnail->storeAs('public/products/thumbnail', $thumbnail->hashName());
-                $thumbnail_url = url('/storage/products/thumbnail/' . $thumbnail->hashName());
+                $directory = 'products/thumbnails/';
+                $thumbnail->storeAs($directory, $thumbnail->hashName(), 'google');
+                $thumbnail_url = config('app.url'). '/img/' . $directory . $thumbnail->hashName();
 
-                Storage::delete('public' . (str_replace(url('/storage'), '', $product->thumbnail)));
+                Storage::disk('google')->delete($directory . basename($product->thumbnail));
                 
                 $product->update([
                     'thumbnail' => $thumbnail_url,
@@ -304,10 +306,11 @@ class ProductController extends Controller
             $product->productImages()->whereNotIn('id', $saved_images)->delete();
             
             if(isset($validated['images'])) {
+                $directory = 'products/images/';
                 foreach ($validated['images'] as $image) {
-                    $image->storeAs('public/products/images', $image->hashName());
-                    $image_url = url('/storage/products/images/' . $image->hashName());
-
+                    $image->storeAs($directory, $image->hashName(), 'google');
+                    $image_url = config('app.url'). '/img/' . $directory . $image->hashName();
+                    
                     $product->productImages()->create([
                         'image' => $image_url,
                     ]);

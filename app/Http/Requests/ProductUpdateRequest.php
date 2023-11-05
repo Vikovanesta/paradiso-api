@@ -35,7 +35,7 @@ class ProductUpdateRequest extends FormRequest
             'price' => 'integer|min:0',
             'unit' => 'string',
             'discount' => 'nullable|integer',
-            'thumbnail' => 'file|image',
+            'thumbnail' => 'file|mimes:jpeg,jpg,png,webp,bmp',
             'address' => 'string',
             'coordinate' => 'string',
             'max_person' => 'integer',
@@ -52,7 +52,7 @@ class ProductUpdateRequest extends FormRequest
             'faqs' => 'json',
             'schedules' => 'json',
             'images' => 'array',
-            'images.*' => 'file|image',
+            'images.*' => 'file|mimes:jpeg,jpg,png,webp,bmp',
             'saved_images' => 'array',
             'saved_images.*' => 'integer|exists:product_images,id',
         ];

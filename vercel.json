@@ -7,7 +7,7 @@
     ],
     "routes": [
         {
-            "src": "/api/(css|js|vendor|assets|build|storage)/(.*)",
+            "src": "/api/(css|js|vendor|assets|build|storage|static)/(.*)",
             "dest": "public/$1/$2"
         },
         {
@@ -18,7 +18,7 @@
     "env": {    
         "APP_NAME": "Paradiso-api",
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_URL": "https://paradiso-api-vikovanesta.vercel.app",
  
         "APP_CONFIG_CACHE": "/tmp/config.php",

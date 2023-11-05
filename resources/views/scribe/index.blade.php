@@ -152,7 +152,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 3, 2023</li>
+        <li>Last updated: November 4, 2023</li>
     </ul>
 </div>
 
@@ -386,7 +386,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout" \
-    --header "Authorization: Bearer hca5bdkVfe34a8E6Pv6g1ZD" \
+    --header "Authorization: Bearer dV58ZDhEack6agbPe3f1v46" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -396,7 +396,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer hca5bdkVfe34a8E6Pv6g1ZD",
+    "Authorization": "Bearer dV58ZDhEack6agbPe3f1v46",
     "Accept": "application/json",
 };
 
@@ -413,7 +413,7 @@ $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer hca5bdkVfe34a8E6Pv6g1ZD',
+            'Authorization' =&gt; 'Bearer dV58ZDhEack6agbPe3f1v46',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -428,7 +428,7 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout'
 headers = {
-  'Authorization': 'Bearer hca5bdkVfe34a8E6Pv6g1ZD',
+  'Authorization': 'Bearer dV58ZDhEack6agbPe3f1v46',
   'Accept': 'application/json'
 }
 
@@ -501,10 +501,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-logout"
-               value="Bearer hca5bdkVfe34a8E6Pv6g1ZD"
+               value="Bearer dV58ZDhEack6agbPe3f1v46"
                data-component="header">
     <br>
-<p>Example: <code>Bearer hca5bdkVfe34a8E6Pv6g1ZD</code></p>
+<p>Example: <code>Bearer dV58ZDhEack6agbPe3f1v46</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -536,13 +536,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/m1H" \
+    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/m1H"
+    "https://paradiso-api-vikovanesta.vercel.app/api/api/"
 );
 
 const headers = {
@@ -557,7 +557,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/m1H';
+$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/';
 $response = $client-&gt;get(
     $url,
     [
@@ -574,7 +574,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/m1H'
+url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/'
 headers = {
   'Accept': 'application/json'
 }
@@ -594,13 +594,10 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
-vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Endpoint not found&quot;
+    &quot;message&quot;: &quot;The route api could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -669,10 +666,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="m1H"
+               value=""
                data-component="url">
     <br>
-<p>Example: <code>m1H</code></p>
+
             </div>
                     </form>
 
@@ -695,7 +692,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1" \
-    --header "Authorization: Bearer 63gEhdeb1Dac5VP86Zvk4af" \
+    --header "Authorization: Bearer 4D5vk6g8h63ePEf1aZcdbVa" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -705,7 +702,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer 63gEhdeb1Dac5VP86Zvk4af",
+    "Authorization": "Bearer 4D5vk6g8h63ePEf1aZcdbVa",
     "Accept": "application/json",
 };
 
@@ -722,7 +719,7 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 63gEhdeb1Dac5VP86Zvk4af',
+            'Authorization' =&gt; 'Bearer 4D5vk6g8h63ePEf1aZcdbVa',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -737,7 +734,7 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1'
 headers = {
-  'Authorization': 'Bearer 63gEhdeb1Dac5VP86Zvk4af',
+  'Authorization': 'Bearer 4D5vk6g8h63ePEf1aZcdbVa',
   'Accept': 'application/json'
 }
 
@@ -762,6 +759,8 @@ vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Merchant profile retrieved successfully&quot;,
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;merchant&quot;,
@@ -850,10 +849,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="Bearer 63gEhdeb1Dac5VP86Zvk4af"
+               value="Bearer 4D5vk6g8h63ePEf1aZcdbVa"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 63gEhdeb1Dac5VP86Zvk4af</code></p>
+<p>Example: <code>Bearer 4D5vk6g8h63ePEf1aZcdbVa</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -895,18 +894,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants" \
-    --header "Authorization: Bearer Daf5kV36adeZc1v4hg6E8Pb" \
+    --header "Authorization: Bearer eab641h35Zkdc8PDa6vEVfg" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
-    --form "name=est"\
-    --form "address=ratione"\
-    --form "description=Quo sit maiores ut a a explicabo tenetur nam."\
-    --form "notes=accusamus"\
-    --form "ktp_number=hrozfzsbwxqjzejg"\
-    --form "npwp_number=apthehahtlooihl"\
-    --form "siup_number=blidqriidtcjz"\
-    --form "logo=@/tmp/phpBdOnST" \
-    --form "banner=@/tmp/phpxIbMGp" </code></pre></div>
+    --form "name=officia"\
+    --form "address=qui"\
+    --form "description=Voluptatibus facere modi minima iusto."\
+    --form "notes=veniam"\
+    --form "ktp_number=ojejtznahodqusbv"\
+    --form "npwp_number=mskervfrmhbwdcb"\
+    --form "siup_number=njadlspkvlieb"\
+    --form "logo=@/tmp/php1UBc1D" \
+    --form "banner=@/tmp/phpCiwO0b" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -915,19 +914,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer Daf5kV36adeZc1v4hg6E8Pb",
+    "Authorization": "Bearer eab641h35Zkdc8PDa6vEVfg",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
 
 const body = new FormData();
-body.append('name', 'est');
-body.append('address', 'ratione');
-body.append('description', 'Quo sit maiores ut a a explicabo tenetur nam.');
-body.append('notes', 'accusamus');
-body.append('ktp_number', 'hrozfzsbwxqjzejg');
-body.append('npwp_number', 'apthehahtlooihl');
-body.append('siup_number', 'blidqriidtcjz');
+body.append('name', 'officia');
+body.append('address', 'qui');
+body.append('description', 'Voluptatibus facere modi minima iusto.');
+body.append('notes', 'veniam');
+body.append('ktp_number', 'ojejtznahodqusbv');
+body.append('npwp_number', 'mskervfrmhbwdcb');
+body.append('siup_number', 'njadlspkvlieb');
 body.append('logo', document.querySelector('input[name="logo"]').files[0]);
 body.append('banner', document.querySelector('input[name="banner"]').files[0]);
 
@@ -945,46 +944,46 @@ $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer Daf5kV36adeZc1v4hg6E8Pb',
+            'Authorization' =&gt; 'Bearer eab641h35Zkdc8PDa6vEVfg',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
         'multipart' =&gt; [
             [
                 'name' =&gt; 'name',
-                'contents' =&gt; 'est'
+                'contents' =&gt; 'officia'
             ],
             [
                 'name' =&gt; 'address',
-                'contents' =&gt; 'ratione'
+                'contents' =&gt; 'qui'
             ],
             [
                 'name' =&gt; 'description',
-                'contents' =&gt; 'Quo sit maiores ut a a explicabo tenetur nam.'
+                'contents' =&gt; 'Voluptatibus facere modi minima iusto.'
             ],
             [
                 'name' =&gt; 'notes',
-                'contents' =&gt; 'accusamus'
+                'contents' =&gt; 'veniam'
             ],
             [
                 'name' =&gt; 'ktp_number',
-                'contents' =&gt; 'hrozfzsbwxqjzejg'
+                'contents' =&gt; 'ojejtznahodqusbv'
             ],
             [
                 'name' =&gt; 'npwp_number',
-                'contents' =&gt; 'apthehahtlooihl'
+                'contents' =&gt; 'mskervfrmhbwdcb'
             ],
             [
                 'name' =&gt; 'siup_number',
-                'contents' =&gt; 'blidqriidtcjz'
+                'contents' =&gt; 'njadlspkvlieb'
             ],
             [
                 'name' =&gt; 'logo',
-                'contents' =&gt; fopen('/tmp/phpBdOnST', 'r')
+                'contents' =&gt; fopen('/tmp/php1UBc1D', 'r')
             ],
             [
                 'name' =&gt; 'banner',
-                'contents' =&gt; fopen('/tmp/phpxIbMGp', 'r')
+                'contents' =&gt; fopen('/tmp/phpCiwO0b', 'r')
             ],
         ],
     ]
@@ -999,26 +998,26 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants'
 files = {
-  'name': (None, 'est'),
-  'address': (None, 'ratione'),
-  'description': (None, 'Quo sit maiores ut a a explicabo tenetur nam.'),
-  'notes': (None, 'accusamus'),
-  'ktp_number': (None, 'hrozfzsbwxqjzejg'),
-  'npwp_number': (None, 'apthehahtlooihl'),
-  'siup_number': (None, 'blidqriidtcjz'),
-  'logo': open('/tmp/phpBdOnST', 'rb'),
-  'banner': open('/tmp/phpxIbMGp', 'rb')}
+  'name': (None, 'officia'),
+  'address': (None, 'qui'),
+  'description': (None, 'Voluptatibus facere modi minima iusto.'),
+  'notes': (None, 'veniam'),
+  'ktp_number': (None, 'ojejtznahodqusbv'),
+  'npwp_number': (None, 'mskervfrmhbwdcb'),
+  'siup_number': (None, 'njadlspkvlieb'),
+  'logo': open('/tmp/php1UBc1D', 'rb'),
+  'banner': open('/tmp/phpCiwO0b', 'rb')}
 payload = {
-    "name": "est",
-    "address": "ratione",
-    "description": "Quo sit maiores ut a a explicabo tenetur nam.",
-    "notes": "accusamus",
-    "ktp_number": "hrozfzsbwxqjzejg",
-    "npwp_number": "apthehahtlooihl",
-    "siup_number": "blidqriidtcjz"
+    "name": "officia",
+    "address": "qui",
+    "description": "Voluptatibus facere modi minima iusto.",
+    "notes": "veniam",
+    "ktp_number": "ojejtznahodqusbv",
+    "npwp_number": "mskervfrmhbwdcb",
+    "siup_number": "njadlspkvlieb"
 }
 headers = {
-  'Authorization': 'Bearer Daf5kV36adeZc1v4hg6E8Pb',
+  'Authorization': 'Bearer eab641h35Zkdc8PDa6vEVfg',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1083,10 +1082,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-merchants"
-               value="Bearer Daf5kV36adeZc1v4hg6E8Pb"
+               value="Bearer eab641h35Zkdc8PDa6vEVfg"
                data-component="header">
     <br>
-<p>Example: <code>Bearer Daf5kV36adeZc1v4hg6E8Pb</code></p>
+<p>Example: <code>Bearer eab641h35Zkdc8PDa6vEVfg</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1117,10 +1116,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-merchants"
-               value="est"
+               value="officia"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>officia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>logo</code></b>&nbsp;&nbsp;
@@ -1131,7 +1130,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpBdOnST</code></p>
+<p>Must be a file. Example: <code>/tmp/php1UBc1D</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -1139,10 +1138,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-merchants"
-               value="ratione"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>ratione</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>banner</code></b>&nbsp;&nbsp;
@@ -1153,7 +1152,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must be an image. Example: <code>/tmp/phpxIbMGp</code></p>
+<p>Must be a file. Example: <code>/tmp/phpCiwO0b</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1161,10 +1160,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-merchants"
-               value="Quo sit maiores ut a a explicabo tenetur nam."
+               value="Voluptatibus facere modi minima iusto."
                data-component="body">
     <br>
-<p>Example: <code>Quo sit maiores ut a a explicabo tenetur nam.</code></p>
+<p>Example: <code>Voluptatibus facere modi minima iusto.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -1172,10 +1171,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="PUTapi-v1-merchants"
-               value="accusamus"
+               value="veniam"
                data-component="body">
     <br>
-<p>Example: <code>accusamus</code></p>
+<p>Example: <code>veniam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ktp_number</code></b>&nbsp;&nbsp;
@@ -1183,10 +1182,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ktp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="hrozfzsbwxqjzejg"
+               value="ojejtznahodqusbv"
                data-component="body">
     <br>
-<p>Must be 16 characters. Example: <code>hrozfzsbwxqjzejg</code></p>
+<p>Must be 16 characters. Example: <code>ojejtznahodqusbv</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>npwp_number</code></b>&nbsp;&nbsp;
@@ -1194,10 +1193,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="npwp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="apthehahtlooihl"
+               value="mskervfrmhbwdcb"
                data-component="body">
     <br>
-<p>Must be 15 characters. Example: <code>apthehahtlooihl</code></p>
+<p>Must be 15 characters. Example: <code>mskervfrmhbwdcb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>siup_number</code></b>&nbsp;&nbsp;
@@ -1205,10 +1204,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="siup_number"                data-endpoint="PUTapi-v1-merchants"
-               value="blidqriidtcjz"
+               value="njadlspkvlieb"
                data-component="body">
     <br>
-<p>Must be 13 characters. Example: <code>blidqriidtcjz</code></p>
+<p>Must be 13 characters. Example: <code>njadlspkvlieb</code></p>
         </div>
         </form>
 
@@ -1528,7 +1527,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products" \
-    --header "Authorization: Bearer 6k6P1ED83e4cdfVav5aZbhg" \
+    --header "Authorization: Bearer aEvZ5chk8Pe4D66gfda3V1b" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
     --form "product_sub_category_id=1"\
@@ -1547,15 +1546,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "coordinate=-6.8890653,109.1689806"\
     --form "max_person=10"\
     --form "min_person=1"\
-    --form "note=ducimus"\
-    --form "includes[]=est"\
-    --form "excludes[]=ipsa"\
-    --form "facilities[]=dolore"\
-    --form "terms[]=vel"\
+    --form "note=rerum"\
+    --form "includes[]=dignissimos"\
+    --form "excludes[]=quis"\
+    --form "facilities[]=rerum"\
+    --form "terms[]=eum"\
     --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
     --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
-    --form "thumbnail=@/tmp/phpSwo1NN" \
-    --form "images[]=@/tmp/php5BckA2" </code></pre></div>
+    --form "thumbnail=@/tmp/phpQhk8gF" \
+    --form "images[]=@/tmp/phpA9z9Ys" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1564,7 +1563,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer 6k6P1ED83e4cdfVav5aZbhg",
+    "Authorization": "Bearer aEvZ5chk8Pe4D66gfda3V1b",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
@@ -1586,11 +1585,11 @@ body.append('address', 'Jl. Test');
 body.append('coordinate', '-6.8890653,109.1689806');
 body.append('max_person', '10');
 body.append('min_person', '1');
-body.append('note', 'ducimus');
-body.append('includes[]', 'est');
-body.append('excludes[]', 'ipsa');
-body.append('facilities[]', 'dolore');
-body.append('terms[]', 'vel');
+body.append('note', 'rerum');
+body.append('includes[]', 'dignissimos');
+body.append('excludes[]', 'quis');
+body.append('facilities[]', 'rerum');
+body.append('terms[]', 'eum');
 body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
 body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
@@ -1610,7 +1609,7 @@ $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 6k6P1ED83e4cdfVav5aZbhg',
+            'Authorization' =&gt; 'Bearer aEvZ5chk8Pe4D66gfda3V1b',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
@@ -1681,23 +1680,23 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'note',
-                'contents' =&gt; 'ducimus'
+                'contents' =&gt; 'rerum'
             ],
             [
                 'name' =&gt; 'includes[]',
-                'contents' =&gt; 'est'
+                'contents' =&gt; 'dignissimos'
             ],
             [
                 'name' =&gt; 'excludes[]',
-                'contents' =&gt; 'ipsa'
+                'contents' =&gt; 'quis'
             ],
             [
                 'name' =&gt; 'facilities[]',
-                'contents' =&gt; 'dolore'
+                'contents' =&gt; 'rerum'
             ],
             [
                 'name' =&gt; 'terms[]',
-                'contents' =&gt; 'vel'
+                'contents' =&gt; 'eum'
             ],
             [
                 'name' =&gt; 'faqs',
@@ -1709,11 +1708,11 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'thumbnail',
-                'contents' =&gt; fopen('/tmp/phpSwo1NN', 'r')
+                'contents' =&gt; fopen('/tmp/phpQhk8gF', 'r')
             ],
             [
                 'name' =&gt; 'images[]',
-                'contents' =&gt; fopen('/tmp/php5BckA2', 'r')
+                'contents' =&gt; fopen('/tmp/phpA9z9Ys', 'r')
             ],
         ],
     ]
@@ -1744,15 +1743,15 @@ files = {
   'coordinate': (None, '-6.8890653,109.1689806'),
   'max_person': (None, '10'),
   'min_person': (None, '1'),
-  'note': (None, 'ducimus'),
-  'includes[]': (None, 'est'),
-  'excludes[]': (None, 'ipsa'),
-  'facilities[]': (None, 'dolore'),
-  'terms[]': (None, 'vel'),
+  'note': (None, 'rerum'),
+  'includes[]': (None, 'dignissimos'),
+  'excludes[]': (None, 'quis'),
+  'facilities[]': (None, 'rerum'),
+  'terms[]': (None, 'eum'),
   'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
   'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
-  'thumbnail': open('/tmp/phpSwo1NN', 'rb'),
-  'images[]': open('/tmp/php5BckA2', 'rb')}
+  'thumbnail': open('/tmp/phpQhk8gF', 'rb'),
+  'images[]': open('/tmp/phpA9z9Ys', 'rb')}
 payload = {
     "product_sub_category_id": 1,
     "city_id": 1,
@@ -1770,24 +1769,24 @@ payload = {
     "coordinate": "-6.8890653,109.1689806",
     "max_person": 10,
     "min_person": 1,
-    "note": "ducimus",
+    "note": "rerum",
     "includes": [
-        "est"
+        "dignissimos"
     ],
     "excludes": [
-        "ipsa"
+        "quis"
     ],
     "facilities": [
-        "dolore"
+        "rerum"
     ],
     "terms": [
-        "vel"
+        "eum"
     ],
     "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
     "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]"
 }
 headers = {
-  'Authorization': 'Bearer 6k6P1ED83e4cdfVav5aZbhg',
+  'Authorization': 'Bearer aEvZ5chk8Pe4D66gfda3V1b',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1852,10 +1851,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-merchants-products"
-               value="Bearer 6k6P1ED83e4cdfVav5aZbhg"
+               value="Bearer aEvZ5chk8Pe4D66gfda3V1b"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 6k6P1ED83e4cdfVav5aZbhg</code></p>
+<p>Example: <code>Bearer aEvZ5chk8Pe4D66gfda3V1b</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2023,7 +2022,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Product thumbnail. Must be a file. Must be an image. Example: <code>/tmp/phpSwo1NN</code></p>
+<p>Product thumbnail. Must be a file. Example: <code>/tmp/phpQhk8gF</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -2075,10 +2074,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="note"                data-endpoint="POSTapi-v1-merchants-products"
-               value="ducimus"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>ducimus</code></p>
+<p>Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
@@ -2165,7 +2164,7 @@ Must be one of:
                name="images[1]"                data-endpoint="POSTapi-v1-merchants-products"
                data-component="body">
     <br>
-<p>Must be a file. Must be an image.</p>
+<p>Must be a file.</p>
         </div>
         </form>
 
@@ -2184,7 +2183,7 @@ Must be one of:
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products" \
-    --header "Authorization: Bearer abDf86k5dgcvaVPe346EZ1h" \
+    --header "Authorization: Bearer DkaabdVh4f6vE8Pg61ce5Z3" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -2194,7 +2193,7 @@ Must be one of:
 );
 
 const headers = {
-    "Authorization": "Bearer abDf86k5dgcvaVPe346EZ1h",
+    "Authorization": "Bearer DkaabdVh4f6vE8Pg61ce5Z3",
     "Accept": "application/json",
 };
 
@@ -2211,7 +2210,7 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer abDf86k5dgcvaVPe346EZ1h',
+            'Authorization' =&gt; 'Bearer DkaabdVh4f6vE8Pg61ce5Z3',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -2226,7 +2225,7 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products'
 headers = {
-  'Authorization': 'Bearer abDf86k5dgcvaVPe346EZ1h',
+  'Authorization': 'Bearer DkaabdVh4f6vE8Pg61ce5Z3',
   'Accept': 'application/json'
 }
 
@@ -2555,14 +2554,14 @@ vary: Origin
     ],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
-        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;,
+        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=3&quot;,
         &quot;prev&quot;: null,
         &quot;next&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
         &quot;from&quot;: 1,
-        &quot;last_page&quot;: 2,
+        &quot;last_page&quot;: 3,
         &quot;links&quot;: [
             {
                 &quot;url&quot;: null,
@@ -2580,6 +2579,11 @@ vary: Origin
                 &quot;active&quot;: false
             },
             {
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=3&quot;,
+                &quot;label&quot;: &quot;3&quot;,
+                &quot;active&quot;: false
+            },
+            {
                 &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;,
                 &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
                 &quot;active&quot;: false
@@ -2588,7 +2592,7 @@ vary: Origin
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products&quot;,
         &quot;per_page&quot;: 15,
         &quot;to&quot;: 15,
-        &quot;total&quot;: 28
+        &quot;total&quot;: 35
     }
 }</code>
  </pre>
@@ -2646,10 +2650,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant--products"
-               value="Bearer abDf86k5dgcvaVPe346EZ1h"
+               value="Bearer DkaabdVh4f6vE8Pg61ce5Z3"
                data-component="header">
     <br>
-<p>Example: <code>Bearer abDf86k5dgcvaVPe346EZ1h</code></p>
+<p>Example: <code>Bearer DkaabdVh4f6vE8Pg61ce5Z3</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2691,7 +2695,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1" \
-    --header "Authorization: Bearer 5agf8V6ZDPhE6e1d4av3bkc" \
+    --header "Authorization: Bearer e1bPf6Vd68kaDZcv5ag4Eh3" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
     --form "product_sub_category_id=1"\
@@ -2710,16 +2714,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "coordinate=-6.8890653,109.1689806"\
     --form "max_person=10"\
     --form "min_person=1"\
-    --form "note=sed"\
-    --form "includes[]=officiis"\
-    --form "excludes[]=et"\
-    --form "facilities[]=10"\
-    --form "terms[]=et"\
+    --form "note=quibusdam"\
+    --form "includes[]=quia"\
+    --form "excludes[]=quam"\
+    --form "facilities[]=11"\
+    --form "terms[]=aliquam"\
     --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
     --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
-    --form "saved_images[]=16"\
-    --form "thumbnail=@/tmp/phpYSKGtW" \
-    --form "images[]=@/tmp/phpBxbyfk" </code></pre></div>
+    --form "saved_images[]=5"\
+    --form "thumbnail=@/tmp/phpx12Oj4" \
+    --form "images[]=@/tmp/php4wlP9h" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2728,7 +2732,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer 5agf8V6ZDPhE6e1d4av3bkc",
+    "Authorization": "Bearer e1bPf6Vd68kaDZcv5ag4Eh3",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
@@ -2750,14 +2754,14 @@ body.append('address', 'Jl. Test');
 body.append('coordinate', '-6.8890653,109.1689806');
 body.append('max_person', '10');
 body.append('min_person', '1');
-body.append('note', 'sed');
-body.append('includes[]', 'officiis');
-body.append('excludes[]', 'et');
-body.append('facilities[]', '10');
-body.append('terms[]', 'et');
+body.append('note', 'quibusdam');
+body.append('includes[]', 'quia');
+body.append('excludes[]', 'quam');
+body.append('facilities[]', '11');
+body.append('terms[]', 'aliquam');
 body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
 body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
-body.append('saved_images[]', '16');
+body.append('saved_images[]', '5');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
 body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 
@@ -2775,7 +2779,7 @@ $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 5agf8V6ZDPhE6e1d4av3bkc',
+            'Authorization' =&gt; 'Bearer e1bPf6Vd68kaDZcv5ag4Eh3',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
@@ -2846,23 +2850,23 @@ $response = $client-&gt;put(
             ],
             [
                 'name' =&gt; 'note',
-                'contents' =&gt; 'sed'
+                'contents' =&gt; 'quibusdam'
             ],
             [
                 'name' =&gt; 'includes[]',
-                'contents' =&gt; 'officiis'
+                'contents' =&gt; 'quia'
             ],
             [
                 'name' =&gt; 'excludes[]',
-                'contents' =&gt; 'et'
+                'contents' =&gt; 'quam'
             ],
             [
                 'name' =&gt; 'facilities[]',
-                'contents' =&gt; '10'
+                'contents' =&gt; '11'
             ],
             [
                 'name' =&gt; 'terms[]',
-                'contents' =&gt; 'et'
+                'contents' =&gt; 'aliquam'
             ],
             [
                 'name' =&gt; 'faqs',
@@ -2874,15 +2878,15 @@ $response = $client-&gt;put(
             ],
             [
                 'name' =&gt; 'saved_images[]',
-                'contents' =&gt; '16'
+                'contents' =&gt; '5'
             ],
             [
                 'name' =&gt; 'thumbnail',
-                'contents' =&gt; fopen('/tmp/phpYSKGtW', 'r')
+                'contents' =&gt; fopen('/tmp/phpx12Oj4', 'r')
             ],
             [
                 'name' =&gt; 'images[]',
-                'contents' =&gt; fopen('/tmp/phpBxbyfk', 'r')
+                'contents' =&gt; fopen('/tmp/php4wlP9h', 'r')
             ],
         ],
     ]
@@ -2913,16 +2917,16 @@ files = {
   'coordinate': (None, '-6.8890653,109.1689806'),
   'max_person': (None, '10'),
   'min_person': (None, '1'),
-  'note': (None, 'sed'),
-  'includes[]': (None, 'officiis'),
-  'excludes[]': (None, 'et'),
-  'facilities[]': (None, '10'),
-  'terms[]': (None, 'et'),
+  'note': (None, 'quibusdam'),
+  'includes[]': (None, 'quia'),
+  'excludes[]': (None, 'quam'),
+  'facilities[]': (None, '11'),
+  'terms[]': (None, 'aliquam'),
   'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
   'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
-  'saved_images[]': (None, '16'),
-  'thumbnail': open('/tmp/phpYSKGtW', 'rb'),
-  'images[]': open('/tmp/phpBxbyfk', 'rb')}
+  'saved_images[]': (None, '5'),
+  'thumbnail': open('/tmp/phpx12Oj4', 'rb'),
+  'images[]': open('/tmp/php4wlP9h', 'rb')}
 payload = {
     "product_sub_category_id": 1,
     "city_id": 1,
@@ -2940,27 +2944,27 @@ payload = {
     "coordinate": "-6.8890653,109.1689806",
     "max_person": 10,
     "min_person": 1,
-    "note": "sed",
+    "note": "quibusdam",
     "includes": [
-        "officiis"
+        "quia"
     ],
     "excludes": [
-        "et"
+        "quam"
     ],
     "facilities": [
-        10
+        11
     ],
     "terms": [
-        "et"
+        "aliquam"
     ],
     "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
     "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]",
     "saved_images": [
-        16
+        5
     ]
 }
 headers = {
-  'Authorization': 'Bearer 5agf8V6ZDPhE6e1d4av3bkc',
+  'Authorization': 'Bearer e1bPf6Vd68kaDZcv5ag4Eh3',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -3025,10 +3029,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-products--product_id-"
-               value="Bearer 5agf8V6ZDPhE6e1d4av3bkc"
+               value="Bearer e1bPf6Vd68kaDZcv5ag4Eh3"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 5agf8V6ZDPhE6e1d4av3bkc</code></p>
+<p>Example: <code>Bearer e1bPf6Vd68kaDZcv5ag4Eh3</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -3210,7 +3214,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Product thumbnail. Must be a file. Must be an image. Example: <code>/tmp/phpYSKGtW</code></p>
+<p>Product thumbnail. Must be a file. Example: <code>/tmp/phpx12Oj4</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -3262,10 +3266,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="note"                data-endpoint="PUTapi-v1-products--product_id-"
-               value="sed"
+               value="quibusdam"
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>quibusdam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
@@ -3352,7 +3356,7 @@ Must be one of:
                name="images[1]"                data-endpoint="PUTapi-v1-products--product_id-"
                data-component="body">
     <br>
-<p>Must be a file. Must be an image.</p>
+<p>Must be a file.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>saved_images</code></b>&nbsp;&nbsp;
@@ -3384,7 +3388,7 @@ Must be one of:
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1" \
-    --header "Authorization: Bearer abPc463D15VfghdEv6eZak8" \
+    --header "Authorization: Bearer f5had4D16akve3c8gPVEZ6b" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -3394,7 +3398,7 @@ Must be one of:
 );
 
 const headers = {
-    "Authorization": "Bearer abPc463D15VfghdEv6eZak8",
+    "Authorization": "Bearer f5had4D16akve3c8gPVEZ6b",
     "Accept": "application/json",
 };
 
@@ -3411,7 +3415,7 @@ $response = $client-&gt;delete(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer abPc463D15VfghdEv6eZak8',
+            'Authorization' =&gt; 'Bearer f5had4D16akve3c8gPVEZ6b',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -3426,7 +3430,7 @@ import json
 
 url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1'
 headers = {
-  'Authorization': 'Bearer abPc463D15VfghdEv6eZak8',
+  'Authorization': 'Bearer f5had4D16akve3c8gPVEZ6b',
   'Accept': 'application/json'
 }
 
@@ -3490,10 +3494,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-products--product_id-"
-               value="Bearer abPc463D15VfghdEv6eZak8"
+               value="Bearer f5had4D16akve3c8gPVEZ6b"
                data-component="header">
     <br>
-<p>Example: <code>Bearer abPc463D15VfghdEv6eZak8</code></p>
+<p>Example: <code>Bearer f5had4D16akve3c8gPVEZ6b</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
