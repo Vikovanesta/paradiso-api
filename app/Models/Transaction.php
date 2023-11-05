@@ -34,4 +34,9 @@ class Transaction extends Model
     {
         return $this->belongsTo(TransactionStatus::class);
     }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

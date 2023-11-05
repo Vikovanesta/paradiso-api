@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Faq;
 use App\Models\IncludeExclude;
+use App\Models\Item;
 use App\Models\Merchant;
 use App\Models\MerchantProfile;
 use App\Models\Product;
@@ -12,6 +13,8 @@ use App\Models\Review;
 use App\Models\Schedule;
 use App\Models\ScheduleDay;
 use App\Models\Term;
+use App\Models\Transaction;
+use App\Models\TransactionStatus;
 use App\Models\User;
 use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -155,6 +158,30 @@ class TestUserSeeder extends Seeder
                 'product_id' => 1,
                 'facility_id' => 3,
             ],
+        ]);
+
+        Transaction::create([
+            'invoice_number' => 'INV/2021/10/1',
+            'user_id' => 1,
+            'transaction_status_id' => TransactionStatus::where('description', 'Selesai')->first()->id,
+            'item_total_price' => 200000,
+            'item_total_net_price' => 200000,
+            'voucher_price' => 0,
+            'amount' => 200000,
+        ]);
+
+        Item::create([
+            'product_id' => 1,
+            'transaction_id' => 1,
+            'status_id' => 1,
+            'net_price' => 200000,
+            'price' => 200000,
+            'product_name' => 'product',
+            'product_description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+            'start_date' => '10/16/2023',
+            'end_date' => '10/17/2023',
+            'quantity' => 2,
+            'note' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         ]);
     }
 }

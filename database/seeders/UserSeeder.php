@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Facility;
 use App\Models\Faq;
 use App\Models\IncludeExclude;
+use App\Models\Item;
 use App\Models\Merchant;
 use App\Models\MerchantProfile;
 use App\Models\Product;
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::factory(2)
+        ->has(Transaction::factory(2))
         ->has(
             Merchant::factory()
             ->has(MerchantProfile::factory())
@@ -42,9 +44,9 @@ class UserSeeder extends Seeder
                 ->has(Faq::factory(2))
                 ->has(Term::factory(2))
                 ->has(ProductImage::factory(2))
+                ->has(Item::factory(2))
             )
         )
-        ->has(Transaction::factory(2))
         ->create();
     }
 }

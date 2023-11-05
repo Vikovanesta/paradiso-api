@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Merchant;
 use App\Models\MerchantLevel;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TransactionStatusSeeder::class,
             CountrySeeder::class,
+            ItemStatusSeeder::class,
             ProductStatusSeeder::class,
             ProductCategorySeeder::class,
             FacilitySeeder::class,
