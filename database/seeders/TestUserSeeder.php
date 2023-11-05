@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\BankAccount;
 use App\Models\Faq;
 use App\Models\IncludeExclude;
 use App\Models\Item;
@@ -36,6 +37,14 @@ class TestUserSeeder extends Seeder
             'email_verified_at' => now(),
             'phone' => '081234567890',
             'status' => 1,
+        ]);
+
+        BankAccount::create([
+            'bank_id' => 1,
+            'user_id' => 1,
+            'name' => 'merchant',
+            'account_number' => '1234567890',
+            'is_merchant' => true,
         ]);
 
         Merchant::create([
