@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('merchants', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('merchant_level_id');
-            $table->foreignId('merchant_status_id');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('merchant_level_id')->constrained();
+            $table->foreignId('merchant_status_id')->constrained();
             $table->string('name');
             $table->string('logo')->nullable();
             $table->boolean('is_highlight')->default(false);

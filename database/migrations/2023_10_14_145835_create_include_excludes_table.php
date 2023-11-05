@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('include_excludes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id');
+            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->text('description');
             $table->boolean('is_include');
             $table->timestamps();

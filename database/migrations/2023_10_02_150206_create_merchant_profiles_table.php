@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('merchant_profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('merchant_id');
+            $table->foreignId('merchant_id')->constrained()->cascadeOnDelete();
             $table->string('description');
             $table->string('address');
             $table->string('banner');
