@@ -17,6 +17,7 @@ use App\Models\Schedule;
 use App\Models\Term;
 use App\Models\Transaction;
 use App\Models\User;
+use App\Models\Wallet;
 use Database\Factories\ScheduleDayFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -52,6 +53,7 @@ class UserSeeder extends Seeder
             Transaction::factory(2)
             ->has(Item::factory(2))
             ->has(Payment::factory())
+            ->has(Wallet::factory())
         )
         ->create();
     }

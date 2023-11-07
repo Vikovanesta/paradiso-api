@@ -45,4 +45,8 @@ class Merchant extends Model
     {
         return $this->belongsTo(MerchantStatus::class);
     }
+    public function wallets()
+    {
+        return $this->hasMany(Wallet::class);
+    }
 }

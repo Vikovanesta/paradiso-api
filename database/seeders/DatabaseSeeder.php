@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             ProductStatusSeeder::class,
             ItemStatusSeeder::class,
             MerchantStatusSeeder::class,
+            WalletStatusSeeder::class,
 
             BankSeeder::class,
             CountrySeeder::class,
