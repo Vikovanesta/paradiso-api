@@ -9,6 +9,7 @@ use App\Models\IncludeExclude;
 use App\Models\Item;
 use App\Models\Merchant;
 use App\Models\MerchantProfile;
+use App\Models\Payment;
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\Review;
@@ -50,6 +51,7 @@ class UserSeeder extends Seeder
         ->has(
             Transaction::factory(2)
             ->has(Item::factory(2))
+            ->has(Payment::factory())
         )
         ->create();
     }

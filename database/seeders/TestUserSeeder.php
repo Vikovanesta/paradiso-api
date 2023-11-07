@@ -8,6 +8,7 @@ use App\Models\IncludeExclude;
 use App\Models\Item;
 use App\Models\Merchant;
 use App\Models\MerchantProfile;
+use App\Models\Payment;
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\Review;
@@ -191,6 +192,16 @@ class TestUserSeeder extends Seeder
             'end_date' => '10/17/2023',
             'quantity' => 2,
             'note' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+        ]);
+
+        Payment::create([
+            'transaction_id' => 1,
+            'payment_status_id' => 1,
+            'payment_order' => 2,
+            'amount' => 200000,
+            'payment_token' => 1234567,
+            'due_date' => now()->addDays(7),
+            'response' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         ]);
     }
 }
