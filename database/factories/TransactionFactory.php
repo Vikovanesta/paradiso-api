@@ -19,7 +19,7 @@ class TransactionFactory extends Factory
     public function definition(): array
     {
         return [
-            'invoice_number' => fake()->unique()->randomNumber(9),
+            'invoice_number' => fake()->unique()->numerify('INV-###'),
             'transaction_status_id' => TransactionStatus::query()->inRandomOrder()->first()->id,
             'item_total_price' => rand(50000, 1000000),
             'item_total_net_price' => rand(50000, 1000000),

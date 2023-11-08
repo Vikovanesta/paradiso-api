@@ -34,8 +34,9 @@ Route::group(['prefix' => 'v1'], function () {
     })->name('scribe.postman');
 });
 
-// Protected routes
+// Merchant routes
 Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
+    Route::get('/merchants/me/transactions', [MerchantController::class,'transactionIndex'])->name('merchant.transactionIndex');
     Route::post('/merchants/products', [ProductController::class,'store'])->name('product.store');
     Route::get('/merchants/{merchant}', [MerchantController::class,'show'])->name('merchant.show');
     Route::get('/merchants/{merchant}/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('amount');
             $table->integer('payment_token');
             $table->date('due_date');
-            $table->string('response');
+            $table->string('response')->nullable();
             $table->timestamps();
         });
     }

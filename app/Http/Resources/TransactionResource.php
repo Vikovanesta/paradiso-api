@@ -16,14 +16,14 @@ class TransactionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'invoce_number' => $this->invoce_number,
+            'invoice_number' => $this->invoice_number,
             'item_total_price' => $this->item_total_price,
             'item_total_net_price' => $this->item_total_net_price,
-            'voucher_price' => $this->voucher_price,
+            'total_voucher_price' => $this->voucher_price,
             'amount' => $this->amount,
-            'transaction_status' => new TransactionStatusResource($this->transactionStatus),
-            'review' => new ReviewResource($this->whenLoaded('review')),
+            'status' => new TransactionStatusResource($this->transactionStatus),
             'user' => new UserResource($this->whenLoaded('user')),
+            'payments' => PaymentResource::collection($this->whenLoaded('payments')),
         ];
     }
 }
