@@ -4,6 +4,7 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use App\Models\Item;
 use App\Models\Product;
 use App\Models\Transaction;
 use App\Policies\ProductPolicy;
@@ -45,6 +46,11 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('view-transaction', function ($user, Transaction $transaction) {
             return $user->id === $transaction->user_id ||
                     ($user->user_level === 3 && $user->merchant->id === $transaction->items->first()->product->merchant_id);
+        });
+
+        Gate::define('view-item', function ($user, Item $item) {
+            return $user->id === $item->transaction->user_id ||
+                    ($user->user_level === 3 && $user->merchant->id === $item->product->merchant_id);
         });
     }
 }

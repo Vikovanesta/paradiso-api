@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MerchantController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\TransactionController;
@@ -49,6 +50,8 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
 
 
     Route::get('/transactions/{transaction}', [TransactionController::class,'show'])->name('transaction.show');
+
+    Route::get('/items/{item}', [ItemController::class,'show'])->name('item.show');
 
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
