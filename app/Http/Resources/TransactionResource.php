@@ -24,6 +24,7 @@ class TransactionResource extends JsonResource
             'status' => new TransactionStatusResource($this->transactionStatus),
             'user' => new UserResource($this->whenLoaded('user')),
             'payments' => PaymentResource::collection($this->whenLoaded('payments')),
+            'items' => ItemResource::collection($this->whenLoaded('items')),
         ];
     }
 }

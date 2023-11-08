@@ -3,8 +3,8 @@
 use App\Models\User;
 use Knuckles\Scribe\Extracting\Strategies;
 
-// $url = env('APP_URL');
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api';
+$url = env('APP_URL');
+// $url = 'https://paradiso-api-vikovanesta.vercel.app/api';
 
 return [
 

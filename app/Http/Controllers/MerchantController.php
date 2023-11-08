@@ -28,7 +28,7 @@ class MerchantController extends Controller
     }
 
     /**
-     * Get all products from a merchant.
+     * Get all merchant's products.
      * 
      * @group Product
      * 
@@ -42,6 +42,13 @@ class MerchantController extends Controller
         return $this->success(ProductResource::collection($products), 'Products retrieved successfully');
     }
 
+    /**
+     * Get all merchant's transactions.
+     * 
+     * @group Transaction
+     * 
+     * @authenticated
+     */
     public function transactionIndex(Request $request)
     {
         $pageSize = $request->query('page_size', 15);

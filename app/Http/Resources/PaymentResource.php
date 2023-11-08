@@ -18,7 +18,7 @@ class PaymentResource extends JsonResource
             'id' => $this->id,
             'payment_order' => $this->payment_order,
             'amount' => $this->amount,
-            'due_date' => $this->due_date->fomat('d/m/Y'),
+            'due_date' => $this->due_date->format('d/m/Y'),
             'response' => $this->response,
             'payment_token' => $this->payment_token,
             'created_at' => $this->created_at->format('d/m/Y H:i:s'),

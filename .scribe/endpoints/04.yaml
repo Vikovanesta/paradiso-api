@@ -1,32 +1,33 @@
-name: Fallback
+name: Merchant
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/{fallbackPlaceholder}'
+    uri: 'api/v1/merchants/{merchant_id}'
     metadata:
-      groupName: Fallback
+      groupName: Merchant
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Fallback route'
-      description: 'This route will be used if the requested route is not found.'
-      authenticated: false
+      title: 'Get merchant profile'
+      description: ''
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer edfZPkhbaD4gvVc51E3686a'
       Accept: application/json
     urlParameters:
-      fallbackPlaceholder:
-        name: fallbackPlaceholder
-        description: ''
+      merchant_id:
+        name: merchant_id
+        description: 'The ID of the merchant.'
         required: true
-        example: ''
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      fallbackPlaceholder: ''
+      merchant_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -34,18 +35,136 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "The route api could not be found."
-          }
+        status: 200
+        content: '{"status":true,"message":"Merchant profile retrieved successfully","data":{"id":1,"name":"merchant","logo":"https:\/\/picsum.photos\/100\/100","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-11-07T06:39:32.000000Z","updated_at":"2023-11-07T06:39:32.000000Z","profile":{"id":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","address":"Jl. Test","banner":"https:\/\/picsum.photos\/500\/250","ktp_number":"1234567890123456","npwp_number":null,"siup_number":null,"ktp":"https:\/\/picsum.photos\/500\/250","npwp":null,"siup":null},"level":{"id":1,"name":"standart","icon":"https:\/\/via.placeholder.com\/640x480.png\/006622?text=rem"},"status":{"id":3,"name":"Accepted","icon":"https:\/\/via.placeholder.com\/640x480.png\/00eecc?text=et","color":"#d454fd"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '54'
+          vary: Origin
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer edfZPkhbaD4gvVc51E3686a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/merchants
+    metadata:
+      groupName: Merchant
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update merchant profile'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 6ak4V8Dvcgd1beP6fa5hZE3'
+      Accept: application/json
+      Content-Type: multipart/form-data
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: doloribus
+        type: string
+        enumValues: []
+        custom: []
+      logo:
+        name: logo
+        description: 'Must be a file.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: false
+        example: deleniti
+        type: string
+        enumValues: []
+        custom: []
+      banner:
+        name: banner
+        description: 'Must be a file.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Blanditiis sequi est consequatur.'
+        type: string
+        enumValues: []
+        custom: []
+      notes:
+        name: notes
+        description: ''
+        required: false
+        example: deserunt
+        type: string
+        enumValues: []
+        custom: []
+      ktp_number:
+        name: ktp_number
+        description: 'Must be 16 characters.'
+        required: false
+        example: ocqoghwocpehjmzk
+        type: string
+        enumValues: []
+        custom: []
+      npwp_number:
+        name: npwp_number
+        description: 'Must be 15 characters.'
+        required: false
+        example: rqzccorcqlcvkbp
+        type: string
+        enumValues: []
+        custom: []
+      siup_number:
+        name: siup_number
+        description: 'Must be 13 characters.'
+        required: false
+        example: dcegdyvskcnhf
+        type: string
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      name: doloribus
+      address: deleniti
+      description: 'Blanditiis sequi est consequatur.'
+      notes: deserunt
+      ktp_number: ocqoghwocpehjmzk
+      npwp_number: rqzccorcqlcvkbp
+      siup_number: dcegdyvskcnhf
+    fileParameters:
+      logo: null
+      banner: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6ak4V8Dvcgd1beP6fa5hZE3'
     controller: null
     method: null
     route: null

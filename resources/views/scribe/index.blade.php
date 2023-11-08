@@ -28,7 +28,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "https://paradiso-api-vikovanesta.vercel.app/api";
+        var tryItOutBaseUrl = "http://127.0.0.1:8000";
         var useCsrf = Boolean(1);
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -118,7 +118,7 @@
                                 <a href="#product-POSTapi-v1-merchants-products">Create new product.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="product-GETapi-v1-merchants--merchant--products">
-                                <a href="#product-GETapi-v1-merchants--merchant--products">Get all products from a merchant.</a>
+                                <a href="#product-GETapi-v1-merchants--merchant--products">Get all merchant's products.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="product-PUTapi-v1-products--product_id-">
                                 <a href="#product-PUTapi-v1-products--product_id-">Update a product.</a>
@@ -144,6 +144,19 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-transaction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="transaction">
+                    <a href="#transaction">Transaction</a>
+                </li>
+                                    <ul id="tocify-subheader-transaction" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="transaction-GETapi-v1-merchants-me-transactions">
+                                <a href="#transaction-GETapi-v1-merchants-me-transactions">Get all merchant's transactions.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="transaction-GETapi-v1-transactions--transaction_id-">
+                                <a href="#transaction-GETapi-v1-transactions--transaction_id-">Get transaction details.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
@@ -152,7 +165,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 4, 2023</li>
+        <li>Last updated: November 8, 2023</li>
     </ul>
 </div>
 
@@ -161,7 +174,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>https://paradiso-api-vikovanesta.vercel.app/api</code>
+    <strong>Base URL</strong>: <code>http://127.0.0.1:8000</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -189,7 +202,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/auth" \
+    "http://127.0.0.1:8000/api/v1/auth" \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
     --data "{
@@ -202,7 +215,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/auth"
+    "http://127.0.0.1:8000/api/v1/auth"
 );
 
 const headers = {
@@ -225,7 +238,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/auth';
+$url = 'http://127.0.0.1:8000/api/v1/auth';
 $response = $client-&gt;post(
     $url,
     [
@@ -248,7 +261,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/auth'
+url = 'http://127.0.0.1:8000/api/v1/auth'
 payload = {
     "name": "merchant",
     "email": "merchant@mail.com",
@@ -385,18 +398,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout" \
-    --header "Authorization: Bearer dV58ZDhEack6agbPe3f1v46" \
+    "http://127.0.0.1:8000/api/v1/logout" \
+    --header "Authorization: Bearer 5v16h3Pdfe4aDacZb8gVkE6" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout"
+    "http://127.0.0.1:8000/api/v1/logout"
 );
 
 const headers = {
-    "Authorization": "Bearer dV58ZDhEack6agbPe3f1v46",
+    "Authorization": "Bearer 5v16h3Pdfe4aDacZb8gVkE6",
     "Accept": "application/json",
 };
 
@@ -408,12 +421,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout';
+$url = 'http://127.0.0.1:8000/api/v1/logout';
 $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer dV58ZDhEack6agbPe3f1v46',
+            'Authorization' =&gt; 'Bearer 5v16h3Pdfe4aDacZb8gVkE6',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -426,9 +439,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/logout'
+url = 'http://127.0.0.1:8000/api/v1/logout'
 headers = {
-  'Authorization': 'Bearer dV58ZDhEack6agbPe3f1v46',
+  'Authorization': 'Bearer 5v16h3Pdfe4aDacZb8gVkE6',
   'Accept': 'application/json'
 }
 
@@ -501,10 +514,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-logout"
-               value="Bearer dV58ZDhEack6agbPe3f1v46"
+               value="Bearer 5v16h3Pdfe4aDacZb8gVkE6"
                data-component="header">
     <br>
-<p>Example: <code>Bearer dV58ZDhEack6agbPe3f1v46</code></p>
+<p>Example: <code>Bearer 5v16h3Pdfe4aDacZb8gVkE6</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -536,13 +549,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/" \
+    --get "http://127.0.0.1:8000/api/mEY76wk" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/"
+    "http://127.0.0.1:8000/api/mEY76wk"
 );
 
 const headers = {
@@ -557,7 +570,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/';
+$url = 'http://127.0.0.1:8000/api/mEY76wk';
 $response = $client-&gt;get(
     $url,
     [
@@ -574,7 +587,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/'
+url = 'http://127.0.0.1:8000/api/mEY76wk'
 headers = {
   'Accept': 'application/json'
 }
@@ -594,10 +607,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 51
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The route api could not be found.&quot;
+    &quot;message&quot;: &quot;Endpoint not found&quot;
 }</code>
  </pre>
     </span>
@@ -666,10 +682,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value=""
+               value="mEY76wk"
                data-component="url">
     <br>
-
+<p>Example: <code>mEY76wk</code></p>
             </div>
                     </form>
 
@@ -691,18 +707,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1" \
-    --header "Authorization: Bearer 4D5vk6g8h63ePEf1aZcdbVa" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/1" \
+    --header "Authorization: Bearer edfZPkhbaD4gvVc51E3686a" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1"
+    "http://127.0.0.1:8000/api/v1/merchants/1"
 );
 
 const headers = {
-    "Authorization": "Bearer 4D5vk6g8h63ePEf1aZcdbVa",
+    "Authorization": "Bearer edfZPkhbaD4gvVc51E3686a",
     "Accept": "application/json",
 };
 
@@ -714,12 +730,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1';
+$url = 'http://127.0.0.1:8000/api/v1/merchants/1';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 4D5vk6g8h63ePEf1aZcdbVa',
+            'Authorization' =&gt; 'Bearer edfZPkhbaD4gvVc51E3686a',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -732,9 +748,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1'
+url = 'http://127.0.0.1:8000/api/v1/merchants/1'
 headers = {
-  'Authorization': 'Bearer 4D5vk6g8h63ePEf1aZcdbVa',
+  'Authorization': 'Bearer edfZPkhbaD4gvVc51E3686a',
   'Accept': 'application/json'
 }
 
@@ -754,7 +770,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 54
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -767,8 +783,8 @@ vary: Origin
         &quot;logo&quot;: &quot;https://picsum.photos/100/100&quot;,
         &quot;is_highlight&quot;: 0,
         &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-        &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
         &quot;profile&quot;: {
             &quot;id&quot;: 1,
             &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
@@ -784,13 +800,13 @@ vary: Origin
         &quot;level&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;standart&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00bb33?text=quisquam&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/006622?text=rem&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;Accepted&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00cc77?text=ut&quot;,
-            &quot;color&quot;: &quot;#7e34e5&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00eecc?text=et&quot;,
+            &quot;color&quot;: &quot;#d454fd&quot;
         }
     }
 }</code>
@@ -849,10 +865,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="Bearer 4D5vk6g8h63ePEf1aZcdbVa"
+               value="Bearer edfZPkhbaD4gvVc51E3686a"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 4D5vk6g8h63ePEf1aZcdbVa</code></p>
+<p>Example: <code>Bearer edfZPkhbaD4gvVc51E3686a</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -893,40 +909,40 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants" \
-    --header "Authorization: Bearer eab641h35Zkdc8PDa6vEVfg" \
+    "http://127.0.0.1:8000/api/v1/merchants" \
+    --header "Authorization: Bearer 6ak4V8Dvcgd1beP6fa5hZE3" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
-    --form "name=officia"\
-    --form "address=qui"\
-    --form "description=Voluptatibus facere modi minima iusto."\
-    --form "notes=veniam"\
-    --form "ktp_number=ojejtznahodqusbv"\
-    --form "npwp_number=mskervfrmhbwdcb"\
-    --form "siup_number=njadlspkvlieb"\
-    --form "logo=@/tmp/php1UBc1D" \
-    --form "banner=@/tmp/phpCiwO0b" </code></pre></div>
+    --form "name=doloribus"\
+    --form "address=deleniti"\
+    --form "description=Blanditiis sequi est consequatur."\
+    --form "notes=deserunt"\
+    --form "ktp_number=ocqoghwocpehjmzk"\
+    --form "npwp_number=rqzccorcqlcvkbp"\
+    --form "siup_number=dcegdyvskcnhf"\
+    --form "logo=@/tmp/phpqFvc5y" \
+    --form "banner=@/tmp/phpD3i6ik" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants"
+    "http://127.0.0.1:8000/api/v1/merchants"
 );
 
 const headers = {
-    "Authorization": "Bearer eab641h35Zkdc8PDa6vEVfg",
+    "Authorization": "Bearer 6ak4V8Dvcgd1beP6fa5hZE3",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
 
 const body = new FormData();
-body.append('name', 'officia');
-body.append('address', 'qui');
-body.append('description', 'Voluptatibus facere modi minima iusto.');
-body.append('notes', 'veniam');
-body.append('ktp_number', 'ojejtznahodqusbv');
-body.append('npwp_number', 'mskervfrmhbwdcb');
-body.append('siup_number', 'njadlspkvlieb');
+body.append('name', 'doloribus');
+body.append('address', 'deleniti');
+body.append('description', 'Blanditiis sequi est consequatur.');
+body.append('notes', 'deserunt');
+body.append('ktp_number', 'ocqoghwocpehjmzk');
+body.append('npwp_number', 'rqzccorcqlcvkbp');
+body.append('siup_number', 'dcegdyvskcnhf');
 body.append('logo', document.querySelector('input[name="logo"]').files[0]);
 body.append('banner', document.querySelector('input[name="banner"]').files[0]);
 
@@ -939,51 +955,51 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants';
+$url = 'http://127.0.0.1:8000/api/v1/merchants';
 $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer eab641h35Zkdc8PDa6vEVfg',
+            'Authorization' =&gt; 'Bearer 6ak4V8Dvcgd1beP6fa5hZE3',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
         'multipart' =&gt; [
             [
                 'name' =&gt; 'name',
-                'contents' =&gt; 'officia'
+                'contents' =&gt; 'doloribus'
             ],
             [
                 'name' =&gt; 'address',
-                'contents' =&gt; 'qui'
+                'contents' =&gt; 'deleniti'
             ],
             [
                 'name' =&gt; 'description',
-                'contents' =&gt; 'Voluptatibus facere modi minima iusto.'
+                'contents' =&gt; 'Blanditiis sequi est consequatur.'
             ],
             [
                 'name' =&gt; 'notes',
-                'contents' =&gt; 'veniam'
+                'contents' =&gt; 'deserunt'
             ],
             [
                 'name' =&gt; 'ktp_number',
-                'contents' =&gt; 'ojejtznahodqusbv'
+                'contents' =&gt; 'ocqoghwocpehjmzk'
             ],
             [
                 'name' =&gt; 'npwp_number',
-                'contents' =&gt; 'mskervfrmhbwdcb'
+                'contents' =&gt; 'rqzccorcqlcvkbp'
             ],
             [
                 'name' =&gt; 'siup_number',
-                'contents' =&gt; 'njadlspkvlieb'
+                'contents' =&gt; 'dcegdyvskcnhf'
             ],
             [
                 'name' =&gt; 'logo',
-                'contents' =&gt; fopen('/tmp/php1UBc1D', 'r')
+                'contents' =&gt; fopen('/tmp/phpqFvc5y', 'r')
             ],
             [
                 'name' =&gt; 'banner',
-                'contents' =&gt; fopen('/tmp/phpCiwO0b', 'r')
+                'contents' =&gt; fopen('/tmp/phpD3i6ik', 'r')
             ],
         ],
     ]
@@ -996,28 +1012,28 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants'
+url = 'http://127.0.0.1:8000/api/v1/merchants'
 files = {
-  'name': (None, 'officia'),
-  'address': (None, 'qui'),
-  'description': (None, 'Voluptatibus facere modi minima iusto.'),
-  'notes': (None, 'veniam'),
-  'ktp_number': (None, 'ojejtznahodqusbv'),
-  'npwp_number': (None, 'mskervfrmhbwdcb'),
-  'siup_number': (None, 'njadlspkvlieb'),
-  'logo': open('/tmp/php1UBc1D', 'rb'),
-  'banner': open('/tmp/phpCiwO0b', 'rb')}
+  'name': (None, 'doloribus'),
+  'address': (None, 'deleniti'),
+  'description': (None, 'Blanditiis sequi est consequatur.'),
+  'notes': (None, 'deserunt'),
+  'ktp_number': (None, 'ocqoghwocpehjmzk'),
+  'npwp_number': (None, 'rqzccorcqlcvkbp'),
+  'siup_number': (None, 'dcegdyvskcnhf'),
+  'logo': open('/tmp/phpqFvc5y', 'rb'),
+  'banner': open('/tmp/phpD3i6ik', 'rb')}
 payload = {
-    "name": "officia",
-    "address": "qui",
-    "description": "Voluptatibus facere modi minima iusto.",
-    "notes": "veniam",
-    "ktp_number": "ojejtznahodqusbv",
-    "npwp_number": "mskervfrmhbwdcb",
-    "siup_number": "njadlspkvlieb"
+    "name": "doloribus",
+    "address": "deleniti",
+    "description": "Blanditiis sequi est consequatur.",
+    "notes": "deserunt",
+    "ktp_number": "ocqoghwocpehjmzk",
+    "npwp_number": "rqzccorcqlcvkbp",
+    "siup_number": "dcegdyvskcnhf"
 }
 headers = {
-  'Authorization': 'Bearer eab641h35Zkdc8PDa6vEVfg',
+  'Authorization': 'Bearer 6ak4V8Dvcgd1beP6fa5hZE3',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1082,10 +1098,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-merchants"
-               value="Bearer eab641h35Zkdc8PDa6vEVfg"
+               value="Bearer 6ak4V8Dvcgd1beP6fa5hZE3"
                data-component="header">
     <br>
-<p>Example: <code>Bearer eab641h35Zkdc8PDa6vEVfg</code></p>
+<p>Example: <code>Bearer 6ak4V8Dvcgd1beP6fa5hZE3</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1116,10 +1132,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-merchants"
-               value="officia"
+               value="doloribus"
                data-component="body">
     <br>
-<p>Example: <code>officia</code></p>
+<p>Example: <code>doloribus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>logo</code></b>&nbsp;&nbsp;
@@ -1130,7 +1146,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Example: <code>/tmp/php1UBc1D</code></p>
+<p>Must be a file. Example: <code>/tmp/phpqFvc5y</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -1138,10 +1154,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-merchants"
-               value="qui"
+               value="deleniti"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>deleniti</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>banner</code></b>&nbsp;&nbsp;
@@ -1152,7 +1168,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Example: <code>/tmp/phpCiwO0b</code></p>
+<p>Must be a file. Example: <code>/tmp/phpD3i6ik</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1160,10 +1176,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-merchants"
-               value="Voluptatibus facere modi minima iusto."
+               value="Blanditiis sequi est consequatur."
                data-component="body">
     <br>
-<p>Example: <code>Voluptatibus facere modi minima iusto.</code></p>
+<p>Example: <code>Blanditiis sequi est consequatur.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -1171,10 +1187,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="PUTapi-v1-merchants"
-               value="veniam"
+               value="deserunt"
                data-component="body">
     <br>
-<p>Example: <code>veniam</code></p>
+<p>Example: <code>deserunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ktp_number</code></b>&nbsp;&nbsp;
@@ -1182,10 +1198,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ktp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="ojejtznahodqusbv"
+               value="ocqoghwocpehjmzk"
                data-component="body">
     <br>
-<p>Must be 16 characters. Example: <code>ojejtznahodqusbv</code></p>
+<p>Must be 16 characters. Example: <code>ocqoghwocpehjmzk</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>npwp_number</code></b>&nbsp;&nbsp;
@@ -1193,10 +1209,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="npwp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="mskervfrmhbwdcb"
+               value="rqzccorcqlcvkbp"
                data-component="body">
     <br>
-<p>Must be 15 characters. Example: <code>mskervfrmhbwdcb</code></p>
+<p>Must be 15 characters. Example: <code>rqzccorcqlcvkbp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>siup_number</code></b>&nbsp;&nbsp;
@@ -1204,10 +1220,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="siup_number"                data-endpoint="PUTapi-v1-merchants"
-               value="njadlspkvlieb"
+               value="dcegdyvskcnhf"
                data-component="body">
     <br>
-<p>Must be 13 characters. Example: <code>njadlspkvlieb</code></p>
+<p>Must be 13 characters. Example: <code>dcegdyvskcnhf</code></p>
         </div>
         </form>
 
@@ -1228,13 +1244,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1" \
+    --get "http://127.0.0.1:8000/api/v1/products/1" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1"
+    "http://127.0.0.1:8000/api/v1/products/1"
 );
 
 const headers = {
@@ -1249,7 +1265,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1';
+$url = 'http://127.0.0.1:8000/api/v1/products/1';
 $response = $client-&gt;get(
     $url,
     [
@@ -1266,7 +1282,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1'
+url = 'http://127.0.0.1:8000/api/v1/products/1'
 headers = {
   'Accept': 'application/json'
 }
@@ -1303,7 +1319,7 @@ vary: Origin
         &quot;end_date&quot;: &quot;17/10/2023&quot;,
         &quot;price&quot;: 100000,
         &quot;unit&quot;: &quot;unit&quot;,
-        &quot;discount&quot;: null,
+        &quot;discount&quot;: 0,
         &quot;thumbnail&quot;: &quot;https://picsum.photos/200/200&quot;,
         &quot;address&quot;: &quot;Jl. Test&quot;,
         &quot;coordinate&quot;: &quot;123,123&quot;,
@@ -1311,16 +1327,16 @@ vary: Origin
         &quot;min_person&quot;: 1,
         &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
         &quot;is_published&quot;: 0,
-        &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
         &quot;sub_category&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;at&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/002277?text=voluptatem&quot;,
+            &quot;name&quot;: &quot;quia&quot;,
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/006688?text=deleniti&quot;,
             &quot;product_category&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;perferendis&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/007799?text=qui&quot;
+                &quot;name&quot;: &quot;iure&quot;,
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/009966?text=vitae&quot;
             }
         },
         &quot;merchant&quot;: {
@@ -1329,13 +1345,13 @@ vary: Origin
             &quot;logo&quot;: &quot;https://picsum.photos/100/100&quot;,
             &quot;is_highlight&quot;: 0,
             &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-            &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;draft&quot;,
-            &quot;color&quot;: &quot;Violet&quot;,
+            &quot;color&quot;: &quot;Yellow&quot;,
             &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/CCCCCC&quot;
         },
         &quot;schedules&quot;: [
@@ -1371,8 +1387,8 @@ vary: Origin
                     &quot;email&quot;: &quot;merchant@mail.com&quot;,
                     &quot;phone&quot;: &quot;081234567890&quot;,
                     &quot;status&quot;: 1,
-                    &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;
                 }
             }
         ],
@@ -1392,12 +1408,12 @@ vary: Origin
             {
                 &quot;id&quot;: 2,
                 &quot;name&quot;: &quot;parkir&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00bb77?text=possimus&quot;
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0088ee?text=sapiente&quot;
             },
             {
                 &quot;id&quot;: 3,
                 &quot;name&quot;: &quot;ac&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0055dd?text=laudantium&quot;
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0099aa?text=consequuntur&quot;
             }
         ],
         &quot;faqs&quot;: [
@@ -1526,8 +1542,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products" \
-    --header "Authorization: Bearer aEvZ5chk8Pe4D66gfda3V1b" \
+    "http://127.0.0.1:8000/api/v1/merchants/products" \
+    --header "Authorization: Bearer PfhaeVg46d613kEcvZ58aDb" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
     --form "product_sub_category_id=1"\
@@ -1546,24 +1562,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "coordinate=-6.8890653,109.1689806"\
     --form "max_person=10"\
     --form "min_person=1"\
-    --form "note=rerum"\
-    --form "includes[]=dignissimos"\
-    --form "excludes[]=quis"\
-    --form "facilities[]=rerum"\
-    --form "terms[]=eum"\
+    --form "note=accusamus"\
+    --form "includes[]=nostrum"\
+    --form "excludes[]=consectetur"\
+    --form "facilities[]=sit"\
+    --form "terms[]=quasi"\
     --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
     --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
-    --form "thumbnail=@/tmp/phpQhk8gF" \
-    --form "images[]=@/tmp/phpA9z9Ys" </code></pre></div>
+    --form "thumbnail=@/tmp/phpFUoTJW" \
+    --form "images[]=@/tmp/phpv4uKgd" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products"
+    "http://127.0.0.1:8000/api/v1/merchants/products"
 );
 
 const headers = {
-    "Authorization": "Bearer aEvZ5chk8Pe4D66gfda3V1b",
+    "Authorization": "Bearer PfhaeVg46d613kEcvZ58aDb",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
@@ -1585,11 +1601,11 @@ body.append('address', 'Jl. Test');
 body.append('coordinate', '-6.8890653,109.1689806');
 body.append('max_person', '10');
 body.append('min_person', '1');
-body.append('note', 'rerum');
-body.append('includes[]', 'dignissimos');
-body.append('excludes[]', 'quis');
-body.append('facilities[]', 'rerum');
-body.append('terms[]', 'eum');
+body.append('note', 'accusamus');
+body.append('includes[]', 'nostrum');
+body.append('excludes[]', 'consectetur');
+body.append('facilities[]', 'sit');
+body.append('terms[]', 'quasi');
 body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
 body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
@@ -1604,12 +1620,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products';
+$url = 'http://127.0.0.1:8000/api/v1/merchants/products';
 $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer aEvZ5chk8Pe4D66gfda3V1b',
+            'Authorization' =&gt; 'Bearer PfhaeVg46d613kEcvZ58aDb',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
@@ -1680,23 +1696,23 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'note',
-                'contents' =&gt; 'rerum'
+                'contents' =&gt; 'accusamus'
             ],
             [
                 'name' =&gt; 'includes[]',
-                'contents' =&gt; 'dignissimos'
+                'contents' =&gt; 'nostrum'
             ],
             [
                 'name' =&gt; 'excludes[]',
-                'contents' =&gt; 'quis'
+                'contents' =&gt; 'consectetur'
             ],
             [
                 'name' =&gt; 'facilities[]',
-                'contents' =&gt; 'rerum'
+                'contents' =&gt; 'sit'
             ],
             [
                 'name' =&gt; 'terms[]',
-                'contents' =&gt; 'eum'
+                'contents' =&gt; 'quasi'
             ],
             [
                 'name' =&gt; 'faqs',
@@ -1708,11 +1724,11 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'thumbnail',
-                'contents' =&gt; fopen('/tmp/phpQhk8gF', 'r')
+                'contents' =&gt; fopen('/tmp/phpFUoTJW', 'r')
             ],
             [
                 'name' =&gt; 'images[]',
-                'contents' =&gt; fopen('/tmp/phpA9z9Ys', 'r')
+                'contents' =&gt; fopen('/tmp/phpv4uKgd', 'r')
             ],
         ],
     ]
@@ -1725,7 +1741,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/products'
+url = 'http://127.0.0.1:8000/api/v1/merchants/products'
 files = {
   'product_sub_category_id': (None, '1'),
   'city_id': (None, '1'),
@@ -1743,15 +1759,15 @@ files = {
   'coordinate': (None, '-6.8890653,109.1689806'),
   'max_person': (None, '10'),
   'min_person': (None, '1'),
-  'note': (None, 'rerum'),
-  'includes[]': (None, 'dignissimos'),
-  'excludes[]': (None, 'quis'),
-  'facilities[]': (None, 'rerum'),
-  'terms[]': (None, 'eum'),
+  'note': (None, 'accusamus'),
+  'includes[]': (None, 'nostrum'),
+  'excludes[]': (None, 'consectetur'),
+  'facilities[]': (None, 'sit'),
+  'terms[]': (None, 'quasi'),
   'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
   'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
-  'thumbnail': open('/tmp/phpQhk8gF', 'rb'),
-  'images[]': open('/tmp/phpA9z9Ys', 'rb')}
+  'thumbnail': open('/tmp/phpFUoTJW', 'rb'),
+  'images[]': open('/tmp/phpv4uKgd', 'rb')}
 payload = {
     "product_sub_category_id": 1,
     "city_id": 1,
@@ -1769,24 +1785,24 @@ payload = {
     "coordinate": "-6.8890653,109.1689806",
     "max_person": 10,
     "min_person": 1,
-    "note": "rerum",
+    "note": "accusamus",
     "includes": [
-        "dignissimos"
+        "nostrum"
     ],
     "excludes": [
-        "quis"
+        "consectetur"
     ],
     "facilities": [
-        "rerum"
+        "sit"
     ],
     "terms": [
-        "eum"
+        "quasi"
     ],
     "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
     "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]"
 }
 headers = {
-  'Authorization': 'Bearer aEvZ5chk8Pe4D66gfda3V1b',
+  'Authorization': 'Bearer PfhaeVg46d613kEcvZ58aDb',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1851,10 +1867,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-merchants-products"
-               value="Bearer aEvZ5chk8Pe4D66gfda3V1b"
+               value="Bearer PfhaeVg46d613kEcvZ58aDb"
                data-component="header">
     <br>
-<p>Example: <code>Bearer aEvZ5chk8Pe4D66gfda3V1b</code></p>
+<p>Example: <code>Bearer PfhaeVg46d613kEcvZ58aDb</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2022,7 +2038,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Product thumbnail. Must be a file. Example: <code>/tmp/phpQhk8gF</code></p>
+<p>Product thumbnail. Must be a file. Example: <code>/tmp/phpFUoTJW</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -2074,10 +2090,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="note"                data-endpoint="POSTapi-v1-merchants-products"
-               value="rerum"
+               value="accusamus"
                data-component="body">
     <br>
-<p>Example: <code>rerum</code></p>
+<p>Example: <code>accusamus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
@@ -2168,7 +2184,7 @@ Must be one of:
         </div>
         </form>
 
-                    <h2 id="product-GETapi-v1-merchants--merchant--products">Get all products from a merchant.</h2>
+                    <h2 id="product-GETapi-v1-merchants--merchant--products">Get all merchant&#039;s products.</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -2182,18 +2198,18 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products" \
-    --header "Authorization: Bearer DkaabdVh4f6vE8Pg61ce5Z3" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/1/products" \
+    --header "Authorization: Bearer 6b5fZ34cE8gekPDVv6da1ha" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products"
+    "http://127.0.0.1:8000/api/v1/merchants/1/products"
 );
 
 const headers = {
-    "Authorization": "Bearer DkaabdVh4f6vE8Pg61ce5Z3",
+    "Authorization": "Bearer 6b5fZ34cE8gekPDVv6da1ha",
     "Accept": "application/json",
 };
 
@@ -2205,12 +2221,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products';
+$url = 'http://127.0.0.1:8000/api/v1/merchants/1/products';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer DkaabdVh4f6vE8Pg61ce5Z3',
+            'Authorization' =&gt; 'Bearer 6b5fZ34cE8gekPDVv6da1ha',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -2223,9 +2239,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/merchants/1/products'
+url = 'http://127.0.0.1:8000/api/v1/merchants/1/products'
 headers = {
-  'Authorization': 'Bearer DkaabdVh4f6vE8Pg61ce5Z3',
+  'Authorization': 'Bearer 6b5fZ34cE8gekPDVv6da1ha',
   'Accept': 'application/json'
 }
 
@@ -2245,11 +2261,13 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 53
 vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Products retrieved successfully&quot;,
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
@@ -2260,7 +2278,7 @@ vary: Origin
             &quot;end_date&quot;: &quot;17/10/2023&quot;,
             &quot;price&quot;: 100000,
             &quot;unit&quot;: &quot;unit&quot;,
-            &quot;discount&quot;: null,
+            &quot;discount&quot;: 0,
             &quot;thumbnail&quot;: &quot;https://picsum.photos/200/200&quot;,
             &quot;address&quot;: &quot;Jl. Test&quot;,
             &quot;coordinate&quot;: &quot;123,123&quot;,
@@ -2268,332 +2286,10 @@ vary: Origin
             &quot;min_person&quot;: 1,
             &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
             &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-01T16:53:40.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;product 2&quot;,
-            &quot;description&quot;: &quot;Lorem Ipsum&quot;,
-            &quot;duration&quot;: 2,
-            &quot;start_date&quot;: &quot;16/07/2023&quot;,
-            &quot;end_date&quot;: &quot;18/07/2023&quot;,
-            &quot;price&quot;: 9000000,
-            &quot;unit&quot;: &quot;per pack&quot;,
-            &quot;discount&quot;: null,
-            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/h5JnvF6cxfOIWIBV5BzDyIELt3c1HaDIJIKFim2Z.jpg&quot;,
-            &quot;address&quot;: &quot;Address product&quot;,
-            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 2,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T01:52:42.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T01:52:42.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;product 3&quot;,
-            &quot;description&quot;: &quot;Lorem Ipsum&quot;,
-            &quot;duration&quot;: 2,
-            &quot;start_date&quot;: &quot;16/07/2023&quot;,
-            &quot;end_date&quot;: &quot;18/07/2023&quot;,
-            &quot;price&quot;: 9000000,
-            &quot;unit&quot;: &quot;per pack&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/eVdSCsDjKoLyZnoZ1i4Roj0STrmY6GU7gqJeIeq6.jpg&quot;,
-            &quot;address&quot;: &quot;Address product&quot;,
-            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 2,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T01:56:51.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T01:56:51.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;product 4&quot;,
-            &quot;description&quot;: &quot;Lorem Ipsum&quot;,
-            &quot;duration&quot;: 2,
-            &quot;start_date&quot;: &quot;16/07/2023&quot;,
-            &quot;end_date&quot;: &quot;18/07/2023&quot;,
-            &quot;price&quot;: 9000000,
-            &quot;unit&quot;: &quot;per pack&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/tOhOTbXzWbf5CUGni38lzYoCqZrZMUScdit1QM7a.jpg&quot;,
-            &quot;address&quot;: &quot;Address product&quot;,
-            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 2,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T02:03:51.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T02:03:51.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;product 5&quot;,
-            &quot;description&quot;: &quot;Lorem Ipsum&quot;,
-            &quot;duration&quot;: 2,
-            &quot;start_date&quot;: &quot;16/07/2023&quot;,
-            &quot;end_date&quot;: &quot;18/07/2023&quot;,
-            &quot;price&quot;: 9000000,
-            &quot;unit&quot;: &quot;per pack&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/02GoH379w26t5o8nKupUQ5QIPHFINp4aOcUL6fHZ.jpg&quot;,
-            &quot;address&quot;: &quot;Address product&quot;,
-            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 2,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T02:04:33.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T02:04:33.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 10,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/sPVWUM2c5Sb4dIhULgqMV12L2EmRRaJvbxVctPuQ.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:12:00.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:12:00.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 11,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/RAYf7yVoJOVEi2Mm5Z0UMkh6XuaOffSjjIDXPPIz.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:17:04.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:17:04.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 12,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/50lk2M4P02xTN8iQ8F23I9f7Bc0XE88aovwt4pUj.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:17:42.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:17:42.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 14,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/W6AsHkIEj0Lij32LQFFGZ3OelWrTaP1JGYsgcirg.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:18:31.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:18:31.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 15,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/JdCknGMdefcg9KRnNJYPHAGp0aQ1eqjyRfJMJumf.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:18:49.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:18:49.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 16,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/Z9ngY1gO0WUi4y9P4ViaFwz7fOJLjwmwlDJiIUJm.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:19:07.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:19:07.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 17,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/KMuCzhoXzSvgAAzix0YIjuGjzVq3ZX2x6kYP1gJm.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:19:18.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:19:18.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 18,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/ZEJEAdURnipAYYjO8sw87KvRHtCVWYfkaUWntdkJ.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:19:43.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:19:43.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 19,
-            &quot;name&quot;: &quot;Product name&quot;,
-            &quot;description&quot;: &quot;Product description&quot;,
-            &quot;duration&quot;: 3,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;18/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;person&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://127.0.0.1:8000/storage/products/thumbnail/DUhL7L5OnUKNuoxSapdhzd4LueTn0kf4FQpxfTTw.png&quot;,
-            &quot;address&quot;: &quot;Product address&quot;,
-            &quot;coordinate&quot;: &quot;Product coordinate&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:19:55.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-02T03:19:55.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 21,
-            &quot;name&quot;: &quot;product X&quot;,
-            &quot;description&quot;: &quot;Lorem Ipsum whatt&quot;,
-            &quot;duration&quot;: 2,
-            &quot;start_date&quot;: &quot;16/07/2023&quot;,
-            &quot;end_date&quot;: &quot;18/07/2023&quot;,
-            &quot;price&quot;: 1000,
-            &quot;unit&quot;: &quot;per pack&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;http://127.0.0.1:8000/storage/products/thumbnail/3V3Z1AMZbLPDMuTmDiLeACVjcf3KL58g8l5jktZJ.jpg&quot;,
-            &quot;address&quot;: &quot;Address product&quot;,
-            &quot;coordinate&quot;: &quot;-6.8890653,109.1689806&quot;,
-            &quot;max_person&quot;: 8,
-            &quot;min_person&quot;: 2,
-            &quot;note&quot;: null,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-02T03:20:42.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-03T16:23:54.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;
         }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
-        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=3&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 3,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;,
-                &quot;label&quot;: &quot;2&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=3&quot;,
-                &quot;label&quot;: &quot;3&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=2&quot;,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products&quot;,
-        &quot;per_page&quot;: 15,
-        &quot;to&quot;: 15,
-        &quot;total&quot;: 35
-    }
+    ]
 }</code>
  </pre>
     </span>
@@ -2650,10 +2346,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant--products"
-               value="Bearer DkaabdVh4f6vE8Pg61ce5Z3"
+               value="Bearer 6b5fZ34cE8gekPDVv6da1ha"
                data-component="header">
     <br>
-<p>Example: <code>Bearer DkaabdVh4f6vE8Pg61ce5Z3</code></p>
+<p>Example: <code>Bearer 6b5fZ34cE8gekPDVv6da1ha</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2694,8 +2390,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1" \
-    --header "Authorization: Bearer e1bPf6Vd68kaDZcv5ag4Eh3" \
+    "http://127.0.0.1:8000/api/v1/products/1" \
+    --header "Authorization: Bearer f16eaa6g4h5Pv3bVEdZk8cD" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
     --form "product_sub_category_id=1"\
@@ -2714,25 +2410,25 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "coordinate=-6.8890653,109.1689806"\
     --form "max_person=10"\
     --form "min_person=1"\
-    --form "note=quibusdam"\
-    --form "includes[]=quia"\
-    --form "excludes[]=quam"\
-    --form "facilities[]=11"\
-    --form "terms[]=aliquam"\
+    --form "note=sint"\
+    --form "includes[]=a"\
+    --form "excludes[]=rerum"\
+    --form "facilities[]=5"\
+    --form "terms[]=nostrum"\
     --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
     --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
-    --form "saved_images[]=5"\
-    --form "thumbnail=@/tmp/phpx12Oj4" \
-    --form "images[]=@/tmp/php4wlP9h" </code></pre></div>
+    --form "saved_images[]=12"\
+    --form "thumbnail=@/tmp/phpvRK6nm" \
+    --form "images[]=@/tmp/phpzXPNnR" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1"
+    "http://127.0.0.1:8000/api/v1/products/1"
 );
 
 const headers = {
-    "Authorization": "Bearer e1bPf6Vd68kaDZcv5ag4Eh3",
+    "Authorization": "Bearer f16eaa6g4h5Pv3bVEdZk8cD",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
@@ -2754,14 +2450,14 @@ body.append('address', 'Jl. Test');
 body.append('coordinate', '-6.8890653,109.1689806');
 body.append('max_person', '10');
 body.append('min_person', '1');
-body.append('note', 'quibusdam');
-body.append('includes[]', 'quia');
-body.append('excludes[]', 'quam');
-body.append('facilities[]', '11');
-body.append('terms[]', 'aliquam');
+body.append('note', 'sint');
+body.append('includes[]', 'a');
+body.append('excludes[]', 'rerum');
+body.append('facilities[]', '5');
+body.append('terms[]', 'nostrum');
 body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
 body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
-body.append('saved_images[]', '5');
+body.append('saved_images[]', '12');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
 body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 
@@ -2774,12 +2470,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1';
+$url = 'http://127.0.0.1:8000/api/v1/products/1';
 $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer e1bPf6Vd68kaDZcv5ag4Eh3',
+            'Authorization' =&gt; 'Bearer f16eaa6g4h5Pv3bVEdZk8cD',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
@@ -2850,23 +2546,23 @@ $response = $client-&gt;put(
             ],
             [
                 'name' =&gt; 'note',
-                'contents' =&gt; 'quibusdam'
+                'contents' =&gt; 'sint'
             ],
             [
                 'name' =&gt; 'includes[]',
-                'contents' =&gt; 'quia'
+                'contents' =&gt; 'a'
             ],
             [
                 'name' =&gt; 'excludes[]',
-                'contents' =&gt; 'quam'
+                'contents' =&gt; 'rerum'
             ],
             [
                 'name' =&gt; 'facilities[]',
-                'contents' =&gt; '11'
+                'contents' =&gt; '5'
             ],
             [
                 'name' =&gt; 'terms[]',
-                'contents' =&gt; 'aliquam'
+                'contents' =&gt; 'nostrum'
             ],
             [
                 'name' =&gt; 'faqs',
@@ -2878,15 +2574,15 @@ $response = $client-&gt;put(
             ],
             [
                 'name' =&gt; 'saved_images[]',
-                'contents' =&gt; '5'
+                'contents' =&gt; '12'
             ],
             [
                 'name' =&gt; 'thumbnail',
-                'contents' =&gt; fopen('/tmp/phpx12Oj4', 'r')
+                'contents' =&gt; fopen('/tmp/phpvRK6nm', 'r')
             ],
             [
                 'name' =&gt; 'images[]',
-                'contents' =&gt; fopen('/tmp/php4wlP9h', 'r')
+                'contents' =&gt; fopen('/tmp/phpzXPNnR', 'r')
             ],
         ],
     ]
@@ -2899,7 +2595,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1'
+url = 'http://127.0.0.1:8000/api/v1/products/1'
 files = {
   'product_sub_category_id': (None, '1'),
   'city_id': (None, '1'),
@@ -2917,16 +2613,16 @@ files = {
   'coordinate': (None, '-6.8890653,109.1689806'),
   'max_person': (None, '10'),
   'min_person': (None, '1'),
-  'note': (None, 'quibusdam'),
-  'includes[]': (None, 'quia'),
-  'excludes[]': (None, 'quam'),
-  'facilities[]': (None, '11'),
-  'terms[]': (None, 'aliquam'),
+  'note': (None, 'sint'),
+  'includes[]': (None, 'a'),
+  'excludes[]': (None, 'rerum'),
+  'facilities[]': (None, '5'),
+  'terms[]': (None, 'nostrum'),
   'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
   'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
-  'saved_images[]': (None, '5'),
-  'thumbnail': open('/tmp/phpx12Oj4', 'rb'),
-  'images[]': open('/tmp/php4wlP9h', 'rb')}
+  'saved_images[]': (None, '12'),
+  'thumbnail': open('/tmp/phpvRK6nm', 'rb'),
+  'images[]': open('/tmp/phpzXPNnR', 'rb')}
 payload = {
     "product_sub_category_id": 1,
     "city_id": 1,
@@ -2944,27 +2640,27 @@ payload = {
     "coordinate": "-6.8890653,109.1689806",
     "max_person": 10,
     "min_person": 1,
-    "note": "quibusdam",
+    "note": "sint",
     "includes": [
-        "quia"
+        "a"
     ],
     "excludes": [
-        "quam"
+        "rerum"
     ],
     "facilities": [
-        11
+        5
     ],
     "terms": [
-        "aliquam"
+        "nostrum"
     ],
     "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
     "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]",
     "saved_images": [
-        5
+        12
     ]
 }
 headers = {
-  'Authorization': 'Bearer e1bPf6Vd68kaDZcv5ag4Eh3',
+  'Authorization': 'Bearer f16eaa6g4h5Pv3bVEdZk8cD',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -3029,10 +2725,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-products--product_id-"
-               value="Bearer e1bPf6Vd68kaDZcv5ag4Eh3"
+               value="Bearer f16eaa6g4h5Pv3bVEdZk8cD"
                data-component="header">
     <br>
-<p>Example: <code>Bearer e1bPf6Vd68kaDZcv5ag4Eh3</code></p>
+<p>Example: <code>Bearer f16eaa6g4h5Pv3bVEdZk8cD</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -3214,7 +2910,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Product thumbnail. Must be a file. Example: <code>/tmp/phpx12Oj4</code></p>
+<p>Product thumbnail. Must be a file. Example: <code>/tmp/phpvRK6nm</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -3266,10 +2962,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="note"                data-endpoint="PUTapi-v1-products--product_id-"
-               value="quibusdam"
+               value="sint"
                data-component="body">
     <br>
-<p>Example: <code>quibusdam</code></p>
+<p>Example: <code>sint</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
@@ -3387,18 +3083,18 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1" \
-    --header "Authorization: Bearer f5had4D16akve3c8gPVEZ6b" \
+    "http://127.0.0.1:8000/api/v1/products/1" \
+    --header "Authorization: Bearer 6ZeDbdh5Eg4PaaV16vc8f3k" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1"
+    "http://127.0.0.1:8000/api/v1/products/1"
 );
 
 const headers = {
-    "Authorization": "Bearer f5had4D16akve3c8gPVEZ6b",
+    "Authorization": "Bearer 6ZeDbdh5Eg4PaaV16vc8f3k",
     "Accept": "application/json",
 };
 
@@ -3410,12 +3106,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1';
+$url = 'http://127.0.0.1:8000/api/v1/products/1';
 $response = $client-&gt;delete(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer f5had4D16akve3c8gPVEZ6b',
+            'Authorization' =&gt; 'Bearer 6ZeDbdh5Eg4PaaV16vc8f3k',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -3428,9 +3124,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/products/1'
+url = 'http://127.0.0.1:8000/api/v1/products/1'
 headers = {
-  'Authorization': 'Bearer f5had4D16akve3c8gPVEZ6b',
+  'Authorization': 'Bearer 6ZeDbdh5Eg4PaaV16vc8f3k',
   'Accept': 'application/json'
 }
 
@@ -3494,10 +3190,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-products--product_id-"
-               value="Bearer f5had4D16akve3c8gPVEZ6b"
+               value="Bearer 6ZeDbdh5Eg4PaaV16vc8f3k"
                data-component="header">
     <br>
-<p>Example: <code>Bearer f5had4D16akve3c8gPVEZ6b</code></p>
+<p>Example: <code>Bearer 6ZeDbdh5Eg4PaaV16vc8f3k</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -3541,13 +3237,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/cities" \
+    --get "http://127.0.0.1:8000/api/v1/cities" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/cities"
+    "http://127.0.0.1:8000/api/v1/cities"
 );
 
 const headers = {
@@ -3562,7 +3258,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/cities';
+$url = 'http://127.0.0.1:8000/api/v1/cities';
 $response = $client-&gt;get(
     $url,
     [
@@ -3579,7 +3275,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/cities'
+url = 'http://127.0.0.1:8000/api/v1/cities'
 headers = {
   'Accept': 'application/json'
 }
@@ -3608,152 +3304,152 @@ vary: Origin
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;East Tevin&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/003322?text=architecto&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;South Janis&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00cc00?text=architecto&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;West Wilson&quot;
+                &quot;name&quot;: &quot;Lake Landen&quot;
             }
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Port Theresaside&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00eecc?text=sunt&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Lunaburgh&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/002277?text=id&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;West Wilson&quot;
+                &quot;name&quot;: &quot;Lake Landen&quot;
             }
         },
         {
             &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;East Savannahfort&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0044cc?text=blanditiis&quot;,
+            &quot;name&quot;: &quot;East Valentinaview&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005544?text=facere&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;West Wilson&quot;
+                &quot;name&quot;: &quot;Lake Landen&quot;
             }
         },
         {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Earnestinetown&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00cc00?text=unde&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;New Audieburgh&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/003377?text=veniam&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Lake Thadtown&quot;
+                &quot;name&quot;: &quot;Annabelmouth&quot;
             }
         },
         {
             &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Evalynfurt&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bbff?text=omnis&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;New Cecile&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/007766?text=adipisci&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Lake Thadtown&quot;
+                &quot;name&quot;: &quot;Annabelmouth&quot;
             }
         },
         {
             &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Langworthville&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ccee?text=nostrum&quot;,
+            &quot;name&quot;: &quot;Timmothyview&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/002244?text=soluta&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Lake Thadtown&quot;
+                &quot;name&quot;: &quot;Annabelmouth&quot;
             }
         },
         {
             &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;South Kaelynstad&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0077ee?text=quae&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Lake Busterhaven&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00dd00?text=illum&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Willowbury&quot;
+                &quot;name&quot;: &quot;Ferrychester&quot;
             }
         },
         {
             &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;Tevinport&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ee00?text=aut&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;name&quot;: &quot;Mrazmouth&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00dd22?text=cum&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Willowbury&quot;
+                &quot;name&quot;: &quot;Ferrychester&quot;
             }
         },
         {
             &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;Fadelport&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/007755?text=illo&quot;,
+            &quot;name&quot;: &quot;West Oleta&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/000022?text=reiciendis&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Willowbury&quot;
+                &quot;name&quot;: &quot;Ferrychester&quot;
             }
         },
         {
             &quot;id&quot;: 10,
-            &quot;name&quot;: &quot;Tomasaside&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/001133?text=quasi&quot;,
+            &quot;name&quot;: &quot;North Wilton&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ee44?text=enim&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Leannonchester&quot;
+                &quot;name&quot;: &quot;Lake Kiarraside&quot;
             }
         },
         {
             &quot;id&quot;: 11,
-            &quot;name&quot;: &quot;Reynaland&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005500?text=ab&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;Hesselshire&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/007744?text=quis&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Leannonchester&quot;
+                &quot;name&quot;: &quot;Lake Kiarraside&quot;
             }
         },
         {
             &quot;id&quot;: 12,
-            &quot;name&quot;: &quot;New Elizabeth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066ff?text=voluptates&quot;,
+            &quot;name&quot;: &quot;Rogeliobury&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005522?text=blanditiis&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;Leannonchester&quot;
+                &quot;name&quot;: &quot;Lake Kiarraside&quot;
             }
         },
         {
             &quot;id&quot;: 13,
-            &quot;name&quot;: &quot;Nikkohaven&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0044ff?text=ut&quot;,
+            &quot;name&quot;: &quot;New Kristin&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0011cc?text=ea&quot;,
             &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Ismaelborough&quot;
+                &quot;name&quot;: &quot;Purdyside&quot;
             }
         },
         {
             &quot;id&quot;: 14,
-            &quot;name&quot;: &quot;North Selena&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0066bb?text=atque&quot;,
-            &quot;is_highlighted&quot;: 1,
+            &quot;name&quot;: &quot;New Erafurt&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/009977?text=inventore&quot;,
+            &quot;is_highlighted&quot;: 0,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Ismaelborough&quot;
+                &quot;name&quot;: &quot;Purdyside&quot;
             }
         },
         {
             &quot;id&quot;: 15,
-            &quot;name&quot;: &quot;South Kadechester&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/008833?text=reprehenderit&quot;,
+            &quot;name&quot;: &quot;Nataliechester&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0000dd?text=tempore&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;North Ismaelborough&quot;
+                &quot;name&quot;: &quot;Purdyside&quot;
             }
         }
     ]
@@ -3833,13 +3529,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/provinces" \
+    --get "http://127.0.0.1:8000/api/v1/provinces" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/provinces"
+    "http://127.0.0.1:8000/api/v1/provinces"
 );
 
 const headers = {
@@ -3854,7 +3550,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/provinces';
+$url = 'http://127.0.0.1:8000/api/v1/provinces';
 $response = $client-&gt;get(
     $url,
     [
@@ -3871,7 +3567,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/provinces'
+url = 'http://127.0.0.1:8000/api/v1/provinces'
 headers = {
   'Accept': 'application/json'
 }
@@ -3900,47 +3596,47 @@ vary: Origin
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;West Wilson&quot;,
+            &quot;name&quot;: &quot;Lake Landen&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Bhutan&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
+                &quot;name&quot;: &quot;Grenada&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00ffdd?text=labore&quot;
             }
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Lake Thadtown&quot;,
+            &quot;name&quot;: &quot;Annabelmouth&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Bhutan&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
+                &quot;name&quot;: &quot;Grenada&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00ffdd?text=labore&quot;
             }
         },
         {
             &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Willowbury&quot;,
+            &quot;name&quot;: &quot;Ferrychester&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Bhutan&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
+                &quot;name&quot;: &quot;Grenada&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00ffdd?text=labore&quot;
             }
         },
         {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Leannonchester&quot;,
+            &quot;name&quot;: &quot;Lake Kiarraside&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Bhutan&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
+                &quot;name&quot;: &quot;Grenada&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00ffdd?text=labore&quot;
             }
         },
         {
             &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;North Ismaelborough&quot;,
+            &quot;name&quot;: &quot;Purdyside&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Bhutan&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
+                &quot;name&quot;: &quot;Grenada&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00ffdd?text=labore&quot;
             }
         }
     ]
@@ -4020,13 +3716,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/countries" \
+    --get "http://127.0.0.1:8000/api/v1/countries" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://paradiso-api-vikovanesta.vercel.app/api/api/v1/countries"
+    "http://127.0.0.1:8000/api/v1/countries"
 );
 
 const headers = {
@@ -4041,7 +3737,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/countries';
+$url = 'http://127.0.0.1:8000/api/v1/countries';
 $response = $client-&gt;get(
     $url,
     [
@@ -4058,7 +3754,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://paradiso-api-vikovanesta.vercel.app/api/api/v1/countries'
+url = 'http://127.0.0.1:8000/api/v1/countries'
 headers = {
   'Accept': 'application/json'
 }
@@ -4087,8 +3783,8 @@ vary: Origin
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Bhutan&quot;,
-            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/008844?text=cupiditate&quot;
+            &quot;name&quot;: &quot;Grenada&quot;,
+            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00ffdd?text=labore&quot;
         }
     ]
 }</code>
@@ -4153,6 +3849,430 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                <h1 id="transaction">Transaction</h1>
+
+    
+
+                                <h2 id="transaction-GETapi-v1-merchants-me-transactions">Get all merchant&#039;s transactions.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-merchants-me-transactions">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/merchants/me/transactions" \
+    --header "Authorization: Bearer fb1h6ae538aEZ46DvVgcdPk" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/merchants/me/transactions"
+);
+
+const headers = {
+    "Authorization": "Bearer fb1h6ae538aEZ46DvVgcdPk",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/v1/merchants/me/transactions';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer fb1h6ae538aEZ46DvVgcdPk',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/v1/merchants/me/transactions'
+headers = {
+  'Authorization': 'Bearer fb1h6ae538aEZ46DvVgcdPk',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-merchants-me-transactions">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 55
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Transactions retrieved successfully&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;invoice_number&quot;: &quot;INV/2021/10/1&quot;,
+            &quot;item_total_price&quot;: 200000,
+            &quot;item_total_net_price&quot;: 200000,
+            &quot;total_voucher_price&quot;: 0,
+            &quot;amount&quot;: 200000,
+            &quot;status&quot;: {
+                &quot;id&quot;: 7,
+                &quot;name&quot;: &quot;50&quot;,
+                &quot;description&quot;: &quot;Selesai&quot;
+            }
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-merchants-me-transactions" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-merchants-me-transactions"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-merchants-me-transactions"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-merchants-me-transactions" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-merchants-me-transactions">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-merchants-me-transactions" data-method="GET"
+      data-path="api/v1/merchants/me/transactions"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-merchants-me-transactions', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-merchants-me-transactions"
+                    onclick="tryItOut('GETapi-v1-merchants-me-transactions');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-merchants-me-transactions"
+                    onclick="cancelTryOut('GETapi-v1-merchants-me-transactions');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-merchants-me-transactions"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/merchants/me/transactions</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants-me-transactions"
+               value="Bearer fb1h6ae538aEZ46DvVgcdPk"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer fb1h6ae538aEZ46DvVgcdPk</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-merchants-me-transactions"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="transaction-GETapi-v1-transactions--transaction_id-">Get transaction details.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-transactions--transaction_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/transactions/1" \
+    --header "Authorization: Bearer bdeaahDE43fvZg61PkcV856" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/transactions/1"
+);
+
+const headers = {
+    "Authorization": "Bearer bdeaahDE43fvZg61PkcV856",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/v1/transactions/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer bdeaahDE43fvZg61PkcV856',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/v1/transactions/1'
+headers = {
+  'Authorization': 'Bearer bdeaahDE43fvZg61PkcV856',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-transactions--transaction_id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 52
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Transaction retrieved successfully&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;invoice_number&quot;: &quot;INV/2021/10/1&quot;,
+        &quot;item_total_price&quot;: 200000,
+        &quot;item_total_net_price&quot;: 200000,
+        &quot;total_voucher_price&quot;: 0,
+        &quot;amount&quot;: 200000,
+        &quot;status&quot;: {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;50&quot;,
+            &quot;description&quot;: &quot;Selesai&quot;
+        },
+        &quot;user&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;merchant&quot;,
+            &quot;user_level&quot;: 3,
+            &quot;email&quot;: &quot;merchant@mail.com&quot;,
+            &quot;phone&quot;: &quot;081234567890&quot;,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;
+        },
+        &quot;payments&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;payment_order&quot;: 2,
+                &quot;amount&quot;: 200000,
+                &quot;due_date&quot;: &quot;14/11/2023&quot;,
+                &quot;response&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+                &quot;payment_token&quot;: 1234567,
+                &quot;created_at&quot;: &quot;07/11/2023 06:39:32&quot;,
+                &quot;updated_at&quot;: &quot;07/11/2023 06:39:32&quot;,
+                &quot;status&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;description&quot;: &quot;Success&quot;
+                }
+            }
+        ],
+        &quot;items&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;net_price&quot;: 200000,
+                &quot;price&quot;: 200000,
+                &quot;product_name&quot;: &quot;product&quot;,
+                &quot;product_description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+                &quot;start_date&quot;: &quot;16/10/2023&quot;,
+                &quot;end_date&quot;: &quot;17/10/2023&quot;,
+                &quot;quantity&quot;: 2,
+                &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+                &quot;product&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;product&quot;,
+                    &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+                    &quot;duration&quot;: 1,
+                    &quot;start_date&quot;: &quot;16/10/2023&quot;,
+                    &quot;end_date&quot;: &quot;17/10/2023&quot;,
+                    &quot;price&quot;: 100000,
+                    &quot;unit&quot;: &quot;unit&quot;,
+                    &quot;discount&quot;: 0,
+                    &quot;thumbnail&quot;: &quot;https://picsum.photos/200/200&quot;,
+                    &quot;address&quot;: &quot;Jl. Test&quot;,
+                    &quot;coordinate&quot;: &quot;123,123&quot;,
+                    &quot;max_person&quot;: 10,
+                    &quot;min_person&quot;: 1,
+                    &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+                    &quot;is_published&quot;: 0,
+                    &quot;created_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-11-07T06:39:32.000000Z&quot;
+                },
+                &quot;status&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;0&quot;,
+                    &quot;desciption&quot;: &quot;Waiting for merchant confirmation&quot;
+                }
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-transactions--transaction_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-transactions--transaction_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-transactions--transaction_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-transactions--transaction_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-transactions--transaction_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-transactions--transaction_id-" data-method="GET"
+      data-path="api/v1/transactions/{transaction_id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-transactions--transaction_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-transactions--transaction_id-"
+                    onclick="tryItOut('GETapi-v1-transactions--transaction_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-transactions--transaction_id-"
+                    onclick="cancelTryOut('GETapi-v1-transactions--transaction_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-transactions--transaction_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/transactions/{transaction_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-transactions--transaction_id-"
+               value="Bearer bdeaahDE43fvZg61PkcV856"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer bdeaahDE43fvZg61PkcV856</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-transactions--transaction_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>transaction_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="transaction_id"                data-endpoint="GETapi-v1-transactions--transaction_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the transaction. Example: <code>1</code></p>
+            </div>
+                    </form>
 
             
 
