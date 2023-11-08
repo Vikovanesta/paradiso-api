@@ -22,5 +22,10 @@ class ItemStatusSeeder extends Seeder
             'name' => '1',
             'description' => 'Confirmed by merchant',
         ]);
+
+        ItemStatus::create([
+            'name' => '2',
+            'description' => 'Rejected by merchant',
+        ]);
     }
 }

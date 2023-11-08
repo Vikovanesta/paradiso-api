@@ -38,6 +38,7 @@ Route::group(['prefix' => 'v1'], function () {
 // Merchant routes
 Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::get('/merchants/me/transactions', [MerchantController::class,'transactionIndex'])->name('merchant.transactionIndex');
+    Route::get('/merchants/me/items', [MerchantController::class,'itemIndex'])->name('merchant.itemIndex');
     Route::post('/merchants/products', [ProductController::class,'store'])->name('product.store');
     Route::get('/merchants/{merchant}', [MerchantController::class,'show'])->name('merchant.show');
     Route::get('/merchants/{merchant}/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
@@ -45,6 +46,7 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
 
     Route::put('/products/{product}', [ProductController::class,'update'])->name('product.update');
     Route::delete('/products/{product}', [ProductController::class,'destroy'])->name('product.destroy');
+
 
     Route::get('/transactions/{transaction}', [TransactionController::class,'show'])->name('transaction.show');
 

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MerchantUpdateRequest;
+use App\Http\Resources\ItemResource;
 use App\Http\Resources\MerchantResource;
 use App\Http\Resources\ProductResource;
 use App\Http\Resources\TransactionResource;
+use App\Models\Item;
 use App\Models\Merchant;
 use App\Models\Product;
 use App\Models\Transaction;
@@ -52,9 +54,18 @@ class MerchantController extends Controller
     public function transactionIndex(Request $request)
     {
         $pageSize = $request->query('page_size', 15);
-        $transactions = Transaction::where('user_id', Auth::user()->id)->orderByDesc('updated_at')->paginate($pageSize);
+        $transactions = Transaction::where('user_id', Auth::user()->id)->orderBy('updated_at', 'DESC')->paginate($pageSize);
 
         return $this->success(TransactionResource::collection($transactions), 'Transactions retrieved successfully');
+    }
+
+    public function itemIndex(Request $request)
+    {
+        $pageSize = $request->query('page_size', 15);
+        $items = Item::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
+                ->orderBy('updated_at', 'DESC')->orderBy('status_id', 'ASC')->paginate($pageSize);
+
+        return $this->success(ItemResource::collection($items), 'Items retrieved successfully');
     }
 
     /**
