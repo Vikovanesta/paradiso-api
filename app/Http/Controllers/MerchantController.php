@@ -6,10 +6,12 @@ use App\Http\Requests\MerchantUpdateRequest;
 use App\Http\Resources\ItemResource;
 use App\Http\Resources\MerchantResource;
 use App\Http\Resources\ProductResource;
+use App\Http\Resources\ReviewResource;
 use App\Http\Resources\TransactionResource;
 use App\Models\Item;
 use App\Models\Merchant;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Transaction;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
@@ -41,7 +43,7 @@ class MerchantController extends Controller
         $pageSize = $request->query('page_size', 15);
         $products = Product::where('merchant_id', $id)->paginate($pageSize);
 
-        return $this->success(ProductResource::collection($products), 'Products retrieved successfully');
+        return ProductResource::collection($products);
     }
 
     /**
@@ -56,16 +58,40 @@ class MerchantController extends Controller
         $pageSize = $request->query('page_size', 15);
         $transactions = Transaction::where('user_id', Auth::user()->id)->orderBy('updated_at', 'DESC')->paginate($pageSize);
 
-        return $this->success(TransactionResource::collection($transactions), 'Transactions retrieved successfully');
+        return TransactionResource::collection($transactions);
     }
 
+    /**
+     * Get all merchant's order's items.
+     * 
+     * @group Order Item
+     * 
+     * @authenticated
+     */
     public function itemIndex(Request $request)
     {
         $pageSize = $request->query('page_size', 15);
         $items = Item::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
                 ->orderBy('updated_at', 'DESC')->orderBy('status_id', 'ASC')->paginate($pageSize);
 
-        return $this->success(ItemResource::collection($items), 'Items retrieved successfully');
+        return ItemResource::collection($items);
+    }
+
+    /**
+     * Get all merchant's reviews.
+     * 
+     * @group Review
+     * 
+     * @authenticated
+     */
+    public function reviewIndex(Request $request)
+    {
+        $pageSize = $request->query('page_size', 15);
+        $reviews = Review::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
+                ->orderBy('updated_at', 'DESC')->paginate($pageSize);
+        $reviews->load('user', 'product');
+
+        return ReviewResource::collection($reviews);
     }
 
     /**
