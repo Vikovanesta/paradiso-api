@@ -52,5 +52,9 @@ class AuthServiceProvider extends ServiceProvider
             return $user->id === $item->transaction->user_id ||
                     ($user->user_level === 3 && $user->merchant->id === $item->product->merchant_id);
         });
+
+        Gate::define('update-item', function($user, Item $item) {
+            return $user->user_level === 3 && $user->merchant->id === $item->product->merchant_id;
+        });
     }
 }

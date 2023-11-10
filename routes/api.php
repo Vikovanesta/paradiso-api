@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::get('/transactions/{transaction}', [TransactionController::class,'show'])->name('transaction.show');
 
     Route::get('/items/{item}', [ItemController::class,'show'])->name('item.show');
+    Route::put('/items/{item}', [ItemController::class,'update'])->name('item.update');
 
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
