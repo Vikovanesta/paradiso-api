@@ -38,10 +38,11 @@ class MerchantController extends Controller
      * 
      * @authenticated
      */
-    public function productIndex(Request $request, $id)
+    public function productIndex(Request $request)
     {
         $pageSize = $request->query('page_size', 15);
-        $products = Product::where('merchant_id', $id)->paginate($pageSize);
+        $products = Product::where('merchant_id', Auth::user()->merchant->id)
+                    ->paginate($pageSize);
 
         return ProductResource::collection($products);
     }
@@ -56,7 +57,9 @@ class MerchantController extends Controller
     public function transactionIndex(Request $request)
     {
         $pageSize = $request->query('page_size', 15);
-        $transactions = Transaction::where('user_id', Auth::user()->id)->orderBy('updated_at', 'DESC')->paginate($pageSize);
+        $transactions = Transaction::where('user_id', Auth::user()->id)
+                        ->orderBy('updated_at', 'DESC')
+                        ->paginate($pageSize);
 
         return TransactionResource::collection($transactions);
     }
@@ -72,7 +75,9 @@ class MerchantController extends Controller
     {
         $pageSize = $request->query('page_size', 15);
         $items = Item::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
-                ->orderBy('updated_at', 'DESC')->orderBy('status_id', 'ASC')->paginate($pageSize);
+                ->orderBy('updated_at', 'DESC')
+                ->orderBy('status_id', 'ASC')
+                ->paginate($pageSize);
 
         return ItemResource::collection($items);
     }
@@ -88,7 +93,8 @@ class MerchantController extends Controller
     {
         $pageSize = $request->query('page_size', 15);
         $reviews = Review::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
-                ->orderBy('updated_at', 'DESC')->paginate($pageSize);
+                ->orderBy('updated_at', 'DESC')
+                ->paginate($pageSize);
         $reviews->load('user', 'product');
 
         return ReviewResource::collection($reviews);
@@ -109,13 +115,13 @@ class MerchantController extends Controller
      * 
      * @authenticated
      */
-    public function show(Merchant $merchant)
+    public function show()
     {
         $merchant = Merchant::with(
             'merchantProfile',
             'merchantLevel',
             'merchantStatus',
-        )->find($merchant->id);
+        )->find(Auth::user()->merchant->id);
 
         return $this->success(new MerchantResource($merchant), 'Merchant profile retrieved successfully');
     }

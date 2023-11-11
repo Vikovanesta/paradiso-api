@@ -37,7 +37,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"status":true,"message":"Product retrieved successfully","data":{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":0,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-11-07T06:39:32.000000Z","updated_at":"2023-11-07T06:39:32.000000Z","sub_category":{"id":1,"name":"quia","icon":"https:\/\/via.placeholder.com\/640x480.png\/006688?text=deleniti","product_category":{"id":1,"name":"iure","icon":"https:\/\/via.placeholder.com\/640x480.png\/009966?text=vitae"}},"merchant":{"id":1,"name":"merchant","logo":"https:\/\/picsum.photos\/100\/100","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-11-07T06:39:32.000000Z","updated_at":"2023-11-07T06:39:32.000000Z"},"status":{"id":1,"name":"draft","color":"Yellow","icon":"https:\/\/via.placeholder.com\/640x480.png\/CCCCCC"},"schedules":[{"id":1,"date":"16\/10\/2023","title":"day 1","schedule_days":[{"id":1,"start_time":"08:00","end_time":"10:00","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."},{"id":2,"start_time":"13:00","end_time":"14:00","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."}]}],"reviews":[{"id":1,"review":"revieww","rating":5,"user":{"id":1,"name":"merchant","user_level":3,"email":"merchant@mail.com","phone":"081234567890","status":1,"created_at":"2023-11-07T06:39:32.000000Z","updated_at":"2023-11-07T06:39:32.000000Z"}}],"include_excludes":[{"id":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_include":1},{"id":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_include":0}],"facilities":[{"id":2,"name":"parkir","icon":"https:\/\/via.placeholder.com\/640x480.png\/0088ee?text=sapiente"},{"id":3,"name":"ac","icon":"https:\/\/via.placeholder.com\/640x480.png\/0099aa?text=consequuntur"}],"faqs":[{"id":1,"question":"question1","answer":"answer1","is_global":0},{"id":2,"question":"question2","answer":"answer2","is_global":0}],"terms":[{"id":1,"term":"term1","is_global":0},{"id":2,"term":"term2","is_global":0}],"images":[{"id":1,"image":"https:\/\/picsum.photos\/360\/360"},{"id":2,"image":"https:\/\/picsum.photos\/360\/360"}]}}'
+        content: '{"status":true,"message":"Product retrieved successfully","data":{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":0,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-11-10T06:34:08.000000Z","updated_at":"2023-11-10T06:34:08.000000Z","sub_category":{"id":1,"name":"dolore","icon":"https:\/\/via.placeholder.com\/640x480.png\/004444?text=pariatur","product_category":{"id":1,"name":"quos","icon":"https:\/\/via.placeholder.com\/640x480.png\/0077bb?text=voluptatem"}},"merchant":{"id":1,"name":"merchant","logo":"https:\/\/picsum.photos\/100\/100","is_highlight":0,"notes":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","created_at":"2023-11-10T06:34:08.000000Z","updated_at":"2023-11-10T06:34:08.000000Z"},"status":{"id":1,"name":"draft","color":"PaleTurquoise","icon":"https:\/\/via.placeholder.com\/640x480.png\/CCCCCC"},"schedules":[{"id":1,"date":"16\/10\/2023","title":"day 1","schedule_days":[{"id":1,"start_time":"08:00","end_time":"10:00","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."},{"id":2,"start_time":"13:00","end_time":"14:00","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."}]}],"reviews":[{"id":1,"review":"revieww","rating":5,"reply":"ampas bro","user":{"id":1,"name":"merchant","user_level":3,"email":"merchant@mail.com","phone":"081234567890","status":1,"created_at":"2023-11-10T06:34:08.000000Z","updated_at":"2023-11-10T06:34:08.000000Z"}}],"include_excludes":[{"id":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_include":1},{"id":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_include":0}],"facilities":[{"id":2,"name":"parkir","icon":"https:\/\/via.placeholder.com\/640x480.png\/0033ee?text=earum"},{"id":3,"name":"ac","icon":"https:\/\/via.placeholder.com\/640x480.png\/000044?text=beatae"}],"faqs":[{"id":1,"question":"question1","answer":"answer1","is_global":0},{"id":2,"question":"question2","answer":"answer2","is_global":0}],"terms":[{"id":1,"term":"term1","is_global":0},{"id":2,"term":"term2","is_global":0}],"images":[{"id":1,"image":"https:\/\/picsum.photos\/360\/360"},{"id":2,"image":"https:\/\/picsum.photos\/360\/360"}]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -66,7 +66,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer PfhaeVg46d613kEcvZ58aDb'
+      Authorization: 'Bearer v5f346kahcg1b86VDEPadZe'
       Accept: application/json
       Content-Type: multipart/form-data
     urlParameters: []
@@ -216,7 +216,7 @@ endpoints:
         name: note
         description: ''
         required: false
-        example: accusamus
+        example: qui
         type: string
         enumValues: []
         custom: []
@@ -225,7 +225,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - nostrum
+          - asperiores
         type: 'string[]'
         enumValues: []
         custom: []
@@ -234,7 +234,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - consectetur
+          - sapiente
         type: 'string[]'
         enumValues: []
         custom: []
@@ -243,7 +243,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - sit
+          - ut
         type: 'string[]'
         enumValues: []
         custom: []
@@ -252,7 +252,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - quasi
+          - neque
         type: 'string[]'
         enumValues: []
         custom: []
@@ -298,15 +298,15 @@ endpoints:
       coordinate: '-6.8890653,109.1689806'
       max_person: 10
       min_person: 1
-      note: accusamus
+      note: qui
       includes:
-        - nostrum
+        - asperiores
       excludes:
-        - consectetur
+        - sapiente
       facilities:
-        - sit
+        - ut
       terms:
-        - quasi
+        - neque
       faqs: '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'
       schedules: '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'
     fileParameters:
@@ -318,7 +318,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PfhaeVg46d613kEcvZ58aDb'
+      - 'Bearer v5f346kahcg1b86VDEPadZe'
     controller: null
     method: null
     route: null
@@ -337,7 +337,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer 6b5fZ34cE8gekPDVv6da1ha'
+      Authorization: 'Bearer 5PcVDZ1ek4ag36h86vaEbdf'
       Accept: application/json
     urlParameters:
       merchant:
@@ -358,12 +358,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"status":true,"message":"Products retrieved successfully","data":[{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":0,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-11-07T06:39:32.000000Z","updated_at":"2023-11-07T06:39:32.000000Z"}]}'
+        content: '{"data":[{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":0,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-11-10T06:34:08.000000Z","updated_at":"2023-11-10T06:34:08.000000Z"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/1\/products","per_page":15,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
+          x-ratelimit-remaining: '51'
           vary: Origin
         description: null
         custom: []
@@ -371,7 +371,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6b5fZ34cE8gekPDVv6da1ha'
+      - 'Bearer 5PcVDZ1ek4ag36h86vaEbdf'
     controller: null
     method: null
     route: null
@@ -390,7 +390,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer f16eaa6g4h5Pv3bVEdZk8cD'
+      Authorization: 'Bearer 6dVgE36cbDeaZ1k4aPfvh58'
       Accept: application/json
       Content-Type: multipart/form-data
     urlParameters:
@@ -551,7 +551,7 @@ endpoints:
         name: note
         description: ''
         required: false
-        example: sint
+        example: voluptas
         type: string
         enumValues: []
         custom: []
@@ -560,7 +560,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - a
+          - accusamus
         type: 'string[]'
         enumValues: []
         custom: []
@@ -569,7 +569,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - rerum
+          - autem
         type: 'string[]'
         enumValues: []
         custom: []
@@ -578,7 +578,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - 5
+          - 2
         type: 'integer[]'
         enumValues: []
         custom: []
@@ -587,7 +587,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - nostrum
+          - fugit
         type: 'string[]'
         enumValues: []
         custom: []
@@ -621,7 +621,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - 12
+          - 13
         type: 'integer[]'
         enumValues: []
         custom: []
@@ -642,19 +642,19 @@ endpoints:
       coordinate: '-6.8890653,109.1689806'
       max_person: 10
       min_person: 1
-      note: sint
+      note: voluptas
       includes:
-        - a
+        - accusamus
       excludes:
-        - rerum
+        - autem
       facilities:
-        - 5
+        - 2
       terms:
-        - nostrum
+        - fugit
       faqs: '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'
       schedules: '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'
       saved_images:
-        - 12
+        - 13
     fileParameters:
       thumbnail: null
       images:
@@ -664,7 +664,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f16eaa6g4h5Pv3bVEdZk8cD'
+      - 'Bearer 6dVgE36cbDeaZ1k4aPfvh58'
     controller: null
     method: null
     route: null
@@ -683,7 +683,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer 6ZeDbdh5Eg4PaaV16vc8f3k'
+      Authorization: 'Bearer 6ea3gvVbEhD64a1PcZd58kf'
       Accept: application/json
     urlParameters:
       product_id:
@@ -706,7 +706,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6ZeDbdh5Eg4PaaV16vc8f3k'
+      - 'Bearer 6ea3gvVbEhD64a1PcZd58kf'
     controller: null
     method: null
     route: null

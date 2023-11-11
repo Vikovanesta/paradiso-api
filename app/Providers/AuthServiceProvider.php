@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Models\Item;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Transaction;
 use App\Policies\ProductPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -55,6 +56,10 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('update-item', function($user, Item $item) {
             return $user->user_level === 3 && $user->merchant->id === $item->product->merchant_id;
+        });
+
+        Gate::define('update-reviewReply', function($user, Review $review) {
+            return ($user->user_level === 3 && $user->merchant->id === $review->product->merchant_id);
         });
     }
 }

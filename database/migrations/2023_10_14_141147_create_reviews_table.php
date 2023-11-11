@@ -16,8 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('transaction_id')->nullable()->constrained();
             $table->foreignId('product_id')->constrained()->cascadeOnDelete();
-            $table->text('review');
+            $table->text('review')->nullable();
             $table->integer('rating');
+            $table->text('reply')->nullable();
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer fb1h6ae538aEZ46DvVgcdPk'
+      Authorization: 'Bearer ZV13ad8gfb66EcD45keavPh'
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -29,7 +29,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"status":true,"message":"Transactions retrieved successfully","data":[{"id":1,"invoice_number":"INV\/2021\/10\/1","item_total_price":200000,"item_total_net_price":200000,"total_voucher_price":0,"amount":200000,"status":{"id":7,"name":"50","description":"Selesai"}}]}'
+        content: '{"data":[{"id":1,"invoice_number":"INV\/2021\/10\/1","item_total_price":200000,"item_total_net_price":200000,"total_voucher_price":0,"amount":200000,"status":{"id":7,"name":"50","description":"Selesai"}}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/me\/transactions?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/me\/transactions?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/me\/transactions?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/merchants\/me\/transactions","per_page":15,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fb1h6ae538aEZ46DvVgcdPk'
+      - 'Bearer ZV13ad8gfb66EcD45keavPh'
     controller: null
     method: null
     route: null
@@ -61,7 +61,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer bdeaahDE43fvZg61PkcV856'
+      Authorization: 'Bearer 8daZ3g6cah6Eevk41fbDVP5'
       Accept: application/json
     urlParameters:
       transaction_id:
@@ -82,12 +82,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"status":true,"message":"Transaction retrieved successfully","data":{"id":1,"invoice_number":"INV\/2021\/10\/1","item_total_price":200000,"item_total_net_price":200000,"total_voucher_price":0,"amount":200000,"status":{"id":7,"name":"50","description":"Selesai"},"user":{"id":1,"name":"merchant","user_level":3,"email":"merchant@mail.com","phone":"081234567890","status":1,"created_at":"2023-11-07T06:39:32.000000Z","updated_at":"2023-11-07T06:39:32.000000Z"},"payments":[{"id":1,"payment_order":2,"amount":200000,"due_date":"14\/11\/2023","response":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","payment_token":1234567,"created_at":"07\/11\/2023 06:39:32","updated_at":"07\/11\/2023 06:39:32","status":{"id":1,"description":"Success"}}],"items":[{"id":1,"net_price":200000,"price":200000,"product_name":"product","product_description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","start_date":"16\/10\/2023","end_date":"17\/10\/2023","quantity":2,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","product":{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":0,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-11-07T06:39:32.000000Z","updated_at":"2023-11-07T06:39:32.000000Z"},"status":{"id":1,"name":"0","desciption":"Waiting for merchant confirmation"}}]}}'
+        content: '{"status":true,"message":"Transaction retrieved successfully","data":{"id":1,"invoice_number":"INV\/2021\/10\/1","item_total_price":200000,"item_total_net_price":200000,"total_voucher_price":0,"amount":200000,"status":{"id":7,"name":"50","description":"Selesai"},"user":{"id":1,"name":"merchant","user_level":3,"email":"merchant@mail.com","phone":"081234567890","status":1,"created_at":"2023-11-10T06:34:08.000000Z","updated_at":"2023-11-10T06:34:08.000000Z"},"payments":[{"id":1,"payment_order":2,"amount":200000,"due_date":"17\/11\/2023","response":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","payment_token":1234567,"created_at":"10\/11\/2023 06:34:08","updated_at":"10\/11\/2023 06:34:08","status":{"id":1,"description":"Success"}}],"items":[{"id":1,"net_price":200000,"price":200000,"product_name":"product","product_description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","start_date":"16\/10\/2023","end_date":"17\/10\/2023","quantity":2,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","product":{"id":1,"name":"product","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","duration":1,"start_date":"16\/10\/2023","end_date":"17\/10\/2023","price":100000,"unit":"unit","discount":0,"thumbnail":"https:\/\/picsum.photos\/200\/200","address":"Jl. Test","coordinate":"123,123","max_person":10,"min_person":1,"note":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.","is_published":0,"created_at":"2023-11-10T06:34:08.000000Z","updated_at":"2023-11-10T06:34:08.000000Z"},"status":{"id":1,"name":"0","desciption":"Waiting for merchant confirmation"}}]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '50'
           vary: Origin
         description: null
         custom: []
@@ -95,7 +95,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bdeaahDE43fvZg61PkcV856'
+      - 'Bearer 8daZ3g6cah6Eevk41fbDVP5'
     controller: null
     method: null
     route: null
