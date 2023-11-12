@@ -60,32 +60,28 @@ class ProductController extends Controller
             ]);
 
             
-            $includes = json_decode($validated['includes']);
-            foreach ($includes as $include) {
+            foreach ($validated['includes'] as $include) {
                 $product->includeExcludes()->create([
                     'description' => $include,
                     'is_include' => true,
                 ]);
             }
             
-            $excludes = json_decode($validated['excludes']);
-            foreach ($excludes as $exclude) {
+            foreach ($validated['excludes'] as $exclude) {
                 $product->includeExcludes()->create([
                     'description' => $exclude,
                     'is_include' => false,
                 ]);
             }
             
-            $terms = json_decode($validated['terms']);
-            foreach ($terms as $term) {
+            foreach ($validated['terms'] as $term) {
                 $product->terms()->create([
                     'term' => $term,
                     'is_global' => false,
                 ]);
             }
             
-            $facilities = json_decode($validated['facilities']);
-            foreach ($facilities as $facility) {
+            foreach ($validated['facilities'] as $facility) {
                 $product->facilities()->attach($facility);
             }
 
@@ -144,6 +140,7 @@ class ProductController extends Controller
             'productSubCategory',
             'productSubCategory.productCategory',
             'productStatus',
+            'city',
             'schedules',
             'schedules.scheduleDays',
             'reviews',
@@ -170,6 +167,7 @@ class ProductController extends Controller
                 'productSubCategory',
                 'productSubCategory.productCategory',
                 'productStatus',
+                'city',
                 'schedules',
                 'schedules.scheduleDays',
                 'reviews',
@@ -219,8 +217,7 @@ class ProductController extends Controller
 
             if(isset($validated['includes'])) {
                 $product->includeExcludes()->where('is_include', true)->delete();
-                $includes = json_decode($validated['includes']);
-                foreach ($includes as $include) {
+                foreach ($validated['includes'] as $include) {
                     $product->includeExcludes()->create([
                         'description' => $include,
                         'is_include' => true,
@@ -230,8 +227,7 @@ class ProductController extends Controller
 
             if(isset($validated['excludes'])) {
                 $product->includeExcludes()->where('is_include', false)->delete();
-                $excludes = json_decode($validated['excludes']);
-                foreach ($excludes as $exclude) {
+                foreach ($validated['excludes'] as $exclude) {
                     $product->includeExcludes()->create([
                         'description' => $exclude,
                         'is_include' => false,
@@ -241,8 +237,7 @@ class ProductController extends Controller
 
             if(isset($validated['terms'])) {
                 $product->terms()->delete();
-                $terms = json_decode($validated['terms']);
-                foreach ($terms as $term) {
+                foreach ($validated['terms'] as $term) {
                     $product->terms()->create([
                         'term' => $term,
                         'is_global' => false,
@@ -252,8 +247,7 @@ class ProductController extends Controller
 
             if(isset($validated['facilities'])) {
                 $product->facilities()->detach();
-                $facilities = json_decode($validated['facilities']);
-                foreach ($facilities as $facility) {
+                foreach ($validated['facilities'] as $facility) {
                     $product->facilities()->attach($facility);
                 }
             }
@@ -323,6 +317,7 @@ class ProductController extends Controller
             'productSubCategory',
             'productSubCategory.productCategory',
             'productStatus',
+            'city',
             'schedules',
             'schedules.scheduleDays',
             'reviews',

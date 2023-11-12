@@ -36,6 +36,7 @@ class ProductResource extends JsonResource
             'sub_category' => new ProductSubCategoryResource($this->whenLoaded('productSubCategory')),
             'merchant' => new MerchantResource($this->whenLoaded('merchant')),
             'status' => new ProductStatusResource($this->whenLoaded('productStatus')),
+            'city' => new CityResource($this->whenLoaded('city')),
             'schedules' => ScheduleResource::collection($this->whenLoaded('schedules')),
             'reviews' => ReviewResource::collection($this->whenLoaded('reviews')),
             'include_excludes' => IncludeExcludeResource::collection($this->whenLoaded('includeExcludes')),

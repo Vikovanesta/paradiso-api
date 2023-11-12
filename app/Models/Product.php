@@ -56,6 +56,11 @@ class Product extends Model
         return $this->belongsTo(ProductStatus::class);
     }
 
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
     public function schedules()
     {
         return $this->hasMany(Schedule::class);
