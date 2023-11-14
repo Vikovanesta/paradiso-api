@@ -17,7 +17,7 @@ class TransactionStatusFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => rand(1, 10),
+            'id' => fake()->unique()->numberBetween(1, 10000),
             'description' => fake()->sentence(),
         ];
     }

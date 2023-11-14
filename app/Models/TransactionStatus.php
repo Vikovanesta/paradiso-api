@@ -10,7 +10,7 @@ class TransactionStatus extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'id',
         'description',
     ];
 

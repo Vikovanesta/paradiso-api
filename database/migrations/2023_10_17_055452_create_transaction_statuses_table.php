@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transaction_statuses', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('id')->primary();
             $table->string('description');
             $table->timestamps();
         });

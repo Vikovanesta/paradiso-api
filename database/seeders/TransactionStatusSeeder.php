@@ -14,43 +14,43 @@ class TransactionStatusSeeder extends Seeder
     {
         $transactionStatuses = [
             [
-                'name' => '10',
+                'id' => 10,
                 'description' => 'Menunggu Konfirmasi Merchant',
             ],
             [
-                'name' => '20',
+                'id' => 20,
                 'description' => 'Menunggu Pembayaran',
             ],
             [
-                'name' => '21',
+                'id' => 21,
                 'description' => 'Menunggu Down Payment',
             ],
             [
-                'name' => '22',
+                'id' => 22,
                 'description' => 'Menunggu Pelunasan',
             ],
             [
-                'name' => '30',
+                'id' => 30,
                 'description' => 'Sedang Berlangsung',
             ],
             [
-                'name' => '40',
+                'id' => 40,
                 'description' => 'Menunggu Review',
             ],
             [
-                'name' => '50',
+                'id' => 50,
                 'description' => 'Selesai',
             ],
             [
-                'name' => '90',
+                'id' => 90,
                 'description' => 'Dibatalkan',
             ],
             [
-                'name' => '91',
+                'id' => 91,
                 'description' => 'Menunggu Konfirmasi Merchant',
             ],
             [
-                'name' => '92',
+                'id' => 92,
                 'description' => 'Menunggu Konfirmasi Customer',
             ],
         ];
