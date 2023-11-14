@@ -8,6 +8,7 @@ use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
@@ -178,6 +179,19 @@ class ProductController extends Controller
                 'terms',
                 'productImages',
             )->find($product->id);
+        
+        // Update view count if user is customer
+        if(auth()->user()->user_level === 2) {
+            $productView = $product->productViews()->whereDate('created_at', today())->first();
+
+            if($productView) {
+                $productView->increment('count');
+            } else {
+                $product->productViews()->create([
+                    'count' => 1,
+                ]);
+            }
+        }
 
         return $this->success(new ProductResource($product), 'Product retrieved successfully');
     }

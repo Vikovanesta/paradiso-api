@@ -11,6 +11,7 @@ use App\Models\MerchantProfile;
 use App\Models\Payment;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\ProductView;
 use App\Models\Review;
 use App\Models\Schedule;
 use App\Models\ScheduleDay;
@@ -204,5 +205,8 @@ class TestUserSeeder extends Seeder
             'response' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         ]);
 
+        ProductView::factory()->count(50)->create([
+            'product_id' => 1,
+        ]);
     }
 }

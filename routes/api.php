@@ -29,8 +29,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/cities', [CityController::class,'index'])->name('city.index');
     Route::get('/provinces', [ProvinceController::class,'index'])->name('province.index');
     Route::get('/countries', [CountryController::class,'index'])->name('country.index');
-
-    Route::get('/products/{product}', [ProductController::class,'show'])->name('product.show');
     
     Route::get('/postman', function () {
         return response()->file(storage_path('/app/scribe/collection.json'));
@@ -46,7 +44,8 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::get('/merchants/me', [MerchantController::class,'show'])->name('merchant.show');
     Route::post('/merchants/products', [ProductController::class,'store'])->name('product.store');
     Route::put('/merchants', [MerchantController::class,'update'])->name('merchant.update');
-
+    
+    Route::get('/products/{product}', [ProductController::class,'show'])->name('product.show');
     Route::put('/products/{product}', [ProductController::class,'update'])->name('product.update');
     Route::delete('/products/{product}', [ProductController::class,'destroy'])->name('product.destroy');
 

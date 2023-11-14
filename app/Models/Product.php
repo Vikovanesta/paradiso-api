@@ -100,4 +100,9 @@ class Product extends Model
     {
         return $this->hasMany(Item::class);
     }
+
+    public function productViews()
+    {
+        return $this->hasMany(ProductView::class);
+    }
 }
