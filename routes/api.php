@@ -8,6 +8,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,7 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::get('/merchants/me/items', [MerchantController::class,'itemIndex'])->name('merchant.itemIndex');
     Route::get('/merchants/me/reviews', [MerchantController::class,'reviewIndex'])->name('merchant.reviewIndex');
     Route::get('/merchants/me/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
+    Route::get('/merchants/me/statistic', [StatisticController::class,'show'])->name('statistic.show');
     Route::get('/merchants/me', [MerchantController::class,'show'])->name('merchant.show');
     Route::post('/merchants/products', [ProductController::class,'store'])->name('product.store');
     Route::put('/merchants', [MerchantController::class,'update'])->name('merchant.update');
