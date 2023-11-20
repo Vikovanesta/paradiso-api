@@ -37,12 +37,62 @@ class MerchantController extends Controller
      * @group Product
      * 
      * @authenticated
+     * 
+     * @queryParam status_id int Product status ID Example: 1
+     * @queryParam category_id int Category ID Example: 1
+     * @queryParam sub_category_id int Sub Category ID Example: 1
+     * @queryParam name string Product name (fuzzy search) Example: Prod
+     * @queryParam duration int Product duration Example: 1
+     * @queryParam start_date string Product minimum start date (Y-m-d) Example: 2023-10-16
+     * @queryParam end_date string Product maximum end date (Y-m-d) Example: 2023-10-20
+     * @queryParam price_min int Product minimum price Example: 50000
+     * @queryParam price_max int Product maximum price Example: 1000000
+     * @queryParam person_min int Product minimum person Example: 1
+     * @queryParam person_max int Product maximum person Example: 20
+     * @queryParam sort_by string Sort by (default: updated_at) Example: updated_at
+     * @queryParam sort_direction string Sort direction (ASC or DESC) (default: DESC) Example: DESC
+     * @queryParam page_size int Page size (default: 15) Example: 15
      */
     public function productIndex(Request $request)
     {
-        $pageSize = $request->query('page_size', 15);
+        $query = $request->query();
+
         $products = Product::where('merchant_id', Auth::user()->merchant->id)
-                    ->paginate($pageSize);
+                    ->when(isset($query['category_id']), function ($q) use ($query) {
+                        $q->whereRelation('productSubCategory', 'product_category_id', $query['category_id']);
+                    })
+                    ->when(isset($query['sub_category_id']), function ($q) use ($query) {
+                        $q->where('product_sub_category_id', $query['sub_category_id']);
+                    })
+                    ->when(isset($query['name']), function ($q) use ($query) {
+                        $q->where('name', 'like', '%' . $query['name'] . '%');
+                    })
+                    ->when(isset($query['duration']), function ($q) use ($query) {
+                        $q->where('duration', $query['duration']);
+                    })
+                    ->when(isset($query['start_date']), function ($q) use ($query) {
+                        $q->where('start_date', '>=', $query['start_date']);
+                    })
+                    ->when(isset($query['end_date']), function ($q) use ($query) {
+                        $q->where('end_date', '<=', $query['end_date']);
+                    })
+                    ->when(isset($query['price_min']), function ($q) use ($query) {
+                        $q->where('price', '>=', $query['price_min']);
+                    })
+                    ->when(isset($query['price_max']), function ($q) use ($query) {
+                        $q->where('price', '<=', $query['price_max']);
+                    })
+                    ->when(isset($query['person_min']), function ($q) use ($query) {
+                        $q->where('min_person', '>=', $query['person_min']);
+                    })
+                    ->when(isset($query['person_max']), function ($q) use ($query) {
+                        $q->where('max_person', '<=', $query['person_max']);
+                    })
+                    ->when(isset($query['status_id']), function ($q) use ($query) {
+                        $q->where('product_status_id', $query['status_id']);
+                    })
+                    ->orderBy($query['sort_by'] ?? 'updated_at', $query['sort_direction'] ?? 'DESC')
+                    ->paginate($query['page_size'] ?? 15);
 
         return ProductResource::collection($products);
     }
@@ -53,13 +103,25 @@ class MerchantController extends Controller
      * @group Transaction
      * 
      * @authenticated
+     * 
+     * @queryParam status_id int Transaction status ID Example: 50
+     * @queryParam order_by string Order by (default: updated_at) Example: updated_at
+     * @queryParam order_direction string Order direction (ASC or DESC) (default: DESC) Example: DESC
+     * @queryParam page_size int Page size (default: 15) Example: 15
      */
     public function transactionIndex(Request $request)
     {
-        $pageSize = $request->query('page_size', 15);
-        $transactions = Transaction::where('user_id', Auth::user()->id)
-                        ->orderBy('updated_at', 'DESC')
-                        ->paginate($pageSize);
+        $query = $request->query();
+
+        $transactions = Transaction::whereHas('items', function ($query) {
+                        $query->whereHas('product', function ($query) {
+                            $query->where('merchant_id', auth()->user()->merchant->id);
+                        });})
+                        ->when(isset($query['status_id']), function ($q) use ($query) {
+                            $q->where('transaction_status_id', $query['status_id']);
+                        })
+                        ->orderBy($query['order_by'] ?? 'updated_at', $query['order_direction'] ?? 'DESC')
+                        ->paginate($query['page_size'] ?? 15);
 
         return TransactionResource::collection($transactions);
     }
@@ -70,14 +132,37 @@ class MerchantController extends Controller
      * @group Order Item
      * 
      * @authenticated
+     * 
+     * @queryParam quantity_min int Item minimum quantity Example: 2
+     * @queryParam quantity_max int Item maximum quantity Example: 10
+     * @queryParam start_date string Item minimum start date (Y-m-d) Example: 2023-10-16
+     * @queryParam end_date string Item maximum end date (Y-m-d) Example: 2023-10-20
+     * @queryParam order_by string Order by (default: updated_at) Example: updated_at
+     * @queryParam order_direction string Order direction (ASC or DESC) (default: DESC) Example: DESC
+     * @queryParam page_size int Page size (default: 15) Example: 15
      */
     public function itemIndex(Request $request)
     {
-        $pageSize = $request->query('page_size', 15);
+        $query = $request->query();
+
         $items = Item::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
-                ->orderBy('updated_at', 'DESC')
-                ->orderBy('status_id', 'ASC')
-                ->paginate($pageSize);
+                ->when(isset($query['status_id']), function ($q) use ($query) {
+                    $q->where('status_id', $query['status_id']);
+                })
+                ->when(isset($query['quantity_min']), function ($q) use ($query) {
+                    $q->where('quantity', '>=', $query['quantity_min']);
+                })
+                ->when(isset($query['quantity_max']), function ($q) use ($query) {
+                    $q->where('quantity', '<=', $query['quantity_max']);
+                })
+                ->when(isset($query['start_date']), function ($q) use ($query) {
+                    $q->where('start_date', '>=', $query['start_date']);
+                })
+                ->when(isset($query['end_date']), function ($q) use ($query) {
+                    $q->where('end_date', '<=', $query['end_date']);
+                })
+                ->orderBy($query['order_by'] ?? 'updated_at', $query['order_direction'] ?? 'DESC')
+                ->paginate($query['page_size'] ?? 15);
 
         return ItemResource::collection($items);
     }
@@ -88,13 +173,30 @@ class MerchantController extends Controller
      * @group Review
      * 
      * @authenticated
+     * 
+     * @queryParam rating_min int Review minimum rating Example: 2
+     * @queryParam rating_max int Review maximum rating Example: 5
+     * @queryParam is_replied bool Review is replied Example: true
+     * @queryParam order_by string Order by (default: updated_at) Example: updated_at
+     * @queryParam order_direction string Order direction (ASC or DESC) (default: DESC) Example: DESC
+     * @queryParam page_size int Page size (default: 15) Example: 15
      */
     public function reviewIndex(Request $request)
     {
-        $pageSize = $request->query('page_size', 15);
+        $query = $request->query();
+
         $reviews = Review::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
-                ->orderBy('updated_at', 'DESC')
-                ->paginate($pageSize);
+                ->when(isset($query['rating_min']), function ($q) use ($query) {
+                    $q->where('rating', '>=', $query['rating_min']);
+                })
+                ->when(isset($query['rating_max']), function ($q) use ($query) {
+                    $q->where('rating', '<=', $query['rating_max']);
+                })
+                ->when(isset($query['is_replied']), function ($q) use ($query) {
+                    $q->whereNotNull('reply');
+                })
+                ->orderBy($query['order_by'] ?? 'updated_at', $query['order_direction'] ?? 'DESC')
+                ->paginate($query['page_size'] ?? 15);
         $reviews->load('user', 'product');
 
         return ReviewResource::collection($reviews);

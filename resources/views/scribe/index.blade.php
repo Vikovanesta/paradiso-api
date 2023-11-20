@@ -98,8 +98,8 @@
                     <a href="#merchant">Merchant</a>
                 </li>
                                     <ul id="tocify-subheader-merchant" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="merchant-GETapi-v1-merchants--merchant_id-">
-                                <a href="#merchant-GETapi-v1-merchants--merchant_id-">Get merchant profile</a>
+                                                    <li class="tocify-item level-2" data-unique="merchant-GETapi-v1-merchants-me">
+                                <a href="#merchant-GETapi-v1-merchants-me">Get merchant profile</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="merchant-PUTapi-v1-merchants">
                                 <a href="#merchant-PUTapi-v1-merchants">Update merchant profile</a>
@@ -127,14 +127,14 @@
                     <a href="#product">Product</a>
                 </li>
                                     <ul id="tocify-subheader-product" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="product-GETapi-v1-products--product_id-">
-                                <a href="#product-GETapi-v1-products--product_id-">Get product details.</a>
+                                                    <li class="tocify-item level-2" data-unique="product-GETapi-v1-merchants-me-products">
+                                <a href="#product-GETapi-v1-merchants-me-products">Get all merchant's products.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="product-POSTapi-v1-merchants-products">
                                 <a href="#product-POSTapi-v1-merchants-products">Create new product.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="product-GETapi-v1-merchants--merchant--products">
-                                <a href="#product-GETapi-v1-merchants--merchant--products">Get all merchant's products.</a>
+                                                                                <li class="tocify-item level-2" data-unique="product-GETapi-v1-products--product_id-">
+                                <a href="#product-GETapi-v1-products--product_id-">Get product details.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="product-PUTapi-v1-products--product_id-">
                                 <a href="#product-PUTapi-v1-products--product_id-">Update a product.</a>
@@ -173,6 +173,16 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-statistic" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="statistic">
+                    <a href="#statistic">Statistic</a>
+                </li>
+                                    <ul id="tocify-subheader-statistic" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="statistic-GETapi-v1-merchants-me-statistic">
+                                <a href="#statistic-GETapi-v1-merchants-me-statistic">Get merchant's statistic.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-transaction" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="transaction">
                     <a href="#transaction">Transaction</a>
@@ -194,7 +204,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 10, 2023</li>
+        <li>Last updated: November 20, 2023</li>
     </ul>
 </div>
 
@@ -428,7 +438,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/logout" \
-    --header "Authorization: Bearer dZhV6bfD18P34e6a5Evagkc" \
+    --header "Authorization: Bearer e6gZV6vf5kE4a3d8DachbP1" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -438,7 +448,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer dZhV6bfD18P34e6a5Evagkc",
+    "Authorization": "Bearer e6gZV6vf5kE4a3d8DachbP1",
     "Accept": "application/json",
 };
 
@@ -455,7 +465,7 @@ $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer dZhV6bfD18P34e6a5Evagkc',
+            'Authorization' =&gt; 'Bearer e6gZV6vf5kE4a3d8DachbP1',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -470,7 +480,7 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/logout'
 headers = {
-  'Authorization': 'Bearer dZhV6bfD18P34e6a5Evagkc',
+  'Authorization': 'Bearer e6gZV6vf5kE4a3d8DachbP1',
   'Accept': 'application/json'
 }
 
@@ -543,10 +553,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-logout"
-               value="Bearer dZhV6bfD18P34e6a5Evagkc"
+               value="Bearer e6gZV6vf5kE4a3d8DachbP1"
                data-component="header">
     <br>
-<p>Example: <code>Bearer dZhV6bfD18P34e6a5Evagkc</code></p>
+<p>Example: <code>Bearer e6gZV6vf5kE4a3d8DachbP1</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -578,13 +588,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/u&amp;lt;a]\L9L" \
+    --get "http://127.0.0.1:8000/api/vMT!U12" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/u&amp;lt;a]\L9L"
+    "http://127.0.0.1:8000/api/vMT!U12"
 );
 
 const headers = {
@@ -599,7 +609,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/u&lt;a]\L9L';
+$url = 'http://127.0.0.1:8000/api/vMT!U12';
 $response = $client-&gt;get(
     $url,
     [
@@ -616,7 +626,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/u&amp;lt;a]\L9L'
+url = 'http://127.0.0.1:8000/api/vMT!U12'
 headers = {
   'Accept': 'application/json'
 }
@@ -637,7 +647,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 48
+x-ratelimit-remaining: 47
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -711,10 +721,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="fallbackPlaceholder"                data-endpoint="GETapi--fallbackPlaceholder-"
-               value="u<a]\L9L"
+               value="vMT!U12"
                data-component="url">
     <br>
-<p>Example: <code>u&lt;a]\L9L</code></p>
+<p>Example: <code>vMT!U12</code></p>
             </div>
                     </form>
 
@@ -722,7 +732,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
     
 
-                                <h2 id="merchant-GETapi-v1-merchants--merchant_id-">Get merchant profile</h2>
+                                <h2 id="merchant-GETapi-v1-merchants-me">Get merchant profile</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -730,24 +740,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 
 
-<span id="example-requests-GETapi-v1-merchants--merchant_id-">
+<span id="example-requests-GETapi-v1-merchants-me">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/merchants/1" \
-    --header "Authorization: Bearer hc1Z6bvDVe4gd8E3a5kPa6f" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/me" \
+    --header "Authorization: Bearer fdV8e1cahvZ4gkPE3656Dba" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/merchants/1"
+    "http://127.0.0.1:8000/api/v1/merchants/me"
 );
 
 const headers = {
-    "Authorization": "Bearer hc1Z6bvDVe4gd8E3a5kPa6f",
+    "Authorization": "Bearer fdV8e1cahvZ4gkPE3656Dba",
     "Accept": "application/json",
 };
 
@@ -759,12 +769,12 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/merchants/1';
+$url = 'http://127.0.0.1:8000/api/v1/merchants/me';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer hc1Z6bvDVe4gd8E3a5kPa6f',
+            'Authorization' =&gt; 'Bearer fdV8e1cahvZ4gkPE3656Dba',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -777,9 +787,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/merchants/1'
+url = 'http://127.0.0.1:8000/api/v1/merchants/me'
 headers = {
-  'Authorization': 'Bearer hc1Z6bvDVe4gd8E3a5kPa6f',
+  'Authorization': 'Bearer fdV8e1cahvZ4gkPE3656Dba',
   'Accept': 'application/json'
 }
 
@@ -788,7 +798,7 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-v1-merchants--merchant_id-">
+<span id="example-responses-GETapi-v1-merchants-me">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -799,7 +809,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 51
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -812,8 +822,8 @@ vary: Origin
         &quot;logo&quot;: &quot;https://picsum.photos/100/100&quot;,
         &quot;is_highlight&quot;: 0,
         &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-        &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
         &quot;profile&quot;: {
             &quot;id&quot;: 1,
             &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
@@ -829,55 +839,55 @@ vary: Origin
         &quot;level&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;standart&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0044ff?text=quo&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/003399?text=molestias&quot;
         },
         &quot;status&quot;: {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;Accepted&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0011cc?text=maiores&quot;,
-            &quot;color&quot;: &quot;#871827&quot;
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/000022?text=quia&quot;,
+            &quot;color&quot;: &quot;#299790&quot;
         }
     }
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-v1-merchants--merchant_id-" hidden>
+<span id="execution-results-GETapi-v1-merchants-me" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-merchants--merchant_id-"></span>:
+                id="execution-response-status-GETapi-v1-merchants-me"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-merchants--merchant_id-"
+    <pre class="json"><code id="execution-response-content-GETapi-v1-merchants-me"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-v1-merchants--merchant_id-" hidden>
+<span id="execution-error-GETapi-v1-merchants-me" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-merchants--merchant_id-">
+    <pre><code id="execution-error-message-GETapi-v1-merchants-me">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-v1-merchants--merchant_id-" data-method="GET"
-      data-path="api/v1/merchants/{merchant_id}"
+<form id="form-GETapi-v1-merchants-me" data-method="GET"
+      data-path="api/v1/merchants/me"
       data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-merchants--merchant_id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-merchants-me', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-merchants--merchant_id-"
-                    onclick="tryItOut('GETapi-v1-merchants--merchant_id-');">Try it out ⚡
+                    id="btn-tryout-GETapi-v1-merchants-me"
+                    onclick="tryItOut('GETapi-v1-merchants-me');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-merchants--merchant_id-"
-                    onclick="cancelTryOut('GETapi-v1-merchants--merchant_id-');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-v1-merchants-me"
+                    onclick="cancelTryOut('GETapi-v1-merchants-me');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-merchants--merchant_id-"
+                    id="btn-executetryout-GETapi-v1-merchants-me"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -885,7 +895,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/v1/merchants/{merchant_id}</code></b>
+            <b><code>api/v1/merchants/me</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -893,36 +903,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="Bearer hc1Z6bvDVe4gd8E3a5kPa6f"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants-me"
+               value="Bearer fdV8e1cahvZ4gkPE3656Dba"
                data-component="header">
     <br>
-<p>Example: <code>Bearer hc1Z6bvDVe4gd8E3a5kPa6f</code></p>
+<p>Example: <code>Bearer fdV8e1cahvZ4gkPE3656Dba</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-merchants--merchant_id-"
+                              name="Accept"                data-endpoint="GETapi-v1-merchants-me"
                value="application/json"
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>merchant_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="merchant_id"                data-endpoint="GETapi-v1-merchants--merchant_id-"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the merchant. Example: <code>1</code></p>
-            </div>
-                    </form>
+                        </form>
 
                     <h2 id="merchant-PUTapi-v1-merchants">Update merchant profile</h2>
 
@@ -939,18 +937,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/merchants" \
-    --header "Authorization: Bearer f6DgaZV3b684Ed1Pkahe5cv" \
+    --header "Authorization: Bearer k8cfd6b15VPDZaEhe3vag64" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
-    --form "name=molestias"\
-    --form "address=velit"\
-    --form "description=Sunt corrupti cupiditate perferendis qui ut."\
-    --form "notes=est"\
-    --form "ktp_number=qppeggcbygsvaczs"\
-    --form "npwp_number=bdfnwatgmrglcuj"\
-    --form "siup_number=gtmyxjbjopsyy"\
-    --form "logo=@/tmp/phpz2R7xB" \
-    --form "banner=@/tmp/phpwe5uFy" </code></pre></div>
+    --form "name=esse"\
+    --form "address=dolor"\
+    --form "description=Numquam accusantium ea doloremque et."\
+    --form "notes=et"\
+    --form "ktp_number=yulymkvfhrqdzqpu"\
+    --form "npwp_number=kcspssjyawlbmiv"\
+    --form "siup_number=ukoruodinrrhd"\
+    --form "logo=@/tmp/php8VOjIp" \
+    --form "banner=@/tmp/phpouc1fS" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -959,19 +957,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer f6DgaZV3b684Ed1Pkahe5cv",
+    "Authorization": "Bearer k8cfd6b15VPDZaEhe3vag64",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
 
 const body = new FormData();
-body.append('name', 'molestias');
-body.append('address', 'velit');
-body.append('description', 'Sunt corrupti cupiditate perferendis qui ut.');
-body.append('notes', 'est');
-body.append('ktp_number', 'qppeggcbygsvaczs');
-body.append('npwp_number', 'bdfnwatgmrglcuj');
-body.append('siup_number', 'gtmyxjbjopsyy');
+body.append('name', 'esse');
+body.append('address', 'dolor');
+body.append('description', 'Numquam accusantium ea doloremque et.');
+body.append('notes', 'et');
+body.append('ktp_number', 'yulymkvfhrqdzqpu');
+body.append('npwp_number', 'kcspssjyawlbmiv');
+body.append('siup_number', 'ukoruodinrrhd');
 body.append('logo', document.querySelector('input[name="logo"]').files[0]);
 body.append('banner', document.querySelector('input[name="banner"]').files[0]);
 
@@ -989,46 +987,46 @@ $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer f6DgaZV3b684Ed1Pkahe5cv',
+            'Authorization' =&gt; 'Bearer k8cfd6b15VPDZaEhe3vag64',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
         'multipart' =&gt; [
             [
                 'name' =&gt; 'name',
-                'contents' =&gt; 'molestias'
+                'contents' =&gt; 'esse'
             ],
             [
                 'name' =&gt; 'address',
-                'contents' =&gt; 'velit'
+                'contents' =&gt; 'dolor'
             ],
             [
                 'name' =&gt; 'description',
-                'contents' =&gt; 'Sunt corrupti cupiditate perferendis qui ut.'
+                'contents' =&gt; 'Numquam accusantium ea doloremque et.'
             ],
             [
                 'name' =&gt; 'notes',
-                'contents' =&gt; 'est'
+                'contents' =&gt; 'et'
             ],
             [
                 'name' =&gt; 'ktp_number',
-                'contents' =&gt; 'qppeggcbygsvaczs'
+                'contents' =&gt; 'yulymkvfhrqdzqpu'
             ],
             [
                 'name' =&gt; 'npwp_number',
-                'contents' =&gt; 'bdfnwatgmrglcuj'
+                'contents' =&gt; 'kcspssjyawlbmiv'
             ],
             [
                 'name' =&gt; 'siup_number',
-                'contents' =&gt; 'gtmyxjbjopsyy'
+                'contents' =&gt; 'ukoruodinrrhd'
             ],
             [
                 'name' =&gt; 'logo',
-                'contents' =&gt; fopen('/tmp/phpz2R7xB', 'r')
+                'contents' =&gt; fopen('/tmp/php8VOjIp', 'r')
             ],
             [
                 'name' =&gt; 'banner',
-                'contents' =&gt; fopen('/tmp/phpwe5uFy', 'r')
+                'contents' =&gt; fopen('/tmp/phpouc1fS', 'r')
             ],
         ],
     ]
@@ -1043,26 +1041,26 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/merchants'
 files = {
-  'name': (None, 'molestias'),
-  'address': (None, 'velit'),
-  'description': (None, 'Sunt corrupti cupiditate perferendis qui ut.'),
-  'notes': (None, 'est'),
-  'ktp_number': (None, 'qppeggcbygsvaczs'),
-  'npwp_number': (None, 'bdfnwatgmrglcuj'),
-  'siup_number': (None, 'gtmyxjbjopsyy'),
-  'logo': open('/tmp/phpz2R7xB', 'rb'),
-  'banner': open('/tmp/phpwe5uFy', 'rb')}
+  'name': (None, 'esse'),
+  'address': (None, 'dolor'),
+  'description': (None, 'Numquam accusantium ea doloremque et.'),
+  'notes': (None, 'et'),
+  'ktp_number': (None, 'yulymkvfhrqdzqpu'),
+  'npwp_number': (None, 'kcspssjyawlbmiv'),
+  'siup_number': (None, 'ukoruodinrrhd'),
+  'logo': open('/tmp/php8VOjIp', 'rb'),
+  'banner': open('/tmp/phpouc1fS', 'rb')}
 payload = {
-    "name": "molestias",
-    "address": "velit",
-    "description": "Sunt corrupti cupiditate perferendis qui ut.",
-    "notes": "est",
-    "ktp_number": "qppeggcbygsvaczs",
-    "npwp_number": "bdfnwatgmrglcuj",
-    "siup_number": "gtmyxjbjopsyy"
+    "name": "esse",
+    "address": "dolor",
+    "description": "Numquam accusantium ea doloremque et.",
+    "notes": "et",
+    "ktp_number": "yulymkvfhrqdzqpu",
+    "npwp_number": "kcspssjyawlbmiv",
+    "siup_number": "ukoruodinrrhd"
 }
 headers = {
-  'Authorization': 'Bearer f6DgaZV3b684Ed1Pkahe5cv',
+  'Authorization': 'Bearer k8cfd6b15VPDZaEhe3vag64',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -1127,10 +1125,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-merchants"
-               value="Bearer f6DgaZV3b684Ed1Pkahe5cv"
+               value="Bearer k8cfd6b15VPDZaEhe3vag64"
                data-component="header">
     <br>
-<p>Example: <code>Bearer f6DgaZV3b684Ed1Pkahe5cv</code></p>
+<p>Example: <code>Bearer k8cfd6b15VPDZaEhe3vag64</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1161,10 +1159,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-merchants"
-               value="molestias"
+               value="esse"
                data-component="body">
     <br>
-<p>Example: <code>molestias</code></p>
+<p>Example: <code>esse</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>logo</code></b>&nbsp;&nbsp;
@@ -1175,7 +1173,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Example: <code>/tmp/phpz2R7xB</code></p>
+<p>Must be a file. Example: <code>/tmp/php8VOjIp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -1183,10 +1181,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-merchants"
-               value="velit"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>velit</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>banner</code></b>&nbsp;&nbsp;
@@ -1197,7 +1195,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Example: <code>/tmp/phpwe5uFy</code></p>
+<p>Must be a file. Example: <code>/tmp/phpouc1fS</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1205,10 +1203,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-merchants"
-               value="Sunt corrupti cupiditate perferendis qui ut."
+               value="Numquam accusantium ea doloremque et."
                data-component="body">
     <br>
-<p>Example: <code>Sunt corrupti cupiditate perferendis qui ut.</code></p>
+<p>Example: <code>Numquam accusantium ea doloremque et.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -1216,10 +1214,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="PUTapi-v1-merchants"
-               value="est"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ktp_number</code></b>&nbsp;&nbsp;
@@ -1227,10 +1225,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ktp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="qppeggcbygsvaczs"
+               value="yulymkvfhrqdzqpu"
                data-component="body">
     <br>
-<p>Must be 16 characters. Example: <code>qppeggcbygsvaczs</code></p>
+<p>Must be 16 characters. Example: <code>yulymkvfhrqdzqpu</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>npwp_number</code></b>&nbsp;&nbsp;
@@ -1238,10 +1236,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="npwp_number"                data-endpoint="PUTapi-v1-merchants"
-               value="bdfnwatgmrglcuj"
+               value="kcspssjyawlbmiv"
                data-component="body">
     <br>
-<p>Must be 15 characters. Example: <code>bdfnwatgmrglcuj</code></p>
+<p>Must be 15 characters. Example: <code>kcspssjyawlbmiv</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>siup_number</code></b>&nbsp;&nbsp;
@@ -1249,10 +1247,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="siup_number"                data-endpoint="PUTapi-v1-merchants"
-               value="gtmyxjbjopsyy"
+               value="ukoruodinrrhd"
                data-component="body">
     <br>
-<p>Must be 13 characters. Example: <code>gtmyxjbjopsyy</code></p>
+<p>Must be 13 characters. Example: <code>ukoruodinrrhd</code></p>
         </div>
         </form>
 
@@ -1274,8 +1272,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/merchants/me/items" \
-    --header "Authorization: Bearer vZg1a65EeVc8adDfbk6Ph34" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/me/items?quantity_min=2&amp;quantity_max=10&amp;start_date=2023-10-16&amp;end_date=2023-10-20&amp;order_by=updated_at&amp;order_direction=DESC&amp;page_size=15" \
+    --header "Authorization: Bearer 43vdhe1agca5bk8Zf6D6VPE" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -1284,8 +1282,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/v1/merchants/me/items"
 );
 
+const params = {
+    "quantity_min": "2",
+    "quantity_max": "10",
+    "start_date": "2023-10-16",
+    "end_date": "2023-10-20",
+    "order_by": "updated_at",
+    "order_direction": "DESC",
+    "page_size": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
 const headers = {
-    "Authorization": "Bearer vZg1a65EeVc8adDfbk6Ph34",
+    "Authorization": "Bearer 43vdhe1agca5bk8Zf6D6VPE",
     "Accept": "application/json",
 };
 
@@ -1302,8 +1312,17 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer vZg1a65EeVc8adDfbk6Ph34',
+            'Authorization' =&gt; 'Bearer 43vdhe1agca5bk8Zf6D6VPE',
             'Accept' =&gt; 'application/json',
+        ],
+        'query' =&gt; [
+            'quantity_min' =&gt; '2',
+            'quantity_max' =&gt; '10',
+            'start_date' =&gt; '2023-10-16',
+            'end_date' =&gt; '2023-10-20',
+            'order_by' =&gt; 'updated_at',
+            'order_direction' =&gt; 'DESC',
+            'page_size' =&gt; '15',
         ],
     ]
 );
@@ -1316,12 +1335,21 @@ print_r(json_decode((string) $body));</code></pre></div>
 import json
 
 url = 'http://127.0.0.1:8000/api/v1/merchants/me/items'
+params = {
+  'quantity_min': '2',
+  'quantity_max': '10',
+  'start_date': '2023-10-16',
+  'end_date': '2023-10-20',
+  'order_by': 'updated_at',
+  'order_direction': 'DESC',
+  'page_size': '15',
+}
 headers = {
-  'Authorization': 'Bearer vZg1a65EeVc8adDfbk6Ph34',
+  'Authorization': 'Bearer 43vdhe1agca5bk8Zf6D6VPE',
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()</code></pre></div>
 
 </span>
@@ -1337,38 +1365,22 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 55
 vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 2,
-            &quot;net_price&quot;: 306487,
-            &quot;price&quot;: 300000,
+            &quot;id&quot;: 9,
+            &quot;net_price&quot;: 687832,
+            &quot;price&quot;: 700000,
             &quot;product_name&quot;: &quot;product&quot;,
             &quot;product_description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-            &quot;start_date&quot;: &quot;04/04/2022&quot;,
-            &quot;end_date&quot;: &quot;05/07/2021&quot;,
-            &quot;quantity&quot;: 3,
-            &quot;note&quot;: &quot;Aliquam eveniet nam sit dicta praesentium non ipsa.&quot;,
-            &quot;status&quot;: {
-                &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;1&quot;,
-                &quot;desciption&quot;: &quot;Confirmed by merchant&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;net_price&quot;: 206800,
-            &quot;price&quot;: 200000,
-            &quot;product_name&quot;: &quot;product&quot;,
-            &quot;product_description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-            &quot;start_date&quot;: &quot;05/06/2022&quot;,
-            &quot;end_date&quot;: &quot;20/06/2022&quot;,
-            &quot;quantity&quot;: 2,
-            &quot;note&quot;: &quot;Quaerat deserunt praesentium praesentium modi animi.&quot;,
+            &quot;start_date&quot;: &quot;22/10/2023&quot;,
+            &quot;end_date&quot;: &quot;27/01/2022&quot;,
+            &quot;quantity&quot;: 7,
+            &quot;note&quot;: &quot;Aut aut at ullam vitae.&quot;,
             &quot;status&quot;: {
                 &quot;id&quot;: 3,
                 &quot;name&quot;: &quot;2&quot;,
@@ -1386,9 +1398,9 @@ vary: Origin
             &quot;quantity&quot;: 2,
             &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
             &quot;status&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;0&quot;,
-                &quot;desciption&quot;: &quot;Waiting for merchant confirmation&quot;
+                &quot;id&quot;: 2,
+                &quot;name&quot;: &quot;1&quot;,
+                &quot;desciption&quot;: &quot;Confirmed by merchant&quot;
             }
         }
     ],
@@ -1421,8 +1433,8 @@ vary: Origin
         ],
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/me/items&quot;,
         &quot;per_page&quot;: 15,
-        &quot;to&quot;: 3,
-        &quot;total&quot;: 3
+        &quot;to&quot;: 2,
+        &quot;total&quot;: 2
     }
 }</code>
  </pre>
@@ -1480,10 +1492,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants-me-items"
-               value="Bearer vZg1a65EeVc8adDfbk6Ph34"
+               value="Bearer 43vdhe1agca5bk8Zf6D6VPE"
                data-component="header">
     <br>
-<p>Example: <code>Bearer vZg1a65EeVc8adDfbk6Ph34</code></p>
+<p>Example: <code>Bearer 43vdhe1agca5bk8Zf6D6VPE</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1496,7 +1508,85 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>quantity_min</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity_min"                data-endpoint="GETapi-v1-merchants-me-items"
+               value="2"
+               data-component="query">
+    <br>
+<p>Item minimum quantity Example: <code>2</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>quantity_max</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity_max"                data-endpoint="GETapi-v1-merchants-me-items"
+               value="10"
+               data-component="query">
+    <br>
+<p>Item maximum quantity Example: <code>10</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="start_date"                data-endpoint="GETapi-v1-merchants-me-items"
+               value="2023-10-16"
+               data-component="query">
+    <br>
+<p>Item minimum start date (Y-m-d) Example: <code>2023-10-16</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="end_date"                data-endpoint="GETapi-v1-merchants-me-items"
+               value="2023-10-20"
+               data-component="query">
+    <br>
+<p>Item maximum end date (Y-m-d) Example: <code>2023-10-20</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="order_by"                data-endpoint="GETapi-v1-merchants-me-items"
+               value="updated_at"
+               data-component="query">
+    <br>
+<p>Order by (default: updated_at) Example: <code>updated_at</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order_direction</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="order_direction"                data-endpoint="GETapi-v1-merchants-me-items"
+               value="DESC"
+               data-component="query">
+    <br>
+<p>Order direction (ASC or DESC) (default: DESC) Example: <code>DESC</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page_size</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page_size"                data-endpoint="GETapi-v1-merchants-me-items"
+               value="15"
+               data-component="query">
+    <br>
+<p>Page size (default: 15) Example: <code>15</code></p>
+            </div>
+                </form>
 
                     <h2 id="order-item-GETapi-v1-items--item_id-">Get order item details.</h2>
 
@@ -1513,7 +1603,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/items/1" \
-    --header "Authorization: Bearer 8kVf1cb4agvhE3DZ6d5Pea6" \
+    --header "Authorization: Bearer 6cfh1v4Ead6gP5DVk83aebZ" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -1523,7 +1613,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer 8kVf1cb4agvhE3DZ6d5Pea6",
+    "Authorization": "Bearer 6cfh1v4Ead6gP5DVk83aebZ",
     "Accept": "application/json",
 };
 
@@ -1540,7 +1630,7 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 8kVf1cb4agvhE3DZ6d5Pea6',
+            'Authorization' =&gt; 'Bearer 6cfh1v4Ead6gP5DVk83aebZ',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -1555,7 +1645,7 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/items/1'
 headers = {
-  'Authorization': 'Bearer 8kVf1cb4agvhE3DZ6d5Pea6',
+  'Authorization': 'Bearer 6cfh1v4Ead6gP5DVk83aebZ',
   'Accept': 'application/json'
 }
 
@@ -1575,7 +1665,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 49
+x-ratelimit-remaining: 48
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -1609,8 +1699,8 @@ vary: Origin
             &quot;min_person&quot;: 1,
             &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
             &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;
         },
         &quot;transaction&quot;: {
             &quot;id&quot;: 1,
@@ -1620,15 +1710,15 @@ vary: Origin
             &quot;total_voucher_price&quot;: 0,
             &quot;amount&quot;: 200000,
             &quot;status&quot;: {
-                &quot;id&quot;: 7,
-                &quot;name&quot;: &quot;50&quot;,
+                &quot;id&quot;: 50,
+                &quot;name&quot;: null,
                 &quot;description&quot;: &quot;Selesai&quot;
             }
         },
         &quot;status&quot;: {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;0&quot;,
-            &quot;desciption&quot;: &quot;Waiting for merchant confirmation&quot;
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;1&quot;,
+            &quot;desciption&quot;: &quot;Confirmed by merchant&quot;
         }
     }
 }</code>
@@ -1687,10 +1777,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-items--item_id-"
-               value="Bearer 8kVf1cb4agvhE3DZ6d5Pea6"
+               value="Bearer 6cfh1v4Ead6gP5DVk83aebZ"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 8kVf1cb4agvhE3DZ6d5Pea6</code></p>
+<p>Example: <code>Bearer 6cfh1v4Ead6gP5DVk83aebZ</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1732,11 +1822,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/items/1" \
-    --header "Authorization: Bearer aE5dV618vhkeZcf3ab64DPg" \
+    --header "Authorization: Bearer 1EacvaZV8hkedP3g66b45Df" \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
     --data "{
-    \"status_id\": \"3\"
+    \"status_id\": \"2\"
 }"
 </code></pre></div>
 
@@ -1747,13 +1837,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer aE5dV618vhkeZcf3ab64DPg",
+    "Authorization": "Bearer 1EacvaZV8hkedP3g66b45Df",
     "Accept": "application/json",
     "Content-Type": "application/json",
 };
 
 let body = {
-    "status_id": "3"
+    "status_id": "2"
 };
 
 fetch(url, {
@@ -1770,12 +1860,12 @@ $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer aE5dV618vhkeZcf3ab64DPg',
+            'Authorization' =&gt; 'Bearer 1EacvaZV8hkedP3g66b45Df',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'status_id' =&gt; '3',
+            'status_id' =&gt; '2',
         ],
     ]
 );
@@ -1789,10 +1879,10 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/items/1'
 payload = {
-    "status_id": "3"
+    "status_id": "2"
 }
 headers = {
-  'Authorization': 'Bearer aE5dV618vhkeZcf3ab64DPg',
+  'Authorization': 'Bearer 1EacvaZV8hkedP3g66b45Df',
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
@@ -1857,10 +1947,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-items--item_id-"
-               value="Bearer aE5dV618vhkeZcf3ab64DPg"
+               value="Bearer 1EacvaZV8hkedP3g66b45Df"
                data-component="header">
     <br>
-<p>Example: <code>Bearer aE5dV618vhkeZcf3ab64DPg</code></p>
+<p>Example: <code>Bearer 1EacvaZV8hkedP3g66b45Df</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1903,10 +1993,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="status_id"                data-endpoint="PUTapi-v1-items--item_id-"
-               value="3"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>2</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>2</code></li> <li><code>3</code></li></ul>
         </div>
@@ -1916,29 +2006,51 @@ Must be one of:
 
     
 
-                                <h2 id="product-GETapi-v1-products--product_id-">Get product details.</h2>
+                                <h2 id="product-GETapi-v1-merchants-me-products">Get all merchant&#039;s products.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
 
-<span id="example-requests-GETapi-v1-products--product_id-">
+<span id="example-requests-GETapi-v1-merchants-me-products">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/products/1" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/me/products?status_id=1&amp;category_id=1&amp;sub_category_id=1&amp;name=Prod&amp;duration=1&amp;start_date=2023-10-16&amp;end_date=2023-10-20&amp;price_min=50000&amp;price_max=1000000&amp;person_min=1&amp;person_max=20&amp;sort_by=updated_at&amp;sort_direction=DESC&amp;page_size=15" \
+    --header "Authorization: Bearer P4d1b5gDe68vaE36VckfaZh" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/products/1"
+    "http://127.0.0.1:8000/api/v1/merchants/me/products"
 );
 
+const params = {
+    "status_id": "1",
+    "category_id": "1",
+    "sub_category_id": "1",
+    "name": "Prod",
+    "duration": "1",
+    "start_date": "2023-10-16",
+    "end_date": "2023-10-20",
+    "price_min": "50000",
+    "price_max": "1000000",
+    "person_min": "1",
+    "person_max": "20",
+    "sort_by": "updated_at",
+    "sort_direction": "DESC",
+    "page_size": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
 const headers = {
+    "Authorization": "Bearer P4d1b5gDe68vaE36VckfaZh",
     "Accept": "application/json",
 };
 
@@ -1950,12 +2062,29 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/products/1';
+$url = 'http://127.0.0.1:8000/api/v1/merchants/me/products';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer P4d1b5gDe68vaE36VckfaZh',
             'Accept' =&gt; 'application/json',
+        ],
+        'query' =&gt; [
+            'status_id' =&gt; '1',
+            'category_id' =&gt; '1',
+            'sub_category_id' =&gt; '1',
+            'name' =&gt; 'Prod',
+            'duration' =&gt; '1',
+            'start_date' =&gt; '2023-10-16',
+            'end_date' =&gt; '2023-10-20',
+            'price_min' =&gt; '50000',
+            'price_max' =&gt; '1000000',
+            'person_min' =&gt; '1',
+            'person_max' =&gt; '20',
+            'sort_by' =&gt; 'updated_at',
+            'sort_direction' =&gt; 'DESC',
+            'page_size' =&gt; '15',
         ],
     ]
 );
@@ -1967,17 +2096,34 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/products/1'
+url = 'http://127.0.0.1:8000/api/v1/merchants/me/products'
+params = {
+  'status_id': '1',
+  'category_id': '1',
+  'sub_category_id': '1',
+  'name': 'Prod',
+  'duration': '1',
+  'start_date': '2023-10-16',
+  'end_date': '2023-10-20',
+  'price_min': '50000',
+  'price_max': '1000000',
+  'person_min': '1',
+  'person_max': '20',
+  'sort_by': 'updated_at',
+  'sort_direction': 'DESC',
+  'page_size': '15',
+}
 headers = {
+  'Authorization': 'Bearer P4d1b5gDe68vaE36VckfaZh',
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-v1-products--product_id-">
+<span id="example-responses-GETapi-v1-merchants-me-products">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -1988,197 +2134,105 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 53
 vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;status&quot;: true,
-    &quot;message&quot;: &quot;Product retrieved successfully&quot;,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;product&quot;,
-        &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-        &quot;duration&quot;: 1,
-        &quot;start_date&quot;: &quot;16/10/2023&quot;,
-        &quot;end_date&quot;: &quot;17/10/2023&quot;,
-        &quot;price&quot;: 100000,
-        &quot;unit&quot;: &quot;unit&quot;,
-        &quot;discount&quot;: 0,
-        &quot;thumbnail&quot;: &quot;https://picsum.photos/200/200&quot;,
-        &quot;address&quot;: &quot;Jl. Test&quot;,
-        &quot;coordinate&quot;: &quot;123,123&quot;,
-        &quot;max_person&quot;: 10,
-        &quot;min_person&quot;: 1,
-        &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-        &quot;is_published&quot;: 0,
-        &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-        &quot;sub_category&quot;: {
+    &quot;data&quot;: [
+        {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;dolore&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/004444?text=pariatur&quot;,
-            &quot;product_category&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;quos&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0077bb?text=voluptatem&quot;
-            }
-        },
-        &quot;merchant&quot;: {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;merchant&quot;,
-            &quot;logo&quot;: &quot;https://picsum.photos/100/100&quot;,
-            &quot;is_highlight&quot;: 0,
-            &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-            &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;
-        },
-        &quot;status&quot;: {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;draft&quot;,
-            &quot;color&quot;: &quot;PaleTurquoise&quot;,
-            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/CCCCCC&quot;
-        },
-        &quot;schedules&quot;: [
+            &quot;name&quot;: &quot;product&quot;,
+            &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+            &quot;duration&quot;: 1,
+            &quot;start_date&quot;: &quot;16/10/2023&quot;,
+            &quot;end_date&quot;: &quot;17/10/2023&quot;,
+            &quot;price&quot;: 100000,
+            &quot;unit&quot;: &quot;unit&quot;,
+            &quot;discount&quot;: 0,
+            &quot;thumbnail&quot;: &quot;https://picsum.photos/200/200&quot;,
+            &quot;address&quot;: &quot;Jl. Test&quot;,
+            &quot;coordinate&quot;: &quot;123,123&quot;,
+            &quot;max_person&quot;: 10,
+            &quot;min_person&quot;: 1,
+            &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+            &quot;is_published&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/me/products?page=1&quot;,
+        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/me/products?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
             {
-                &quot;id&quot;: 1,
-                &quot;date&quot;: &quot;16/10/2023&quot;,
-                &quot;title&quot;: &quot;day 1&quot;,
-                &quot;schedule_days&quot;: [
-                    {
-                        &quot;id&quot;: 1,
-                        &quot;start_time&quot;: &quot;08:00&quot;,
-                        &quot;end_time&quot;: &quot;10:00&quot;,
-                        &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;
-                    },
-                    {
-                        &quot;id&quot;: 2,
-                        &quot;start_time&quot;: &quot;13:00&quot;,
-                        &quot;end_time&quot;: &quot;14:00&quot;,
-                        &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;
-                    }
-                ]
-            }
-        ],
-        &quot;reviews&quot;: [
-            {
-                &quot;id&quot;: 1,
-                &quot;review&quot;: &quot;revieww&quot;,
-                &quot;rating&quot;: 5,
-                &quot;reply&quot;: &quot;ampas bro&quot;,
-                &quot;user&quot;: {
-                    &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;merchant&quot;,
-                    &quot;user_level&quot;: 3,
-                    &quot;email&quot;: &quot;merchant@mail.com&quot;,
-                    &quot;phone&quot;: &quot;081234567890&quot;,
-                    &quot;status&quot;: 1,
-                    &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;
-                }
-            }
-        ],
-        &quot;include_excludes&quot;: [
-            {
-                &quot;id&quot;: 1,
-                &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-                &quot;is_include&quot;: 1
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
             },
             {
-                &quot;id&quot;: 2,
-                &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-                &quot;is_include&quot;: 0
-            }
-        ],
-        &quot;facilities&quot;: [
-            {
-                &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;parkir&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0033ee?text=earum&quot;
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/me/products?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
             },
             {
-                &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;ac&quot;,
-                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/000044?text=beatae&quot;
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
             }
         ],
-        &quot;faqs&quot;: [
-            {
-                &quot;id&quot;: 1,
-                &quot;question&quot;: &quot;question1&quot;,
-                &quot;answer&quot;: &quot;answer1&quot;,
-                &quot;is_global&quot;: 0
-            },
-            {
-                &quot;id&quot;: 2,
-                &quot;question&quot;: &quot;question2&quot;,
-                &quot;answer&quot;: &quot;answer2&quot;,
-                &quot;is_global&quot;: 0
-            }
-        ],
-        &quot;terms&quot;: [
-            {
-                &quot;id&quot;: 1,
-                &quot;term&quot;: &quot;term1&quot;,
-                &quot;is_global&quot;: 0
-            },
-            {
-                &quot;id&quot;: 2,
-                &quot;term&quot;: &quot;term2&quot;,
-                &quot;is_global&quot;: 0
-            }
-        ],
-        &quot;images&quot;: [
-            {
-                &quot;id&quot;: 1,
-                &quot;image&quot;: &quot;https://picsum.photos/360/360&quot;
-            },
-            {
-                &quot;id&quot;: 2,
-                &quot;image&quot;: &quot;https://picsum.photos/360/360&quot;
-            }
-        ]
+        &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/me/products&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 1,
+        &quot;total&quot;: 1
     }
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-v1-products--product_id-" hidden>
+<span id="execution-results-GETapi-v1-merchants-me-products" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-products--product_id-"></span>:
+                id="execution-response-status-GETapi-v1-merchants-me-products"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-products--product_id-"
+    <pre class="json"><code id="execution-response-content-GETapi-v1-merchants-me-products"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-v1-products--product_id-" hidden>
+<span id="execution-error-GETapi-v1-merchants-me-products" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-products--product_id-">
+    <pre><code id="execution-error-message-GETapi-v1-merchants-me-products">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-v1-products--product_id-" data-method="GET"
-      data-path="api/v1/products/{product_id}"
-      data-authed="0"
+<form id="form-GETapi-v1-merchants-me-products" data-method="GET"
+      data-path="api/v1/merchants/me/products"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--product_id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-merchants-me-products', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-products--product_id-"
-                    onclick="tryItOut('GETapi-v1-products--product_id-');">Try it out ⚡
+                    id="btn-tryout-GETapi-v1-merchants-me-products"
+                    onclick="tryItOut('GETapi-v1-merchants-me-products');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-products--product_id-"
-                    onclick="cancelTryOut('GETapi-v1-products--product_id-');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-v1-merchants-me-products"
+                    onclick="cancelTryOut('GETapi-v1-merchants-me-products');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-products--product_id-"
+                    id="btn-executetryout-GETapi-v1-merchants-me-products"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -2186,33 +2240,187 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/v1/products/{product_id}</code></b>
+            <b><code>api/v1/merchants/me/products</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants-me-products"
+               value="Bearer P4d1b5gDe68vaE36VckfaZh"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer P4d1b5gDe68vaE36VckfaZh</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-products--product_id-"
+                              name="Accept"                data-endpoint="GETapi-v1-merchants-me-products"
                value="application/json"
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>product_id</code></b>&nbsp;&nbsp;
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>status_id</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="product_id"                data-endpoint="GETapi-v1-products--product_id-"
+               step="any"               name="status_id"                data-endpoint="GETapi-v1-merchants-me-products"
                value="1"
-               data-component="url">
+               data-component="query">
     <br>
-<p>The ID of the product. Example: <code>1</code></p>
+<p>Product status ID Example: <code>1</code></p>
             </div>
-                    </form>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="category_id"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="1"
+               data-component="query">
+    <br>
+<p>Category ID Example: <code>1</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sub_category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="sub_category_id"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="1"
+               data-component="query">
+    <br>
+<p>Sub Category ID Example: <code>1</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="Prod"
+               data-component="query">
+    <br>
+<p>Product name (fuzzy search) Example: <code>Prod</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>duration</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="duration"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="1"
+               data-component="query">
+    <br>
+<p>Product duration Example: <code>1</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="start_date"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="2023-10-16"
+               data-component="query">
+    <br>
+<p>Product minimum start date (Y-m-d) Example: <code>2023-10-16</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="end_date"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="2023-10-20"
+               data-component="query">
+    <br>
+<p>Product maximum end date (Y-m-d) Example: <code>2023-10-20</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>price_min</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="price_min"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="50000"
+               data-component="query">
+    <br>
+<p>Product minimum price Example: <code>50000</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>price_max</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="price_max"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="1000000"
+               data-component="query">
+    <br>
+<p>Product maximum price Example: <code>1000000</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>person_min</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="person_min"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="1"
+               data-component="query">
+    <br>
+<p>Product minimum person Example: <code>1</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>person_max</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="person_max"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="20"
+               data-component="query">
+    <br>
+<p>Product maximum person Example: <code>20</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="sort_by"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="updated_at"
+               data-component="query">
+    <br>
+<p>Sort by (default: updated_at) Example: <code>updated_at</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sort_direction</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="sort_direction"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="DESC"
+               data-component="query">
+    <br>
+<p>Sort direction (ASC or DESC) (default: DESC) Example: <code>DESC</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page_size</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page_size"                data-endpoint="GETapi-v1-merchants-me-products"
+               value="15"
+               data-component="query">
+    <br>
+<p>Page size (default: 15) Example: <code>15</code></p>
+            </div>
+                </form>
 
                     <h2 id="product-POSTapi-v1-merchants-products">Create new product.</h2>
 
@@ -2229,7 +2437,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/merchants/products" \
-    --header "Authorization: Bearer v5f346kahcg1b86VDEPadZe" \
+    --header "Authorization: Bearer 1aa4b3e5PfZDg6V6v8kEhcd" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
     --form "product_sub_category_id=1"\
@@ -2248,15 +2456,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "coordinate=-6.8890653,109.1689806"\
     --form "max_person=10"\
     --form "min_person=1"\
-    --form "note=qui"\
-    --form "includes[]=asperiores"\
-    --form "excludes[]=sapiente"\
-    --form "facilities[]=ut"\
-    --form "terms[]=neque"\
+    --form "note=ut"\
+    --form "includes[]=et"\
+    --form "excludes[]=aliquid"\
+    --form "facilities[]=totam"\
+    --form "terms[]=doloremque"\
     --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
     --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
-    --form "thumbnail=@/tmp/php3Yl9nT" \
-    --form "images[]=@/tmp/phpKRT36p" </code></pre></div>
+    --form "thumbnail=@/tmp/phpapsyb4" \
+    --form "images[]=@/tmp/phplGsgeA" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2265,7 +2473,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer v5f346kahcg1b86VDEPadZe",
+    "Authorization": "Bearer 1aa4b3e5PfZDg6V6v8kEhcd",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
@@ -2287,11 +2495,11 @@ body.append('address', 'Jl. Test');
 body.append('coordinate', '-6.8890653,109.1689806');
 body.append('max_person', '10');
 body.append('min_person', '1');
-body.append('note', 'qui');
-body.append('includes[]', 'asperiores');
-body.append('excludes[]', 'sapiente');
-body.append('facilities[]', 'ut');
-body.append('terms[]', 'neque');
+body.append('note', 'ut');
+body.append('includes[]', 'et');
+body.append('excludes[]', 'aliquid');
+body.append('facilities[]', 'totam');
+body.append('terms[]', 'doloremque');
 body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
 body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
@@ -2311,7 +2519,7 @@ $response = $client-&gt;post(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer v5f346kahcg1b86VDEPadZe',
+            'Authorization' =&gt; 'Bearer 1aa4b3e5PfZDg6V6v8kEhcd',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
@@ -2382,23 +2590,23 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'note',
-                'contents' =&gt; 'qui'
-            ],
-            [
-                'name' =&gt; 'includes[]',
-                'contents' =&gt; 'asperiores'
-            ],
-            [
-                'name' =&gt; 'excludes[]',
-                'contents' =&gt; 'sapiente'
-            ],
-            [
-                'name' =&gt; 'facilities[]',
                 'contents' =&gt; 'ut'
             ],
             [
+                'name' =&gt; 'includes[]',
+                'contents' =&gt; 'et'
+            ],
+            [
+                'name' =&gt; 'excludes[]',
+                'contents' =&gt; 'aliquid'
+            ],
+            [
+                'name' =&gt; 'facilities[]',
+                'contents' =&gt; 'totam'
+            ],
+            [
                 'name' =&gt; 'terms[]',
-                'contents' =&gt; 'neque'
+                'contents' =&gt; 'doloremque'
             ],
             [
                 'name' =&gt; 'faqs',
@@ -2410,11 +2618,11 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'thumbnail',
-                'contents' =&gt; fopen('/tmp/php3Yl9nT', 'r')
+                'contents' =&gt; fopen('/tmp/phpapsyb4', 'r')
             ],
             [
                 'name' =&gt; 'images[]',
-                'contents' =&gt; fopen('/tmp/phpKRT36p', 'r')
+                'contents' =&gt; fopen('/tmp/phplGsgeA', 'r')
             ],
         ],
     ]
@@ -2445,15 +2653,15 @@ files = {
   'coordinate': (None, '-6.8890653,109.1689806'),
   'max_person': (None, '10'),
   'min_person': (None, '1'),
-  'note': (None, 'qui'),
-  'includes[]': (None, 'asperiores'),
-  'excludes[]': (None, 'sapiente'),
-  'facilities[]': (None, 'ut'),
-  'terms[]': (None, 'neque'),
+  'note': (None, 'ut'),
+  'includes[]': (None, 'et'),
+  'excludes[]': (None, 'aliquid'),
+  'facilities[]': (None, 'totam'),
+  'terms[]': (None, 'doloremque'),
   'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
   'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
-  'thumbnail': open('/tmp/php3Yl9nT', 'rb'),
-  'images[]': open('/tmp/phpKRT36p', 'rb')}
+  'thumbnail': open('/tmp/phpapsyb4', 'rb'),
+  'images[]': open('/tmp/phplGsgeA', 'rb')}
 payload = {
     "product_sub_category_id": 1,
     "city_id": 1,
@@ -2471,24 +2679,24 @@ payload = {
     "coordinate": "-6.8890653,109.1689806",
     "max_person": 10,
     "min_person": 1,
-    "note": "qui",
+    "note": "ut",
     "includes": [
-        "asperiores"
+        "et"
     ],
     "excludes": [
-        "sapiente"
+        "aliquid"
     ],
     "facilities": [
-        "ut"
+        "totam"
     ],
     "terms": [
-        "neque"
+        "doloremque"
     ],
     "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
     "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]"
 }
 headers = {
-  'Authorization': 'Bearer v5f346kahcg1b86VDEPadZe',
+  'Authorization': 'Bearer 1aa4b3e5PfZDg6V6v8kEhcd',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -2553,10 +2761,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-merchants-products"
-               value="Bearer v5f346kahcg1b86VDEPadZe"
+               value="Bearer 1aa4b3e5PfZDg6V6v8kEhcd"
                data-component="header">
     <br>
-<p>Example: <code>Bearer v5f346kahcg1b86VDEPadZe</code></p>
+<p>Example: <code>Bearer 1aa4b3e5PfZDg6V6v8kEhcd</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -2724,7 +2932,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Product thumbnail. Must be a file. Example: <code>/tmp/php3Yl9nT</code></p>
+<p>Product thumbnail. Must be a file. Example: <code>/tmp/phpapsyb4</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -2776,10 +2984,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="note"                data-endpoint="POSTapi-v1-merchants-products"
-               value="qui"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
@@ -2870,32 +3078,29 @@ Must be one of:
         </div>
         </form>
 
-                    <h2 id="product-GETapi-v1-merchants--merchant--products">Get all merchant&#039;s products.</h2>
+                    <h2 id="product-GETapi-v1-products--product_id-">Get product details.</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
 
-<span id="example-requests-GETapi-v1-merchants--merchant--products">
+<span id="example-requests-GETapi-v1-products--product_id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/merchants/1/products" \
-    --header "Authorization: Bearer 5PcVDZ1ek4ag36h86vaEbdf" \
+    --get "http://127.0.0.1:8000/api/v1/products/1" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/merchants/1/products"
+    "http://127.0.0.1:8000/api/v1/products/1"
 );
 
 const headers = {
-    "Authorization": "Bearer 5PcVDZ1ek4ag36h86vaEbdf",
     "Accept": "application/json",
 };
 
@@ -2907,12 +3112,11 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://127.0.0.1:8000/api/v1/merchants/1/products';
+$url = 'http://127.0.0.1:8000/api/v1/products/1';
 $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 5PcVDZ1ek4ag36h86vaEbdf',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -2925,9 +3129,8 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://127.0.0.1:8000/api/v1/merchants/1/products'
+url = 'http://127.0.0.1:8000/api/v1/products/1'
 headers = {
-  'Authorization': 'Bearer 5PcVDZ1ek4ag36h86vaEbdf',
   'Accept': 'application/json'
 }
 
@@ -2936,7 +3139,7 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-v1-merchants--merchant--products">
+<span id="example-responses-GETapi-v1-products--product_id-">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -2947,105 +3150,235 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
+x-ratelimit-remaining: 50
 vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Product retrieved successfully&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;product&quot;,
+        &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+        &quot;duration&quot;: 1,
+        &quot;start_date&quot;: &quot;16/10/2023&quot;,
+        &quot;end_date&quot;: &quot;17/10/2023&quot;,
+        &quot;price&quot;: 100000,
+        &quot;unit&quot;: &quot;unit&quot;,
+        &quot;discount&quot;: 0,
+        &quot;thumbnail&quot;: &quot;https://picsum.photos/200/200&quot;,
+        &quot;address&quot;: &quot;Jl. Test&quot;,
+        &quot;coordinate&quot;: &quot;123,123&quot;,
+        &quot;max_person&quot;: 10,
+        &quot;min_person&quot;: 1,
+        &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+        &quot;is_published&quot;: 0,
+        &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+        &quot;sub_category&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;product&quot;,
-            &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-            &quot;duration&quot;: 1,
-            &quot;start_date&quot;: &quot;16/10/2023&quot;,
-            &quot;end_date&quot;: &quot;17/10/2023&quot;,
-            &quot;price&quot;: 100000,
-            &quot;unit&quot;: &quot;unit&quot;,
-            &quot;discount&quot;: 0,
-            &quot;thumbnail&quot;: &quot;https://picsum.photos/200/200&quot;,
-            &quot;address&quot;: &quot;Jl. Test&quot;,
-            &quot;coordinate&quot;: &quot;123,123&quot;,
-            &quot;max_person&quot;: 10,
-            &quot;min_person&quot;: 1,
-            &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-            &quot;is_published&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;
-        }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
-        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
+            &quot;name&quot;: &quot;sed&quot;,
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00bbee?text=nulla&quot;,
+            &quot;product_category&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;non&quot;,
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/0033cc?text=non&quot;
+            }
+        },
+        &quot;merchant&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;merchant&quot;,
+            &quot;logo&quot;: &quot;https://picsum.photos/100/100&quot;,
+            &quot;is_highlight&quot;: 0,
+            &quot;notes&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+            &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;
+        },
+        &quot;status&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;draft&quot;,
+            &quot;color&quot;: &quot;PaleTurquoise&quot;,
+            &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/CCCCCC&quot;
+        },
+        &quot;city&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Kabupaten Aceh Barat&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ffbb?text=architecto&quot;,
+            &quot;is_highlighted&quot;: 1
+        },
+        &quot;schedules&quot;: [
             {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
+                &quot;id&quot;: 1,
+                &quot;date&quot;: &quot;16/10/2023&quot;,
+                &quot;title&quot;: &quot;day 1&quot;,
+                &quot;schedule_days&quot;: [
+                    {
+                        &quot;id&quot;: 1,
+                        &quot;start_time&quot;: &quot;08:00&quot;,
+                        &quot;end_time&quot;: &quot;10:00&quot;,
+                        &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;
+                    },
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;start_time&quot;: &quot;13:00&quot;,
+                        &quot;end_time&quot;: &quot;14:00&quot;,
+                        &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;
+                    }
+                ]
             }
         ],
-        &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/1/products&quot;,
-        &quot;per_page&quot;: 15,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
+        &quot;reviews&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;review&quot;: &quot;revieww&quot;,
+                &quot;rating&quot;: 5,
+                &quot;reply&quot;: null,
+                &quot;user&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;merchant&quot;,
+                    &quot;user_level&quot;: 3,
+                    &quot;email&quot;: &quot;merchant@mail.com&quot;,
+                    &quot;phone&quot;: &quot;081234567890&quot;,
+                    &quot;status&quot;: 1,
+                    &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;review&quot;: &quot;Rerum natus dolore quis et nostrum explicabo. Facilis assumenda magnam dignissimos facilis nemo sit. Quibusdam suscipit quis asperiores dolorem. Doloremque eligendi eos in occaecati.&quot;,
+                &quot;rating&quot;: 2,
+                &quot;reply&quot;: null,
+                &quot;user&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;merchant&quot;,
+                    &quot;user_level&quot;: 3,
+                    &quot;email&quot;: &quot;merchant@mail.com&quot;,
+                    &quot;phone&quot;: &quot;081234567890&quot;,
+                    &quot;status&quot;: 1,
+                    &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;review&quot;: &quot;Hic at alias sit velit et et. Occaecati id ut expedita.&quot;,
+                &quot;rating&quot;: 3,
+                &quot;reply&quot;: null,
+                &quot;user&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;merchant&quot;,
+                    &quot;user_level&quot;: 3,
+                    &quot;email&quot;: &quot;merchant@mail.com&quot;,
+                    &quot;phone&quot;: &quot;081234567890&quot;,
+                    &quot;status&quot;: 1,
+                    &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;
+                }
+            }
+        ],
+        &quot;include_excludes&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+                &quot;is_include&quot;: 1
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
+                &quot;is_include&quot;: 0
+            }
+        ],
+        &quot;facilities&quot;: [
+            {
+                &quot;id&quot;: 2,
+                &quot;name&quot;: &quot;parkir&quot;,
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/008899?text=impedit&quot;
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;name&quot;: &quot;ac&quot;,
+                &quot;icon&quot;: &quot;https://via.placeholder.com/640x480.png/00ddff?text=non&quot;
+            }
+        ],
+        &quot;faqs&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;question&quot;: &quot;question1&quot;,
+                &quot;answer&quot;: &quot;answer1&quot;,
+                &quot;is_global&quot;: 0
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;question&quot;: &quot;question2&quot;,
+                &quot;answer&quot;: &quot;answer2&quot;,
+                &quot;is_global&quot;: 0
+            }
+        ],
+        &quot;terms&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;term&quot;: &quot;term1&quot;,
+                &quot;is_global&quot;: 0
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;term&quot;: &quot;term2&quot;,
+                &quot;is_global&quot;: 0
+            }
+        ],
+        &quot;images&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;image&quot;: &quot;https://picsum.photos/360/360&quot;
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;image&quot;: &quot;https://picsum.photos/360/360&quot;
+            }
+        ]
     }
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-v1-merchants--merchant--products" hidden>
+<span id="execution-results-GETapi-v1-products--product_id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-merchants--merchant--products"></span>:
+                id="execution-response-status-GETapi-v1-products--product_id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-merchants--merchant--products"
+    <pre class="json"><code id="execution-response-content-GETapi-v1-products--product_id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-v1-merchants--merchant--products" hidden>
+<span id="execution-error-GETapi-v1-products--product_id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-merchants--merchant--products">
+    <pre><code id="execution-error-message-GETapi-v1-products--product_id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-v1-merchants--merchant--products" data-method="GET"
-      data-path="api/v1/merchants/{merchant}/products"
-      data-authed="1"
+<form id="form-GETapi-v1-products--product_id-" data-method="GET"
+      data-path="api/v1/products/{product_id}"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-merchants--merchant--products', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--product_id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-merchants--merchant--products"
-                    onclick="tryItOut('GETapi-v1-merchants--merchant--products');">Try it out ⚡
+                    id="btn-tryout-GETapi-v1-products--product_id-"
+                    onclick="tryItOut('GETapi-v1-products--product_id-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-merchants--merchant--products"
-                    onclick="cancelTryOut('GETapi-v1-merchants--merchant--products');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-v1-products--product_id-"
+                    onclick="cancelTryOut('GETapi-v1-products--product_id-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-merchants--merchant--products"
+                    id="btn-executetryout-GETapi-v1-products--product_id-"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -3053,26 +3386,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/v1/merchants/{merchant}/products</code></b>
+            <b><code>api/v1/products/{product_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants--merchant--products"
-               value="Bearer 5PcVDZ1ek4ag36h86vaEbdf"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer 5PcVDZ1ek4ag36h86vaEbdf</code></p>
-            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-merchants--merchant--products"
+                              name="Accept"                data-endpoint="GETapi-v1-products--product_id-"
                value="application/json"
                data-component="header">
     <br>
@@ -3080,15 +3402,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>merchant</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>product_id</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="merchant"                data-endpoint="GETapi-v1-merchants--merchant--products"
+               step="any"               name="product_id"                data-endpoint="GETapi-v1-products--product_id-"
                value="1"
                data-component="url">
     <br>
-<p>The merchant. Example: <code>1</code></p>
+<p>The ID of the product. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -3107,7 +3429,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/products/1" \
-    --header "Authorization: Bearer 6dVgE36cbDeaZ1k4aPfvh58" \
+    --header "Authorization: Bearer vEhae5D3daf1cZ6g4kPb8V6" \
     --header "Accept: application/json" \
     --header "Content-Type: multipart/form-data" \
     --form "product_sub_category_id=1"\
@@ -3126,16 +3448,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "coordinate=-6.8890653,109.1689806"\
     --form "max_person=10"\
     --form "min_person=1"\
-    --form "note=voluptas"\
-    --form "includes[]=accusamus"\
-    --form "excludes[]=autem"\
-    --form "facilities[]=2"\
-    --form "terms[]=fugit"\
+    --form "note=ut"\
+    --form "includes[]=et"\
+    --form "excludes[]=quidem"\
+    --form "facilities[]=20"\
+    --form "terms[]=dolore"\
     --form "faqs=[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]"\
     --form "schedules=[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]"\
-    --form "saved_images[]=13"\
-    --form "thumbnail=@/tmp/phph8YhyV" \
-    --form "images[]=@/tmp/phpWxt7Kj" </code></pre></div>
+    --form "saved_images[]=5"\
+    --form "thumbnail=@/tmp/phpTknltL" \
+    --form "images[]=@/tmp/phpvbtg3X" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3144,7 +3466,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer 6dVgE36cbDeaZ1k4aPfvh58",
+    "Authorization": "Bearer vEhae5D3daf1cZ6g4kPb8V6",
     "Accept": "application/json",
     "Content-Type": "multipart/form-data",
 };
@@ -3166,14 +3488,14 @@ body.append('address', 'Jl. Test');
 body.append('coordinate', '-6.8890653,109.1689806');
 body.append('max_person', '10');
 body.append('min_person', '1');
-body.append('note', 'voluptas');
-body.append('includes[]', 'accusamus');
-body.append('excludes[]', 'autem');
-body.append('facilities[]', '2');
-body.append('terms[]', 'fugit');
+body.append('note', 'ut');
+body.append('includes[]', 'et');
+body.append('excludes[]', 'quidem');
+body.append('facilities[]', '20');
+body.append('terms[]', 'dolore');
 body.append('faqs', '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]');
 body.append('schedules', '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]');
-body.append('saved_images[]', '13');
+body.append('saved_images[]', '5');
 body.append('thumbnail', document.querySelector('input[name="thumbnail"]').files[0]);
 body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 
@@ -3191,7 +3513,7 @@ $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 6dVgE36cbDeaZ1k4aPfvh58',
+            'Authorization' =&gt; 'Bearer vEhae5D3daf1cZ6g4kPb8V6',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'multipart/form-data',
         ],
@@ -3262,23 +3584,23 @@ $response = $client-&gt;put(
             ],
             [
                 'name' =&gt; 'note',
-                'contents' =&gt; 'voluptas'
+                'contents' =&gt; 'ut'
             ],
             [
                 'name' =&gt; 'includes[]',
-                'contents' =&gt; 'accusamus'
+                'contents' =&gt; 'et'
             ],
             [
                 'name' =&gt; 'excludes[]',
-                'contents' =&gt; 'autem'
+                'contents' =&gt; 'quidem'
             ],
             [
                 'name' =&gt; 'facilities[]',
-                'contents' =&gt; '2'
+                'contents' =&gt; '20'
             ],
             [
                 'name' =&gt; 'terms[]',
-                'contents' =&gt; 'fugit'
+                'contents' =&gt; 'dolore'
             ],
             [
                 'name' =&gt; 'faqs',
@@ -3290,15 +3612,15 @@ $response = $client-&gt;put(
             ],
             [
                 'name' =&gt; 'saved_images[]',
-                'contents' =&gt; '13'
+                'contents' =&gt; '5'
             ],
             [
                 'name' =&gt; 'thumbnail',
-                'contents' =&gt; fopen('/tmp/phph8YhyV', 'r')
+                'contents' =&gt; fopen('/tmp/phpTknltL', 'r')
             ],
             [
                 'name' =&gt; 'images[]',
-                'contents' =&gt; fopen('/tmp/phpWxt7Kj', 'r')
+                'contents' =&gt; fopen('/tmp/phpvbtg3X', 'r')
             ],
         ],
     ]
@@ -3329,16 +3651,16 @@ files = {
   'coordinate': (None, '-6.8890653,109.1689806'),
   'max_person': (None, '10'),
   'min_person': (None, '1'),
-  'note': (None, 'voluptas'),
-  'includes[]': (None, 'accusamus'),
-  'excludes[]': (None, 'autem'),
-  'facilities[]': (None, '2'),
-  'terms[]': (None, 'fugit'),
+  'note': (None, 'ut'),
+  'includes[]': (None, 'et'),
+  'excludes[]': (None, 'quidem'),
+  'facilities[]': (None, '20'),
+  'terms[]': (None, 'dolore'),
   'faqs': (None, '[{"question":"Question 1","answer":"Answer 1"},{"question":"Question 2","answer":"Answer 2"}]'),
   'schedules': (None, '[{"order":1,"title":"Day 1","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]},{"order":2,"title":"Day 2","days":[{"start_time":"08:00","end_time":"10:00","description":"Description 1"},{"start_time":"13:00","end_time":"14:00","description":"Description 2"}]}]'),
-  'saved_images[]': (None, '13'),
-  'thumbnail': open('/tmp/phph8YhyV', 'rb'),
-  'images[]': open('/tmp/phpWxt7Kj', 'rb')}
+  'saved_images[]': (None, '5'),
+  'thumbnail': open('/tmp/phpTknltL', 'rb'),
+  'images[]': open('/tmp/phpvbtg3X', 'rb')}
 payload = {
     "product_sub_category_id": 1,
     "city_id": 1,
@@ -3356,27 +3678,27 @@ payload = {
     "coordinate": "-6.8890653,109.1689806",
     "max_person": 10,
     "min_person": 1,
-    "note": "voluptas",
+    "note": "ut",
     "includes": [
-        "accusamus"
+        "et"
     ],
     "excludes": [
-        "autem"
+        "quidem"
     ],
     "facilities": [
-        2
+        20
     ],
     "terms": [
-        "fugit"
+        "dolore"
     ],
     "faqs": "[{\"question\":\"Question 1\",\"answer\":\"Answer 1\"},{\"question\":\"Question 2\",\"answer\":\"Answer 2\"}]",
     "schedules": "[{\"order\":1,\"title\":\"Day 1\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]},{\"order\":2,\"title\":\"Day 2\",\"days\":[{\"start_time\":\"08:00\",\"end_time\":\"10:00\",\"description\":\"Description 1\"},{\"start_time\":\"13:00\",\"end_time\":\"14:00\",\"description\":\"Description 2\"}]}]",
     "saved_images": [
-        13
+        5
     ]
 }
 headers = {
-  'Authorization': 'Bearer 6dVgE36cbDeaZ1k4aPfvh58',
+  'Authorization': 'Bearer vEhae5D3daf1cZ6g4kPb8V6',
   'Accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
@@ -3441,10 +3763,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-products--product_id-"
-               value="Bearer 6dVgE36cbDeaZ1k4aPfvh58"
+               value="Bearer vEhae5D3daf1cZ6g4kPb8V6"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 6dVgE36cbDeaZ1k4aPfvh58</code></p>
+<p>Example: <code>Bearer vEhae5D3daf1cZ6g4kPb8V6</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -3560,7 +3882,7 @@ Must be one of:
                value="3"
                data-component="body">
     <br>
-<p>Product duration. Example: <code>3</code></p>
+<p>Product duration. Must be at least 0. Example: <code>3</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
@@ -3626,7 +3948,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Product thumbnail. Must be a file. Example: <code>/tmp/phph8YhyV</code></p>
+<p>Product thumbnail. Must be a file. Example: <code>/tmp/phpTknltL</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -3659,7 +3981,7 @@ Must be one of:
                value="10"
                data-component="body">
     <br>
-<p>Product max person. Example: <code>10</code></p>
+<p>Product max person. Must be at least 0. Example: <code>10</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_person</code></b>&nbsp;&nbsp;
@@ -3670,7 +3992,7 @@ Must be one of:
                value="1"
                data-component="body">
     <br>
-<p>Product min person. Example: <code>1</code></p>
+<p>Product min person. Must be at least 0. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>note</code></b>&nbsp;&nbsp;
@@ -3678,10 +4000,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="note"                data-endpoint="PUTapi-v1-products--product_id-"
-               value="voluptas"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>includes</code></b>&nbsp;&nbsp;
@@ -3800,7 +4122,7 @@ Must be one of:
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://127.0.0.1:8000/api/v1/products/1" \
-    --header "Authorization: Bearer 6ea3gvVbEhD64a1PcZd58kf" \
+    --header "Authorization: Bearer c6bDk18Pdfv4Eha36g5eVaZ" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -3810,7 +4132,7 @@ Must be one of:
 );
 
 const headers = {
-    "Authorization": "Bearer 6ea3gvVbEhD64a1PcZd58kf",
+    "Authorization": "Bearer c6bDk18Pdfv4Eha36g5eVaZ",
     "Accept": "application/json",
 };
 
@@ -3827,7 +4149,7 @@ $response = $client-&gt;delete(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 6ea3gvVbEhD64a1PcZd58kf',
+            'Authorization' =&gt; 'Bearer c6bDk18Pdfv4Eha36g5eVaZ',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -3842,7 +4164,7 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/products/1'
 headers = {
-  'Authorization': 'Bearer 6ea3gvVbEhD64a1PcZd58kf',
+  'Authorization': 'Bearer c6bDk18Pdfv4Eha36g5eVaZ',
   'Accept': 'application/json'
 }
 
@@ -3906,10 +4228,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-products--product_id-"
-               value="Bearer 6ea3gvVbEhD64a1PcZd58kf"
+               value="Bearer c6bDk18Pdfv4Eha36g5eVaZ"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 6ea3gvVbEhD64a1PcZd58kf</code></p>
+<p>Example: <code>Bearer c6bDk18Pdfv4Eha36g5eVaZ</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -3953,7 +4275,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/cities" \
+    --get "http://127.0.0.1:8000/api/v1/cities?name=Ja" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -3961,6 +4283,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "http://127.0.0.1:8000/api/v1/cities"
 );
+
+const params = {
+    "name": "Ja",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Accept": "application/json",
@@ -3981,6 +4309,9 @@ $response = $client-&gt;get(
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
+        'query' =&gt; [
+            'name' =&gt; 'Ja',
+        ],
     ]
 );
 $body = $response-&gt;getBody();
@@ -3992,11 +4323,14 @@ print_r(json_decode((string) $body));</code></pre></div>
 import json
 
 url = 'http://127.0.0.1:8000/api/v1/cities'
+params = {
+  'name': 'Ja',
+}
 headers = {
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()</code></pre></div>
 
 </span>
@@ -4019,153 +4353,323 @@ vary: Origin
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;East Kellenport&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aa00?text=neque&quot;,
-            &quot;is_highlighted&quot;: 1,
-            &quot;province&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;North Elliott&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;West Mavischester&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00dddd?text=quis&quot;,
-            &quot;is_highlighted&quot;: 0,
-            &quot;province&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;North Elliott&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Einarberg&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00cc33?text=error&quot;,
-            &quot;is_highlighted&quot;: 0,
-            &quot;province&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;North Elliott&quot;
-            }
-        },
-        {
             &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Casperton&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00eeaa?text=est&quot;,
+            &quot;name&quot;: &quot;Kabupaten Aceh Jaya&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006600?text=non&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;Aceh&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 17,
+            &quot;name&quot;: &quot;Kabupaten Pidie Jaya&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aa33?text=inventore&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;Aceh&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 49,
+            &quot;name&quot;: &quot;Kota Binjai&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aa00?text=eos&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Franciscamouth&quot;
+                &quot;name&quot;: &quot;Sumatra Utara&quot;
             }
         },
         {
-            &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Mayermouth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0088aa?text=temporibus&quot;,
-            &quot;is_highlighted&quot;: 0,
-            &quot;province&quot;: {
-                &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Franciscamouth&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;West Zoeymouth&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006666?text=magni&quot;,
-            &quot;is_highlighted&quot;: 0,
-            &quot;province&quot;: {
-                &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Franciscamouth&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;Kemmerburgh&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/005511?text=voluptas&quot;,
+            &quot;id&quot;: 71,
+            &quot;name&quot;: &quot;Kota Padang Panjang&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/004499?text=enim&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Hillsberg&quot;
+                &quot;name&quot;: &quot;Sumatra Barat&quot;
             }
         },
         {
-            &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;North Madison&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/009988?text=nam&quot;,
-            &quot;is_highlighted&quot;: 1,
-            &quot;province&quot;: {
-                &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Hillsberg&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;Moniqueton&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0044aa?text=non&quot;,
-            &quot;is_highlighted&quot;: 1,
-            &quot;province&quot;: {
-                &quot;id&quot;: 3,
-                &quot;name&quot;: &quot;Hillsberg&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 10,
-            &quot;name&quot;: &quot;Daughertyland&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aacc?text=possimus&quot;,
-            &quot;is_highlighted&quot;: 1,
-            &quot;province&quot;: {
-                &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;East Elvis&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 11,
-            &quot;name&quot;: &quot;Corneliusborough&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0099ff?text=corporis&quot;,
-            &quot;is_highlighted&quot;: 0,
-            &quot;province&quot;: {
-                &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;East Elvis&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 12,
-            &quot;name&quot;: &quot;Lake Nicklausstad&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aa44?text=aut&quot;,
-            &quot;is_highlighted&quot;: 1,
-            &quot;province&quot;: {
-                &quot;id&quot;: 4,
-                &quot;name&quot;: &quot;East Elvis&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 13,
-            &quot;name&quot;: &quot;Luettgenfurt&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ee55?text=enim&quot;,
+            &quot;id&quot;: 92,
+            &quot;name&quot;: &quot;Kabupaten Muaro Jambi&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0088dd?text=accusantium&quot;,
             &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;New Fernandoside&quot;
+                &quot;name&quot;: &quot;Jambi&quot;
             }
         },
         {
-            &quot;id&quot;: 14,
-            &quot;name&quot;: &quot;Reingerview&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0088aa?text=repudiandae&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;id&quot;: 94,
+            &quot;name&quot;: &quot;Kabupaten Tanjung Jabung Barat&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0011ee?text=consequuntur&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;New Fernandoside&quot;
+                &quot;name&quot;: &quot;Jambi&quot;
             }
         },
         {
-            &quot;id&quot;: 15,
-            &quot;name&quot;: &quot;Kemmerburgh&quot;,
-            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/008855?text=adipisci&quot;,
-            &quot;is_highlighted&quot;: 0,
+            &quot;id&quot;: 95,
+            &quot;name&quot;: &quot;Kabupaten Tanjung Jabung Timur&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/009977?text=exercitationem&quot;,
+            &quot;is_highlighted&quot;: 1,
             &quot;province&quot;: {
                 &quot;id&quot;: 5,
-                &quot;name&quot;: &quot;New Fernandoside&quot;
+                &quot;name&quot;: &quot;Jambi&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 97,
+            &quot;name&quot;: &quot;Kota Jambi&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0088cc?text=quidem&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 5,
+                &quot;name&quot;: &quot;Jambi&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 123,
+            &quot;name&quot;: &quot;Kabupaten Rejang Lebong&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aaaa?text=aperiam&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 7,
+                &quot;name&quot;: &quot;Bengkulu&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 156,
+            &quot;name&quot;: &quot;Kota Jakarta Barat&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ffbb?text=pariatur&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 11,
+                &quot;name&quot;: &quot;Daerah Khusus Ibukota Jakarta&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 157,
+            &quot;name&quot;: &quot;Kota Jakarta Pusat&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aa88?text=laboriosam&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 11,
+                &quot;name&quot;: &quot;Daerah Khusus Ibukota Jakarta&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 158,
+            &quot;name&quot;: &quot;Kota Jakarta Selatan&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00dd00?text=facilis&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 11,
+                &quot;name&quot;: &quot;Daerah Khusus Ibukota Jakarta&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 159,
+            &quot;name&quot;: &quot;Kota Jakarta Timur&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/000033?text=consequatur&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 11,
+                &quot;name&quot;: &quot;Daerah Khusus Ibukota Jakarta&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 160,
+            &quot;name&quot;: &quot;Kota Jakarta Utara&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0033ff?text=et&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 11,
+                &quot;name&quot;: &quot;Daerah Khusus Ibukota Jakarta&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 172,
+            &quot;name&quot;: &quot;Kabupaten Majalengka&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bb33?text=quo&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 12,
+                &quot;name&quot;: &quot;Jawa Barat&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 180,
+            &quot;name&quot;: &quot;Kota Banjar&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/004422?text=voluptas&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 12,
+                &quot;name&quot;: &quot;Jawa Barat&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 188,
+            &quot;name&quot;: &quot;Kabupaten Banjarnegara&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00aaaa?text=amet&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 13,
+                &quot;name&quot;: &quot;Jawa Tengah&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 238,
+            &quot;name&quot;: &quot;Kabupaten Lumajang&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00bb55?text=cum&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 15,
+                &quot;name&quot;: &quot;Jawa Timur&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 344,
+            &quot;name&quot;: &quot;Kabupaten Banjar&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00eecc?text=a&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 22,
+                &quot;name&quot;: &quot;Kalimantan Selatan&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 354,
+            &quot;name&quot;: &quot;Kota Banjarbaru&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/002244?text=omnis&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 22,
+                &quot;name&quot;: &quot;Kalimantan Selatan&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 355,
+            &quot;name&quot;: &quot;Kota Banjarmasin&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0033cc?text=molestiae&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 22,
+                &quot;name&quot;: &quot;Kalimantan Selatan&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 362,
+            &quot;name&quot;: &quot;Kabupaten Penajam Paser Utara&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/008811?text=eos&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 23,
+                &quot;name&quot;: &quot;Kalimantan Timur&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 414,
+            &quot;name&quot;: &quot;Kabupaten Sinjai&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00dd55?text=pariatur&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 27,
+                &quot;name&quot;: &quot;Sulawesi Selatan&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 417,
+            &quot;name&quot;: &quot;Kabupaten Tana Toraja&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ee11?text=magni&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 27,
+                &quot;name&quot;: &quot;Sulawesi Selatan&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 418,
+            &quot;name&quot;: &quot;Kabupaten Toraja Utara&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/002211?text=voluptate&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 27,
+                &quot;name&quot;: &quot;Sulawesi Selatan&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 478,
+            &quot;name&quot;: &quot;Kabupaten Intan Jaya&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/000033?text=nisi&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 33,
+                &quot;name&quot;: &quot;Papua&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 479,
+            &quot;name&quot;: &quot;Kabupaten Jayapura&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/003333?text=qui&quot;,
+            &quot;is_highlighted&quot;: 1,
+            &quot;province&quot;: {
+                &quot;id&quot;: 33,
+                &quot;name&quot;: &quot;Papua&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 480,
+            &quot;name&quot;: &quot;Kabupaten Jayawijaya&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/0077ee?text=impedit&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 33,
+                &quot;name&quot;: &quot;Papua&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 483,
+            &quot;name&quot;: &quot;Kabupaten Lanny Jaya&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/004455?text=veniam&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 33,
+                &quot;name&quot;: &quot;Papua&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 494,
+            &quot;name&quot;: &quot;Kabupaten Puncak Jaya&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ccff?text=qui&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 33,
+                &quot;name&quot;: &quot;Papua&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 501,
+            &quot;name&quot;: &quot;Kota Jayapura&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/00ffaa?text=illo&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 33,
+                &quot;name&quot;: &quot;Papua&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 508,
+            &quot;name&quot;: &quot;Kabupaten Raja Ampat&quot;,
+            &quot;image&quot;: &quot;https://via.placeholder.com/640x480.png/006655?text=deleniti&quot;,
+            &quot;is_highlighted&quot;: 0,
+            &quot;province&quot;: {
+                &quot;id&quot;: 34,
+                &quot;name&quot;: &quot;Papua Barat&quot;
             }
         }
     ]
@@ -4230,7 +4734,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="GETapi-v1-cities"
+               value="Ja"
+               data-component="query">
+    <br>
+<p>The name of the city. (can be a substring) Example: <code>Ja</code></p>
+            </div>
+                </form>
 
                     <h2 id="public-GETapi-v1-provinces">Get all provinces.</h2>
 
@@ -4245,7 +4761,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/provinces" \
+    --get "http://127.0.0.1:8000/api/v1/provinces?name=Jawa" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -4253,6 +4769,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "http://127.0.0.1:8000/api/v1/provinces"
 );
+
+const params = {
+    "name": "Jawa",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Accept": "application/json",
@@ -4273,6 +4795,9 @@ $response = $client-&gt;get(
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
+        'query' =&gt; [
+            'name' =&gt; 'Jawa',
+        ],
     ]
 );
 $body = $response-&gt;getBody();
@@ -4284,11 +4809,14 @@ print_r(json_decode((string) $body));</code></pre></div>
 import json
 
 url = 'http://127.0.0.1:8000/api/v1/provinces'
+params = {
+  'name': 'Jawa',
+}
 headers = {
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()</code></pre></div>
 
 </span>
@@ -4311,48 +4839,30 @@ vary: Origin
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;North Elliott&quot;,
+            &quot;id&quot;: 12,
+            &quot;name&quot;: &quot;Jawa Barat&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Malawi&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/005566?text=dolore&quot;
+                &quot;name&quot;: &quot;Indonesia&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc44?text=qui&quot;
             }
         },
         {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Franciscamouth&quot;,
+            &quot;id&quot;: 13,
+            &quot;name&quot;: &quot;Jawa Tengah&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Malawi&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/005566?text=dolore&quot;
+                &quot;name&quot;: &quot;Indonesia&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc44?text=qui&quot;
             }
         },
         {
-            &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Hillsberg&quot;,
+            &quot;id&quot;: 15,
+            &quot;name&quot;: &quot;Jawa Timur&quot;,
             &quot;country&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Malawi&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/005566?text=dolore&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;East Elvis&quot;,
-            &quot;country&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Malawi&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/005566?text=dolore&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;New Fernandoside&quot;,
-            &quot;country&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Malawi&quot;,
-                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/005566?text=dolore&quot;
+                &quot;name&quot;: &quot;Indonesia&quot;,
+                &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc44?text=qui&quot;
             }
         }
     ]
@@ -4417,7 +4927,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="GETapi-v1-provinces"
+               value="Jawa"
+               data-component="query">
+    <br>
+<p>The name of the province. (can be a substring) Example: <code>Jawa</code></p>
+            </div>
+                </form>
 
                     <h2 id="public-GETapi-v1-countries">Get all countries.</h2>
 
@@ -4432,7 +4954,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/countries" \
+    --get "http://127.0.0.1:8000/api/v1/countries?name=Ind" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -4440,6 +4962,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "http://127.0.0.1:8000/api/v1/countries"
 );
+
+const params = {
+    "name": "Ind",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Accept": "application/json",
@@ -4460,6 +4988,9 @@ $response = $client-&gt;get(
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
+        'query' =&gt; [
+            'name' =&gt; 'Ind',
+        ],
     ]
 );
 $body = $response-&gt;getBody();
@@ -4471,11 +5002,14 @@ print_r(json_decode((string) $body));</code></pre></div>
 import json
 
 url = 'http://127.0.0.1:8000/api/v1/countries'
+params = {
+  'name': 'Ind',
+}
 headers = {
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()</code></pre></div>
 
 </span>
@@ -4499,8 +5033,8 @@ vary: Origin
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Malawi&quot;,
-            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/005566?text=dolore&quot;
+            &quot;name&quot;: &quot;Indonesia&quot;,
+            &quot;flag&quot;: &quot;https://via.placeholder.com/640x480.png/00cc44?text=qui&quot;
         }
     ]
 }</code>
@@ -4564,7 +5098,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="GETapi-v1-countries"
+               value="Ind"
+               data-component="query">
+    <br>
+<p>The name of the country. (can be a substring) Example: <code>Ind</code></p>
+            </div>
+                </form>
 
                 <h1 id="review">Review</h1>
 
@@ -4584,8 +5130,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/merchants/me/reviews" \
-    --header "Authorization: Bearer EdkaVb6ZD8Pg61fahe54vc3" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/me/reviews?rating_min=2&amp;rating_max=5&amp;is_replied=1&amp;order_by=updated_at&amp;order_direction=DESC&amp;page_size=15" \
+    --header "Authorization: Bearer vkZaeg53caEVDh61P68fbd4" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -4594,8 +5140,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/v1/merchants/me/reviews"
 );
 
+const params = {
+    "rating_min": "2",
+    "rating_max": "5",
+    "is_replied": "1",
+    "order_by": "updated_at",
+    "order_direction": "DESC",
+    "page_size": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
 const headers = {
-    "Authorization": "Bearer EdkaVb6ZD8Pg61fahe54vc3",
+    "Authorization": "Bearer vkZaeg53caEVDh61P68fbd4",
     "Accept": "application/json",
 };
 
@@ -4612,8 +5169,16 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer EdkaVb6ZD8Pg61fahe54vc3',
+            'Authorization' =&gt; 'Bearer vkZaeg53caEVDh61P68fbd4',
             'Accept' =&gt; 'application/json',
+        ],
+        'query' =&gt; [
+            'rating_min' =&gt; '2',
+            'rating_max' =&gt; '5',
+            'is_replied' =&gt; '1',
+            'order_by' =&gt; 'updated_at',
+            'order_direction' =&gt; 'DESC',
+            'page_size' =&gt; '15',
         ],
     ]
 );
@@ -4626,12 +5191,20 @@ print_r(json_decode((string) $body));</code></pre></div>
 import json
 
 url = 'http://127.0.0.1:8000/api/v1/merchants/me/reviews'
+params = {
+  'rating_min': '2',
+  'rating_max': '5',
+  'is_replied': '1',
+  'order_by': 'updated_at',
+  'order_direction': 'DESC',
+  'page_size': '15',
+}
 headers = {
-  'Authorization': 'Bearer EdkaVb6ZD8Pg61fahe54vc3',
+  'Authorization': 'Bearer vkZaeg53caEVDh61P68fbd4',
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()</code></pre></div>
 
 </span>
@@ -4647,49 +5220,12 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+x-ratelimit-remaining: 54
 vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;review&quot;: &quot;revieww&quot;,
-            &quot;rating&quot;: 5,
-            &quot;reply&quot;: &quot;ampas bro&quot;,
-            &quot;user&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;merchant&quot;,
-                &quot;user_level&quot;: 3,
-                &quot;email&quot;: &quot;merchant@mail.com&quot;,
-                &quot;phone&quot;: &quot;081234567890&quot;,
-                &quot;status&quot;: 1,
-                &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;
-            },
-            &quot;product&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;product&quot;,
-                &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-                &quot;duration&quot;: 1,
-                &quot;start_date&quot;: &quot;16/10/2023&quot;,
-                &quot;end_date&quot;: &quot;17/10/2023&quot;,
-                &quot;price&quot;: 100000,
-                &quot;unit&quot;: &quot;unit&quot;,
-                &quot;discount&quot;: 0,
-                &quot;thumbnail&quot;: &quot;https://picsum.photos/200/200&quot;,
-                &quot;address&quot;: &quot;Jl. Test&quot;,
-                &quot;coordinate&quot;: &quot;123,123&quot;,
-                &quot;max_person&quot;: 10,
-                &quot;min_person&quot;: 1,
-                &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
-                &quot;is_published&quot;: 0,
-                &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;
-            }
-        }
-    ],
+    &quot;data&quot;: [],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/me/reviews?page=1&quot;,
         &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/me/reviews?page=1&quot;,
@@ -4698,7 +5234,7 @@ vary: Origin
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
+        &quot;from&quot;: null,
         &quot;last_page&quot;: 1,
         &quot;links&quot;: [
             {
@@ -4719,8 +5255,8 @@ vary: Origin
         ],
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/merchants/me/reviews&quot;,
         &quot;per_page&quot;: 15,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
+        &quot;to&quot;: null,
+        &quot;total&quot;: 0
     }
 }</code>
  </pre>
@@ -4778,10 +5314,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants-me-reviews"
-               value="Bearer EdkaVb6ZD8Pg61fahe54vc3"
+               value="Bearer vkZaeg53caEVDh61P68fbd4"
                data-component="header">
     <br>
-<p>Example: <code>Bearer EdkaVb6ZD8Pg61fahe54vc3</code></p>
+<p>Example: <code>Bearer vkZaeg53caEVDh61P68fbd4</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -4794,7 +5330,84 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>rating_min</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rating_min"                data-endpoint="GETapi-v1-merchants-me-reviews"
+               value="2"
+               data-component="query">
+    <br>
+<p>Review minimum rating Example: <code>2</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>rating_max</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rating_max"                data-endpoint="GETapi-v1-merchants-me-reviews"
+               value="5"
+               data-component="query">
+    <br>
+<p>Review maximum rating Example: <code>5</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>is_replied</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETapi-v1-merchants-me-reviews" style="display: none">
+            <input type="radio" name="is_replied"
+                   value="1"
+                   data-endpoint="GETapi-v1-merchants-me-reviews"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-v1-merchants-me-reviews" style="display: none">
+            <input type="radio" name="is_replied"
+                   value="0"
+                   data-endpoint="GETapi-v1-merchants-me-reviews"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Review is replied Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="order_by"                data-endpoint="GETapi-v1-merchants-me-reviews"
+               value="updated_at"
+               data-component="query">
+    <br>
+<p>Order by (default: updated_at) Example: <code>updated_at</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order_direction</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="order_direction"                data-endpoint="GETapi-v1-merchants-me-reviews"
+               value="DESC"
+               data-component="query">
+    <br>
+<p>Order direction (ASC or DESC) (default: DESC) Example: <code>DESC</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page_size</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page_size"                data-endpoint="GETapi-v1-merchants-me-reviews"
+               value="15"
+               data-component="query">
+    <br>
+<p>Page size (default: 15) Example: <code>15</code></p>
+            </div>
+                </form>
 
                     <h2 id="review-PUTapi-v1-reviews--review_id-">Update review&#039;s reply.</h2>
 
@@ -4811,11 +5424,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/reviews/1" \
-    --header "Authorization: Bearer f1db4a638gkV6vhZPEcDea5" \
+    --header "Authorization: Bearer 64E16ZakDh5fbdP8cav3egV" \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
     --data "{
-    \"reply\": \"est\"
+    \"reply\": \"dolorum\"
 }"
 </code></pre></div>
 
@@ -4826,13 +5439,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer f1db4a638gkV6vhZPEcDea5",
+    "Authorization": "Bearer 64E16ZakDh5fbdP8cav3egV",
     "Accept": "application/json",
     "Content-Type": "application/json",
 };
 
 let body = {
-    "reply": "est"
+    "reply": "dolorum"
 };
 
 fetch(url, {
@@ -4849,12 +5462,12 @@ $response = $client-&gt;put(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer f1db4a638gkV6vhZPEcDea5',
+            'Authorization' =&gt; 'Bearer 64E16ZakDh5fbdP8cav3egV',
             'Accept' =&gt; 'application/json',
             'Content-Type' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'reply' =&gt; 'est',
+            'reply' =&gt; 'dolorum',
         ],
     ]
 );
@@ -4868,10 +5481,10 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/reviews/1'
 payload = {
-    "reply": "est"
+    "reply": "dolorum"
 }
 headers = {
-  'Authorization': 'Bearer f1db4a638gkV6vhZPEcDea5',
+  'Authorization': 'Bearer 64E16ZakDh5fbdP8cav3egV',
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
@@ -4936,10 +5549,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-reviews--review_id-"
-               value="Bearer f1db4a638gkV6vhZPEcDea5"
+               value="Bearer 64E16ZakDh5fbdP8cav3egV"
                data-component="header">
     <br>
-<p>Example: <code>Bearer f1db4a638gkV6vhZPEcDea5</code></p>
+<p>Example: <code>Bearer 64E16ZakDh5fbdP8cav3egV</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -4982,12 +5595,239 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="reply"                data-endpoint="PUTapi-v1-reviews--review_id-"
-               value="est"
+               value="dolorum"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>dolorum</code></p>
         </div>
         </form>
+
+                <h1 id="statistic">Statistic</h1>
+
+    
+
+                                <h2 id="statistic-GETapi-v1-merchants-me-statistic">Get merchant&#039;s statistic.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-merchants-me-statistic">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/merchants/me/statistic?product_time_range=week&amp;transaction_time_range=week" \
+    --header "Authorization: Bearer ce6ak5dPa681VZfEvg3bD4h" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/merchants/me/statistic"
+);
+
+const params = {
+    "product_time_range": "week",
+    "transaction_time_range": "week",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer ce6ak5dPa681VZfEvg3bD4h",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/v1/merchants/me/statistic';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer ce6ak5dPa681VZfEvg3bD4h',
+            'Accept' =&gt; 'application/json',
+        ],
+        'query' =&gt; [
+            'product_time_range' =&gt; 'week',
+            'transaction_time_range' =&gt; 'week',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/v1/merchants/me/statistic'
+params = {
+  'product_time_range': 'week',
+  'transaction_time_range': 'week',
+}
+headers = {
+  'Authorization': 'Bearer ce6ak5dPa681VZfEvg3bD4h',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, params=params)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-merchants-me-statistic">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 52
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;message&quot;: &quot;Merchant&#039;s statistic retrieved successfully.&quot;,
+    &quot;data&quot;: {
+        &quot;order_count_new&quot;: 6,
+        &quot;order_count_pending&quot;: 1,
+        &quot;review_count&quot;: 3,
+        &quot;message_count_new&quot;: 0,
+        &quot;income&quot;: &quot;in progress&quot;,
+        &quot;store_statistic&quot;: {
+            &quot;order_count_regular&quot;: &quot;in progress&quot;,
+            &quot;message_count_responded&quot;: 0,
+            &quot;message_count_replied&quot;: 0,
+            &quot;store_count_verified&quot;: &quot;in progress&quot;,
+            &quot;store_count_pinalty&quot;: &quot;in progress&quot;
+        },
+        &quot;product_statistic&quot;: {
+            &quot;product_count&quot;: 1,
+            &quot;product_count_sold&quot;: 2,
+            &quot;product_view_count&quot;: 77,
+            &quot;product_rating_avg&quot;: 3.5,
+            &quot;conversion_rate&quot;: 0.03
+        },
+        &quot;transaction_statistic&quot;: {
+            &quot;transaction_count&quot;: 5,
+            &quot;transaction_count_success&quot;: 1,
+            &quot;transaction_count_pending&quot;: 3,
+            &quot;transaction_count_cancelled&quot;: 1
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-merchants-me-statistic" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-merchants-me-statistic"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-merchants-me-statistic"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-merchants-me-statistic" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-merchants-me-statistic">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-merchants-me-statistic" data-method="GET"
+      data-path="api/v1/merchants/me/statistic"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-merchants-me-statistic', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-merchants-me-statistic"
+                    onclick="tryItOut('GETapi-v1-merchants-me-statistic');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-merchants-me-statistic"
+                    onclick="cancelTryOut('GETapi-v1-merchants-me-statistic');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-merchants-me-statistic"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/merchants/me/statistic</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants-me-statistic"
+               value="Bearer ce6ak5dPa681VZfEvg3bD4h"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer ce6ak5dPa681VZfEvg3bD4h</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-merchants-me-statistic"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>product_time_range</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="product_time_range"                data-endpoint="GETapi-v1-merchants-me-statistic"
+               value="week"
+               data-component="query">
+    <br>
+<p>The time range of the product statistic. Example: <code>week</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>transaction_time_range</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="transaction_time_range"                data-endpoint="GETapi-v1-merchants-me-statistic"
+               value="week"
+               data-component="query">
+    <br>
+<p>The time range of the transaction statistic. Example: <code>week</code></p>
+            </div>
+                </form>
 
                 <h1 id="transaction">Transaction</h1>
 
@@ -5007,8 +5847,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/merchants/me/transactions" \
-    --header "Authorization: Bearer ZV13ad8gfb66EcD45keavPh" \
+    --get "http://127.0.0.1:8000/api/v1/merchants/me/transactions?status_id=50&amp;order_by=updated_at&amp;order_direction=DESC&amp;page_size=15" \
+    --header "Authorization: Bearer aaPgkDbvhd83V6c5Eef164Z" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -5017,8 +5857,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/v1/merchants/me/transactions"
 );
 
+const params = {
+    "status_id": "50",
+    "order_by": "updated_at",
+    "order_direction": "DESC",
+    "page_size": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
 const headers = {
-    "Authorization": "Bearer ZV13ad8gfb66EcD45keavPh",
+    "Authorization": "Bearer aaPgkDbvhd83V6c5Eef164Z",
     "Accept": "application/json",
 };
 
@@ -5035,8 +5884,14 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer ZV13ad8gfb66EcD45keavPh',
+            'Authorization' =&gt; 'Bearer aaPgkDbvhd83V6c5Eef164Z',
             'Accept' =&gt; 'application/json',
+        ],
+        'query' =&gt; [
+            'status_id' =&gt; '50',
+            'order_by' =&gt; 'updated_at',
+            'order_direction' =&gt; 'DESC',
+            'page_size' =&gt; '15',
         ],
     ]
 );
@@ -5049,12 +5904,18 @@ print_r(json_decode((string) $body));</code></pre></div>
 import json
 
 url = 'http://127.0.0.1:8000/api/v1/merchants/me/transactions'
+params = {
+  'status_id': '50',
+  'order_by': 'updated_at',
+  'order_direction': 'DESC',
+  'page_size': '15',
+}
 headers = {
-  'Authorization': 'Bearer ZV13ad8gfb66EcD45keavPh',
+  'Authorization': 'Bearer aaPgkDbvhd83V6c5Eef164Z',
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()</code></pre></div>
 
 </span>
@@ -5070,7 +5931,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 56
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -5084,8 +5945,8 @@ vary: Origin
             &quot;total_voucher_price&quot;: 0,
             &quot;amount&quot;: 200000,
             &quot;status&quot;: {
-                &quot;id&quot;: 7,
-                &quot;name&quot;: &quot;50&quot;,
+                &quot;id&quot;: 50,
+                &quot;name&quot;: null,
                 &quot;description&quot;: &quot;Selesai&quot;
             }
         }
@@ -5178,10 +6039,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-merchants-me-transactions"
-               value="Bearer ZV13ad8gfb66EcD45keavPh"
+               value="Bearer aaPgkDbvhd83V6c5Eef164Z"
                data-component="header">
     <br>
-<p>Example: <code>Bearer ZV13ad8gfb66EcD45keavPh</code></p>
+<p>Example: <code>Bearer aaPgkDbvhd83V6c5Eef164Z</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -5194,7 +6055,52 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>status_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="status_id"                data-endpoint="GETapi-v1-merchants-me-transactions"
+               value="50"
+               data-component="query">
+    <br>
+<p>Transaction status ID Example: <code>50</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="order_by"                data-endpoint="GETapi-v1-merchants-me-transactions"
+               value="updated_at"
+               data-component="query">
+    <br>
+<p>Order by (default: updated_at) Example: <code>updated_at</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order_direction</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="order_direction"                data-endpoint="GETapi-v1-merchants-me-transactions"
+               value="DESC"
+               data-component="query">
+    <br>
+<p>Order direction (ASC or DESC) (default: DESC) Example: <code>DESC</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page_size</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page_size"                data-endpoint="GETapi-v1-merchants-me-transactions"
+               value="15"
+               data-component="query">
+    <br>
+<p>Page size (default: 15) Example: <code>15</code></p>
+            </div>
+                </form>
 
                     <h2 id="transaction-GETapi-v1-transactions--transaction_id-">Get transaction details.</h2>
 
@@ -5211,7 +6117,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/transactions/1" \
-    --header "Authorization: Bearer 8daZ3g6cah6Eevk41fbDVP5" \
+    --header "Authorization: Bearer cZd3a48ePfb5VvDg61Ea6kh" \
     --header "Accept: application/json"</code></pre></div>
 
 
@@ -5221,7 +6127,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Authorization": "Bearer 8daZ3g6cah6Eevk41fbDVP5",
+    "Authorization": "Bearer cZd3a48ePfb5VvDg61Ea6kh",
     "Accept": "application/json",
 };
 
@@ -5238,7 +6144,7 @@ $response = $client-&gt;get(
     $url,
     [
         'headers' =&gt; [
-            'Authorization' =&gt; 'Bearer 8daZ3g6cah6Eevk41fbDVP5',
+            'Authorization' =&gt; 'Bearer cZd3a48ePfb5VvDg61Ea6kh',
             'Accept' =&gt; 'application/json',
         ],
     ]
@@ -5253,7 +6159,7 @@ import json
 
 url = 'http://127.0.0.1:8000/api/v1/transactions/1'
 headers = {
-  'Authorization': 'Bearer 8daZ3g6cah6Eevk41fbDVP5',
+  'Authorization': 'Bearer cZd3a48ePfb5VvDg61Ea6kh',
   'Accept': 'application/json'
 }
 
@@ -5273,7 +6179,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 50
+x-ratelimit-remaining: 49
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -5288,8 +6194,8 @@ vary: Origin
         &quot;total_voucher_price&quot;: 0,
         &quot;amount&quot;: 200000,
         &quot;status&quot;: {
-            &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;50&quot;,
+            &quot;id&quot;: 50,
+            &quot;name&quot;: null,
             &quot;description&quot;: &quot;Selesai&quot;
         },
         &quot;user&quot;: {
@@ -5299,19 +6205,19 @@ vary: Origin
             &quot;email&quot;: &quot;merchant@mail.com&quot;,
             &quot;phone&quot;: &quot;081234567890&quot;,
             &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;
         },
         &quot;payments&quot;: [
             {
                 &quot;id&quot;: 1,
                 &quot;payment_order&quot;: 2,
                 &quot;amount&quot;: 200000,
-                &quot;due_date&quot;: &quot;17/11/2023&quot;,
+                &quot;due_date&quot;: &quot;27/11/2023&quot;,
                 &quot;response&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
                 &quot;payment_token&quot;: 1234567,
-                &quot;created_at&quot;: &quot;10/11/2023 06:34:08&quot;,
-                &quot;updated_at&quot;: &quot;10/11/2023 06:34:08&quot;,
+                &quot;created_at&quot;: &quot;20/11/2023 13:39:57&quot;,
+                &quot;updated_at&quot;: &quot;20/11/2023 13:39:57&quot;,
                 &quot;status&quot;: {
                     &quot;id&quot;: 1,
                     &quot;description&quot;: &quot;Success&quot;
@@ -5346,13 +6252,13 @@ vary: Origin
                     &quot;min_person&quot;: 1,
                     &quot;note&quot;: &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.&quot;,
                     &quot;is_published&quot;: 0,
-                    &quot;created_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2023-11-10T06:34:08.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2023-11-20T13:39:57.000000Z&quot;
                 },
                 &quot;status&quot;: {
-                    &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;0&quot;,
-                    &quot;desciption&quot;: &quot;Waiting for merchant confirmation&quot;
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;1&quot;,
+                    &quot;desciption&quot;: &quot;Confirmed by merchant&quot;
                 }
             }
         ]
@@ -5413,10 +6319,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-transactions--transaction_id-"
-               value="Bearer 8daZ3g6cah6Eevk41fbDVP5"
+               value="Bearer cZd3a48ePfb5VvDg61Ea6kh"
                data-component="header">
     <br>
-<p>Example: <code>Bearer 8daZ3g6cah6Eevk41fbDVP5</code></p>
+<p>Example: <code>Bearer cZd3a48ePfb5VvDg61Ea6kh</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;

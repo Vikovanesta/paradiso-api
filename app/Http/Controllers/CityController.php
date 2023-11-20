@@ -12,10 +12,18 @@ class CityController extends Controller
      * Get all cities.
      * 
      * @group Public
+     * 
+     * @queryParam name string The name of the city. (can be a substring) Example: Ja
      */
-    public function index()
+    public function index(Request $request)
     {
-        $cities = City::with('province')->get();
+        $query = $request->query();
+
+        $cities = City::with('province')
+                    ->when(isset($query['name']), function ($q) use ($query) {
+                        $q->where('name', 'like', '%'.$query['name'].'%');
+                    })
+                    ->get();
         return CityResource::collection($cities);
     }
 

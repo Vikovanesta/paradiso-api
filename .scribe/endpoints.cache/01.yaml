@@ -20,15 +20,24 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
+    queryParameters:
+      name:
+        name: name
+        description: 'The name of the city. (can be a substring)'
+        required: false
+        example: Ja
+        type: string
+        enumValues: []
+        custom: []
+    cleanQueryParameters:
+      name: Ja
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"East Kellenport","image":"https:\/\/via.placeholder.com\/640x480.png\/00aa00?text=neque","is_highlighted":1,"province":{"id":1,"name":"North Elliott"}},{"id":2,"name":"West Mavischester","image":"https:\/\/via.placeholder.com\/640x480.png\/00dddd?text=quis","is_highlighted":0,"province":{"id":1,"name":"North Elliott"}},{"id":3,"name":"Einarberg","image":"https:\/\/via.placeholder.com\/640x480.png\/00cc33?text=error","is_highlighted":0,"province":{"id":1,"name":"North Elliott"}},{"id":4,"name":"Casperton","image":"https:\/\/via.placeholder.com\/640x480.png\/00eeaa?text=est","is_highlighted":1,"province":{"id":2,"name":"Franciscamouth"}},{"id":5,"name":"Mayermouth","image":"https:\/\/via.placeholder.com\/640x480.png\/0088aa?text=temporibus","is_highlighted":0,"province":{"id":2,"name":"Franciscamouth"}},{"id":6,"name":"West Zoeymouth","image":"https:\/\/via.placeholder.com\/640x480.png\/006666?text=magni","is_highlighted":0,"province":{"id":2,"name":"Franciscamouth"}},{"id":7,"name":"Kemmerburgh","image":"https:\/\/via.placeholder.com\/640x480.png\/005511?text=voluptas","is_highlighted":1,"province":{"id":3,"name":"Hillsberg"}},{"id":8,"name":"North Madison","image":"https:\/\/via.placeholder.com\/640x480.png\/009988?text=nam","is_highlighted":1,"province":{"id":3,"name":"Hillsberg"}},{"id":9,"name":"Moniqueton","image":"https:\/\/via.placeholder.com\/640x480.png\/0044aa?text=non","is_highlighted":1,"province":{"id":3,"name":"Hillsberg"}},{"id":10,"name":"Daughertyland","image":"https:\/\/via.placeholder.com\/640x480.png\/00aacc?text=possimus","is_highlighted":1,"province":{"id":4,"name":"East Elvis"}},{"id":11,"name":"Corneliusborough","image":"https:\/\/via.placeholder.com\/640x480.png\/0099ff?text=corporis","is_highlighted":0,"province":{"id":4,"name":"East Elvis"}},{"id":12,"name":"Lake Nicklausstad","image":"https:\/\/via.placeholder.com\/640x480.png\/00aa44?text=aut","is_highlighted":1,"province":{"id":4,"name":"East Elvis"}},{"id":13,"name":"Luettgenfurt","image":"https:\/\/via.placeholder.com\/640x480.png\/00ee55?text=enim","is_highlighted":1,"province":{"id":5,"name":"New Fernandoside"}},{"id":14,"name":"Reingerview","image":"https:\/\/via.placeholder.com\/640x480.png\/0088aa?text=repudiandae","is_highlighted":0,"province":{"id":5,"name":"New Fernandoside"}},{"id":15,"name":"Kemmerburgh","image":"https:\/\/via.placeholder.com\/640x480.png\/008855?text=adipisci","is_highlighted":0,"province":{"id":5,"name":"New Fernandoside"}}]}'
+        content: '{"data":[{"id":4,"name":"Kabupaten Aceh Jaya","image":"https:\/\/via.placeholder.com\/640x480.png\/006600?text=non","is_highlighted":0,"province":{"id":1,"name":"Aceh"}},{"id":17,"name":"Kabupaten Pidie Jaya","image":"https:\/\/via.placeholder.com\/640x480.png\/00aa33?text=inventore","is_highlighted":1,"province":{"id":1,"name":"Aceh"}},{"id":49,"name":"Kota Binjai","image":"https:\/\/via.placeholder.com\/640x480.png\/00aa00?text=eos","is_highlighted":1,"province":{"id":2,"name":"Sumatra Utara"}},{"id":71,"name":"Kota Padang Panjang","image":"https:\/\/via.placeholder.com\/640x480.png\/004499?text=enim","is_highlighted":1,"province":{"id":3,"name":"Sumatra Barat"}},{"id":92,"name":"Kabupaten Muaro Jambi","image":"https:\/\/via.placeholder.com\/640x480.png\/0088dd?text=accusantium","is_highlighted":1,"province":{"id":5,"name":"Jambi"}},{"id":94,"name":"Kabupaten Tanjung Jabung Barat","image":"https:\/\/via.placeholder.com\/640x480.png\/0011ee?text=consequuntur","is_highlighted":1,"province":{"id":5,"name":"Jambi"}},{"id":95,"name":"Kabupaten Tanjung Jabung Timur","image":"https:\/\/via.placeholder.com\/640x480.png\/009977?text=exercitationem","is_highlighted":1,"province":{"id":5,"name":"Jambi"}},{"id":97,"name":"Kota Jambi","image":"https:\/\/via.placeholder.com\/640x480.png\/0088cc?text=quidem","is_highlighted":1,"province":{"id":5,"name":"Jambi"}},{"id":123,"name":"Kabupaten Rejang Lebong","image":"https:\/\/via.placeholder.com\/640x480.png\/00aaaa?text=aperiam","is_highlighted":1,"province":{"id":7,"name":"Bengkulu"}},{"id":156,"name":"Kota Jakarta Barat","image":"https:\/\/via.placeholder.com\/640x480.png\/00ffbb?text=pariatur","is_highlighted":0,"province":{"id":11,"name":"Daerah Khusus Ibukota Jakarta"}},{"id":157,"name":"Kota Jakarta Pusat","image":"https:\/\/via.placeholder.com\/640x480.png\/00aa88?text=laboriosam","is_highlighted":1,"province":{"id":11,"name":"Daerah Khusus Ibukota Jakarta"}},{"id":158,"name":"Kota Jakarta Selatan","image":"https:\/\/via.placeholder.com\/640x480.png\/00dd00?text=facilis","is_highlighted":1,"province":{"id":11,"name":"Daerah Khusus Ibukota Jakarta"}},{"id":159,"name":"Kota Jakarta Timur","image":"https:\/\/via.placeholder.com\/640x480.png\/000033?text=consequatur","is_highlighted":0,"province":{"id":11,"name":"Daerah Khusus Ibukota Jakarta"}},{"id":160,"name":"Kota Jakarta Utara","image":"https:\/\/via.placeholder.com\/640x480.png\/0033ff?text=et","is_highlighted":0,"province":{"id":11,"name":"Daerah Khusus Ibukota Jakarta"}},{"id":172,"name":"Kabupaten Majalengka","image":"https:\/\/via.placeholder.com\/640x480.png\/00bb33?text=quo","is_highlighted":0,"province":{"id":12,"name":"Jawa Barat"}},{"id":180,"name":"Kota Banjar","image":"https:\/\/via.placeholder.com\/640x480.png\/004422?text=voluptas","is_highlighted":0,"province":{"id":12,"name":"Jawa Barat"}},{"id":188,"name":"Kabupaten Banjarnegara","image":"https:\/\/via.placeholder.com\/640x480.png\/00aaaa?text=amet","is_highlighted":1,"province":{"id":13,"name":"Jawa Tengah"}},{"id":238,"name":"Kabupaten Lumajang","image":"https:\/\/via.placeholder.com\/640x480.png\/00bb55?text=cum","is_highlighted":0,"province":{"id":15,"name":"Jawa Timur"}},{"id":344,"name":"Kabupaten Banjar","image":"https:\/\/via.placeholder.com\/640x480.png\/00eecc?text=a","is_highlighted":1,"province":{"id":22,"name":"Kalimantan Selatan"}},{"id":354,"name":"Kota Banjarbaru","image":"https:\/\/via.placeholder.com\/640x480.png\/002244?text=omnis","is_highlighted":1,"province":{"id":22,"name":"Kalimantan Selatan"}},{"id":355,"name":"Kota Banjarmasin","image":"https:\/\/via.placeholder.com\/640x480.png\/0033cc?text=molestiae","is_highlighted":0,"province":{"id":22,"name":"Kalimantan Selatan"}},{"id":362,"name":"Kabupaten Penajam Paser Utara","image":"https:\/\/via.placeholder.com\/640x480.png\/008811?text=eos","is_highlighted":1,"province":{"id":23,"name":"Kalimantan Timur"}},{"id":414,"name":"Kabupaten Sinjai","image":"https:\/\/via.placeholder.com\/640x480.png\/00dd55?text=pariatur","is_highlighted":0,"province":{"id":27,"name":"Sulawesi Selatan"}},{"id":417,"name":"Kabupaten Tana Toraja","image":"https:\/\/via.placeholder.com\/640x480.png\/00ee11?text=magni","is_highlighted":0,"province":{"id":27,"name":"Sulawesi Selatan"}},{"id":418,"name":"Kabupaten Toraja Utara","image":"https:\/\/via.placeholder.com\/640x480.png\/002211?text=voluptate","is_highlighted":1,"province":{"id":27,"name":"Sulawesi Selatan"}},{"id":478,"name":"Kabupaten Intan Jaya","image":"https:\/\/via.placeholder.com\/640x480.png\/000033?text=nisi","is_highlighted":0,"province":{"id":33,"name":"Papua"}},{"id":479,"name":"Kabupaten Jayapura","image":"https:\/\/via.placeholder.com\/640x480.png\/003333?text=qui","is_highlighted":1,"province":{"id":33,"name":"Papua"}},{"id":480,"name":"Kabupaten Jayawijaya","image":"https:\/\/via.placeholder.com\/640x480.png\/0077ee?text=impedit","is_highlighted":0,"province":{"id":33,"name":"Papua"}},{"id":483,"name":"Kabupaten Lanny Jaya","image":"https:\/\/via.placeholder.com\/640x480.png\/004455?text=veniam","is_highlighted":0,"province":{"id":33,"name":"Papua"}},{"id":494,"name":"Kabupaten Puncak Jaya","image":"https:\/\/via.placeholder.com\/640x480.png\/00ccff?text=qui","is_highlighted":0,"province":{"id":33,"name":"Papua"}},{"id":501,"name":"Kota Jayapura","image":"https:\/\/via.placeholder.com\/640x480.png\/00ffaa?text=illo","is_highlighted":0,"province":{"id":33,"name":"Papua"}},{"id":508,"name":"Kabupaten Raja Ampat","image":"https:\/\/via.placeholder.com\/640x480.png\/006655?text=deleniti","is_highlighted":0,"province":{"id":34,"name":"Papua Barat"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -60,15 +69,24 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
+    queryParameters:
+      name:
+        name: name
+        description: 'The name of the province. (can be a substring)'
+        required: false
+        example: Jawa
+        type: string
+        enumValues: []
+        custom: []
+    cleanQueryParameters:
+      name: Jawa
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"North Elliott","country":{"id":1,"name":"Malawi","flag":"https:\/\/via.placeholder.com\/640x480.png\/005566?text=dolore"}},{"id":2,"name":"Franciscamouth","country":{"id":1,"name":"Malawi","flag":"https:\/\/via.placeholder.com\/640x480.png\/005566?text=dolore"}},{"id":3,"name":"Hillsberg","country":{"id":1,"name":"Malawi","flag":"https:\/\/via.placeholder.com\/640x480.png\/005566?text=dolore"}},{"id":4,"name":"East Elvis","country":{"id":1,"name":"Malawi","flag":"https:\/\/via.placeholder.com\/640x480.png\/005566?text=dolore"}},{"id":5,"name":"New Fernandoside","country":{"id":1,"name":"Malawi","flag":"https:\/\/via.placeholder.com\/640x480.png\/005566?text=dolore"}}]}'
+        content: '{"data":[{"id":12,"name":"Jawa Barat","country":{"id":1,"name":"Indonesia","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc44?text=qui"}},{"id":13,"name":"Jawa Tengah","country":{"id":1,"name":"Indonesia","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc44?text=qui"}},{"id":15,"name":"Jawa Timur","country":{"id":1,"name":"Indonesia","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc44?text=qui"}}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -100,15 +118,24 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
+    queryParameters:
+      name:
+        name: name
+        description: 'The name of the country. (can be a substring)'
+        required: false
+        example: Ind
+        type: string
+        enumValues: []
+        custom: []
+    cleanQueryParameters:
+      name: Ind
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Malawi","flag":"https:\/\/via.placeholder.com\/640x480.png\/005566?text=dolore"}]}'
+        content: '{"data":[{"id":1,"name":"Indonesia","flag":"https:\/\/via.placeholder.com\/640x480.png\/00cc44?text=qui"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
 
             BankSeeder::class,
             CountrySeeder::class,
+            ProvinceSeeder::class,
+            CitySeeder::class,
             ProductCategorySeeder::class,
             FacilitySeeder::class,
             TestUserSeeder::class,

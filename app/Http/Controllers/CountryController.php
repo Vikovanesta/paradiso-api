@@ -12,10 +12,19 @@ class CountryController extends Controller
      * Get all countries.
      * 
      * @group Public
+     * 
+     * @queryParam name string The name of the country. (can be a substring) Example: Ind
      */
-    public function index()
+    public function index(Request $request)
     {
-        $countries = Country::all();
+        $query = $request->query();
+
+        $countries = Country::
+                        when(isset($query['name']), function ($q) use ($query) {
+                            $q->where('name', 'like', '%'.$query['name'].'%');
+                        })
+                        ->get()
+                        ;
         return CountryResource::collection($countries);
     }
 

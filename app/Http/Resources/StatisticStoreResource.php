@@ -15,11 +15,11 @@ class StatisticStoreResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'order_count_regular' => 0, // TODO: Implement regular order count
+            'order_count_regular' => 'in progress', // TODO: Implement regular order count
             'message_count_responded' => 0, // TODO: Implement responded message count
             'message_count_replied' => 0, // TODO: Implement new message count
-            'store_count_verified' => 0, // TODO: Implement verified store count
-            'store_count_pinalty' => 0, // TODO: Implement pinalty store count
+            'store_count_verified' => 'in progress', // TODO: Implement verified store count
+            'store_count_pinalty' => 'in progress', // TODO: Implement pinalty store count
         ];
     }
 }

@@ -184,7 +184,7 @@ class TestUserSeeder extends Seeder
         Item::create([
             'product_id' => 1,
             'transaction_id' => 1,
-            'status_id' => 1,
+            'status_id' => 2,
             'net_price' => 200000,
             'price' => 200000,
             'product_name' => 'product',

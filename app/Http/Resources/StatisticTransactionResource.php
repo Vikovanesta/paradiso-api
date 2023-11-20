@@ -15,11 +15,30 @@ class StatisticTransactionResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $transactions = Transaction::whereHas('items', function ($query) {
-            $query->whereHas('product', function ($query) {
-                $query->where('merchant_id', $this->id);
+        $query = $request->query();
+
+        $transactions = Transaction::whereHas('items', function ($q) {
+            $q->whereHas('product', function ($q) {
+                $q->where('merchant_id', $this->id);
             });
-        })->get();
+        })
+        ->when(isset($query['transaction_time_range']), function ($q) use ($query) {
+            switch ($query['transaction_time_range']) {
+                case 'today':
+                    return $q->where('created_at', '>=', now()->subDays(1));
+                    break;
+                case 'week':
+                    return $q->where('created_at', '>=', now()->subWeek());
+                    break;
+                case 'month':
+                    return $q->where('created_at', '>=', now()->subMonth());
+                    break;
+                case 'year':
+                    return $q->where('created_at', '>=', now()->subYear());
+                    break;
+            }
+        })
+        ->get();
 
         return [
             'transaction_count' => $transactions->count(),

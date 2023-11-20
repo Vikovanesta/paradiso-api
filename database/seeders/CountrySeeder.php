@@ -16,9 +16,8 @@ class CountrySeeder extends Seeder
      */
     public function run(): void
     {
-        Country::factory(1)
-            ->has(Province::factory(5)
-                ->has(City::factory(3)))
-            ->create();
+        Country::factory()->create([
+            'name' => 'Indonesia',
+        ]);
     }
 }
