@@ -42,4 +42,9 @@ class Item extends Model
     {
         return $this->belongsTo(ItemStatus::class);
     }
+
+    public function vouchers()
+    {
+        return $this->belongsToMany(Voucher::class);
+    }
 }

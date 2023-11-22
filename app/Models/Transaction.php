@@ -49,4 +49,9 @@ class Transaction extends Model
     {
         return $this->hasMany(Wallet::class);
     }
+
+    public function vouchers()
+    {
+        return $this->belongsToMany(Voucher::class);
+    }
 }

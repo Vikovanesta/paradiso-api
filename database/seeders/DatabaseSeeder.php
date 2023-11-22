@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\MerchantLevel;
+use App\Models\VoucherType;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use PHPUnit\Framework\Constraint\Count;
@@ -14,12 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $merchantLevels = ['standart', 'bronze', 'silver', 'gold', 'platinum'];
-        foreach ($merchantLevels as $merchantLevel) {
-            MerchantLevel::factory()->create([
-                'name' => $merchantLevel,
-            ]);
-        }
 
         $this->call([
             TransactionStatusSeeder::class,
@@ -33,10 +28,13 @@ class DatabaseSeeder extends Seeder
             CountrySeeder::class,
             ProvinceSeeder::class,
             CitySeeder::class,
+            MerchantLevelSeeder::class,
+            VoucherTypeSeeder::class,
             ProductCategorySeeder::class,
             FacilitySeeder::class,
             TestUserSeeder::class,
             UserSeeder::class,
+            VoucherSeeder::class,
         ]);
     }
 }

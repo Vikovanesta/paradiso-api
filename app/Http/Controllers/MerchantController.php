@@ -245,10 +245,10 @@ class MerchantController extends Controller
         if (isset($validated['logo'])) {
             $logo = $validated['logo'];
             $directory = 'merchants/logo/';
-            $logo->storeAs($directory, $logo->hashName(), 'google');
-            $logo_url = config('app.url') . '/img/' . $directory . $logo->hashName();
+            $logo->storeAs('public/' . $directory, $logo->hashName(), 'local');
+            $logo_url = url('/storage/' . $directory . $logo->hashName());
 
-            Storage::disk('google')->delete($directory . basename($merchant->logo));
+            Storage::disk('local')->delete('public/' . $directory . basename($merchant->logo));
 
             $merchant->update([
                 'logo' => $logo_url,
@@ -258,12 +258,12 @@ class MerchantController extends Controller
         if (isset($validated['banner'])) {
             $banner = $validated['banner'];
             $directory = 'merchants/banners/';
-            $banner->storeAs($directory, $banner->hashName());
-            $banner_url = config('app.url') . '/img/' . $directory . $banner->hashName();
+            $banner->storeAs('public/' . $directory, $banner->hashName(), 'local');
+            $banner_url = url('/storage/' . $directory . $banner->hashName());
 
-            Storage::disk('google')->delete($directory . basename($merchant->banner));
+            Storage::disk('local')->delete('public/' . $directory . basename($merchant->merchantProfile->banner));
 
-            $merchant->merchantProfile()->update([
+            $merchant->merchantProfile->update([
                 'banner' => $banner_url,
             ]);
         }
