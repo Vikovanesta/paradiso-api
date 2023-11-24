@@ -8,6 +8,7 @@ use App\Models\Item;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Transaction;
+use App\Models\Voucher;
 use App\Policies\ProductPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
@@ -60,6 +61,14 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('update-reviewReply', function($user, Review $review) {
             return ($user->user_level === 3 && $user->merchant->id === $review->product->merchant_id);
+        });
+
+        Gate::define('create-voucher', function($user) {
+            return $user->user_level === 3;
+        });
+
+        Gate::define('update-voucher', function($user, Voucher $voucher) {
+            return $user->user_level === 3 && $user->merchant->id === $voucher->merchant_id;
         });
     }
 }

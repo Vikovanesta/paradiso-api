@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\BankAccount;
+use App\Models\Facility;
 use App\Models\Faq;
 use App\Models\IncludeExclude;
 use App\Models\Item;
@@ -19,6 +20,7 @@ use App\Models\Term;
 use App\Models\Transaction;
 use App\Models\TransactionStatus;
 use App\Models\User;
+use Database\Factories\ScheduleDayFactory;
 use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -30,7 +32,7 @@ class TestUserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
+        $user = User::create([
             'name' => 'merchant',
             'email' => 'merchant@mail.com',
             'password' => 'password',
@@ -49,7 +51,7 @@ class TestUserSeeder extends Seeder
             'is_merchant' => true,
         ]);
 
-        Merchant::create([
+        $nerchant = Merchant::create([
             'user_id' => 1,
             'merchant_level_id' => 1,
             'merchant_status_id' => 3,
@@ -208,5 +210,24 @@ class TestUserSeeder extends Seeder
         ProductView::factory()->count(50)->create([
             'product_id' => 1,
         ]);
+
+        Product::factory()->count(10)
+        ->has(
+            Schedule::factory(rand(1, 3))
+            ->has(ScheduleDayFactory::times(rand(1, 3)))
+        )
+        ->has(IncludeExclude::factory(2))
+        ->has(Faq::factory(2))
+        ->has(Term::factory(2))
+        ->has(ProductImage::factory(2))
+        ->has(
+            ProductView::factory(10)
+            ->rangeMonth(1)
+        )
+        ->create([
+            'merchant_id' => 1,
+        ]);
+
+
     }
 }

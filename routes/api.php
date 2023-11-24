@@ -11,6 +11,7 @@ use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\VoucherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,12 +41,13 @@ Route::group(['prefix' => 'v1'], function () {
 
 // Merchant routes
 Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
-    Route::get('/merchants/me/transactions', [MerchantController::class,'transactionIndex'])->name('merchant.transactionIndex');
-    Route::get('/merchants/me/items', [MerchantController::class,'itemIndex'])->name('merchant.itemIndex');
-    Route::get('/merchants/me/reviews', [MerchantController::class,'reviewIndex'])->name('merchant.reviewIndex');
-    Route::get('/merchants/me/products', [MerchantController::class,'productIndex'])->name('merchant.productIndex');
-    Route::get('/merchants/me/statistic', [StatisticController::class,'show'])->name('statistic.show');
     Route::get('/merchants/me', [MerchantController::class,'show'])->name('merchant.show');
+    Route::get('/merchants/me/transactions', [MerchantController::class,'indexTransaction'])->name('merchant.indexTransaction');
+    Route::get('/merchants/me/items', [MerchantController::class,'indexItem'])->name('merchant.indexItem');
+    Route::get('/merchants/me/reviews', [MerchantController::class,'indexReview'])->name('merchant.indexReview');
+    Route::get('/merchants/me/products', [MerchantController::class,'indexProduct'])->name('merchant.indexProduct');
+    Route::get('/merchants/me/vouchers', [MerchantController::class,'indexVoucher'])->name('voucher.indexVoucher');
+    Route::get('/merchants/me/statistic', [StatisticController::class,'show'])->name('statistic.show');
     Route::post('/merchants/products', [ProductController::class,'store'])->name('product.store');
     Route::put('/merchants', [MerchantController::class,'update'])->name('merchant.update');
     
@@ -58,6 +60,9 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
 
     Route::get('/items/{item}', [ItemController::class,'show'])->name('item.show');
     Route::put('/items/{item}', [ItemController::class,'update'])->name('item.update');
+
+    Route::post('/vouchers', [VoucherController::class,'store'])->name('voucher.store');
+    Route::put('/vouchers/{voucher}', [VoucherController::class,'update'])->name('voucher.update');
 
     Route::put('/reviews/{review}', [ReviewController::class,'update'])->name('review.update');
 

@@ -8,11 +8,13 @@ use App\Http\Resources\MerchantResource;
 use App\Http\Resources\ProductResource;
 use App\Http\Resources\ReviewResource;
 use App\Http\Resources\TransactionResource;
+use App\Http\Resources\VoucherResource;
 use App\Models\Item;
 use App\Models\Merchant;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Transaction;
+use App\Models\Voucher;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,7 +55,7 @@ class MerchantController extends Controller
      * @queryParam sort_direction string Sort direction (ASC or DESC) (default: DESC) Example: DESC
      * @queryParam page_size int Page size (default: 15) Example: 15
      */
-    public function productIndex(Request $request)
+    public function indexProduct(Request $request)
     {
         $query = $request->query();
 
@@ -109,7 +111,7 @@ class MerchantController extends Controller
      * @queryParam order_direction string Order direction (ASC or DESC) (default: DESC) Example: DESC
      * @queryParam page_size int Page size (default: 15) Example: 15
      */
-    public function transactionIndex(Request $request)
+    public function indexTransaction(Request $request)
     {
         $query = $request->query();
 
@@ -141,7 +143,7 @@ class MerchantController extends Controller
      * @queryParam order_direction string Order direction (ASC or DESC) (default: DESC) Example: DESC
      * @queryParam page_size int Page size (default: 15) Example: 15
      */
-    public function itemIndex(Request $request)
+    public function indexItem(Request $request)
     {
         $query = $request->query();
 
@@ -181,7 +183,7 @@ class MerchantController extends Controller
      * @queryParam order_direction string Order direction (ASC or DESC) (default: DESC) Example: DESC
      * @queryParam page_size int Page size (default: 15) Example: 15
      */
-    public function reviewIndex(Request $request)
+    public function indexReview(Request $request)
     {
         $query = $request->query();
 
@@ -192,7 +194,7 @@ class MerchantController extends Controller
                 ->when(isset($query['rating_max']), function ($q) use ($query) {
                     $q->where('rating', '<=', $query['rating_max']);
                 })
-                ->when(isset($query['is_replied']), function ($q) use ($query) {
+                ->when(isset($query['is_replied']), function ($q) {
                     $q->whereNotNull('reply');
                 })
                 ->orderBy($query['order_by'] ?? 'updated_at', $query['order_direction'] ?? 'DESC')
@@ -200,6 +202,65 @@ class MerchantController extends Controller
         $reviews->load('user', 'product');
 
         return ReviewResource::collection($reviews);
+    }
+
+    /**
+     * Get all merchant's vouchers.
+     * 
+     * @group Voucher
+     * 
+     * @authenticated
+     * 
+     * @queryParam voucher_type_id int Voucher type ID Example: 1
+     * @queryParam name string Voucher name (fuzzy search) Example: Vouc
+     * @queryParam code string Voucher code (fuzzy search) Example: Vouc
+     * @queryParam nominal int Voucher nominal Example: 10000
+     * @queryParam start_date string Voucher minimum start date (Y-m-d) Example: 2023-10-16
+     * @queryParam end_date string Voucher maximum end date (Y-m-d) Example: 2023-10-20
+     * @queryParam min_transaction int Voucher minimum transaction Example: 100000
+     * @queryParam max_discount int Voucher maximum discount Example: 10000
+     * @queryParam quota int Voucher quota Example: 100
+     * @queryParam order_by string Order by (default: updated_at) Example: updated_at
+     * @queryParam order_direction string Order direction (ASC or DESC) (default: DESC) Example: DESC
+     * @queryParam page_size int Page size (default: 15) Example: 15
+     */
+    public function indexVoucher(Request $request)
+    {
+        $query = $request->query();
+
+        $vouchers = Voucher::whereRelation('merchant', 'id', Auth::user()->merchant->id)
+                ->when(isset($query['voucher_type_id']), function ($q) use ($query) {
+                    $q->where('voucher_type_id', $query['voucher_type_id']);
+                })
+                ->when(isset($query['name']), function ($q) use ($query) {
+                    $q->where('name', 'like', '%' . $query['name'] . '%');
+                })
+                ->when(isset($query['code']), function ($q) use ($query) {
+                    $q->where('code', 'like', '%' . $query['code'] . '%');
+                })
+                ->when(isset($query['nominal']), function ($q) use ($query) {
+                    $q->where('nominal', $query['nominal']);
+                })
+                ->when(isset($query['start_date']), function ($q) use ($query) {
+                    $q->where('start_date', '>=', $query['start_date']);
+                })
+                ->when(isset($query['end_date']), function ($q) use ($query) {
+                    $q->where('end_date', '<=', $query['end_date']);
+                })
+                ->when(isset($query['min_transaction']), function ($q) use ($query) {
+                    $q->where('min_transaction', $query['min_transaction']);
+                })
+                ->when(isset($query['max_discount']), function ($q) use ($query) {
+                    $q->where('max_discount', $query['max_discount']);
+                })
+                ->when(isset($query['quota']), function ($q) use ($query) {
+                    $q->where('quota', $query['quota']);
+                })
+                ->orderBy($query['order_by'] ?? 'updated_at', $query['order_direction'] ?? 'DESC')
+                ->paginate($query['page_size'] ?? 15);
+        $vouchers->load('voucherType', 'merchant');
+
+        return VoucherResource::collection($vouchers);
     }
 
     /**

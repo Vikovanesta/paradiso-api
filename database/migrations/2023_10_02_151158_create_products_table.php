@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('merchant_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->nullable()->constrained();   // admin_id
             $table->foreignId('product_sub_category_id')->constrained();
-            $table->tinyInteger('product_status_id');
+            $table->foreignId('product_status_id')->constrained();
             $table->foreignId('city_id')->constrained();
             $table->string('name');
             $table->text('description')->nullable()->default('No description');

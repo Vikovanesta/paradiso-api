@@ -30,30 +30,54 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(2)
+        // Generate superadmin
+        User::factory()->superadmin()->create([
+            'name' => 'superadmin',
+            'email' => 'superadmin@mail.com',
+            'phone' => '081234067890',
+            'password' => 'password',
+        ]);
+
+        // Generate admin
+        User::factory()->admin()->create([
+            'name' => 'admin',
+            'email' => 'admin@mail.com',
+            'phone' => '081334567891',
+            'password' => 'password',
+        ]);
+
+        // User::factory(1)
+        // ->merchant()
+        // ->has(BankAccount::factory())
+        // ->has(
+        //     Merchant::factory()
+        //     ->has(MerchantProfile::factory())
+        //     ->has(
+        //         Product::factory(2)
+        //         ->has(
+        //             Schedule::factory(2)
+        //             ->has(ScheduleDayFactory::times(2))
+        //         )
+        //         ->has(Review::factory(2))
+        //         ->has(IncludeExclude::factory(2))
+        //         ->has(Facility::factory(2))
+        //         ->has(Faq::factory(2))
+        //         ->has(Term::factory(2))
+        //         ->has(ProductImage::factory(2))
+        //     )
+        // )
+        // ->create();
+
+        // Generate customer
+        User::factory(4)
+        ->customer()
         ->has(BankAccount::factory())
         ->has(
-            Merchant::factory()
-            ->has(MerchantProfile::factory())
-            ->has(
-                Product::factory(2)
-                ->has(
-                    Schedule::factory(2)
-                    ->has(ScheduleDayFactory::times(2))
-                )
-                ->has(Review::factory(2))
-                ->has(IncludeExclude::factory(2))
-                ->has(Facility::factory(2))
-                ->has(Faq::factory(2))
-                ->has(Term::factory(2))
-                ->has(ProductImage::factory(2))
-            )
-        )
-        ->has(
             Transaction::factory(2)
-            ->has(Item::factory(2))
-            ->has(Payment::factory())
+            ->has(Item::factory(rand(1, 3)))
+            ->has(Payment::factory())   
             ->has(Wallet::factory())
+            ->has(Review::factory())
         )
         ->create();
     }

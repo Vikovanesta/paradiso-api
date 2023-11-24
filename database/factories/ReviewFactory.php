@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,6 +21,8 @@ class ReviewFactory extends Factory
     {
         return [
             'user_id' => User::query()->inRandomOrder()->first()->id,
+            'transaction_id' => Transaction::query()->inRandomOrder()->first()->id,
+            'product_id' => Product::query()->inRandomOrder()->first()->id,
             'review' => fake()->paragraph(),
             'rating' => rand(1, 5),
         ];

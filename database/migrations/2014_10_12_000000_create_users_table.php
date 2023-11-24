@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('customer_level_id')->nullable();
             $table->string('name');
-            $table->integer('user_level')->nullable()->default(2);  //2 = customer
+            $table->integer('user_level')->default(2);  //2 = customer
             $table->string('email')->unique();
             $table->boolean('is_email_verified');
             $table->timestamp('email_verified_at')->nullable();
