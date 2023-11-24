@@ -64,4 +64,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(BankAccount::class);
     }
+
+    public function chatRooms()
+    {
+        return $this->belongsToMany(ChatRoom::class, 'chat_room_users');
+    }
 }

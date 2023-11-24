@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\MerchantLevel;
-use App\Models\VoucherType;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use PHPUnit\Framework\Constraint\Count;
@@ -35,6 +33,7 @@ class DatabaseSeeder extends Seeder
             TestUserSeeder::class,
             UserSeeder::class,
             VoucherSeeder::class,
+            ChatRoomSeeder::class,
         ]);
     }
 }

@@ -51,7 +51,7 @@ class TestUserSeeder extends Seeder
             'is_merchant' => true,
         ]);
 
-        $nerchant = Merchant::create([
+        $merchant = Merchant::create([
             'user_id' => 1,
             'merchant_level_id' => 1,
             'merchant_status_id' => 3,
