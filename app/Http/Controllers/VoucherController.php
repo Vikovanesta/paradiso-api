@@ -10,6 +10,20 @@ use Illuminate\Http\Request;
 
 class VoucherController extends Controller
 {
+
+    /**
+     * Get a voycher detail
+     *
+     * @group Voucher
+     * 
+     * @authenticated
+     */
+    public function show(Voucher $voucher)
+    {
+        $voucher->load(['merchant']);
+
+        return $this->success(new VoucherResource($voucher), 'Voucher detail');
+    }
     
     /**
      * Create new voucher

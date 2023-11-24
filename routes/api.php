@@ -6,6 +6,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\ReviewController;
@@ -33,6 +34,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/provinces', [ProvinceController::class,'index'])->name('province.index');
     Route::get('/countries', [CountryController::class,'index'])->name('country.index');
     Route::get('/facilities', [FacilityController::class,'index'])->name('facility.index');
+    Route::get('/categories', [ProductCategoryController::class,'index'])->name('category.index');
     
     Route::get('/postman', function () {
         return response()->file(storage_path('/app/scribe/collection.json'));
@@ -62,6 +64,7 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::put('/items/{item}', [ItemController::class,'update'])->name('item.update');
 
     Route::post('/vouchers', [VoucherController::class,'store'])->name('voucher.store');
+    Route::get('/vouchers/{voucher}', [VoucherController::class,'show'])->name('voucher.show');
     Route::put('/vouchers/{voucher}', [VoucherController::class,'update'])->name('voucher.update');
 
     Route::put('/reviews/{review}', [ReviewController::class,'update'])->name('review.update');

@@ -20,7 +20,7 @@ class ProductCategory extends Model
         'icon',
     ];    
 
-    public function productSubCategory()
+    public function productSubCategories()
     {
         return $this->hasMany(ProductSubCategory::class);
     }
