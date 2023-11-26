@@ -27,7 +27,8 @@ class ChatRoomSeeder extends Seeder
 
             Message::factory()->count(rand(4, 10))
             ->sequence(fn ($sequence) => [
-                'sender_id' => rand(1,2) == 1 ? 1 : $customer->id
+                'sender_id' => rand(1,2) == 1 ? 1 : $customer->id,
+                'created_at' => now()->addMinutes($sequence->index * 5)
             ])
             ->create([
                 'chat_room_id' => $chatRoom->id,

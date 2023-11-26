@@ -4,6 +4,7 @@
 /public/hot
 /public/storage
 /storage/*.key
+/resources/views/scribe
 /vendor
 .env
 .env.backup
@@ -19,3 +20,4 @@ yarn-error.log
 /.vscode
 _ide_helper.php
 .vercel
+.scribe

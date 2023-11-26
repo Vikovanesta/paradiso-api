@@ -22,7 +22,7 @@ class MessageFactory extends Factory
         return [
             'chat_room_id' => $chatRoom->id,
             'sender_id' => $chatRoom->users()->inRandomOrder()->first()->id,
-            'message' => $this->faker->sentences(rand(1, 3), true),
+            'message' => $this->faker->realText(rand(10, 120)),
             'is_read' => true,
             'read_at' => now(),
         ];

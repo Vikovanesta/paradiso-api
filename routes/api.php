@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MerchantController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
@@ -57,7 +58,6 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::put('/products/{product}', [ProductController::class,'update'])->name('product.update');
     Route::delete('/products/{product}', [ProductController::class,'destroy'])->name('product.destroy');
 
-
     Route::get('/transactions/{transaction}', [TransactionController::class,'show'])->name('transaction.show');
 
     Route::get('/items/{item}', [ItemController::class,'show'])->name('item.show');
@@ -68,6 +68,9 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::put('/vouchers/{voucher}', [VoucherController::class,'update'])->name('voucher.update');
 
     Route::put('/reviews/{review}', [ReviewController::class,'update'])->name('review.update');
+
+    Route::get('/chats', [ChatController::class,'index'])->name('chat.index');
+    Route::get('/chats/{chat}', [ChatController::class,'show'])->name('chat.show');
 
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
