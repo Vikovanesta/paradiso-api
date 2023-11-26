@@ -40,6 +40,10 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/postman', function () {
         return response()->file(storage_path('/app/scribe/collection.json'));
     })->name('scribe.postman');
+
+    Route::get('/openapi', function () {
+        return response()->file(storage_path('/app/scribe/openapi.yaml'));
+    })->name('scribe.openapi');
 });
 
 // Merchant routes
@@ -70,7 +74,9 @@ Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::put('/reviews/{review}', [ReviewController::class,'update'])->name('review.update');
 
     Route::get('/chats', [ChatController::class,'index'])->name('chat.index');
+    Route::post('/chats', [ChatController::class,'store'])->name('chat.store');
     Route::get('/chats/{chat}', [ChatController::class,'show'])->name('chat.show');
+    Route::post('/chats/{chat}', [ChatController::class,'storeMessage'])->name('chat.storeMessage');
 
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });

@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class FacilityController extends Controller
 {
+    /**
+     * Get all facilities.
+     *
+     * @group Public
+     * 
+     * @authenticated
+     */
     public function index() 
     {
         $facilities = Facility::get();

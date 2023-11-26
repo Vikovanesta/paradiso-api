@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChatRoomStoreRequest;
+use App\Http\Requests\MessageStoreRequest;
 use App\Http\Resources\ChatRoomResource;
 use App\Models\ChatRoom;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ChatController extends Controller
 {
@@ -32,10 +35,56 @@ class ChatController extends Controller
      * @authenticated
      */
     public function show(ChatRoom $chat)
-    {
+    {   
+        Gate::authorize('view-chatRoom', $chat);
+
         $chat->load(['users', 'messages']);
 
         return $this->success(new ChatRoomResource($chat), 'Suceesfully retrieved chat room');
     }
-    
+
+    // /**
+    //  * Create new chat room.
+    //  *
+    //  * @group Chat
+    //  * 
+    //  * @authenticated
+    //  */
+    // public function store(ChatRoomStoreRequest $request)
+    // {
+    //     $validated = $request->validated();
+
+    //     $chat = ChatRoom::create([
+    //         'name' => $validated->name,
+    //     ]);
+
+    //     $chat->users()->attach($validated->users);
+
+    //     return $this->success(new ChatRoomResource($chat), 'Suceesfully created chat room');
+    // }
+
+    /**
+     * Create new message.
+     *
+     * @group Chat
+     * 
+     * @authenticated
+     */
+    public function storeMessage(MessageStoreRequest $request, ChatRoom $chat)
+    {
+        $validated = $request->validated();
+
+        $message = $chat->messages()->create([
+            'sender_id' => auth()->id(),
+            'message' => $request->message,
+        ]);
+
+        // $chat->users()->updateExistingPivot(auth()->id(), [
+        //     'last_read_at' => now(),
+        // ]);
+
+        $chat->load(['users', 'messages']);
+
+        return $this->success(new ChatRoomResource($chat), 'Suceesfully created message');
+    }
 }

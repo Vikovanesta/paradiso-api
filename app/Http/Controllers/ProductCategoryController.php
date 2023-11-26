@@ -7,6 +7,13 @@ use App\Models\ProductCategory;
 
 class ProductCategoryController extends Controller
 {
+    /**
+     * Get all product categories.
+     *
+     * @group Public
+     * 
+     * @authenticated
+     */
     public function index()
     {
         $categories = ProductCategory::with(['productSubCategories'])

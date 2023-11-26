@@ -4,6 +4,7 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use App\Models\ChatRoom;
 use App\Models\Item;
 use App\Models\Product;
 use App\Models\Review;
@@ -69,6 +70,11 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('update-voucher', function($user, Voucher $voucher) {
             return $user->user_level === 3 && $user->merchant->id === $voucher->merchant_id;
+        });
+
+        Gate::define('view-chatRoom', function($user, ChatRoom $chatRoom) {
+            $participants = $chatRoom->users->pluck('id')->toArray();
+            return  in_array($user->id, $participants) ;
         });
     }
 }

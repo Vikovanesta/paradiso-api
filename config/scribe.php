@@ -306,7 +306,7 @@ INTRO
      * Setting `laravel.add_routes` to true (above) will also add a route for the spec.
      */
     'openapi' => [
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Manually override some generated content in the spec. Dot notation is supported.
@@ -332,6 +332,18 @@ INTRO
          * Note: you must include the initial '/' when writing an endpoint.
          */
         'order' => [
+            'Auth',
+            'Merchant',
+            'Statistic',
+            'Product',
+            'Transaction',
+            'Order Item',
+            'Voucher',
+            'Review',
+            'Chat',
+            'Public',
+            'Fallback',
+
             // 'This group will come first',
             // 'This group will come next' => [
             //     'POST /this-endpoint-will-comes-first',
