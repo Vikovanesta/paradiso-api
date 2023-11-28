@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\MessageSend;
 use App\Http\Requests\ChatRoomStoreRequest;
 use App\Http\Requests\MessageStoreRequest;
 use App\Http\Resources\ChatRoomResource;
 use App\Models\ChatRoom;
+use App\Notifications\MessageReceivedNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Notification;
 
 class ChatController extends Controller
 {
@@ -78,6 +81,9 @@ class ChatController extends Controller
             'sender_id' => auth()->id(),
             'message' => $request->message,
         ]);
+
+        event(new MessageSend($chat, $message));
+        Notification::send($chat->users->where('id', '!=', $message->sender_id), new MessageReceivedNotification($chat, $message));
 
         // $chat->users()->updateExistingPivot(auth()->id(), [
         //     'last_read_at' => now(),

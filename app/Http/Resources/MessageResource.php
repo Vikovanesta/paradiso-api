@@ -14,6 +14,8 @@ class MessageResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $this->load(['sender']);
+
         return [
             'id' => $this->id,
             'message' => $this->message,
