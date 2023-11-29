@@ -31,45 +31,45 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::define('update-merchantProfile', function ($user) {
-            return $user->user_level === 3;
+            return $user->isMerchant();
         });
 
         Gate::define('create-product', function ($user) {
-            return $user->user_level === 3;
+            return $user->isMerchant();
         });
 
         Gate::define('update-product', function ($user, Product $product) {
-            return $user->user_level === 3 && $user->merchant->id === $product->merchant_id;
+            return $user->isMerchant() && $product->isOwnedBy($user->merchant);
         });
 
         Gate::define('delete-product', function ($user, Product $product) {
-            return $user->user_level === 3 && $user->merchant->id === $product->merchant_id;
+            return $user->isMerchant() && $product->isOwnedBy($user->merchant);
         });
         
         Gate::define('view-transaction', function ($user, Transaction $transaction) {
-            return $user->id === $transaction->user_id ||
-                    ($user->user_level === 3 && $user->merchant->id === $transaction->items->first()->product->merchant_id);
+            return $transaction->isOwnedBy($user) ||
+                    ($user->isMerchant() && $transaction->items->first()->product->isOwnedBy($user->merchant));
         });
 
         Gate::define('view-item', function ($user, Item $item) {
-            return $user->id === $item->transaction->user_id ||
-                    ($user->user_level === 3 && $user->merchant->id === $item->product->merchant_id);
+            return $item->transaction->isOwnedBy($user) ||
+                    ($user->isMerchant() && $item->product->isOwnedBy($user->merchant));
         });
 
         Gate::define('update-item', function($user, Item $item) {
-            return $user->user_level === 3 && $user->merchant->id === $item->product->merchant_id;
+            return $user->isMerchant() && $item->product->isOwnedBy($user->merchant);
         });
 
         Gate::define('update-reviewReply', function($user, Review $review) {
-            return ($user->user_level === 3 && $user->merchant->id === $review->product->merchant_id);
+            return ($user->isMerchant() && $review->product->isOwnedBy($user->merchant));
         });
 
         Gate::define('create-voucher', function($user) {
-            return $user->user_level === 3;
+            return $user->isMerchant();
         });
 
         Gate::define('update-voucher', function($user, Voucher $voucher) {
-            return $user->user_level === 3 && $user->merchant->id === $voucher->merchant_id;
+            return $user->isMerchant() && $voucher->isOwnedBy($user->merchant);
         });
 
         Gate::define('view-chatRoom', function($user, ChatRoom $chatRoom) {

@@ -20,6 +20,11 @@ class Transaction extends Model
         'amount',
     ];
 
+    public function isOwnedBy(User $user)
+    {
+        return $this->user_id === $user->id;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

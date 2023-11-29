@@ -27,6 +27,11 @@ class Voucher extends Model
         'quota',
     ];
 
+    public function isOwnedBy(Merchant $merchant)
+    {
+        return $this->merchant_id === $merchant->id;
+    }
+
     public function voucherType()
     {
         return $this->belongsTo(VoucherType::class);

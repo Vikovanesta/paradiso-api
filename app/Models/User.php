@@ -45,6 +45,21 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function isAdmin()
+    {
+        return $this->user_level === 1;
+    }
+
+    public function isCustomer()
+    {
+        return $this->user_level === 2;
+    }
+
+    public function isMerchant()
+    {
+        return $this->user_level === 3;
+    }
+
     public function merchant()
     {
         return $this->hasOne(Merchant::class);

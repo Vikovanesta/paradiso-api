@@ -41,6 +41,11 @@ class Product extends Model
         'note',
     ];
 
+    public function isOwnedBy(Merchant $merchant)
+    {
+        return $this->merchant_id === $merchant->id;
+    }
+
     public function merchant()
     {
         return $this->belongsTo(Merchant::class);
