@@ -60,40 +60,7 @@ class MerchantController extends Controller
         $query = $request->query();
 
         $products = Product::where('merchant_id', Auth::user()->merchant->id)
-                    ->when(isset($query['category_id']), function ($q) use ($query) {
-                        $q->whereRelation('productSubCategory', 'product_category_id', $query['category_id']);
-                    })
-                    ->when(isset($query['sub_category_id']), function ($q) use ($query) {
-                        $q->where('product_sub_category_id', $query['sub_category_id']);
-                    })
-                    ->when(isset($query['name']), function ($q) use ($query) {
-                        $q->where('name', 'like', '%' . $query['name'] . '%');
-                    })
-                    ->when(isset($query['duration']), function ($q) use ($query) {
-                        $q->where('duration', $query['duration']);
-                    })
-                    ->when(isset($query['start_date']), function ($q) use ($query) {
-                        $q->where('start_date', '>=', $query['start_date']);
-                    })
-                    ->when(isset($query['end_date']), function ($q) use ($query) {
-                        $q->where('end_date', '<=', $query['end_date']);
-                    })
-                    ->when(isset($query['price_min']), function ($q) use ($query) {
-                        $q->where('price', '>=', $query['price_min']);
-                    })
-                    ->when(isset($query['price_max']), function ($q) use ($query) {
-                        $q->where('price', '<=', $query['price_max']);
-                    })
-                    ->when(isset($query['person_min']), function ($q) use ($query) {
-                        $q->where('min_person', '>=', $query['person_min']);
-                    })
-                    ->when(isset($query['person_max']), function ($q) use ($query) {
-                        $q->where('max_person', '<=', $query['person_max']);
-                    })
-                    ->when(isset($query['status_id']), function ($q) use ($query) {
-                        $q->where('product_status_id', $query['status_id']);
-                    })
-                    ->orderBy($query['sort_by'] ?? 'updated_at', $query['sort_direction'] ?? 'DESC')
+                    ->filterByQuery($query)
                     ->paginate($query['page_size'] ?? 15);
 
         return ProductResource::collection($products);
@@ -173,16 +140,7 @@ class MerchantController extends Controller
         $query = $request->query();
 
         $reviews = Review::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
-                ->when(isset($query['rating_min']), function ($q) use ($query) {
-                    $q->where('rating', '>=', $query['rating_min']);
-                })
-                ->when(isset($query['rating_max']), function ($q) use ($query) {
-                    $q->where('rating', '<=', $query['rating_max']);
-                })
-                ->when(isset($query['is_replied']), function ($q) {
-                    $q->whereNotNull('reply');
-                })
-                ->orderBy($query['order_by'] ?? 'updated_at', $query['order_direction'] ?? 'DESC')
+                ->filterByQuery($query)
                 ->paginate($query['page_size'] ?? 15);
         $reviews->load('user', 'product');
 
@@ -214,34 +172,7 @@ class MerchantController extends Controller
         $query = $request->query();
 
         $vouchers = Voucher::whereRelation('merchant', 'id', Auth::user()->merchant->id)
-                ->when(isset($query['voucher_type_id']), function ($q) use ($query) {
-                    $q->where('voucher_type_id', $query['voucher_type_id']);
-                })
-                ->when(isset($query['name']), function ($q) use ($query) {
-                    $q->where('name', 'like', '%' . $query['name'] . '%');
-                })
-                ->when(isset($query['code']), function ($q) use ($query) {
-                    $q->where('code', 'like', '%' . $query['code'] . '%');
-                })
-                ->when(isset($query['nominal']), function ($q) use ($query) {
-                    $q->where('nominal', $query['nominal']);
-                })
-                ->when(isset($query['start_date']), function ($q) use ($query) {
-                    $q->where('start_date', '>=', $query['start_date']);
-                })
-                ->when(isset($query['end_date']), function ($q) use ($query) {
-                    $q->where('end_date', '<=', $query['end_date']);
-                })
-                ->when(isset($query['min_transaction']), function ($q) use ($query) {
-                    $q->where('min_transaction', $query['min_transaction']);
-                })
-                ->when(isset($query['max_discount']), function ($q) use ($query) {
-                    $q->where('max_discount', $query['max_discount']);
-                })
-                ->when(isset($query['quota']), function ($q) use ($query) {
-                    $q->where('quota', $query['quota']);
-                })
-                ->orderBy($query['order_by'] ?? 'updated_at', $query['order_direction'] ?? 'DESC')
+                ->filterByQuery($query)
                 ->paginate($query['page_size'] ?? 15);
         $vouchers->load('voucherType', 'merchant');
 

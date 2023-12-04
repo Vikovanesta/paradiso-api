@@ -18,6 +18,20 @@ class Review extends Model
         'reply',
     ];
 
+    public function filterByQuery($q, array $filters)
+    {
+        return $q->when(isset($filters['rating_min']), function ($q) use ($filters) {
+            $q->where('rating', '>=', $filters['rating_min']);
+        })
+        ->when(isset($filters['rating_max']), function ($q) use ($filters) {
+            $q->where('rating', '<=', $filters['rating_max']);
+        })
+        ->when(isset($filters['is_replied']), function ($q) {
+            $q->whereNotNull('reply');
+        })
+        ->orderBy($filters['order_by'] ?? 'updated_at', $filters['order_direction'] ?? 'DESC');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
