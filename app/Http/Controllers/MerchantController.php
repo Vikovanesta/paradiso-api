@@ -148,23 +148,8 @@ class MerchantController extends Controller
         $query = $request->query();
 
         $items = Item::whereRelation('product', 'merchant_id', Auth::user()->merchant->id)
-                ->when(isset($query['status_id']), function ($q) use ($query) {
-                    $q->where('status_id', $query['status_id']);
-                })
-                ->when(isset($query['quantity_min']), function ($q) use ($query) {
-                    $q->where('quantity', '>=', $query['quantity_min']);
-                })
-                ->when(isset($query['quantity_max']), function ($q) use ($query) {
-                    $q->where('quantity', '<=', $query['quantity_max']);
-                })
-                ->when(isset($query['start_date']), function ($q) use ($query) {
-                    $q->where('start_date', '>=', $query['start_date']);
-                })
-                ->when(isset($query['end_date']), function ($q) use ($query) {
-                    $q->where('end_date', '<=', $query['end_date']);
-                })
-                ->orderBy($query['order_by'] ?? 'updated_at', $query['order_direction'] ?? 'DESC')
-                ->paginate($query['page_size'] ?? 15);
+                ->filterByQuery($query)
+                ->paginate($query['page_size'] ?? 15);  
 
         return ItemResource::collection($items);
     }

@@ -27,7 +27,12 @@ class StatisticResource extends JsonResource
                                     ->count(),
             'review_count' => Review::whereRelation('product', 'merchant_id', $this->id)
                                     ->count(),
-            'message_count_new' => 0, // TODO: Implement new message count. Make chat feature first
+            'message_count_new' => $this->user->chatRooms->sum(function ($chatRoom) {
+                return $chatRoom->messages
+                        ->where('read_at', null)
+                        ->where('sender_id', '!=', $this->user->id)
+                        ->count();
+            }),
             'income' => 'in progress', // TODO: Implement income. Need Confirmation
             'store_statistic' => new StatisticStoreResource($this),
             'product_statistic' => new StatisticProductResource($this),
