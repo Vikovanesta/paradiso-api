@@ -27,7 +27,7 @@ class Voucher extends Model
         'quota',
     ];
 
-    public function filterByQuery($q, array $filters)
+    public function scopeFilterByQuery($q, array $filters)
     {
         return $q->when(isset($filters['voucher_type_id']), function ($q) use ($filters) {
             $q->where('voucher_type_id', $filters['voucher_type_id']);

@@ -41,7 +41,7 @@ class Product extends Model
         'note',
     ];
 
-    public function filterByQuery($q, array $filters) 
+    public function scopeFilterByQuery($q, array $filters) 
     {
         return $q->when(isset($filters['category_id']), function ($q) use ($filters) {
             $q->whereRelation('productSubCategory', 'product_category_id', $filters['category_id']);

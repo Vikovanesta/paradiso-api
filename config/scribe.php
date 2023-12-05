@@ -105,7 +105,7 @@ return [
                     'config' => [
                         'app.env' => 'documentation',
                         'app.debug' => false,
-                        'database.default' => 'sqlite'
+                        'database.default' => env('DB_CONNECTION')
                     ],
 
                     /*

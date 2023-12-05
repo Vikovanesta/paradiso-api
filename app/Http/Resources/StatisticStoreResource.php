@@ -64,6 +64,7 @@ class StatisticStoreResource extends JsonResource
                         ->where('sender_id', $this->user->id)
                         ->count() > 0;
             })->count(),
+            'chat_count_total' => $chatRooms->count(),
             'store_count_verified' => 'in progress', // TODO: Implement verified store count
             'store_count_penalty' => 'in progress', // TODO: Implement penalty store count
         ];
