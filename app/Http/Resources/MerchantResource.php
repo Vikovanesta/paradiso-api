@@ -17,6 +17,7 @@ class MerchantResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'email' => $this->user->email,
             'logo' => $this->logo,
             'is_highlight' => $this->is_highlight,
             'notes' => $this->notes,
