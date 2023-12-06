@@ -17,12 +17,12 @@ class MerchantResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'email' => $this->user->email,
             'logo' => $this->logo,
             'is_highlight' => $this->is_highlight,
             'notes' => $this->notes,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'user' => new UserResource($this->whenLoaded('user')),
             'profile' => new MerchantProfileResource($this->whenLoaded('merchantProfile')),
             'level' => new MerchantLevelResource($this->whenLoaded('merchantLevel')),
             'status' => new MerchantStatusResource($this->whenLoaded('merchantStatus')),

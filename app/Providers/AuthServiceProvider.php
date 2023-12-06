@@ -30,6 +30,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Gate::define('merchant', function ($user) {
+            return $user->isMerchant();
+        });
+        
         Gate::define('update-merchantProfile', function ($user) {
             return $user->isMerchant();
         });

@@ -8,98 +8,174 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
+use Carbon\Carbon;
 
 class MerchantTest extends TestCase
 {
+
     
-    public function test_get_merchant_detail_success(): void
+    public function test_update_merchant_detail_success()
     {
-        $user = User::where('email', 'merchant@mail.com')->first();
-        $merchantId = $user->merchant->id;
+        Carbon::setTestNow(now());
+        Storage::fake('local');
 
-        $response = $this->actingAs($user)->get('/api/v1/merchants/' . $merchantId);
+        $user = User::find(8);
+        $merchant = $user->merchant;
 
-        $merchant = Merchant::with('merchantProfile', 'merchantLevel', 'merchantStatus')->find($merchantId);
+        $logo = UploadedFile::fake()->image('logo.jpg');
+        $banner = UploadedFile::fake()->image('banner.jpg');
 
-        $response->assertStatus(200)
-            ->assertJson(fn (AssertableJson $json) =>
-                $json->has('data')
-                    ->where('data.id', $merchant->id)
-                    ->where('data.name', $merchant->name)
-                    ->where('data.logo', $merchant->logo)
-                    ->where('data.is_highlight', $merchant->is_highlight)
-                    ->where('data.notes', $merchant->notes)
-                    ->has('data.profile')
-                        ->where('data.profile.id', $merchant->merchantProfile->id)
-                        ->where('data.profile.description', $merchant->merchantProfile->description)
-                        ->where('data.profile.address', $merchant->merchantProfile->address)
-                        ->where('data.profile.banner', $merchant->merchantProfile->banner)
-                        ->where('data.profile.ktp_number', $merchant->merchantProfile->ktp_number)
-                        ->where('data.profile.ktp', $merchant->merchantProfile->ktp)
-                    ->has('data.level')
-                        ->where('data.level.id', $merchant->merchantLevel->id)
-                    ->has('data.status')
-                        ->where('data.status.id', $merchant->merchantStatus->id)
-        );
-    }
-
-    public function test_update_merchant_detail_success(): void
-    {
-        $user = User::where('id', 2)->first();
-        $merchantId = $user->merchant->id;
-        $oldMerchant = Merchant::with('merchantProfile', 'merchantLevel', 'merchantStatus')->find($merchantId);
-
-        // Update merchant
-        $logoFile = UploadedFile::fake()->image('logo.png');
-        $bannerFile = UploadedFile::fake()->image('banner.png');
-        $newMerchant = [
-            'name' => 'Merchant 1',
-            'is_highlight' => 1,
-            'notes' => 'Lorem ipsum dolor sit amet',
-            'address' => 'Jl. Raya Kebayoran Lama No. 12',
-            'description' => 'Lorem ipsum dolor sit amet',
+        $response = $this->actingAs($user)->put('/api/v1/merchants', [
+            'name' => 'merchant 2',
+            'is_highlight' => true,
+            'notes' => 'New merchant notes',
+            'address' => 'New merchant address',
+            'description' => 'New merchant description',
             'ktp_number' => '1234567890123456',
             'npwp_number' => '123456789012345',
             'siup_number' => '1234567890123',
-            'logo' => $logoFile,
-            'banner' => $bannerFile,
-        ];
-        $response = $this->actingAs($user)->put('/api/v1/merchants', $newMerchant);
-        $merchant = Merchant::with('merchantProfile', 'merchantLevel', 'merchantStatus')->find($merchantId);
+            'logo' => $logo,
+            'banner' => $banner,
+        ]);
 
-        // Check file in storage
-        Storage::assertExists('public/merchants/logo/' . $logoFile->hashName());
-        Storage::assertExists('public/merchants/banner/' . $bannerFile->hashName());
-
-        if ($oldMerchant->logo !== $merchant->logo) {
-            Storage::assertMissing('public' . (str_replace(url('/storage'), '', $oldMerchant->logo)));
-        }
-
-        if ($oldMerchant->merchantProfile->banner !== $merchant->merchantProfile->banner) {
-            Storage::assertMissing('public' . (str_replace(url('/storage'), '', $oldMerchant->merchantProfile->banner)));
-        }
-
-        // Check response
         $response->assertStatus(201)
-            ->assertJson(fn (AssertableJson $json) =>
-                $json->has('data')
-                    ->where('data.id', $merchant->id)
-                    ->where('data.name', $newMerchant['name'])
-                    ->where('data.logo', $merchant->logo)
-                    ->where('data.is_highlight', $newMerchant['is_highlight'])
-                    ->where('data.notes', $newMerchant['notes'])
-                    ->has('data.profile')
-                        ->where('data.profile.id', $merchant->merchantProfile->id)
-                        ->where('data.profile.description', $newMerchant['description'])
-                        ->where('data.profile.address', $newMerchant['address'])
-                        ->where('data.profile.banner', $merchant->merchantProfile->banner)
-                        ->where('data.profile.ktp_number', $newMerchant['ktp_number'])
-                        ->where('data.profile.ktp', $merchant->merchantProfile->ktp)
-                        ->etc()
-                    ->has('data.level')
-                        ->where('data.level.id', $merchant->merchantLevel->id)
-                    ->has('data.status')
-                        ->where('data.status.id', $merchant->merchantStatus->id)
-        );
+            ->assertJson([
+                'status' => true,
+                'message' => 'Merchant profile updated successfully',
+                'data' => [
+                    'name' => 'merchant 2',
+                    'logo' => 'https://127.0.0.1:8000/storage/merchants/logo/' . $logo->hashName(),
+                    'is_highlight' => 1,
+                    'notes' => 'New merchant notes',
+                    'profile' => [
+                        'address' => 'New merchant address',
+                        'description' => 'New merchant description',
+                        'ktp_number' => '1234567890123456',
+                        'npwp_number' => '123456789012345',
+                        'siup_number' => '1234567890123',
+                    ],
+                ],
+            ]);
+
+        $merchant->refresh();
+
+        $this->assertEquals('merchant 2', $merchant->name);
+        $this->assertEquals(1, $merchant->is_highlight);
+        $this->assertEquals('New merchant notes', $merchant->notes);
+        $this->assertEquals('New merchant address', $merchant->merchantProfile->address);
+        $this->assertEquals('New merchant description', $merchant->merchantProfile->description);
+        $this->assertEquals('1234567890123456', $merchant->merchantProfile->ktp_number);
+        $this->assertEquals('123456789012345', $merchant->merchantProfile->npwp_number);
+        $this->assertEquals('1234567890123', $merchant->merchantProfile->siup_number);
+
+        Storage::disk('local')->assertExists('public/merchants/logo/' . $logo->hashName());
+        Storage::disk('local')->assertExists('public/merchants/banners/' . $banner->hashName());
+
+        Carbon::setTestNow();
+    }
+
+    public function test_update_merchant_detail_without_logo_and_banner_success()
+    {
+        $user = User::find(8);
+        $merchant = $user->merchant;
+
+        $response = $this->actingAs($user)->put('/api/v1/merchants', [
+            'name' => 'merchant 2',
+            'is_highlight' => true,
+            'notes' => 'New merchant notes',
+            'address' => 'New merchant address',
+            'description' => 'New merchant description',
+            'ktp_number' => '1234567890123456',
+            'npwp_number' => '123456789012345',
+            'siup_number' => '1234567890123',
+        ]);
+
+        $response->assertStatus(201)
+            ->assertJson([
+                'status' => true,
+                'message' => 'Merchant profile updated successfully',
+                'data' => [
+                    'name' => 'merchant 2',
+                    'is_highlight' => 1,
+                    'notes' => 'New merchant notes',
+                    'profile' => [
+                        'address' => 'New merchant address',
+                        'description' => 'New merchant description',
+                        'ktp_number' => '1234567890123456',
+                        'npwp_number' => '123456789012345',
+                        'siup_number' => '1234567890123',
+                    ],
+                ],
+            ]);
+
+        $merchant->refresh();
+
+        $this->assertEquals('merchant 2', $merchant->name);
+        $this->assertEquals(1, $merchant->is_highlight);
+        $this->assertEquals('New merchant notes', $merchant->notes);
+        $this->assertEquals('New merchant address', $merchant->merchantProfile->address);
+        $this->assertEquals('New merchant description', $merchant->merchantProfile->description);
+        $this->assertEquals('1234567890123456', $merchant->merchantProfile->ktp_number);
+        $this->assertEquals('123456789012345', $merchant->merchantProfile->npwp_number);
+        $this->assertEquals('1234567890123', $merchant->merchantProfile->siup_number);
+    }
+
+    public function test_get_merchant_detail_success()
+    {
+        $user = User::find(8);
+        $merchant = $user->merchant;
+
+        $response = $this->actingAs($user)->get('/api/v1/merchants/me');
+
+        $response->assertStatus(200)
+            ->assertJson([
+                'status' => true,
+                'data' => [
+                    'id' => $merchant->id,
+                    'name' => $merchant->name,
+                    'logo' => $merchant->logo,
+                    'is_highlight' => $merchant->is_highlight,
+                    'notes' => $merchant->notes,
+                    'created_at' => $merchant->created_at,
+                    'updated_at' => $merchant->updated_at,
+                    'profile' => [
+                        'id' => $merchant->merchantProfile->id,
+                        'description' => $merchant->merchantProfile->description,
+                        'address' => $merchant->merchantProfile->address,
+                        'banner' => $merchant->merchantProfile->banner,
+                        'ktp_number' => $merchant->merchantProfile->ktp_number,
+                        'npwp_number' => $merchant->merchantProfile->npwp_number,
+                        'siup_number' => $merchant->merchantProfile->siup_number,
+                        'ktp' => $merchant->merchantProfile->ktp,
+                        'npwp' => $merchant->merchantProfile->npwp,
+                        'siup' => $merchant->merchantProfile->siup,
+                    ],
+                    'level' => [
+                        'id' => $merchant->merchantLevel->id,
+                        'name' => $merchant->merchantLevel->name,
+                        'icon' => $merchant->merchantLevel->icon,
+                    ],
+                    'status' => [
+                        'id' => $merchant->merchantStatus->id,
+                        'name' => $merchant->merchantStatus->name,
+                        'icon' => $merchant->merchantStatus->icon,
+                        'color' => $merchant->merchantStatus->color,
+                    ],
+                ],
+            ]);
+    }
+
+    public function test_get_merchant_detail_unauthorized()
+    {
+        $user = User::find(7);
+
+        $response = $this->actingAs($user)->get('/api/v1/merchants/me');
+
+        $response->assertStatus(401)
+            ->assertJson([
+                'status' => false,
+                'message' => 'Unauthorized',
+                'data' => null,
+            ]);
     }
 }

@@ -33,6 +33,23 @@ class UserTest extends TestCase
             ]);
     }
 
+    public function test_login_name_not_found()
+    {
+        $response = $this->post('/api/v1/auth', [
+            'name' => 'merchant123',
+            'email' => 'merchant@mail.com',
+            'password' => 'password'
+        ]);
+
+        $response->assertStatus(401)
+            ->assertJson([
+                'message' => 'User not found',
+                'errors' => [
+                    'message' => 'Incorrect name, email or password',
+                ]
+            ]);
+    }
+
     public function test_login_email_not_found()
     {
         $response = $this->post('/api/v1/auth', [
@@ -44,8 +61,25 @@ class UserTest extends TestCase
         $response->assertStatus(401)
             ->assertJson([
                 'message' => 'User not found',
-                    'errors' => [
-                        'message' => 'Incorrect name, email or password',
+                'errors' => [
+                    'message' => 'Incorrect name, email or password',
+                ]
+            ]);
+    }
+
+    public function test_login_password_incorrect()
+    {
+        $response = $this->post('/api/v1/auth', [
+            'name' => 'merchant',
+            'email' => 'merchant@mail.com',
+            'password' => 'password123'
+        ]);
+
+        $response->assertStatus(401)
+            ->assertJson([
+                'message' => 'User not found',
+                'errors' => [
+                    'message' => 'Incorrect name, email or password',
                 ]
             ]);
     }

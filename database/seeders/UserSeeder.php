@@ -80,5 +80,27 @@ class UserSeeder extends Seeder
             ->has(Review::factory())
         )
         ->create();
+
+        User::factory(1)
+        ->merchant()
+        ->has(BankAccount::factory())
+        ->has(
+            Merchant::factory()
+            ->has(MerchantProfile::factory())
+            ->has(
+                Product::factory(2)
+                ->has(
+                    Schedule::factory(2)
+                    ->has(ScheduleDayFactory::times(2))
+                )
+                ->has(Review::factory(2))
+                ->has(IncludeExclude::factory(2))
+                ->has(Facility::factory(2))
+                ->has(Faq::factory(2))
+                ->has(Term::factory(2))
+                ->has(ProductImage::factory(2))
+            )
+        )
+        ->create();
     }
 }

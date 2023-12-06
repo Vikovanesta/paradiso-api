@@ -19,6 +19,7 @@ use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
 class MerchantController extends Controller
@@ -196,11 +197,14 @@ class MerchantController extends Controller
      */
     public function show()
     {
+        Gate::authorize('merchant');
+
         $merchant = Merchant::with(
+            'user',
             'merchantProfile',
             'merchantLevel',
             'merchantStatus',
-        )->find(Auth::user()->merchant->id);
+        )->findOrFail(Auth::user()->merchant->id);
 
         return $this->success(new MerchantResource($merchant), 'Merchant profile retrieved successfully');
     }
