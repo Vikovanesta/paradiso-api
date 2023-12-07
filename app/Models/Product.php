@@ -32,6 +32,7 @@ class Product extends Model
         'end_date',
         'price',
         'unit',
+        'stock',
         'discount',
         'thumbnail',
         'address',

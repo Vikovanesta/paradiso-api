@@ -30,6 +30,7 @@ class ProductFactory extends Factory
             'end_date' => fake()->date(),
             'price' => fake()->randomNumber(6),
             'unit' => fake()->randomElement(['day', 'hour']), //not sure if this is correct
+            'stock' => fake()->randomNumber(2),
             'discount' => fake()->randomNumber(2),
             'thumbnail' => 'https://picsum.photos/200/200',
             'address' => fake()->address(),

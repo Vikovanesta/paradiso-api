@@ -66,6 +66,7 @@ class MerchantController extends Controller
 
         $products->load(
             'productSubCategory',
+            'productStatus',
         );
 
         return ProductResource::collection($products);

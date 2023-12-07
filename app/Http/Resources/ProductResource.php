@@ -24,6 +24,7 @@ class ProductResource extends JsonResource
             'end_date' => $this->end_date->format('d/m/Y'),
             'price' => $this->price,
             'unit' => $this->unit,
+            'stock' => $this->stock,
             'discount' => $this->discount,
             'thumbnail' => $this->thumbnail,
             'address' => $this->address,
