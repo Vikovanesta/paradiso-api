@@ -35,6 +35,7 @@ return new class extends Migration
             $table->integer('min_person')->nullable();
             $table->text('note')->nullable();
             $table->boolean('is_published')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

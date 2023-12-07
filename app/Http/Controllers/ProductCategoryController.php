@@ -11,8 +11,6 @@ class ProductCategoryController extends Controller
      * Get all product categories.
      *
      * @group Public
-     * 
-     * @authenticated
      */
     public function index()
     {

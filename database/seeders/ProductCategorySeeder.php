@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductSubCategory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -14,8 +15,23 @@ class ProductCategorySeeder extends Seeder
      */
     public function run(): void
     {
-        ProductCategory::factory(5)
-            ->has(ProductSubCategory::factory()->count(2))
-            ->create();
+        $productCategories = [
+            'Paket Wisata',
+            'Tiket Masuk',
+            'Rental',
+            'Guide',
+            'Kamar Penginapan',
+        ];
+
+        foreach ($productCategories as $name) {
+            $productCategory = ProductCategory::factory()->create([
+                'name' => $name,
+            ]);
+
+            ProductSubCategory::factory()->create([
+                'product_category_id' => $productCategory->id,
+                'name' => $name,
+            ]);
+        }
     }
 }

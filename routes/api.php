@@ -35,7 +35,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/provinces', [ProvinceController::class,'index'])->name('province.index');
     Route::get('/countries', [CountryController::class,'index'])->name('country.index');
     Route::get('/facilities', [FacilityController::class,'index'])->name('facility.index');
-    Route::get('/categories', [ProductCategoryController::class,'index'])->name('category.index');
+    Route::get('/product-categories', [ProductCategoryController::class,'index'])->name('category.index');
     
     Route::get('/postman', function () {
         return response()->file(storage_path('/app/scribe/collection.json'));
