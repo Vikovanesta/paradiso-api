@@ -32,7 +32,7 @@ class ProductResource extends JsonResource
             'min_person' => $this->min_person,
             'note' => $this->note,
             'is_published' => $this->is_published,
-            'average_rating' => Review::where('product_id', $this->id)->avg('rating'),
+            'average_rating' => round(Review::where('product_id', $this->id)->avg('rating'), 2),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'sub_category' => new ProductSubCategoryResource($this->whenLoaded('productSubCategory')),

@@ -41,13 +41,13 @@ class MerchantController extends Controller
      * 
      * @authenticated
      * 
-     * @queryParam status_id int Product status ID Example: 1
-     * @queryParam category_id int Category ID Example: 1
-     * @queryParam sub_category_id int Sub Category ID Example: 1
+     * @queryParam status_id int Product status ID No-example
+     * @queryParam category_id int Category ID No-example
+     * @queryParam sub_category_id int Sub Category ID No-example
      * @queryParam name string Product name (fuzzy search) Example: Prod
-     * @queryParam duration int Product duration Example: 1
-     * @queryParam start_date string Product minimum start date (Y-m-d) Example: 2023-10-16
-     * @queryParam end_date string Product maximum end date (Y-m-d) Example: 2023-10-20
+     * @queryParam duration int Product duration No-example
+     * @queryParam start_date string Product minimum start date (Y-m-d) Example: 1523-10-16
+     * @queryParam end_date string Product maximum end date (Y-m-d) Example: 2025-10-20
      * @queryParam price_min int Product minimum price Example: 50000
      * @queryParam price_max int Product maximum price Example: 1000000
      * @queryParam person_min int Product minimum person Example: 1
@@ -63,6 +63,10 @@ class MerchantController extends Controller
         $products = Product::where('merchant_id', Auth::user()->merchant->id)
                     ->filterByQuery($query)
                     ->paginate($query['page_size'] ?? 15);
+
+        $products->load(
+            'productSubCategory',
+        );
 
         return ProductResource::collection($products);
     }
