@@ -218,6 +218,10 @@ class ProductStoreRequest extends FormRequest
 
         $categorySpecificRules = [];
 
+        if (!$productSubCategory) {
+            return $categorySpecificRules;
+        }
+
         switch ($productSubCategory->name) {
             case 'Paket Wisata':
                 $categorySpecificRules = [
