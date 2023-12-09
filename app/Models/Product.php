@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\CaseConversion;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, CaseConversion;
 
     protected $casts = [
         'start_date' => 'datetime',
@@ -33,7 +34,7 @@ class Product extends Model
         'start_date',
         'end_date',
         'price',
-        'unit',
+        'price_unit',
         'stock',
         'discount',
         'thumbnail',
@@ -43,6 +44,16 @@ class Product extends Model
         'min_person',
         'note',
     ];
+
+    protected static function booted()
+    {
+        static::created(function ($product) {
+            $product->fields()->attach($product->productSubCategory->fields, [
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        });
+    }
 
     public function scopeFilterByQuery($q, array $filters) 
     {
@@ -54,9 +65,6 @@ class Product extends Model
         })
         ->when(isset($filters['name']), function ($q) use ($filters) {
             $q->where('name', 'like', '%' . $filters['name'] . '%');
-        })
-        ->when(isset($filters['duration']), function ($q) use ($filters) {
-            $q->where('duration', $filters['duration']);
         })
         ->when(isset($filters['start_date']), function ($q) use ($filters) {
             $q->where('start_date', '>=', $filters['start_date']);
@@ -70,12 +78,6 @@ class Product extends Model
         ->when(isset($filters['price_max']), function ($q) use ($filters) {
             $q->where('price', '<=', $filters['price_max']);
         })
-        ->when(isset($filters['person_min']), function ($q) use ($filters) {
-            $q->where('min_person', '>=', $filters['person_min']);
-        })
-        ->when(isset($filters['person_max']), function ($q) use ($filters) {
-            $q->where('max_person', '<=', $filters['person_max']);
-        })
         ->when(isset($filters['status_id']), function ($q) use ($filters) {
             $q->where('product_status_id', $filters['status_id']);
         })
@@ -85,6 +87,124 @@ class Product extends Model
     public function isOwnedBy(Merchant $merchant)
     {
         return $this->merchant_id === $merchant->id;
+    }
+
+    public function getAllCategorySpecificFields()
+    {
+        $categorySpecificFields = [];
+
+        foreach ($this->fields()->get() as $field) {
+            $fieldName = $field->name;
+            $pivotValueAttribute = "value_{$field->data_type}";
+        
+            $categorySpecificFields[$fieldName] = $field->pivot->$pivotValueAttribute;
+        }
+        return $categorySpecificFields;
+    }
+
+    public function setCategorySpecificFieldByName($name, $value)
+    {
+        $field = Field::where('name', $name)->first();
+        if ($field) {
+            $pivotValueAttribute = "value_{$field->data_type}";
+
+            $updateData = [
+                $pivotValueAttribute => $value,
+            ];
+
+            $this->fields()->updateExistingPivot($field->id, $updateData);
+        }
+    }
+
+    public function setCategorySpecificFieldByArray(array $fields)
+    {
+        $subCategoryFields = $this->productSubCategory->fields;
+
+        foreach ($subCategoryFields as $field) {
+            $fieldName = $field->name;
+            $pivotValueAttribute = "value_{$field->data_type}";
+    
+            $value = $fields[$fieldName] ?? $this->{$this->snakeToCamel($fieldName)};
+            
+            $updateData = [$pivotValueAttribute => $value];
+    
+            $this->fields()->updateExistingPivot($field->id, $updateData);
+        }
+    }
+
+    public function getDurationAttribute()
+    {
+        return $this->getFieldAttribute('duration');
+    }
+
+    public function getDurationUnitAttribute()
+    {
+        return $this->getFieldAttribute('duration_unit');
+    }
+
+    public function getMaxPersonAttribute()
+    {
+        return $this->getFieldAttribute('max_person');
+    }
+
+    public function getMinPersonAttribute()
+    {
+        return $this->getFieldAttribute('min_person');
+    }
+
+    public function getMinQuantityAttribute()
+    {
+        return $this->getFieldAttribute('min_quantity');
+    }
+
+    public function getMaxQuantityAttribute()
+    {
+        return $this->getFieldAttribute('max_quantity');
+    }
+
+    public function getBaggageAttribute()
+    {
+        return $this->getFieldAttribute('baggage');
+    }
+
+    public function getFuelAttribute()
+    {
+        return $this->getFieldAttribute('fuel');
+    }
+
+    public function getTransmissionAttribute()
+    {
+        return $this->getFieldAttribute('transmission');
+    }
+
+    public function getColorAttribute()
+    {
+        return $this->getFieldAttribute('color');
+    }
+
+    public function getCapacityAttribute()
+    {
+        return $this->getFieldAttribute('capacity');
+    }
+
+    public function getYearOfProductionAttribute()
+    {
+        return $this->getFieldAttribute('year_of_production');
+    }
+
+    public function getIncludeDriverAttribute()
+    {
+        return $this->getFieldAttribute('include_driver');
+    }
+
+    public function getRoomAreaAttribute()
+    {
+        return $this->getFieldAttribute('room_area');
+    }
+
+    public function getRoomCountAttribute()
+    {
+        return $this->getFieldAttribute('room_count');
     }
 
     public function merchant()
@@ -150,5 +270,26 @@ class Product extends Model
     public function productViews()
     {
         return $this->hasMany(ProductView::class);
+    }
+
+    public function fields()
+    {
+        $allPivotColumns = \Schema::getColumnListing('field_product');
+
+        return $this->belongsToMany(Field::class)
+            ->withPivot($allPivotColumns)
+            ->withTimestamps();
+    }
+
+    private function getFieldAttribute($name)
+    {
+        $field = $this->fields()->where('name', $name)->first();
+
+        if ($field) {
+            $pivotValueAttribute = "value_{$field->data_type}";
+            return $field->pivot->$pivotValueAttribute;
+        }
+    
+        return null;
     }
 }

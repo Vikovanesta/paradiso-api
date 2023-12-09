@@ -24,4 +24,9 @@ class ProductSubCategory extends Model
     {
         return $this->belongsTo(ProductCategory::class);
     }
+
+    public function fields()
+    {
+        return $this->belongsToMany(Field::class, 'field_product_sub_category', 'product_sub_category_id');
+    }
 }

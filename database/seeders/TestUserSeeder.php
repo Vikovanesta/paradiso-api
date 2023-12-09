@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\BankAccount;
 use App\Models\Facility;
 use App\Models\Faq;
+use App\Models\Field;
 use App\Models\IncludeExclude;
 use App\Models\Item;
 use App\Models\Merchant;
@@ -70,26 +71,32 @@ class TestUserSeeder extends Seeder
             'ktp' => 'https://picsum.photos/500/250',
         ]);
 
-        Product::create([
+        $product = Product::create([
             'merchant_id' => 1,
             'product_sub_category_id' => 1,
             'product_status_id' => 1,
             'city_id' => 1,
             'name' => 'product',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-            'duration' => 1,
             'start_date' => '10/16/2023',
             'end_date' => '10/17/2023',
             'price' => 100000,
-            'unit' => 'unit',
+            'price_unit' => 'unit',
             'thumbnail' => 'https://picsum.photos/200/200',
             'address' => 'Jl. Test',
             'coordinate' => '123,123',
-            'max_person' => 10,
-            'min_person' => 1,
             'note' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
             'is_published' => false,
         ]);
+
+        $productFields = [
+            'duration' => 3,
+            'duration_unit' => 'day',
+            'max_person' => 10,
+            'min_person' => 2,
+        ];
+
+        $product->setCategorySpecificFieldByArray($productFields);
 
         Faq::create([
             'product_id' => 1,
@@ -211,7 +218,80 @@ class TestUserSeeder extends Seeder
             'product_id' => 1,
         ]);
 
-        Product::factory()->count(10)
+        Product::factory()->count(2)
+        ->paketWisata()
+        ->has(
+            Schedule::factory(rand(1, 3))
+            ->has(ScheduleDayFactory::times(rand(1, 3)))
+        )
+        ->has(IncludeExclude::factory(2))
+        ->has(Faq::factory(2))
+        ->has(Term::factory(2))
+        ->has(ProductImage::factory(2))
+        ->has(
+            ProductView::factory(10)
+            ->rangeMonth(1)
+        )
+        ->create([
+            'merchant_id' => 1,
+        ]);
+
+        Product::factory()->count(2)
+        ->tiketMasuk()
+        ->has(
+            Schedule::factory(rand(1, 3))
+            ->has(ScheduleDayFactory::times(rand(1, 3)))
+        )
+        ->has(IncludeExclude::factory(2))
+        ->has(Faq::factory(2))
+        ->has(Term::factory(2))
+        ->has(ProductImage::factory(2))
+        ->has(
+            ProductView::factory(10)
+            ->rangeMonth(1)
+        )
+        ->create([
+            'merchant_id' => 1,
+        ]);
+
+        Product::factory()->count(2)
+        ->rental()
+        ->has(
+            Schedule::factory(rand(1, 3))
+            ->has(ScheduleDayFactory::times(rand(1, 3)))
+        )
+        ->has(IncludeExclude::factory(2))
+        ->has(Faq::factory(2))
+        ->has(Term::factory(2))
+        ->has(ProductImage::factory(2))
+        ->has(
+            ProductView::factory(10)
+            ->rangeMonth(1)
+        )
+        ->create([
+            'merchant_id' => 1,
+        ]);
+
+        Product::factory()->count(2)
+        ->guide()
+        ->has(
+            Schedule::factory(rand(1, 3))
+            ->has(ScheduleDayFactory::times(rand(1, 3)))
+        )
+        ->has(IncludeExclude::factory(2))
+        ->has(Faq::factory(2))
+        ->has(Term::factory(2))
+        ->has(ProductImage::factory(2))
+        ->has(
+            ProductView::factory(10)
+            ->rangeMonth(1)
+        )
+        ->create([
+            'merchant_id' => 1,
+        ]);
+
+        Product::factory()->count(2)
+        ->kamarPenginapan()
         ->has(
             Schedule::factory(rand(1, 3))
             ->has(ScheduleDayFactory::times(rand(1, 3)))

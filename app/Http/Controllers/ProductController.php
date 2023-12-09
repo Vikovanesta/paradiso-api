@@ -46,19 +46,19 @@ class ProductController extends Controller
                 'city_id' => $validated['city_id'],
                 'name' => $validated['name'],
                 'description' => $validated['description'],
-                'duration' => $validated['duration'],
                 'start_date' => $validated['start_date'],
                 'end_date' => $validated['end_date'],
                 'price' => $validated['price'],
-                'unit' => $validated['unit'],
+                'price_unit' => $validated['price_unit'],
+                'stock' => $validated['stock'] ?? 0,
                 'discount' => $validated['discount'] ?? 0,
                 'address' => $validated['address'],
                 'coordinate' => $validated['coordinate'],
-                'max_person' => $validated['max_person'],
-                'min_person' => $validated['min_person'],
                 'note' => $validated['note'] ?? null,
                 'is_published' => 0,
             ]);
+
+            $product->setCategorySpecificFieldByArray($validated);
 
             
             foreach ($validated['includes'] as $include) {
@@ -216,18 +216,18 @@ class ProductController extends Controller
                 'city_id' => $validated['city_id'] ?? $product->city_id,
                 'name' => $validated['name'] ?? $product->name,
                 'description' => $validated['description'] ?? $product->description,
-                'duration' => $validated['duration'] ?? $product->duration,
                 'start_date' => $validated['start_date'] ?? $product->start_date,
                 'end_date' => $validated['end_date'] ?? $product->end_date,
                 'price' => $validated['price'] ?? $product->price,
-                'unit' => $validated['unit'] ?? $product->unit,
+                'price_unit' => $validated['price_unit'] ?? $product->price_unit,
+                'stock' => $validated['stock'] ?? $product->stock,
                 'discount' => $validated['discount'] ?? $product->discount,
                 'address' => $validated['address'] ?? $product->address,
                 'coordinate' => $validated['coordinate'] ?? $product->coordinate,
-                'max_person' => $validated['max_person'] ?? $product->max_person,
-                'min_person' => $validated['min_person'] ?? $product->min_person,
                 'note' => $validated['note'] ?? $product->note,
             ]);
+
+            $product->setCategorySpecificFieldByArray($validated);
 
             if(isset($validated['includes'])) {
                 $product->includeExcludes()->where('is_include', true)->delete();

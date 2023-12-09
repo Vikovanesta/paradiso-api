@@ -45,13 +45,10 @@ class MerchantController extends Controller
      * @queryParam category_id int Category ID No-example
      * @queryParam sub_category_id int Sub Category ID No-example
      * @queryParam name string Product name (fuzzy search) Example: u
-     * @queryParam duration int Product duration No-example
      * @queryParam start_date string Product minimum start date (Y-m-d) Example: 1523-10-16
      * @queryParam end_date string Product maximum end date (Y-m-d) Example: 2025-10-20
      * @queryParam price_min int Product minimum price Example: 50000
      * @queryParam price_max int Product maximum price Example: 1000000
-     * @queryParam person_min int Product minimum person Example: 1
-     * @queryParam person_max int Product maximum person Example: 110
      * @queryParam sort_by string Sort by (default: updated_at) Example: updated_at
      * @queryParam sort_direction string Sort direction (ASC or DESC) (default: DESC) Example: DESC
      * @queryParam page_size int Page size (default: 15) Example: 15

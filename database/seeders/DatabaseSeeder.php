@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
-use PHPUnit\Framework\Constraint\Count;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,7 +29,9 @@ class DatabaseSeeder extends Seeder
             MerchantLevelSeeder::class,
             VoucherTypeSeeder::class,
             ProductCategorySeeder::class,
+            FieldSeeder::class,
             FacilitySeeder::class,
+
             TestUserSeeder::class,
             UserSeeder::class,
             VoucherSeeder::class,
