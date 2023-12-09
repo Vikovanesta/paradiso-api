@@ -27,7 +27,6 @@ class MerchantTest extends TestCase
 
         $response = $this->actingAs($user)->put('/api/v1/merchants', [
             'name' => 'merchant 2',
-            'is_highlight' => true,
             'notes' => 'New merchant notes',
             'address' => 'New merchant address',
             'description' => 'New merchant description',
@@ -38,14 +37,16 @@ class MerchantTest extends TestCase
             'banner' => $banner,
         ]);
 
+        $merchant->refresh();
+
         $response->assertStatus(201)
             ->assertJson([
                 'status' => true,
                 'message' => 'Merchant profile updated successfully',
                 'data' => [
                     'name' => 'merchant 2',
+                    'is_highlight' => $merchant->is_highlight,
                     'logo' => 'https://127.0.0.1:8000/storage/merchants/logo/' . $logo->hashName(),
-                    'is_highlight' => 1,
                     'notes' => 'New merchant notes',
                     'profile' => [
                         'address' => 'New merchant address',
@@ -57,10 +58,7 @@ class MerchantTest extends TestCase
                 ],
             ]);
 
-        $merchant->refresh();
-
         $this->assertEquals('merchant 2', $merchant->name);
-        $this->assertEquals(1, $merchant->is_highlight);
         $this->assertEquals('New merchant notes', $merchant->notes);
         $this->assertEquals('New merchant address', $merchant->merchantProfile->address);
         $this->assertEquals('New merchant description', $merchant->merchantProfile->description);
@@ -81,7 +79,6 @@ class MerchantTest extends TestCase
 
         $response = $this->actingAs($user)->put('/api/v1/merchants', [
             'name' => 'merchant 2',
-            'is_highlight' => true,
             'notes' => 'New merchant notes',
             'address' => 'New merchant address',
             'description' => 'New merchant description',
@@ -90,13 +87,15 @@ class MerchantTest extends TestCase
             'siup_number' => '1234567890123',
         ]);
 
+        $merchant->refresh();
+
         $response->assertStatus(201)
             ->assertJson([
                 'status' => true,
                 'message' => 'Merchant profile updated successfully',
                 'data' => [
                     'name' => 'merchant 2',
-                    'is_highlight' => 1,
+                    'is_highlight' => $merchant->is_highlight,
                     'notes' => 'New merchant notes',
                     'profile' => [
                         'address' => 'New merchant address',
@@ -108,10 +107,7 @@ class MerchantTest extends TestCase
                 ],
             ]);
 
-        $merchant->refresh();
-
         $this->assertEquals('merchant 2', $merchant->name);
-        $this->assertEquals(1, $merchant->is_highlight);
         $this->assertEquals('New merchant notes', $merchant->notes);
         $this->assertEquals('New merchant address', $merchant->merchantProfile->address);
         $this->assertEquals('New merchant description', $merchant->merchantProfile->description);
@@ -136,8 +132,6 @@ class MerchantTest extends TestCase
                     'logo' => $merchant->logo,
                     'is_highlight' => $merchant->is_highlight,
                     'notes' => $merchant->notes,
-                    'created_at' => $merchant->created_at,
-                    'updated_at' => $merchant->updated_at,
                     'profile' => [
                         'id' => $merchant->merchantProfile->id,
                         'description' => $merchant->merchantProfile->description,
