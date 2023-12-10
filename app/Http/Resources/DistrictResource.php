@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CityResource extends JsonResource
+class DistrictResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +16,9 @@ class CityResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'province_id' => $this->province_id,
+            'city_id' => $this->city_id,
             'name' => $this->name,
-            'image' =>$this->image,
-            'is_highlighted' => $this->is_highlighted,
-            'province' => new ProvinceResource($this->whenLoaded('province')),
-            'districts' => DistrictResource::collection($this->whenLoaded('districts')),
+            'city' => new CityResource($this->whenLoaded('city')),
         ];
     }
 }

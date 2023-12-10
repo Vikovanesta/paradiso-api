@@ -14,14 +14,17 @@ class ProvinceController extends Controller
      * @group Public
      * 
      * @queryParam name string The name of the province. (can be a substring) Example: Jawa
+     * @queryParam country_id int The id of the country. Example: 1
      */
     public function index(Request $request)
     {
         $query = $request->query();
 
-        $provinces = Province::with('country')
-                    ->when(isset($query['name']), function ($q) use ($query) {
+        $provinces = Province::when(isset($query['name']), function ($q) use ($query) {
                         $q->where('name', 'like', '%'.$query['name'].'%');
+                    })
+                    ->when(isset($query['country_id']), function ($q) use ($query) {
+                        $q->where('country_id', $query['country_id']);
                     })
                     ->get();
         return ProvinceResource::collection($provinces);

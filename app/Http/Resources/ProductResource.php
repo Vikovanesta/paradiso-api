@@ -15,7 +15,6 @@ class ProductResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        // dd($this->getAllCategorySpecificFields());
 
         return array_merge(
             [
@@ -34,6 +33,7 @@ class ProductResource extends JsonResource
             $this->getAllCategorySpecificFields(),
             [
                 'thumbnail' => $this->thumbnail,
+                'post_code' => $this->postal_code,
                 'address' => $this->address,
                 'coordinate' => $this->coordinate,
                 'note' => $this->note,
@@ -45,6 +45,7 @@ class ProductResource extends JsonResource
                 'merchant' => new MerchantResource($this->whenLoaded('merchant')),
                 'status' => new ProductStatusResource($this->whenLoaded('productStatus')),
                 'city' => new CityResource($this->whenLoaded('city')),
+                'district' => new DistrictResource($this->whenLoaded('district')),
                 'schedules' => ScheduleResource::collection($this->whenLoaded('schedules')),
                 'reviews' => ReviewResource::collection($this->whenLoaded('reviews')),
                 'include_excludes' => IncludeExcludeResource::collection($this->whenLoaded('includeExcludes')),

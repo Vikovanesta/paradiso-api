@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\City;
+use App\Models\District;
 use App\Models\Field;
 use App\Models\Product;
 use App\Models\ProductStatus;
@@ -27,7 +28,8 @@ class ProductFactory extends Factory
 
         return [
             'product_sub_category_id' => $productSubCategory->id,
-            'city_id' => City::query()->inRandomOrder()->first()->id,
+            // 'city_id' => City::query()->inRandomOrder()->first()->id,
+            'district_id' => District::query()->inRandomOrder()->first()->id,
             'product_status_id' => ProductStatus::query()->inRandomOrder()->first()->id,
             'name' => fake()->words(2, true),
             'description' => fake()->text(),
@@ -38,6 +40,7 @@ class ProductFactory extends Factory
             'stock' => fake()->randomNumber(2),
             'discount' => fake()->randomNumber(2),
             'thumbnail' => 'https://picsum.photos/200/200',
+            'postal_code' => fake()->postcode(),
             'address' => fake()->address(),
             'coordinate' => fake()->latitude() . ',' . fake()->longitude(),
             'note' => fake()->text(),

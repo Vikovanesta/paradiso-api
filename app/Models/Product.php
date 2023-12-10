@@ -227,6 +227,11 @@ class Product extends Model
         return $this->belongsTo(City::class);
     }
 
+    public function district()
+    {
+        return $this->belongsTo(District::class);
+    }
+
     public function schedules()
     {
         return $this->hasMany(Schedule::class);

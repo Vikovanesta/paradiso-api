@@ -14,14 +14,17 @@ class CityController extends Controller
      * @group Public
      * 
      * @queryParam name string The name of the city. (can be a substring) Example: Ja
+     * @queryParam province_id int The id of the province. No-example
      */
     public function index(Request $request)
     {
         $query = $request->query();
 
-        $cities = City::with('province')
-                    ->when(isset($query['name']), function ($q) use ($query) {
+        $cities = City::when(isset($query['name']), function ($q) use ($query) {
                         $q->where('name', 'like', '%'.$query['name'].'%');
+                    })
+                    ->when(isset($query['province_id']), function ($q) use ($query) {
+                        $q->where('province_id', $query['province_id']);
                     })
                     ->get();
         return CityResource::collection($cities);

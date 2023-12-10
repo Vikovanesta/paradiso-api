@@ -5,6 +5,7 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MerchantController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProductCategoryController;
@@ -31,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function () {
     Route::post('/auth', [AuthController::class,'login'])->name('login');
 
+    Route::get('/districts', [DistrictController    ::class,'index'])->name('district.index');
     Route::get('/cities', [CityController::class,'index'])->name('city.index');
     Route::get('/provinces', [ProvinceController::class,'index'])->name('province.index');
     Route::get('/countries', [CountryController::class,'index'])->name('country.index');

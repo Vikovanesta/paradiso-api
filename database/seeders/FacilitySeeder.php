@@ -13,7 +13,19 @@ class FacilitySeeder extends Seeder
      */
     public function run(): void
     {
-        $facilities = ['wifi', 'parkir', 'ac', 'tv', 'kamar mandi dalam', 'kamar mandi luar'];
+        $facilities = [
+            'wifi', 
+            'parking', 
+            'swimming pool', 
+            'restaurant', 
+            '24-hour front desk', 
+            'elevator',
+            'wheelchair access',
+            'fitness center',
+            'meeting facilities',
+            'airport transfer',
+        ];
+        
         foreach ($facilities as $facility) {
             Facility::factory()->create([
                 'name' => $facility,

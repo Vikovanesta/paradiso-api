@@ -29,7 +29,8 @@ class ProductStoreRequest extends FormRequest
 
         $rules = [
             'product_sub_category_id' => 'required|exists:product_sub_categories,id',
-            'city_id' => 'required|exists:cities,id',
+            'city_id' => 'sometimes|nullable|exists:cities,id',
+            'district_id' => 'required|exists:districts,id',
             'product_status_id' => 'required|exists:product_statuses,id',
             'name' => 'required|string',
             'description' => 'nullable|string',
@@ -40,6 +41,7 @@ class ProductStoreRequest extends FormRequest
             'stock' => 'nullable|integer|min:0',
             'discount' => 'nullable|integer',
             'thumbnail' => 'required|file|mimes:jpeg,jpg,png,webp,bmp',
+            'postal_code' => 'nullable|string|size:5',
             'address' => 'required|string',
             'coordinate' => 'required|string',
             'note' => 'string',
@@ -69,7 +71,11 @@ class ProductStoreRequest extends FormRequest
             ],
             'city_id' => [
                 'description' => 'City id',
-                'example' => 1,
+                'example' => 3401,
+            ],
+            'district_id' => [
+                'description' => 'id of district (kecamatan) where product located',
+                'example' => 3401020,
             ],
             'product_status_id' => [
                 'description' => 'Product status id',
@@ -109,6 +115,10 @@ class ProductStoreRequest extends FormRequest
             ],
             'thumbnail' => [
                 'description' => 'Product thumbnail',
+            ],
+            'postal_code' => [
+                'description' => 'Product postal code',
+                'example' => '12345',
             ],
             'address' => [
                 'description' => 'Product address',

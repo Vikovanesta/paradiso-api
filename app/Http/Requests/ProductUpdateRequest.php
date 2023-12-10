@@ -29,6 +29,7 @@ class ProductUpdateRequest extends FormRequest
         $rules = [
             'product_sub_category_id' => 'exists:product_sub_categories,id',
             'city_id' => 'exists:cities,id',
+            'district_id' => 'exists:districts,id',
             'product_status_id' => 'exists:product_statuses,id|in:1,2',
             'name' => 'string',
             'description' => 'string',
@@ -38,6 +39,7 @@ class ProductUpdateRequest extends FormRequest
             'price_unit' => 'string',
             'discount' => 'nullable|integer',
             'thumbnail' => 'file|mimes:jpeg,jpg,png,webp,bmp',
+            'postal_code' => 'nullable|string|size:5',
             'address' => 'string',
             'coordinate' => 'string',
             'note' => 'string',
@@ -69,7 +71,11 @@ class ProductUpdateRequest extends FormRequest
             ],
             'city_id' => [
                 'description' => 'City id',
-                'example' => 1,
+                'example' => 3401,
+            ],
+            'district_id' => [
+                'description' => 'id of district (kecamatan) where product located',
+                'example' => 3401070,
             ],
             'product_status_id' => [
                 'description' => 'Product status id',
@@ -105,6 +111,10 @@ class ProductUpdateRequest extends FormRequest
             ],
             'thumbnail' => [
                 'description' => 'Product thumbnail',
+            ],
+            'postal_code' => [
+                'description' => 'Product postal code',
+                'example' => '12345',
             ],
             'address' => [
                 'description' => 'Product address',
