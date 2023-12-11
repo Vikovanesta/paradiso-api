@@ -62,56 +62,114 @@ class ProductController extends Controller
 
             $product->setCategorySpecificFieldByArray($validated);
 
-            
-            foreach ($validated['includes'] as $include) {
-                $product->includeExcludes()->create([
-                    'description' => $include,
-                    'is_include' => true,
-                ]);
+            if(isset($validated['includes'])) {
+                foreach ($validated['includes'] as $include) {
+                    $product->includeExcludes()->create([
+                        'description' => $include,
+                        'is_include' => true,
+                    ]);
+                }
             }
+            // foreach ($validated['includes'] as $include) {
+            //     $product->includeExcludes()->create([
+            //         'description' => $include,
+            //         'is_include' => true,
+            //     ]);
+            // }
             
-            foreach ($validated['excludes'] as $exclude) {
-                $product->includeExcludes()->create([
-                    'description' => $exclude,
-                    'is_include' => false,
-                ]);
-            }
-            
-            foreach ($validated['terms'] as $term) {
-                $product->terms()->create([
-                    'term' => $term,
-                    'is_global' => false,
-                ]);
-            }
-            
-            foreach ($validated['facilities'] as $facility) {
-                $product->facilities()->attach($facility);
-            }
-
-            $schedules = json_decode($validated['schedules']);
-            foreach ($schedules as $schedule) {
-                $newSchedule = $product->schedules()->create([
-                    'date' => $product->start_date->addDays($schedule->order - 1),
-                    'title' => $schedule->title,
-                ]);
-
-                foreach ($schedule->days as $schedule_day) {
-                    $newSchedule->scheduleDays()->create([
-                        'start_time' => $schedule_day->start_time,
-                        'end_time' => $schedule_day->end_time,
-                        'description' => $schedule_day->description,
+            if(isset($validated['excludes'])) {
+                foreach ($validated['excludes'] as $exclude) {
+                    $product->includeExcludes()->create([
+                        'description' => $exclude,
+                        'is_include' => false,
                     ]);
                 }
             }
 
-            $faqs = json_decode($validated['faqs']);
-            foreach ($faqs as $faq) {
-                $product->faqs()->create([
-                    'question' => $faq->question,
-                    'answer' => $faq->answer,
-                ]);
-            }
+            // foreach ($validated['excludes'] as $exclude) {
+            //     $product->includeExcludes()->create([
+            //         'description' => $exclude,
+            //         'is_include' => false,
+            //     ]);
+            // }
             
+            if(isset($validated['terms'])) {
+                foreach ($validated['terms'] as $term) {
+                    $product->terms()->create([
+                        'term' => $term,
+                        'is_global' => false,
+                    ]);
+                }
+            }
+
+            // foreach ($validated['terms'] as $term) {
+            //     $product->terms()->create([
+            //         'term' => $term,
+            //         'is_global' => false,
+            //     ]);
+            // }
+            
+            if(isset($validated['facilities'])) {
+                foreach ($validated['facilities'] as $facility) {
+                    $product->facilities()->attach($facility);
+                }
+            }
+
+            // foreach ($validated['facilities'] as $facility) {
+            //     $product->facilities()->attach($facility);
+            // }
+
+            if(isset($validated['schedules'])) {
+                $schedules = json_decode($validated['schedules']);
+                foreach ($schedules as $schedule) {
+                    $newSchedule = $product->schedules()->create([
+                        'date' => $product->start_date->addDays($schedule->order - 1),
+                        'title' => $schedule->title,
+                    ]);
+
+                    foreach ($schedule->days as $schedule_day) {
+                        $newSchedule->scheduleDays()->create([
+                            'start_time' => $schedule_day->start_time,
+                            'end_time' => $schedule_day->end_time,
+                            'description' => $schedule_day->description,
+                        ]);
+                    }
+                }
+            }
+
+            // $schedules = json_decode($validated['schedules']);
+            // foreach ($schedules as $schedule) {
+            //     $newSchedule = $product->schedules()->create([
+            //         'date' => $product->start_date->addDays($schedule->order - 1),
+            //         'title' => $schedule->title,
+            //     ]);
+
+            //     foreach ($schedule->days as $schedule_day) {
+            //         $newSchedule->scheduleDays()->create([
+            //             'start_time' => $schedule_day->start_time,
+            //             'end_time' => $schedule_day->end_time,
+            //             'description' => $schedule_day->description,
+            //         ]);
+            //     }
+            // }
+
+            if(isset($validated['faqs'])) {
+                $faqs = json_decode($validated['faqs']);
+                foreach ($faqs as $faq) {
+                    $product->faqs()->create([
+                        'question' => $faq->question,
+                        'answer' => $faq->answer,
+                    ]);
+                }
+            }
+
+            // $faqs = json_decode($validated['faqs']);
+            // foreach ($faqs as $faq) {
+            //     $product->faqs()->create([
+            //         'question' => $faq->question,
+            //         'answer' => $faq->answer,
+            //     ]);
+            // }
             
             
             if(isset($validated['thumbnail'])) {
