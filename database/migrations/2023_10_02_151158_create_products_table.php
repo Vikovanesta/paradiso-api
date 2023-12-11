@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('postal_code')->nullable();
             $table->string('address');
-            $table->string('coordinate');
+            $table->string('coordinate')->nullable();
             $table->text('note')->nullable();
             $table->boolean('is_published')->default(false);
             $table->softDeletes();
