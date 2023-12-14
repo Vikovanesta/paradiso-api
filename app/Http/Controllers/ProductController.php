@@ -42,7 +42,7 @@ class ProductController extends Controller
             $product = Product::create([
                 'merchant_id' => $merchant->id,
                 'product_sub_category_id' => $validated['product_sub_category_id'],
-                'product_status_id' => $validated['product_status_id'],
+                'product_status_id' => $validated['product_status_id'] ?? 1,
                 'city_id' => $validated['city_id'] ?? null,
                 'district_id' => $validated['district_id'],
                 'name' => $validated['name'],
