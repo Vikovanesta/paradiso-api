@@ -37,7 +37,7 @@ class ProductStoreRequest extends FormRequest
             'start_date' => 'sometimes|nullable|date_format:Y-m-d',
             'end_date' => 'sometimes|nullable|date_format:Y-m-d|after_or_equal:start_date',
             'price' => 'required|integer',
-            'price_unit' => 'required|string',
+            'price_unit' => 'sometimes|string',
             'stock' => 'nullable|integer|min:0',
             'discount' => 'nullable|integer',
             'thumbnail' => 'sometimes|nullable|file|mimes:jpeg,jpg,png,webp,bmp',
@@ -236,7 +236,7 @@ class ProductStoreRequest extends FormRequest
             case 'Paket Wisata':
                 $categorySpecificRules = [
                     'duration' => 'required|integer',
-                    'duration_unit' => 'required_with:duration|string|in:hour,day',
+                    'duration_unit' => 'sometimes|string|in:hour,day',
                     'max_person' => 'required|integer|min:1',
                     'min_person' => 'required|integer|min:1',
                 ];

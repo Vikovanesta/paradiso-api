@@ -50,7 +50,7 @@ class ProductController extends Controller
                 'start_date' => $validated['start_date'] ?? null,
                 'end_date' => $validated['end_date'] ?? null,
                 'price' => $validated['price'],
-                'price_unit' => $validated['price_unit'],
+                'price_unit' => $validated['price_unit'] ?? null,
                 'stock' => $validated['stock'] ?? 0,
                 'discount' => $validated['discount'] ?? 0,
                 'postal_code' => $validated['postal_code'] ?? null, // 'postal_code' => 'nullable|digits:5',
